@@ -13,5 +13,6 @@ This repository contains:
 
 A test case for the database will soon be available under www.database.industrialecology.uni-freiburg.de
 
+Last change of this document: July 4th, 2018.
 
 
