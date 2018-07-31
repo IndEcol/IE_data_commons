@@ -1,0 +1,16 @@
+Changelog DB ancillary tables, 30.7.2018:
+
+types: 'Per capita stocks' -> 'Per capita stock'
+
+layers: added 'Parameters of pdf of product discard'
+
+provenance: COMPLETELY REWORKED!!!
+
+aspects: added "substituting_material"
+	changed 'restination region' to 'destination region'
+
+
+licenses: added "© 2012 Macmillan Publishers Limited. All rights reserved."
+
+user: 	add thpereira;Thibaud Pereira;Yale; thibaud.pereira@yale.edu;None;09.06.2018;31.07.2018
+	add mbisch	Moritz Bisch	IEF	uni@moritzbisch.de		09.06.2018
