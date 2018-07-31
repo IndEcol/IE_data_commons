@@ -14,3 +14,5 @@ licenses: added "© 2012 Macmillan Publishers Limited. All rights reserved."
 
 user: 	add thpereira;Thibaud Pereira;Yale; thibaud.pereira@yale.edu;None;09.06.2018;31.07.2018
 	add mbisch	Moritz Bisch	IEF	uni@moritzbisch.de		09.06.2018
+
+>>>>> ALL CHANGES IMPLEMENTED!!!
