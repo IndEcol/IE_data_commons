@@ -38,17 +38,20 @@ cur.execute("SELECT * FROM iedc_review.datasets")
 for row in cur:
     print(row)
     
-cur.execute("SELECT * FROM datasets")
+cur.execute("SELECT * FROM classification_definition")
 for row in cur:
     print(row)
 
+cur.execute("SELECT * FROM classifiation_items")
+for row in cur:
+    print(row)
     
 # Show table creation statement    
 cur.execute("SHOW CREATE TABLE licences")
 for row in cur:
     print(row)
     
-cur.execute("SHOW CREATE TABLE datasets")
+cur.execute("SHOW CREATE TABLE data")
 for row in cur:
     print(row)    
     
@@ -60,6 +63,11 @@ for row in cur:
 cur.execute("SELECT table_name, Auto_increment FROM information_schema.tables WHERE table_schema = DATABASE()")    
 for row in cur:
     print(row)
+    
+# get total number of data
+cur.execute("SELECT COUNT(*) FROM data")
+for row in cur:
+    print(row)    
     
 # Change auto_increment    
 cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")
@@ -77,6 +85,11 @@ cur.execute("DELETE FROM iedc_review.licences WHERE id = 5")
 cur.execute("DELETE FROM iedc_review.datasets WHERE id = 1") 
 
 cur.execute("DELETE FROM iedc_review.datasets")
+
+# get units
+cur.execute("SELECT * FROM units")
+for row in cur:
+    print(row)
 
 # Insert into datasets:
 # id is not set because of auto_increment
