@@ -95,6 +95,10 @@ cur.execute("SELECT * FROM datasets WHERE id = 58")
 for row in cur:
     print(row)
 
+
+## 4) close connection
+cur.close()
+conn.close()
 #
 #    
 #    
