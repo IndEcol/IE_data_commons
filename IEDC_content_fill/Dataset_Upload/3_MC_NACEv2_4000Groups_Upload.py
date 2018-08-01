@@ -66,25 +66,34 @@ C2Labels = [x[1] for x in C2Tuples]
 
 
 # Open excel file with data
-FilePath = 'C:\\Users\\spauliuk\\FILES\\ARBEIT\\PROJECTS\\Database\\IE_DataCommons\\DATA\\Data_Custom_Insertion\\3_MC_NACEv2_4000Groups\\3_MC_NACEv2_4000Groups.xls'
-DataFile = xlrd.open_workbook(FilePath)
+FilePath  = 'C:\\Users\\spauliuk\\FILES\\ARBEIT\\PROJECTS\\Database\\IE_DataCommons\\DATA\\Data_Custom_Insertion\\3_MC_NACEv2_4000Groups\\3_MC_NACEv2_4000Groups.xls'
+DataFile  = xlrd.open_workbook(FilePath)
+DataSheet = DataFile.sheet_by_name('3_MC_NACEv2_4000Groups')
 
-lines = open(FilePath,'r').read().split('\n')
-for line in lines:
-    if line != '':
-        cols = line.split(';')
-        CountryID = int(cols[3])
-        YearID    = int(cols[4])
-        PopValue  = np.float(cols[8])
+# loop over data from Excel reference dataset file
+for m in range(0,4047): # rows
+    for n in range(0,11): # cols
+	# get row label, column label, and value
+        ProductID  = DataSheet.cell_value(m +15,8)
+        MaterialID = DataSheet.cell_value(14, n +9)
+        ContValue  = DataSheet.cell_value(m +15,n +9)
         
-        Country_Pos = C1IDs[C1Labels.index(CountryID)]
-        Time_Pos    = C2IDs[C2Labels.index(YearID)]
+	# match row and column labels to classification_items entry
+        Mat_Pos    = C1IDs[C1Labels.index(MaterialID)]
+        Prod_Pos   = C2IDs[C2Labels.index(ProductID)]
+        
+        # Read and parse uncertainty string:
+        UncString  = DataSheet.cell_value(m +8115 ,n +9)
+        UncParts   = UncString.split(';')
+        U1 = 13
+        U2 = np.float(UncParts[1])
+        U3 = np.float(UncParts[2])
+        U4 = None
         
         # Add data into db:
-    cur.execute(SQL,(DS_id,Country_Pos,Time_Pos,None,None,None,None,None,None,None,None,None,None,PopValue,\
-                     32,1,1,0,0,0,None,None,None,None))
+        cur.execute(SQL,(DS_id,Mat_Pos,Prod_Pos,None,None,None,None,None,None,None,None,None,None,ContValue,\
+                     2,2,U1,U2,U3,U4,None,None,None,None))
 
-    
     
 # Close connection
 cur.close()
