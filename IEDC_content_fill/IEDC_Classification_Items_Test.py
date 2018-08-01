@@ -23,7 +23,7 @@ for row in cur:
     print(row) 
     
 # get set of classification_items:
-cur.execute("SELECT * FROM classifiation_items WHERE classification_id = 3")
+cur.execute("SELECT * FROM classifiation_items WHERE classification_id = 5")
 for row in cur:
     print(row)
     

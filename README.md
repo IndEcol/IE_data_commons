@@ -7,12 +7,15 @@ The data that fit the general data model are structured and stored in a relation
 The data are structured (they all fit a commmon data model and are organised in a single database) but not linked (different data come in different classifications, resolution and scope of the different datasets is not compatible with others). That means this database exhibits an intermediate step of data integration: more integrated than repositories like Figshare or Zenodo (Data are not structured or structured in custom formats and not linked) and less integrated than highly integrated databases like ecoinvent or EXIOBASE (data are structured and come in a project-wide classification)
 
 This repository contains:
-* mySQL code to create the (empty) database on any machine
-* Python scripts with mySQL code to write to and download from the database
-* C# code for the web interface
+* mySQL code and Excel templates to create the (empty) database on any machine (folder mySQL_Create)
+* Excel templates to fill the lookup tables (licenses, etc.) (folder IEDC_LookupTable_fill)
+* Excel and csv templates to fill the classfication table (folder IEDC_Classification_fill)
+* Python scripts with mySQL code to write to and download from the database (folder IEDC_content_fill)
+* C# code for the web interface (folder IEDC_webapp)
+* Sample code for the pymysql interface (folder mySQL_Python_Examples)
 
 A test case for the database will soon be available under www.database.industrialecology.uni-freiburg.de
 
-Last change of this document: July 4th, 2018.
+Last change of this document: August 1st, 2018.
 
 
