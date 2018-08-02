@@ -10,11 +10,13 @@ import datetime
 import IEDC_PW
 
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='sankey', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
-
+a
 cur.execute("Show tables")
 for row in cur:
     print(row)
@@ -86,6 +88,12 @@ cur.execute("DELETE FROM iedc_review.datasets WHERE id = 1")
 
 cur.execute("DELETE FROM iedc_review.datasets")
 
+cur.execute("DELETE FROM iedc_review.data")
+cur.execute("ALTER TABLE iedc_review.data AUTO_INCREMENT = 1")
+
+
+cur.execute("DELETE FROM iedc.data")
+cur.execute("ALTER TABLE iedc.data AUTO_INCREMENT = 1")
 # get units
 cur.execute("SELECT * FROM units")
 for row in cur:

@@ -12,6 +12,18 @@ import xlrd
 import IEDC_PW
 
 
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='sankey', autocommit=True, charset='utf8')
+
+cur = conn.cursor()
+
+cur.execute("Show tables")
+for row in cur:
+    print(row)
+    
+cur.execute("SELECT * FROM process_list")
+for row in cur:
+    print(row)    
+
 # Define mySQL command for data item insertion
 SQL = "INSERT INTO data (\
 dataset_id,\
