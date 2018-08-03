@@ -13,10 +13,9 @@ import IEDC_PW
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
 conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='sankey', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
-a
+
 cur.execute("Show tables")
 for row in cur:
     print(row)
@@ -92,12 +91,17 @@ cur.execute("DELETE FROM iedc_review.data")
 cur.execute("ALTER TABLE iedc_review.data AUTO_INCREMENT = 1")
 
 
-cur.execute("DELETE FROM iedc.data")
-cur.execute("ALTER TABLE iedc.data AUTO_INCREMENT = 1")
+cur.execute("DELETE FROM data")
+cur.execute("ALTER TABLE data AUTO_INCREMENT = 1")
 # get units
 cur.execute("SELECT * FROM units")
 for row in cur:
     print(row)
+    
+    
+cur.execute("SELECT DISTINCT(process_id) FROM stocks")
+for row in cur:
+    print(row)    
 
 # Insert into datasets:
 # id is not set because of auto_increment
@@ -112,7 +116,7 @@ conn.commit()
 
 
 
-cur.execute("SELECT * FROM datasets WHERE id = 58")
+cur.execute("SELECT count(*) FROM data")
 for row in cur:
     print(row)
 
