@@ -50,9 +50,9 @@ for row in cur:
 # Show table creation statement    
 cur.execute("SHOW CREATE TABLE licences")
 for row in cur:
-    print(row)
+    print(row)   
     
-cur.execute("SHOW CREATE TABLE data")
+cur.execute("SHOW CREATE TABLE datasets")
 for row in cur:
     print(row)    
     
@@ -71,28 +71,29 @@ for row in cur:
     print(row)    
     
 # Change auto_increment    
-cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")
-cur.execute("ALTER TABLE iedc_review.datasets AUTO_INCREMENT = 1")
+#cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")
+#cur.execute("ALTER TABLE iedc_review.datasets AUTO_INCREMENT = 1")
     
 # Insert data into tables with auto_increment and default NULL columns:
-SQL = "INSERT INTO iedc_review.licences (name,description) VALUES ('Crown Copyright','')"
-cur.execute(SQL)
-D = ['Test','']
-SQL = "INSERT INTO iedc_review.licences (name,description) VALUES (%s,%s)"
-cur.execute(SQL,('Test',''))
+#SQL = "INSERT INTO iedc_review.licences (name,description) VALUES ('Crown Copyright','')"
+#cur.execute(SQL)
+#D = ['Test','']
+#SQL = "INSERT INTO iedc_review.licences (name,description) VALUES (%s,%s)"
+#cur.execute(SQL,('Test',''))
     
 # Delete
-cur.execute("DELETE FROM iedc_review.licences WHERE id = 5")    
-cur.execute("DELETE FROM iedc_review.datasets WHERE id = 1") 
-
-cur.execute("DELETE FROM iedc_review.datasets")
-
-cur.execute("DELETE FROM iedc_review.data")
-cur.execute("ALTER TABLE iedc_review.data AUTO_INCREMENT = 1")
-
-
-cur.execute("DELETE FROM data")
-cur.execute("ALTER TABLE data AUTO_INCREMENT = 1")
+#cur.execute("DELETE FROM iedc_review.licences WHERE id = 5")    
+#cur.execute("DELETE FROM iedc_review.datasets WHERE id = 1") 
+#
+#cur.execute("DELETE FROM iedc_review.datasets")
+#
+#cur.execute("DELETE FROM iedc_review.data")
+#cur.execute("ALTER TABLE iedc_review.data AUTO_INCREMENT = 1")
+#
+#
+#cur.execute("DELETE FROM data")
+#cur.execute("ALTER TABLE data AUTO_INCREMENT = 1")
+    
 # get units
 cur.execute("SELECT * FROM units")
 for row in cur:
@@ -106,9 +107,11 @@ for row in cur:
 # Insert into datasets:
 # id is not set because of auto_increment
 
-
-
-
+cur.execute("SELECT dataset_name,aspect_4_classification FROM datasets WHERE id = 11") 
+for row in cur:
+    print(row) 
+    
+#cur.execute("UPDATE datasets SET aspect_4_classification = 14 WHERE id = 10") 
 
 
 conn.commit()

@@ -1,0 +1,46 @@
+Last round to insert datasets into IEDC prototype, increasing number of datasets to 110. 
+Most important feature of this round: Add LCA process inventories to the IEDC.
+Process inventories and unit process inventories are flow data, and belong under category 1:
+
+Change log for master xls and csv tables:
+
+0) Add new projects, datagroups, and datasets to IEDC_Prototype_Datasets_Batch1_Upload.xlsx
+
+1) New data types: 1_PI and 1_UPI -> Add to table in paper
++ types_data table changed
+
+2) Add US LCI license: Creative Commons CC0 1.0 Universal Public Domain Dedication
++ licenses_data table changed
+
+3) Add 'layer' dimension to dimensions table.
++ dimensions_data table changed
+
+4) Add 'Misc. physical units' and 'Misc. units' layer to layers table
++ layers_data table changed
+
+5) Add four new aspects to aspect table
++ aspects_data table changed
+
+6) Classification_item change:
++ Spelling mistake for regions_iso_iedc classifiction:
+ISO 905 'Nothern America' changed to 'Northern America' 
++ Add items to time range classification
+
+7) Create templates for 5 US LCI sample processes, based on Paula's extraction.
+Convert to format using
+=WENN(M2="Output";"Aluminium cold rolling";"unspecified")
+=WENN(M2="Output";"unspecified";"Aluminium cold rolling")
+=SVERWEIS(I2;Q$2:R$5;2;FALSCH)
+
+8) New units added to units table
++ units_data table changed
+
+9) New classifications for material (3x: material, material group, material_category), process, layer,
++ classification_definition_data table changed
+
+10) Added Paula as user:
++ users_data table changed
+
+11) Six new classifications, id 17-22, were created.
+
+--> Changes will be implemented after review, when entire database is recreated and 110 datasets are inserted.
