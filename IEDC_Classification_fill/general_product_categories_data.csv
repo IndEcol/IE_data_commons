@@ -16,10 +16,10 @@ id;classification_id;parent_id;description;reference;attribute1;attribute2;attri
 15;7;0;;;passenger vehicle: battery electric vehicle;;;;;;;;;;;;;;
 16;7;0;;;passenger vehicle: fuel cell vehicle;;;;;;;;;;;;;;
 17;7;0;;;passenger vehicle, internal combustion engine, C-segment, average size;;;;;;;;;;;;;;
-18;7;0;;;reserved;;;;;;;;;;;;;;
-19;7;0;;;reserved;;;;;;;;;;;;;;
-20;7;0;;;reserved;;;;;;;;;;;;;;
-21;7;0;;;reserved;;;;;;;;;;;;;;
+18;7;0;;;buildings - construction - infrastructure;;;;;;;;;;;;;;
+19;7;0;;;vehicles and other transport equipment;;;;;;;;;;;;;;
+20;7;0;;;industrial machinery;;;;;;;;;;;;;;
+21;7;0;;;appliances - packaging - other;;;;;;;;;;;;;;
 22;7;0;;;reserved;;;;;;;;;;;;;;
 23;7;0;;;reserved;;;;;;;;;;;;;;
 24;7;0;;;reserved;;;;;;;;;;;;;;

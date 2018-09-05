@@ -43,7 +43,7 @@ cur.execute("SELECT * FROM classification_definition")
 for row in cur:
     print(row)
 
-cur.execute("SELECT * FROM classifiation_items")
+cur.execute("SELECT attribute1 FROM classification_items WHERE classification_id = 17")
 for row in cur:
     print(row)
     
@@ -54,7 +54,11 @@ for row in cur:
     
 cur.execute("SHOW CREATE TABLE datasets")
 for row in cur:
-    print(row)    
+    print(row)  
+    
+cur.execute("SHOW CREATE TABLE classification_items")
+for row in cur:
+    print(row)        
     
 cur.execute("SHOW TABLE STATUS FROM iedc_review WHERE `name` LIKE 'datasets'")    
 for row in cur:

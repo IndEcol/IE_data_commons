@@ -3,6 +3,9 @@
 Created on Fri Aug  3 10:47:46 2018
 
 @author: spauliuk
+
+This script is obsolete! Is now class. 23.
+
 """
 import pymysql
 import numpy as np

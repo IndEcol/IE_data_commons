@@ -43,4 +43,7 @@ Convert to format using
 
 11) Six new classifications, id 17-22, were created.
 
+12) Manually created classification 17 was overlooked, is now classification 23 (steel cycle data processes).
+
 --> Changes will be implemented after review, when entire database is recreated and 110 datasets are inserted.
+
