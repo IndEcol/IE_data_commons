@@ -20,8 +20,8 @@ id;classification_id;parent_id;description;reference;attribute1;attribute2;attri
 19;7;0;;;vehicles and other transport equipment;;;;;;;;;;;;;;
 20;7;0;;;industrial machinery;;;;;;;;;;;;;;
 21;7;0;;;appliances - packaging - other;;;;;;;;;;;;;;
-22;7;0;;;reserved;;;;;;;;;;;;;;
-23;7;0;;;reserved;;;;;;;;;;;;;;
+22;7;0;;;residential buildings, rural;;;;;;;;;;;;;;
+23;7;0;;;residential buildings, urban;;;;;;;;;;;;;;
 24;7;0;;;reserved;;;;;;;;;;;;;;
 25;7;0;;;reserved;;;;;;;;;;;;;;
 26;7;0;;;reserved;;;;;;;;;;;;;;

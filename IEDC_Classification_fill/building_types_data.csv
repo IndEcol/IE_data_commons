@@ -15,9 +15,9 @@ id;classification_id;parent_id;description;reference;attribute1;attribute2;attri
 14;13;0;;;industrial production;;;;;;;;;;;;;;
 15;13;0;;;non-residential buildings;;;;;;;;;;;;;;
 16;13;0;;;residential buildings;;;;;;;;;;;;;;
-17;13;0;;;reserved;;;;;;;;;;;;;;
-18;13;0;;;reserved;;;;;;;;;;;;;;
-19;13;0;;;reserved;;;;;;;;;;;;;;
+17;13;0;;;average building;;;;;;;;;;;;;;
+18;13;0;;;shearing-force structure dwellings;;;;;;;;;;;;;;
+19;13;0;;;brick concrete structure dwellings;;;;;;;;;;;;;;
 20;13;0;;;reserved;;;;;;;;;;;;;;
 21;13;0;;;reserved;;;;;;;;;;;;;;
 22;13;0;;;reserved;;;;;;;;;;;;;;
