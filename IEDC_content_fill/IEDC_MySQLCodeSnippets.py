@@ -10,8 +10,8 @@ import datetime
 import IEDC_PW
 
 
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 
 cur = conn.cursor()
@@ -31,7 +31,7 @@ cur.execute("DESCRIBE iedc_review.licences")
 for row in cur:
     print(row)
 
-cur.execute("SELECT * FROM licences")
+cur.execute("SELECT * FROM datagroups")
 for row in cur:
     print(row)
     
@@ -55,6 +55,10 @@ for row in cur:
 cur.execute("SHOW CREATE TABLE datasets")
 for row in cur:
     print(row)  
+    
+cur.execute("SHOW CREATE TABLE datagroups")
+for row in cur:
+    print(row)      
     
 cur.execute("SHOW CREATE TABLE classification_items")
 for row in cur:
@@ -89,7 +93,7 @@ for row in cur:
 #cur.execute("DELETE FROM iedc_review.licences WHERE id = 5")    
 #cur.execute("DELETE FROM iedc_review.datasets WHERE id = 1") 
 #
-#cur.execute("DELETE FROM iedc_review.datasets")
+#cur.execute("DELETE FROM datagroups")
 #
 #cur.execute("DELETE FROM iedc_review.data")
 #cur.execute("ALTER TABLE iedc_review.data AUTO_INCREMENT = 1")
