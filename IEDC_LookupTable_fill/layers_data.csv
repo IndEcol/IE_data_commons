@@ -1,0 +1,19 @@
+id;name;description;reserve1;reserve2
+1;Mass;;;
+2;Mass ratio;;;
+3;Monetary;;;
+4;Value per mass;;;
+5;Unit;;;
+6;Population;;;
+7;Lifetime;;;
+8;Power generation capacity;;;
+9;Energy per mass of output;;;
+10;Product per capita;;;
+11;Service per unit;;;
+12;Mass per area;;;
+13;Mass per volume;;;
+14;Service;;;
+15;Mass per unit;;;
+16;Parameters of pdf of product discard;;;
+17;Misc. physical units;;;
+18;Misc. units;;;

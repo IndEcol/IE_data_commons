@@ -1,0 +1,7 @@
+id;name;description;reserve1;reserve2
+1;Publicly available dataset, static web page;;;
+2;Publicly available dataset, dynamic web page;;;
+3;Proprietary dataset, static web page;;;
+4;Proprietary dataset, dynamic web page;;;
+5;Publicly available report or research article;;;
+6;Proprietary report or research article;;;

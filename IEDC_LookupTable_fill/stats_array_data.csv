@@ -1,0 +1,18 @@
+ID;Name;Description;loc;scale;shape
+1;No uncertainty;;static value;;
+2;Lognormal;;mu;sigma;
+3;Normal;;mu;sigma;
+4;Uniform;min-max was moved from original min and max columns to scale and shape;;min;max
+5;Triangular;min-max was moved from original min and max columns to scale and shape;mode;min;max
+6;Bernoulli;lower and upper bound was moved from original min and max columns to scale and shape;p;lower bound;upper bound
+7;Discrete uniform;min and upper bound was moved from original min and max columns to scale and shape;;min;upper bound
+8;Weibull;;offset ;lambda;k
+9;Gamma;;offset ;theta;k
+10;Beta;;alpha;upper bound;beta
+11;Generalized extreme value;;mu;sigma;xi
+12;Student's T;;median;scale;nu
+13;low-mean-high;mean value is stored in 'value' column, only low and high are stored here;low;high;
+14;undefined;moved from 0 as 0 is not allowed in mySQL db.;static value;;
+15;alternative value;basic (= reference) value is stored in 'value' column;alternative;;
+16;low alternative;high (= reference) value is stored in 'value' column;low;;
+17;high alternative;low (= reference) value is stored in 'value' column;high;;

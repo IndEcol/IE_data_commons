@@ -1,0 +1,7 @@
+id;name;description;reserve1;reserve2
+1;Flow;Objects flowing between processes;;
+2;Stock;Objects residing as stocks in processes;;
+3;Material/Product property;Intensive object properties;;
+4;Process coefficient, process parameter, intensive quantity;Intensive process properties;;
+5;Extensive process property;Extensive process properties such as capacity;;
+6;General ratio;Ratios between stocks and flows;;

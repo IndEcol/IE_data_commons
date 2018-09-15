@@ -1,0 +1,19 @@
+id;name;description;reserve1;reserve2
+1;Expert estimates;data from expert judgement;;
+2;Expert estimates, mass balance, product description;data from expert judgement, constrained by mass balance and other available information;;
+3;Aggregated data or estimates from industry association;aggregated, typical, or representative industry data, typically gathered and distributed by industry associations;;
+4;Industry data;data directly obtained from industrial facilities;;
+5;Official data from government institution;data directly obtained from government institutions;;
+6;Result of academic accounting work;data derived from academic accounting work;;
+7;Result of academic MFA work;data derived from material and energy flow analysis ;;
+8;Result of academic LCA work;data derived from life cycle assessment;;
+9;Result of academic IOA work;data derived from input-output analysis;;
+10;Scenario models;data derived from scenario models;;
+11;Compiled from official and semi-official sources;data compiled from official sources (government) AND other sources, such as consultancy reports;;
+12;Survey data;data derived from surveys;;
+13;Assumption based on compilation from scientific literature and expert estimates;;;
+14;Assumption based on compilation from scientific literature and expert estimates, mass balance;;;
+15;"Official data from government institution; Result of academic MFA work";;;
+16;Estimates from industry association supplemented with literature values;;;
+17;unknown;;;
+18;Official data from government institutions, compiled by industry association;;;

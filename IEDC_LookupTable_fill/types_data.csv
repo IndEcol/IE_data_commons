@@ -1,0 +1,20 @@
+id;name;description;reference_data_category;symbol;reserve1;reserve2;reserve3
+1;Flow;;1;F;;;
+2;Stock;stocks of all kind;2;S;;;
+3;In-use stock;in-use stocks only;2;IUS;;;
+4;Population;population figures only;2;P;;;
+5;Lifetime;typically in use phase, or residence time in landfill etc.;3;LT;;;
+6;Material composition;m.c. of products, alloys, waste/scrap, etc.;3;MC;;;
+7;Share;share (in %) of something;3;SHA;;;
+8;Price;price data;3;PR;;;
+9;Yield coefficient;material or energy yield of processes;4;PY;;;
+10;Process extension;Extension per output;4;PE;;;
+11;Process capacity;capacity of processes;5;CAP;;;
+12;Intensity of use of products;service (physical or immaterial) extracted from products;3;IUP;;;
+13;Specific energy consumption of products;energy per unit of use of products, e.g., MJ/km of vehicle driven;3;EIP;;;
+14;Process costs;Costs per capacity;4;PC;;;
+15;Per capita stock;stock per person, e.g., cars per capita;6;PCS;;;
+16;Per capita flows;flows per persion, e.g., GDP per capita;6;PCF;;;
+17;Material substitution coefficient;Amount of material 1 substituted by amount of material 2.;6;MSC;;;
+18;Process inventory;flows entering and leaving process, for LCI datasets;1;PI;;;
+19;Unit process inventory;flows entering and leaving process, normalized, for LCI datasets;1;UPI;;;

@@ -1,0 +1,24 @@
+id;classification_Name;dimension;description;mutually_exclusive;collectively_exhaustive;general;created_from_dataset;reference;reserve1;reserve2;reserve3;meaning_attribute1;meaning_attribute2;meaning_attribute3;meaning_attribute4;meaning_attribute5;meaning_attribute6;meaning_attribute7;meaning_attribute8;meaning_attribute9;meaning_attribute10;meaning_attribute11;meaning_attribute12;meaning_attribute13;meaning_attribute14;meaning_attribute15
+1;chemical_elements;2;Chemical elements 1-118;True;True;True;False;;;;;element name (lowercase);atomic number;symbol;element name (uppercase);atomic weight (rough);;;;;;;;;;
+2;regions_iso_iedc;4;ISO 3166 classification of states and regions, with custom extensions. Numbers > 1000 are self-defined.;False;True;True;False;;;;;Name;ISO2;ISO3;ISO code;continent;UN region;UN member (bool);Official Country (bool);Alternative ISO3;Alternative Name 1;Alternative Name 2;Alternative Name 3;Alternative Name 4;Alternative Name 5;Alternative Name 6
+3;time;1;Years 1800-2200;True;False;True;False;;;;;Year;;;;;;;;;;;;;;
+4;generic_materials_waste;5;List of common materials, products, and waste groups;False;False;False;False;;;;;Material;;;;;;;;;;;;;;
+5;NACEv2_(ProdCom);6;List of ProdCom commodities;True;False;True;False;;;;;Commodity group;commodity code (NACEv2);;;;;;;;;;;;;
+6;broad_industry_groups;7;List of broad industry groupts (mining, material production, ?);False;False;False;False;;;;;Broad industry group;;;;;;;;;;;;;;
+7;general_product_categories;6;List of general product categories, residential and non-residential;False;False;False;False;;;;;Product category;;;;;;;;;;;;;;
+8;basic_scenario_alternatives;9;High-medium-low scenarios;True;False;False;False;;;;;Scenario alternatives: High/medium/low, etc.;;;;;;;;;;;;;;
+9;ca_time;1;Years with ca. prefix;True;False;True;False;;;;;Ca. year;;;;;;;;;;;;;;
+10;general_energy_carriers;8;List of general energy carriers;False;False;False;False;;;;;Energy carrier;;;;;;;;;;;;;;
+11;cities;4;List of cities;False;False;False;False;;;;;City name;alternative city name 1;alternative city name 2;alternative city name 3;Country or region ID;;;;;;;;;;
+12;service_categories;11;List of services;False;False;False;False;;;;;Service type;;;;;;;;;;;;;;
+13;building_types;6;List of commonly used building types;False;False;False;False;;;;;Building type;;;;;;;;;;;;;;
+14;time_ranges;1;List of time intervals for age cohorts and years;False;False;False;False;;;;;Range of years or age-cohorts;;;;;;;;;;;;;;
+15;custom;0;Custom classification, dimension specified via aspect, placeholder only!;False;False;False;False;;;;;None;;;;;;;;;;;;;;
+16;steel_cycle_200R_processes;7;List of processes for steel cycle MFA DOI 10.1016/j.resconrec.2012.11.008;True;False;False;False;;;;;process_name;process_id;;;process_code;process_type;comment;color;angle;width;height;xPos;yPos;;
+17;US_LCI_materials;5;List of materials (flows) used in US LCI database;False;False;True;False;;;;;materials and substances list of US LCI database, incomplete (!);;;;;;;;;;;;;;
+18;LCI_material_categories;5;List of material categories used in LCI data;False;False;True;False;;;;;broad material category for LCA (product, elementary, waste);;;;;;;;;;;;;;
+19;US_LCI_material_groups;5;List of material groups used in US LCI database;False;False;True;False;;;;;grouping of flows in US LCI database into categories like 'reference product' or 'air, high population density';;;;;;;;;;;;;;
+20;LCI_data_layers;12;List of data layers used in LCI data;False;False;True;False;;;;;data layers for LCI data (mass, energy, monetary, ?);;;;;;;;;;;;;;
+21;US_LCI_processes;7;List of processes used in US LCI database;False;False;True;False;;;;;Process (activity) names from US LCI database;;;;;;;;;;;;;;
+22;UK_IO_17Commodities;6;List of 17 commodities used for 2010 aggregated UK IO table in pxp format;False;False;False;False;;;;;Aggregated industrial sector names of UK IO table;;;;;;;;;;;;;;
+23;steel_cycle_200R_materials_products;6;materials and products for stocks and flows in dataset for global steel cycle;False;False;False;False;;;;;material name;;;;;;;;;;;;;;

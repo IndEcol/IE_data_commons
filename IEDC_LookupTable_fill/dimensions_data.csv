@@ -1,0 +1,13 @@
+id;name;description;reserve1;reserve2;reserve3;reserve4;reserve5
+1;time;physical time;;;;;
+2;element;chemical elements;;;;;
+3;unity;one, 1;;;;;
+4;region;country, region, or place;;;;;
+5;material;resource, material, engineering material;;;;;
+6;commodity;product, good, commodity;;;;;
+7;process;process or activity;;;;;
+8;energy;energy type or carrier;;;;;
+9;scenario;scenario, alternative, version;;;;;
+10;extensions;units other than mass or energy;;;;;
+11;services;service flows;;;;;
+12;layer;layer of quantification;;;;;
