@@ -13,7 +13,6 @@ import IEDC_PW
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
 conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
-
 cur = conn.cursor()
 
 cur.execute("Show tables")
@@ -31,11 +30,16 @@ cur.execute("DESCRIBE iedc_review.licences")
 for row in cur:
     print(row)
 
-cur.execute("SELECT * FROM datagroups")
+cur.execute("SELECT index_letter FROM aspects")
 for row in cur:
     print(row)
     
-cur.execute("SELECT * FROM iedc_review.datasets")
+cur.execute("SELECT index_letter FROM aspects WHERE index_letter = 'D' ")
+for row in cur:
+    print(row)
+    
+    
+cur.execute("SELECT * FROM users")
 for row in cur:
     print(row)
     
@@ -48,7 +52,7 @@ for row in cur:
     print(row)
     
 # Show table creation statement    
-cur.execute("SHOW CREATE TABLE licences")
+cur.execute("SHOW CREATE TABLE users")
 for row in cur:
     print(row)   
     
@@ -78,6 +82,11 @@ cur.execute("SELECT COUNT(*) FROM data")
 for row in cur:
     print(row)    
     
+# get total number of classification_items
+cur.execute("SELECT COUNT(*) FROM classification_items")
+for row in cur:
+    print(row)    
+
 # Change auto_increment    
 #cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")
 #cur.execute("ALTER TABLE iedc_review.datasets AUTO_INCREMENT = 1")
@@ -94,21 +103,22 @@ for row in cur:
 #cur.execute("DELETE FROM iedc_review.datasets WHERE id = 1") 
 #
 #cur.execute("DELETE FROM datagroups")
+#cur.execute("DELETE FROM datasets")
+#cur.execute("DELETE FROM classification_items")
 #
 #cur.execute("DELETE FROM iedc_review.data")
-#cur.execute("ALTER TABLE iedc_review.data AUTO_INCREMENT = 1")
+#cur.execute("ALTER TABLE datagroups AUTO_INCREMENT = 1")
 #
 #
 #cur.execute("DELETE FROM data")
-#cur.execute("ALTER TABLE data AUTO_INCREMENT = 1")
+#cur.execute("ALTER TABLE datasets AUTO_INCREMENT = 1")
     
 # get units
-cur.execute("SELECT * FROM units")
+cur.execute("SELECT * FROM licences")
 for row in cur:
     print(row)
     
-    
-cur.execute("SELECT DISTINCT(process_id) FROM stocks")
+    cur.execute("SELECT DISTINCT(process_id) FROM stocks")
 for row in cur:
     print(row)    
 
@@ -125,13 +135,15 @@ for row in cur:
 conn.commit()
 
 # Create new read only user
-cur.execute("GRANT SELECT ON *.* TO 'db_downloand'@'~' IDENTIFIED BY '.39FSdkfFEfd%Kfdkjfe..034'")
+#cur.execute("GRANT SELECT ON *.* TO 'db_downloand'@'~' IDENTIFIED BY '.39FSdkfFEfd%Kfdkjfe..034'")
 
 
-cur.execute("SELECT count(*) FROM data")
+cur.execute("SELECT * FROM datagroups")
 for row in cur:
     print(row)
 
+m=10
+print('Aspect and classification mismatch for dataset %s and aspect %s.' % ((m+1), m))
 
 ## 4) close connection
 cur.close()

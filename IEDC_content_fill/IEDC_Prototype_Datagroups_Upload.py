@@ -55,8 +55,8 @@ reserve3) Values(\
 %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,\
 %s,%s,%s,%s,%s,%s,%s,%s)"
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -86,7 +86,7 @@ TOCFile  = xlrd.open_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_
 TOC = TOCFile.sheet_by_name('DataGroups')
 
 Offset = 0
-No_DG  = 4
+No_DG  = 5
 
 # loop over datasets
 for m in range(Offset,No_DG):
@@ -121,10 +121,10 @@ for m in range(Offset,No_DG):
     D[27]   = datetime.datetime.combine(from_excel_ordinal(TOC.cell_value(30,m +4)), datetime.time()) # submission date
     D[28]   = DUsers.index(TOC.cell_value(31,m +4)) +1 # 28: User
 
-#    cur.execute(SQL,(D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
-#                     D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18],D[19],D[20],\
-#                     D[21],D[22],D[23],D[24],D[25],D[26],D[27],D[28],D[29],D[30],\
-#                     D[31]))
+    cur.execute(SQL,(D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
+                     D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18],D[19],D[20],\
+                     D[21],D[22],D[23],D[24],D[25],D[26],D[27],D[28],D[29],D[30],\
+                     D[31]))
 
 # Close connection
 cur.close()
