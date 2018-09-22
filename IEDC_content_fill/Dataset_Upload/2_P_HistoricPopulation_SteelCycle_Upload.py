@@ -54,12 +54,12 @@ cur.execute("SELECT aspect_2_classification FROM datasets WHERE dataset_name = '
 C2id = cur.fetchall()[0][0]
 
 # 2 Classifications are used, get their items:
-cur.execute("SELECT id,attribute4 FROM classification_items WHERE classification_id = %s ", C1id)
+cur.execute("SELECT id,attribute4_oto FROM classification_items WHERE classification_id = %s ", C1id)
 C1Tuples = cur.fetchall()
 C1IDs    = [x[0] for x in C1Tuples]
 C1Labels = [int(x[1]) for x in C1Tuples]
 
-cur.execute("SELECT id,attribute1 FROM classification_items WHERE classification_id = %s ", C2id)
+cur.execute("SELECT id,attribute1_oto FROM classification_items WHERE classification_id = %s ", C2id)
 C2Tuples = cur.fetchall()
 C2IDs    = [x[0] for x in C2Tuples]
 C2Labels = [int(x[1]) for x in C2Tuples]

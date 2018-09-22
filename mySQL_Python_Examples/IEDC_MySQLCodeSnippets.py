@@ -39,7 +39,7 @@ for row in cur:
     print(row)
     
     
-cur.execute("SELECT * FROM users")
+cur.execute("SELECT * FROM datasets")
 for row in cur:
     print(row)
     
@@ -135,7 +135,15 @@ for row in cur:
 conn.commit()
 
 # Create new read only user
-#cur.execute("GRANT SELECT ON *.* TO 'db_downloand'@'~' IDENTIFIED BY '.39FSdkfFEfd%Kfdkjfe..034'")
+'''
+CREATE USER 'iedc_guest'@'www.industrialecology.uni-freiburg.de' IDENTIFIED BY '...';
+GRANT ALL ON iedc.* TO 'iedc_guest'@'www.industrialecology.uni-freiburg.de';
+FLUSH PRIVILEGES;
+
+CREATE USER 'iedc_guest'@'%' IDENTIFIED BY '...';
+GRANT ALL ON iedc.* TO 'iedc_guest'@'%';
+FLUSH PRIVILEGES;
+'''
 
 
 cur.execute("SELECT * FROM datagroups")

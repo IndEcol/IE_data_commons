@@ -1,6 +1,6 @@
-id;classification_id;parent_id;description;reference;attribute1_oto;attribute2_oto;attribute3_oto;attribute4_oto;attribute5_anc;attribute6_anc;attribute7_anc;attribute8_anc;attribute9_anc;attribute10_anc;attribute11_anc;attribute12_anc;attribute13_anc;attribute14_anc;attribute15_anc
+﻿id;classification_id;parent_id;description;reference;attribute1_oto;attribute2_oto;attribute3_oto;attribute4_oto;attribute5_anc;attribute6_anc;attribute7_anc;attribute8_anc;attribute9_anc;attribute10_anc;attribute11_anc;attribute12_anc;attribute13_anc;attribute14_anc;attribute15_anc
 1;2;;;;Afghanistan;AF;AFG;4;Asia;Southern Asia;1;1;;;;;;;
-2;2;;;;�land Islands;AX;ALA;248;Europe;Northern Europe;0;0;;;;;;;
+2;2;;;;land Islands;AX;ALA;248;Europe;Northern Europe;0;0;;;;;;;
 3;2;;;;Albania;AL;ALB;8;Europe;Southern Europe;1;1;;;;;;;
 4;2;;;;Algeria;DZ;DZA;12;Africa;Northern Africa;1;1;;;;;;;
 5;2;;;;American Samoa;AS;ASM;16;Oceania;Polynesia;0;0;;American Samoa (US);;;;;
@@ -56,10 +56,10 @@ id;classification_id;parent_id;description;reference;attribute1_oto;attribute2_o
 55;2;;;;Congo, Rep.;CG;COG;178;Africa;Middle Africa;1;1;;Congo;Republic of the Congo;Congo-Brazzaville;Rep Congo;;
 56;2;;;;Cook Islands;CK;COK;184;Oceania;Polynesia;0;0;;Cook Isds;Cook islands;;;;
 57;2;;;;Costa Rica;CR;CRI;188;America;Central America;1;1;CRC;;;;;;
-58;2;;;;Cote d''Ivoire;CI;CIV;384;Africa;Western Africa;1;1;;Ivory Coast;C�te d''Ivoire;;;;
+58;2;;;;Cote d''Ivoire;CI;CIV;384;Africa;Western Africa;1;1;;Ivory Coast;C“te d''Ivoire;;;;
 59;2;;;;Croatia;HR;HRV;191;Europe;Southern Europe;1;1;;Croatia (local name: hrvatska);;;;;
 60;2;;;;Cuba;CU;CUB;192;America;Caribbean;1;1;;;;;;;
-61;2;;;;Cura�ao;CW;CUW;531;America;Caribbean;0;1;;;;;;;
+61;2;;;;Cura‡ao;CW;CUW;531;America;Caribbean;0;1;;;;;;;
 62;2;;;;Cyprus;CY;CYP;196;Asia;Western Asia;1;1;;;;;;;
 63;2;;;;Czech Republic;CZ;CZE;203;Europe;Eastern Europe;1;1;;Czech Rep.;;;;;
 64;2;;;;Denmark;DK;DNK;208;Europe;Northern Europe;1;1;;;;;;;
@@ -180,7 +180,7 @@ id;classification_id;parent_id;description;reference;attribute1_oto;attribute2_o
 179;2;;;;Portugal;PT;PRT;620;Europe;Southern Europe;1;1;;;;;;;
 180;2;;;;Puerto Rico;PR;PRI;630;America;Caribbean;0;0;;;;;;;
 181;2;;;;Qatar;QA;QAT;634;Asia;Western Asia;1;1;;;;;;;
-182;2;;;;Reunion;RE;REU;638;Africa;Eastern Africa;0;0;;R�union;RǸunion;;;;
+182;2;;;;Reunion;RE;REU;638;Africa;Eastern Africa;0;0;;R‚union;RÇ¸union;;;;
 183;2;;;;Romania;RO;ROM;642;Europe;Eastern Europe;1;1;;;;;;;
 184;2;;;;Russia;RU;RUS;643;Europe;Eastern Europe;1;1;;Russian Federation;;;;;
 185;2;;;;Rwanda;RW;RWA;646;Africa;Eastern Africa;1;1;;;;;;;

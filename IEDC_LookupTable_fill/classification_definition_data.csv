@@ -3,7 +3,7 @@ id;classification_Name;dimension;description;mutually_exclusive;collectively_exh
 2;regions_iso_iedc;4;ISO 3166 classification of states and regions, with custom extensions. Numbers > 1000 are self-defined.;False;True;True;False;;;;;Name;ISO2;ISO3;ISO code;continent;UN region;UN member (bool);Official Country (bool);Alternative ISO3;Alternative Name 1;Alternative Name 2;Alternative Name 3;Alternative Name 4;Alternative Name 5;Alternative Name 6
 3;time;1;Years 1800-2200;True;False;True;False;;;;;Year;;;;;;;;;;;;;;
 4;generic_materials_waste;5;List of common materials, products, and waste groups;False;False;False;False;;;;;Material;;;;;;;;;;;;;;
-5;NACEv2_(ProdCom);6;List of ProdCom commodities;True;False;True;False;;;;;Commodity group;commodity code (NACEv2);;;;;;;;;;;;;
+5;NACEv2_(ProdCom);6;List of ProdCom commodities;True;False;True;False;;;;;Commodity code (NACEv2);Commodity group name;;;;;;;;;;;;;
 6;broad_industry_groups;7;List of broad industry groupts (mining, material production, ?);False;False;False;False;;;;;Broad industry group;;;;;;;;;;;;;;
 7;general_product_categories;6;List of general product categories, residential and non-residential;False;False;False;False;;;;;Product category;;;;;;;;;;;;;;
 8;basic_scenario_alternatives;9;High-medium-low scenarios;True;False;False;False;;;;;Scenario alternatives: High/medium/low, etc.;;;;;;;;;;;;;;

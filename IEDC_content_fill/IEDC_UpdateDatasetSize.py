@@ -11,8 +11,8 @@ import pymysql
 import datetime
 import IEDC_PW
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 cur = conn.cursor()
 
 # Get current auto_increment value:        
@@ -22,6 +22,7 @@ for row in cur:
     if row[0] == 'datasets':
         AI = row[1]
 
+AI = 110
 # Get dataset size and update datasets entry:        
 for m in range(1,AI):
     cur.execute("SELECT count(*) FROM data WHERE dataset_id = %s",m)
