@@ -20,9 +20,9 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 cur = conn.cursor()
 
 # 1) Change classification_items.attribute2_oto from VARCHAR(255) to TEXT to accommodate for long descriptions.
-cur.execute("ALTER TABLE classification_items MODIFY attribute2_oto TEXT")
-cur.execute("UPDATE classification_definition SET meaning_attribute1 = 'Commodity code (NACEv2)' WHERE id = 5")
-cur.execute("UPDATE classification_definition SET meaning_attribute2 = 'Commodity group name' WHERE id = 5")
+#cur.execute("ALTER TABLE classification_items MODIFY attribute2_oto TEXT")
+#cur.execute("UPDATE classification_definition SET meaning_attribute1 = 'Commodity code (NACEv2)' WHERE id = 5")
+#cur.execute("UPDATE classification_definition SET meaning_attribute2 = 'Commodity group name' WHERE id = 5")
 
 # 2) Fix ; wrapping in NACEv2_(ProdCom)_data.xlsx
 Filein  = 'C:\\Users\\spauliuk\\Desktop\\NACEv2_(ProdCom)_data.xlsx'
@@ -31,6 +31,10 @@ Delimiter = ';'
 DF = pd.read_excel(Filein,index_col=0)
 DF.to_csv(Fileout,sep = Delimiter)
 # Still needs manual fix as some character cannot be decoded (use editor and save as utf-8).
+
+# 3) Add new data type (now part of master file)
+#cur.execute("INSERT INTO types (id,name,description,reference_data_category,symbol) Values(20,'Births_deaths','flows of people being born and dying',	1,'BD')")
+#cur.execute("UPDATE types SET symbol = 'BD' WHERE id = 20") # original query had a \t in the symbol.
 
 ## close connection
 cur.close()

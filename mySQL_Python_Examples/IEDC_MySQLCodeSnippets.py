@@ -37,7 +37,10 @@ for row in cur:
 cur.execute("SELECT index_letter FROM aspects WHERE index_letter = 'D' ")
 for row in cur:
     print(row)
-    
+
+cur.execute("SELECT * FROM types")
+for row in cur:
+    print(row)    
     
 cur.execute("SELECT * FROM datasets")
 for row in cur:

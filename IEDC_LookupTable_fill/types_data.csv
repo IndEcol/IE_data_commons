@@ -1,5 +1,5 @@
 id;name;description;reference_data_category;symbol;reserve1;reserve2;reserve3
-1;Flow;;1;F;;;
+1;Flow;objects flowing between processes;1;F;;;
 2;Stock;stocks of all kind;2;S;;;
 3;In-use stock;in-use stocks only;2;IUS;;;
 4;Population;population figures only;2;P;;;
@@ -18,3 +18,4 @@ id;name;description;reference_data_category;symbol;reserve1;reserve2;reserve3
 17;Material substitution coefficient;Amount of material 1 substituted by amount of material 2.;6;MSC;;;
 18;Process inventory;flows entering and leaving process, for LCI datasets;1;PI;;;
 19;Unit process inventory;flows entering and leaving process, normalized, for LCI datasets;1;UPI;;;
+20;Births_deaths;flows of people being born and dying;1;BD;;;
