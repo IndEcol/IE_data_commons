@@ -13,7 +13,7 @@ id;classification_Name;dimension;description;mutually_exclusive;collectively_exh
 12;service_categories;11;List of services;False;False;False;False;;;;;Service type;;;;;;;;;;;;;;
 13;building_types;6;List of commonly used building types;False;False;False;False;;;;;Building type;;;;;;;;;;;;;;
 14;time_ranges;1;List of time intervals for age cohorts and years;False;False;False;False;;;;;Range of years or age-cohorts;;;;;;;;;;;;;;
-15;custom;0;Custom classification, dimension specified via aspect, placeholder only!;False;False;False;False;;;;;None;;;;;;;;;;;;;;
+15;custom;13;Custom classification, dimension specified via aspect, placeholder only!;False;False;False;False;;;;;None;;;;;;;;;;;;;;
 16;steel_cycle_200R_processes;7;List of processes for steel cycle MFA DOI 10.1016/j.resconrec.2012.11.008;True;False;False;False;;;;;process_name;process_id;;;process_code;process_type;comment;color;angle;width;height;xPos;yPos;;
 17;US_LCI_materials;5;List of materials (flows) used in US LCI database;False;False;True;False;;;;;materials and substances list of US LCI database, incomplete (!);;;;;;;;;;;;;;
 18;LCI_material_categories;5;List of material categories used in LCI data;False;False;True;False;;;;;broad material category for LCA (product, elementary, waste);;;;;;;;;;;;;;

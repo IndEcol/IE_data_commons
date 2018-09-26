@@ -42,6 +42,10 @@ cur.execute("SELECT * FROM types")
 for row in cur:
     print(row)    
     
+cur.execute("SELECT * FROM dimensions")
+for row in cur:
+    print(row)       
+    
 cur.execute("SELECT * FROM datasets")
 for row in cur:
     print(row)
@@ -55,7 +59,7 @@ for row in cur:
     print(row)
     
 # Show table creation statement    
-cur.execute("SHOW CREATE TABLE users")
+cur.execute("SHOW CREATE TABLE dimensions")
 for row in cur:
     print(row)   
     
@@ -121,7 +125,7 @@ cur.execute("SELECT * FROM licences")
 for row in cur:
     print(row)
     
-    cur.execute("SELECT DISTINCT(process_id) FROM stocks")
+cur.execute("SELECT DISTINCT(process_id) FROM stocks")
 for row in cur:
     print(row)    
 
