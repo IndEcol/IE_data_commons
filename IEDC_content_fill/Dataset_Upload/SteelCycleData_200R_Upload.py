@@ -68,27 +68,27 @@ for ds in range(0,len(StockFileList)):
 
     
     # 5 Classifications are used, get their items:
-    cur.execute("SELECT id,attribute2 FROM classification_items WHERE classification_id = %s ", C1id)
+    cur.execute("SELECT id,attribute2_oto FROM classification_items WHERE classification_id = %s ", C1id)
     C1Tuples = cur.fetchall()
     C1IDs    = [x[0] for x in C1Tuples]
     C1Labels = [int(x[1]) for x in C1Tuples]
     
-    cur.execute("SELECT id,attribute3 FROM classification_items WHERE classification_id = %s ", C2id)
+    cur.execute("SELECT id,attribute3_oto FROM classification_items WHERE classification_id = %s ", C2id)
     C2Tuples = cur.fetchall()
     C2IDs    = [x[0] for x in C2Tuples]
     C2Labels = [x[1] for x in C2Tuples]
     
-    cur.execute("SELECT id,attribute1 FROM classification_items WHERE classification_id = %s ", C3id)
+    cur.execute("SELECT id,attribute1_oto FROM classification_items WHERE classification_id = %s ", C3id)
     C3Tuples = cur.fetchall()
     C3IDs    = [x[0] for x in C3Tuples]
     C3Labels = [int(x[1]) for x in C3Tuples]
 
-    cur.execute("SELECT id,attribute1 FROM classification_items WHERE classification_id = %s ", C4id)
+    cur.execute("SELECT id,attribute1_oto FROM classification_items WHERE classification_id = %s ", C4id)
     C4Tuples = cur.fetchall()
     C4IDs    = [x[0] for x in C4Tuples]
     C4Labels = [x[1] for x in C4Tuples]
 
-    cur.execute("SELECT id,attribute4 FROM classification_items WHERE classification_id = %s ", C5id)
+    cur.execute("SELECT id,attribute4_oto FROM classification_items WHERE classification_id = %s ", C5id)
     C5Tuples = cur.fetchall()
     C5IDs    = [x[0] for x in C5Tuples]
     C5Labels = [int(x[1]) for x in C5Tuples]
@@ -241,37 +241,37 @@ for ds in range(0,len(FlowFileList)):
     C7id = cur.fetchall()[0][0]
     
     # 5 Classifications are used, get their items:
-    cur.execute("SELECT id,attribute3 FROM classification_items WHERE classification_id = %s ", C1id)
+    cur.execute("SELECT id,attribute3_oto FROM classification_items WHERE classification_id = %s ", C1id)
     C1Tuples = cur.fetchall()
     C1IDs    = [x[0] for x in C1Tuples]
     C1Labels = [x[1] for x in C1Tuples]
     
-    cur.execute("SELECT id,attribute1 FROM classification_items WHERE classification_id = %s ", C2id)
+    cur.execute("SELECT id,attribute1_oto FROM classification_items WHERE classification_id = %s ", C2id)
     C2Tuples = cur.fetchall()
     C2IDs    = [x[0] for x in C2Tuples]
     C2Labels = [x[1] for x in C2Tuples]
     
-    cur.execute("SELECT id,attribute2 FROM classification_items WHERE classification_id = %s ", C3id)
+    cur.execute("SELECT id,attribute2_oto FROM classification_items WHERE classification_id = %s ", C3id)
     C3Tuples = cur.fetchall()
     C3IDs    = [x[0] for x in C3Tuples]
     C3Labels = [int(x[1]) for x in C3Tuples]
 
-    cur.execute("SELECT id,attribute4 FROM classification_items WHERE classification_id = %s ", C4id)
+    cur.execute("SELECT id,attribute4_oto FROM classification_items WHERE classification_id = %s ", C4id)
     C4Tuples = cur.fetchall()
     C4IDs    = [x[0] for x in C4Tuples]
     C4Labels = [int(x[1]) for x in C4Tuples]
 
-    cur.execute("SELECT id,attribute2 FROM classification_items WHERE classification_id = %s ", C5id)
+    cur.execute("SELECT id,attribute2_oto FROM classification_items WHERE classification_id = %s ", C5id)
     C5Tuples = cur.fetchall()
     C5IDs    = [x[0] for x in C5Tuples]
     C5Labels = [int(x[1]) for x in C5Tuples]
     
-    cur.execute("SELECT id,attribute4 FROM classification_items WHERE classification_id = %s ", C6id)
+    cur.execute("SELECT id,attribute4_oto FROM classification_items WHERE classification_id = %s ", C6id)
     C6Tuples = cur.fetchall()
     C6IDs    = [x[0] for x in C6Tuples]
     C6Labels = [int(x[1]) for x in C6Tuples]
 
-    cur.execute("SELECT id,attribute1 FROM classification_items WHERE classification_id = %s ", C7id)
+    cur.execute("SELECT id,attribute1_oto FROM classification_items WHERE classification_id = %s ", C7id)
     C7Tuples = cur.fetchall()
     C7IDs    = [x[0] for x in C7Tuples]
     C7Labels = [int(x[1]) for x in C7Tuples]    

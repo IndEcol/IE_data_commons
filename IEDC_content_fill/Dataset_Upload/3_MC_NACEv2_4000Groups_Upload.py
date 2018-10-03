@@ -72,6 +72,7 @@ DataSheet = DataFile.sheet_by_name('3_MC_NACEv2_4000Groups')
 
 # loop over data from Excel reference dataset file
 for m in range(0,4047): # rows
+    print(m)
     for n in range(0,11): # cols
 	# get row label, column label, and value
         ProductID  = DataSheet.cell_value(m +15,8)
