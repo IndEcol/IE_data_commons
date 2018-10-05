@@ -35,7 +35,7 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 34;1;bn;;;billion;;;1000000000
 35;3;ps;;;picosecond;;;1.00E-12
 36;3;ns;;;nanosecond;;;1.00E-09
-37;3;Ês;;;microsecond;;;1.00E-06
+37;3;µs;;;microsecond;;;1.00E-06
 38;3;ms;;;millisecond;;;0.001
 39;3;min;;;minute;;;60
 40;3;h;;;hour;;;3600
@@ -44,13 +44,13 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 43;3;mon;;;month;;;2629744
 44;3;yr;a;;year;annum;;31556928
 45;2;Pg;;;petagram;gigaton;;1.00E+12
-46;2;Tg;;;teragram;megaton;;1.00E+09
+46;2;Tg;Mt;;teragram;megaton;;1.00E+09
 47;2;Gg;;;Gigagram;kiloton;;1000000
 48;2;t;;;ton;Megagram;;1000
 49;2;Mg;;;Megagram;ton;;1000
 50;2;g;;;gram;;;0.001
 51;2;mg;;;milligram;;;1.00E-06
-52;2;Êg;;;microgram;;;1.00E-09
+52;2;µg;;;microgram;;;1.00E-09
 53;2;ng;;;nanogram;;;1.00E-12
 54;2;pg;;;picogram;;;1.00E-15
 55;4;TJ;;;Terajoule;;;1E+12
@@ -58,7 +58,7 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 57;4;MJ;;;Megajoule;;;1000000
 58;4;kJ;;;kilojoule;;;1000
 59;4;mJ;;;millijoule;;;0.001
-60;4;ÊJ;;;microjoule;;;1.00E-06
+60;4;µJ;;;microjoule;;;1.00E-06
 61;4;nJ;;;nanojoule;;;1.00E-09
 62;4;pJ;;;picojoule;;;1.00E-12
 63;4;Ws;;;Wattsecond;;;1
@@ -67,7 +67,7 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 66;4;MWs;;;Megawattsecond;;;1000000
 67;4;kWs;;;kilowattsecond;;;1000
 68;4;mWs;;;milliwattsecond;;;0.001
-69;4;ÊWs;;;microwattsecond;;;1.00E-06
+69;4;µWs;;;microwattsecond;;;1.00E-06
 70;4;nWs;;;nanowattsecond;;;1.00E-09
 71;4;pWs;;;picowattsecond;;;1.00E-12
 72;5;cm3;;;cubic centimeter;;;1.00E-06
@@ -86,6 +86,4 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 85;13;kBq;;;kilobequerel;;;1000
 86;8;BYen;;;Billion Yen;;;
 87;1;promille;;;promille;;;0.001
-;;;;;;;;
-;;;;;;;;
-;;;;;;;;
+88;5;l;;;litre;;;0.001

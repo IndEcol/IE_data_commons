@@ -10,8 +10,8 @@ import datetime
 import IEDC_PW
 
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -54,7 +54,7 @@ cur.execute("SELECT * FROM classification_definition")
 for row in cur:
     print(row)
 
-cur.execute("SELECT attribute1 FROM classification_items WHERE classification_id = 17")
+cur.execute("SELECT attribute1_oto FROM classification_items WHERE classification_id = 17")
 for row in cur:
     print(row)
     
@@ -63,7 +63,7 @@ cur.execute("SHOW CREATE TABLE dimensions")
 for row in cur:
     print(row)   
     
-cur.execute("SHOW CREATE TABLE datasets")
+cur.execute("SHOW CREATE TABLE units")
 for row in cur:
     print(row)  
     
@@ -88,6 +88,11 @@ for row in cur:
 cur.execute("SELECT COUNT(*) FROM data")
 for row in cur:
     print(row)    
+    
+cur.execute("SELECT MAX(id) FROM data")
+for row in cur:
+    print(row)    
+    
     
 # get total number of classification_items
 cur.execute("SELECT COUNT(*) FROM classification_items")
@@ -114,11 +119,14 @@ for row in cur:
 #cur.execute("DELETE FROM classification_items")
 #
 #cur.execute("DELETE FROM iedc_review.data")
-#cur.execute("ALTER TABLE datagroups AUTO_INCREMENT = 1")
+#cur.execute("ALTER TABLE units AUTO_INCREMENT = 88")
 #
 #
 #cur.execute("DELETE FROM data")
-#cur.execute("ALTER TABLE datasets AUTO_INCREMENT = 1")
+#
+#cur.execute("ALTER TABLE data AUTO_INCREMENT = 10478")
+#cur.execute("TRUNCATE TABLE data")
+#cur.execute("DROP TABLE data")
     
 # get units
 cur.execute("SELECT * FROM licences")
@@ -152,6 +160,11 @@ GRANT ALL ON iedc.* TO 'iedc_guest'@'%';
 FLUSH PRIVILEGES;
 '''
 
+# move data ids in data table:
+for m in range(0,118650):
+    print(m)
+    cur.execute("UPDATE data SET id = %s WHERE id = %s",(m+1,m+93724)) 
+
 
 cur.execute("SELECT * FROM units")
 for row in cur:
@@ -159,6 +172,71 @@ for row in cur:
 
 m=10
 print('Aspect and classification mismatch for dataset %s and aspect %s.' % ((m+1), m))
+
+
+cur.execute("CREATE TABLE data (id int(11) NOT NULL AUTO_INCREMENT,dataset_id int(11) NOT NULL,aspect1 int(11) NOT NULL,aspect2 int(11) DEFAULT NULL,aspect3 int(11) DEFAULT NULL,aspect4 int(11) DEFAULT NULL,aspect5 int(11) DEFAULT NULL,aspect6 int(11) DEFAULT NULL,aspect7 int(11) DEFAULT NULL,aspect8 int(11) DEFAULT NULL,aspect9 int(11) DEFAULT NULL,aspect10 int(11) DEFAULT NULL,aspect11 int(11) DEFAULT NULL,aspect12 int(11) DEFAULT NULL,value double DEFAULT NULL,unit_nominator int(11) NOT NULL,unit_denominator int(11) DEFAULT NULL,stats_array_1 int(11) DEFAULT NULL,stats_array_2 double DEFAULT NULL,stats_array_3 double DEFAULT NULL,stats_array_4 double DEFAULT NULL,comment text,reserve1 varchar(255) DEFAULT NULL,reserve2 varchar(255) DEFAULT NULL,reserve3 varchar(255) DEFAULT NULL,PRIMARY KEY (`id`),KEY `data_datasets_id` (`dataset_id`),KEY `data_unitsnom_id` (`unit_nominator`),KEY `data_unitsden_id` (`unit_denominator`),KEY `data_stats_array_id` (`stats_array_1`),KEY `data_aspect_1` (`aspect1`),KEY `data_aspect_2` (`aspect2`),KEY `data_aspect_3` (`aspect3`),KEY `data_aspect_4` (`aspect4`),KEY `data_aspect_5` (`aspect5`),KEY `data_aspect_6` (`aspect6`),KEY `data_aspect_7` (`aspect7`),KEY `data_aspect_8` (`aspect8`),KEY `data_aspect_9` (`aspect9`),KEY `data_aspect_10` (`aspect10`),KEY `data_aspect_11` (`aspect11`),KEY `data_aspect_12` (`aspect12`),CONSTRAINT `data_aspect_1` FOREIGN KEY (`aspect1`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_10` FOREIGN KEY (`aspect10`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_11` FOREIGN KEY (`aspect11`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_12` FOREIGN KEY (`aspect12`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_2` FOREIGN KEY (`aspect2`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_3` FOREIGN KEY (`aspect3`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_4` FOREIGN KEY (`aspect4`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_5` FOREIGN KEY (`aspect5`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_6` FOREIGN KEY (`aspect6`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_7` FOREIGN KEY (`aspect7`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_8` FOREIGN KEY (`aspect8`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_aspect_9` FOREIGN KEY (`aspect9`) REFERENCES `classification_items` (`id`),CONSTRAINT `data_datasets_id` FOREIGN KEY (`dataset_id`) REFERENCES `datasets` (`id`),CONSTRAINT `data_stats_array_id` FOREIGN KEY (`stats_array_1`) REFERENCES `stats_array` (`id`),CONSTRAINT `data_unitsden_id` FOREIGN KEY (`unit_denominator`) REFERENCES `units` (`id`),CONSTRAINT `data_unitsnom_id` FOREIGN KEY (`unit_nominator`) REFERENCES `units` (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci")
+
+
+#CREATE TABLE data (
+#id int(11) NOT NULL AUTO_INCREMENT,
+#dataset_id int(11) NOT NULL,
+#aspect1 int(11) NOT NULL,
+#aspect2 int(11) DEFAULT NULL,
+#aspect3 int(11) DEFAULT NULL,
+#aspect4 int(11) DEFAULT NULL,
+#aspect5 int(11) DEFAULT NULL,
+#aspect6 int(11) DEFAULT NULL,
+#aspect7 int(11) DEFAULT NULL,
+#aspect8 int(11) DEFAULT NULL,
+#aspect9 int(11) DEFAULT NULL,
+#aspect10 int(11) DEFAULT NULL,
+#aspect11 int(11) DEFAULT NULL,
+#aspect12 int(11) DEFAULT NULL,
+#value double DEFAULT NULL,
+#unit_nominator int(11) NOT NULL,
+#unit_denominator int(11) DEFAULT NULL
+#stats_array_1 int(11) DEFAULT NULL,
+#stats_array_2 double DEFAULT NULL,
+#stats_array_3 double DEFAULT NULL,
+#stats_array_4 double DEFAULT NULL,
+#comment text,
+#reserve1 varchar(255) DEFAULT NULL,
+#reserve2 varchar(255) DEFAULT NULL,
+#reserve3 varchar(255) DEFAULT NULL,
+#PRIMARY KEY (`id`),
+#KEY `data_datasets_id` (`dataset_id`),
+#KEY `data_unitsnom_id` (`unit_nominator`),
+#KEY `data_unitsden_id` (`unit_denominator`),
+#KEY `data_stats_array_id` (`stats_array_1`),
+#KEY `data_aspect_1` (`aspect1`),
+#KEY `data_aspect_2` (`aspect2`),
+#KEY `data_aspect_3` (`aspect3`),
+#KEY `data_aspect_4` (`aspect4`),
+#KEY `data_aspect_5` (`aspect5`),
+#KEY `data_aspect_6` (`aspect6`),
+#KEY `data_aspect_7` (`aspect7`),
+#KEY `data_aspect_8` (`aspect8`),
+#KEY `data_aspect_9` (`aspect9`),
+#KEY `data_aspect_10` (`aspect10`),
+#KEY `data_aspect_11` (`aspect11`),
+#KEY `data_aspect_12` (`aspect12`),
+#CONSTRAINT `data_aspect_1` FOREIGN KEY (`aspect1`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_10` FOREIGN KEY (`aspect10`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_11` FOREIGN KEY (`aspect11`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_12` FOREIGN KEY (`aspect12`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_2` FOREIGN KEY (`aspect2`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_3` FOREIGN KEY (`aspect3`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_4` FOREIGN KEY (`aspect4`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_5` FOREIGN KEY (`aspect5`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_6` FOREIGN KEY (`aspect6`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_7` FOREIGN KEY (`aspect7`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_8` FOREIGN KEY (`aspect8`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_aspect_9` FOREIGN KEY (`aspect9`) REFERENCES `classification_items` (`id`),
+#CONSTRAINT `data_datasets_id` FOREIGN KEY (`dataset_id`) REFERENCES `datasets` (`id`),
+#CONSTRAINT `data_stats_array_id` FOREIGN KEY (`stats_array_1`) REFERENCES `stats_array` (`id`),
+#CONSTRAINT `data_unitsden_id` FOREIGN KEY (`unit_denominator`) REFERENCES `units` (`id`),
+#CONSTRAINT `data_unitsnom_id` FOREIGN KEY (`unit_nominator`) REFERENCES `units` (`id`)
+#) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci 
 
 ## 4) close connection
 cur.close()

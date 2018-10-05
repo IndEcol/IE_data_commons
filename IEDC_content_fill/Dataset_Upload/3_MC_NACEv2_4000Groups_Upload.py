@@ -92,8 +92,8 @@ for m in range(0,4047): # rows
         U4 = None
         
         # Add data into db:
-        cur.execute(SQL,(DS_id,Mat_Pos,Prod_Pos,None,None,None,None,None,None,None,None,None,None,ContValue,\
-                     2,2,U1,U2,U3,U4,None,None,None,None))
+#        cur.execute(SQL,(DS_id,Mat_Pos,Prod_Pos,None,None,None,None,None,None,None,None,None,None,ContValue,\
+#                     2,2,U1,U2,U3,U4,None,None,None,None))
 
     
 # Close connection

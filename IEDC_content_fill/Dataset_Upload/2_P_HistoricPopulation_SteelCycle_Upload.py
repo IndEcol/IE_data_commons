@@ -79,8 +79,8 @@ for line in lines:
         Time_Pos    = C2IDs[C2Labels.index(YearID)]
         
         # Add data into db:
-    cur.execute(SQL,(DS_id,Country_Pos,Time_Pos,None,None,None,None,None,None,None,None,None,None,PopValue,\
-                     32,1,1,0,0,0,None,None,None,None))
+#    cur.execute(SQL,(DS_id,Country_Pos,Time_Pos,None,None,None,None,None,None,None,None,None,None,PopValue,\
+#                     32,1,1,0,0,0,None,None,None,None))
 
     
     
