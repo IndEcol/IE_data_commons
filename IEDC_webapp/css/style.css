@@ -1,0 +1,75 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+	font-size: 1em;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+.node rect {
+  cursor: move;
+  shape-rendering: crispEdges;
+}
+
+.node1 rect {
+    cursor: default
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 1px 1px 2px #fff;
+  font-size: 0.8em;
+  font-family: sans-serif;
+}
+
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  font-size: 0.7em;
+  font-family: sans-serif;
+  padding: 3px;
+  width: auto;
+  height: auto;
+  background-color: #F2F2F2;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  -mox-box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px rbga(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.value {
+  white-space: pre-line;
+  margin: 0;
+}
+
+
+body {font:80% Trebuchet MS, Arial, Helvetica, Sans-Serif;color:#333;line-height:180%;margin:0;padding:0;}
+
+h1, h2, h3, h4, h5{margin: 0 0 15px 0;padding: 0;color: #690;font-weight: normal;}
+h1{font-size: 200%;letter-spacing: -2px}
+p{margin: 0 0 15px 0;padding: 0;line-height:21px;}
+a{color: #690;text-decoration: underline;font-weight: bold;}
+a:hover{color: #333;text-decoration: none;font-weight: bold;}
+img{border:none;}
+pre{margin-top:-16px;display:block;font:12px "Courier New", Courier, monospace;padding:10px;border:1px solid #bae2f0;background:#e3f4f9;width:674px;}	
+body {font:80% Trebuchet MS, Arial, Helvetica, Sans-Serif;color:#333;line-height:180%;margin:0;padding:0;}
+
+#container {margin:0 auto;position:relative;text-align:left;width:696px;background:#fff;margin-bottom:2em;
+}	
+
+ol {margin:1em 0;padding:0;height:28px;	}
+ol li{margin:0 10px 0 0; padding:0;float:left;list-style:none;height:28px;line-height:28px;}
+ol li a{float:left;height:28px;line-height:28px;border:1px solid #ccc;background:#DAF3F8;color:#555;padding:0 10px;text-decoration:none;}
+ol li.current a{background:#5DC9E1;color:#fff;}
+ol li a:focus, .prevBtn a:focus, .nextBtn a:focus{outline:none;}
+
+.graphic, .prevBtn, .nextBtn{margin:0;padding:0;display:block;overflow:hidden;text-indent:-8000px;}
+
+.prevBtn, .nextBtn {display:block;width:30px;height:77px;position:absolute;left:-30px;top:71px;z-index:1000;background:url(../images/btn_prev.gif) no-repeat 0 0;cursor:pointer;}	
+.nextBtn{left:696px;}														
+.nextBtn {background:url(../images/btn_next.gif) no-repeat 0 0;}	
+
+pre {white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; }

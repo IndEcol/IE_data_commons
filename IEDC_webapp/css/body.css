@@ -1,0 +1,98 @@
+﻿ body {
+            margin-left: 10%;
+          margin-right: 10%;
+          font-size: 13px;
+        background-color: #f2f2f2;
+}
+     
+      .jumbotron{
+          padding-bottom: 10px;
+          padding-top: 10px;
+      }
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      border-radius: 0;
+      background-color: #215daa;
+        border: none;
+        color: #215daa;
+    }
+    
+      .navbar ul li{
+          color: #215daa;
+      }
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+      background-color: #ccdff5;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 15px;
+        
+    }
+
+    .col-md-9{
+        padding-right:10%;
+        text-align: justify;
+        
+    }
+    .caption{
+        text-align:center;
+    }
+    /*.row{
+        background-color: #ffffff;
+    }*/
+    .col-md-3{
+        background-color: #CCDFF5;
+    }
+      footer a {
+          text-align: left;
+      }
+      
+      .container{
+           text-align: justify;
+            text-justify: inter-word;
+          padding-left: 0px;
+          margin-right: 10%;
+          margin-left:0px;
+         
+          
+      }
+      .navbar-custom {
+    background-color:#229922;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+    font-size: 12px;
+    text-transform: uppercase;
+
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color: #33aa33;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: #33aa33;
+}
+
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+.navbar-custom .navbar-toggle {
+    background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+    background-color:#33aa33;
+}

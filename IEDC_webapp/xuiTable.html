@@ -1,0 +1,22 @@
+﻿<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="{{header.header}}" data-ng-repeat="header in tableHeaders">
+                <a data-ng-if="header.sortable" href='javascript:void(0)' data-ng-click="ChangeSorting(header.header)" data-ng-class="SelectedCol(header.header)">{{header.title}}</a>
+                <span class="{{header.header}}" data-ng-if="!header.sortable">{{header.title}}</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody data-ng-if="!tableDataFiltered.length">
+        <tr>
+            <td class="{{header.header}}" data-ng-repeat="header in tableHeaders">N/A</td>
+        </tr>
+    </tbody>
+    <tfoot data-ng-if="!!tablePager">
+    <td colspan="{{tableHeaders.length}}">
+        <div class="pagination pull-right">
+            <pagination total-items="tableDataFiltered.length" page="Page.current" max-size="pageWindow" class="pagination-sm" boundary-links="true"></pagination>
+        </div>
+    </td>
+    </tfoot>
+</table>

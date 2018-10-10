@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E626C856-D851-41ED-9F83-720C370D6FC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEF_Database</RootNamespace>
+    <AssemblyName>IEF_Database</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.89.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.89.0\lib\net452\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aspects.aspx" />
+    <Content Include="classifications.aspx" />
+    <Content Include="css\GridView.css" />
+    <Content Include="css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="css\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="css\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="css\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="css\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="css\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="css\redmond\jquery-ui-1.7.2.custom.css" />
+    <Content Include="DataService.svc" />
+    <Content Include="datatypes.aspx" />
+    <Content Include="frmDatabase.aspx" />
+    <Content Include="frmDatabaseHome.aspx" />
+    <Content Include="frmDatabaseTest.aspx" />
+    <Content Include="frmDB.aspx" />
+    <Content Include="frmTestAngular.aspx" />
+    <Content Include="fromTagTest.aspx" />
+    <Content Include="IEDC_Home.aspx" />
+    <Content Include="js\grid.locale-en.js" />
+    <Content Include="js\jquery-1.6.2.js" />
+    <Content Include="js\jquery-ui.css" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.jqGrid.min.js" />
+    <Content Include="js\jq_grid.js" />
+    <Content Include="js\ui.jqgrid.css" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="provenance.aspx" />
+    <Content Include="resources\Dataset_Global_Population.png" />
+    <Content Include="resources\Global_2007.png" />
+    <Content Include="resources\Global_steel_cycle_146_regions_1900_2008.png" />
+    <Content Include="resources\IEF_Logo.png" />
+    <Content Include="resources\Login_Button.jpg" />
+    <Content Include="resources\SankeySample1.png" />
+    <Content Include="resources\SystemDef_SteelCycle_Method_a.png" />
+    <Content Include="resources\system_definition.png" />
+    <Content Include="resources\uni_freiburg.png" />
+    <Content Include="resources\Uni_Logo.png" />
+    <Content Include="scripts\js_dataset_grid.js" />
+    <Content Include="scripts\js_flows_grid.js" />
+    <Content Include="scripts\js_flow_cycle_grid.js" />
+    <Content Include="scripts\js_iedc_dataset.js" />
+    <Content Include="scripts\js_stocks_grid.js" />
+    <Content Include="scripts\lb\world-topo-min.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\body.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\footer-distributed-with-address-and-phones.css" />
+    <Content Include="css\inputTags.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\styleAng.css" />
+    <Content Include="css\ui.jqgrid.css" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\app.js" />
+    <None Include="Properties\PublishProfiles\IEDCDeploy.pubxml" />
+    <None Include="scripts\jquery-1.6.1-vsdoc.js" />
+    <Content Include="scripts\demo.js" />
+    <Content Include="scripts\grid.locale-en.js" />
+    <None Include="scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="scripts\jquery-1.3.2.min.js" />
+    <Content Include="scripts\jquery-1.6.1.js" />
+    <Content Include="scripts\jquery-1.6.1.min.js" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="scripts\jquery-ui-1.8.13\themes\redmond\jquery-ui.css" />
+    <Content Include="scripts\jquery-ui-1.8.13\ui\jquery-ui.js" />
+    <Content Include="scripts\jquery-ui-1.8.13\ui\minified\jquery-ui.min.js" />
+    <Content Include="scripts\jquery.jqGrid.min.js" />
+    <Content Include="scripts\jsGrid.js" />
+    <Content Include="scripts\json2-min.js" />
+    <Content Include="scripts\json2.js" />
+    <Content Include="scripts\lb\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\lb\ai.0.15.0-build58334.min.js" />
+    <Content Include="scripts\lb\Blob.js" />
+    <Content Include="scripts\lb\canvg.js" />
+    <Content Include="scripts\lb\d3.geo.min.js" />
+    <Content Include="scripts\lb\d3.geo.projection.v0.min.js" />
+    <Content Include="scripts\lb\d3.js" />
+    <Content Include="scripts\lb\d3.min.js" />
+    <Content Include="scripts\lb\d3.v3.min.js" />
+    <Content Include="scripts\lb\d3pie-source.js" />
+    <Content Include="scripts\lb\farbtastic.js" />
+    <Content Include="scripts\lb\FileSaver.js" />
+    <Content Include="scripts\lb\FileSaver.min.js" />
+    <Content Include="scripts\lb\inputTags.jquery.js" />
+    <Content Include="scripts\lb\inputTags.jquery.min.js" />
+    <Content Include="scripts\lb\jquery-1.12.4.js" />
+    <Content Include="scripts\lb\jquery-3.1.1.js" />
+    <Content Include="scripts\lb\jquery-3.1.1.min.js" />
+    <Content Include="scripts\lb\jquery-ui.js" />
+    <Content Include="scripts\lb\jscolor.js" />
+    <Content Include="scripts\lb\jscolor.min.js" />
+    <Content Include="scripts\lb\rgbcolor.js" />
+    <Content Include="scripts\tag_app.js" />
+    <Content Include="scripts\lb\tessst.js" />
+    <Content Include="scripts\lb\topojson.min.js" />
+    <Content Include="scripts\lb\topojson.v0.min.js" />
+    <Content Include="scripts\lb\_default-settings.js" />
+    <Content Include="scripts\lb\_helpers.js" />
+    <Content Include="scripts\lb\_labels.js" />
+    <Content Include="scripts\lb\_math.js" />
+    <Content Include="scripts\lb\_segments.js" />
+    <Content Include="scripts\lb\_text.js" />
+    <Content Include="scripts\lb\_tooltips.js" />
+    <Content Include="scripts\lb\_validate.js" />
+    <Content Include="scripts\pagination.js" />
+    <Content Include="scripts\script.js" />
+    <Content Include="scripts\xuiTable.js" />
+    <Content Include="tables.aspx" />
+    <Content Include="uncertainty.aspx" />
+    <Content Include="units.aspx" />
+    <Content Include="upload.aspx" />
+    <Content Include="xuiTable.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aspects.aspx.cs">
+      <DependentUpon>aspects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspects.aspx.designer.cs">
+      <DependentUpon>aspects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classifications.aspx.cs">
+      <DependentUpon>classifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classifications.aspx.designer.cs">
+      <DependentUpon>classifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cls\clsDataHandling.cs" />
+    <Compile Include="cls\dbConnect.cs" />
+    <Compile Include="cls\JqGridView.cs" />
+    <Compile Include="cls\Product.cs" />
+    <Compile Include="cls\ProductJqGridView.cs" />
+    <Compile Include="cls\ProductRepository.cs" />
+    <Compile Include="DataService.svc.cs">
+      <DependentUpon>DataService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="datatypes.aspx.cs">
+      <DependentUpon>datatypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datatypes.aspx.designer.cs">
+      <DependentUpon>datatypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabase.aspx.cs">
+      <DependentUpon>frmDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmDatabase.aspx.designer.cs">
+      <DependentUpon>frmDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabaseHome.aspx.cs">
+      <DependentUpon>frmDatabaseHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmDatabaseHome.aspx.designer.cs">
+      <DependentUpon>frmDatabaseHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabaseTest.aspx.cs">
+      <DependentUpon>frmDatabaseTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmDatabaseTest.aspx.designer.cs">
+      <DependentUpon>frmDatabaseTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmDB.aspx.cs">
+      <DependentUpon>frmDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmDB.aspx.designer.cs">
+      <DependentUpon>frmDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestAngular.aspx.cs">
+      <DependentUpon>frmTestAngular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTestAngular.aspx.designer.cs">
+      <DependentUpon>frmTestAngular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fromTagTest.aspx.cs">
+      <DependentUpon>fromTagTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fromTagTest.aspx.designer.cs">
+      <DependentUpon>fromTagTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IEDC_Home.aspx.cs">
+      <DependentUpon>IEDC_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IEDC_Home.aspx.designer.cs">
+      <DependentUpon>IEDC_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="provenance.aspx.cs">
+      <DependentUpon>provenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="provenance.aspx.designer.cs">
+      <DependentUpon>provenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tables.aspx.cs">
+      <DependentUpon>tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tables.aspx.designer.cs">
+      <DependentUpon>tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uncertainty.aspx.cs">
+      <DependentUpon>uncertainty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uncertainty.aspx.designer.cs">
+      <DependentUpon>uncertainty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="units.aspx.cs">
+      <DependentUpon>units.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="units.aspx.designer.cs">
+      <DependentUpon>units.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20381</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20381/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
