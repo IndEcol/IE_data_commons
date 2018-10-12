@@ -50,6 +50,10 @@ cur.execute("SELECT * FROM datasets")
 for row in cur:
     print(row)
     
+cur.execute("SELECT * FROM units")
+for row in cur:
+    print(row)    
+    
 cur.execute("SELECT * FROM classification_definition")
 for row in cur:
     print(row)
@@ -98,7 +102,11 @@ for row in cur:
 cur.execute("SELECT COUNT(*) FROM classification_items")
 for row in cur:
     print(row)    
-
+    
+cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classification_id = 4")
+for row in cur:
+    print(row)
+    
 # Change auto_increment    
 #cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")
 #cur.execute("ALTER TABLE iedc_review.datasets AUTO_INCREMENT = 1")
