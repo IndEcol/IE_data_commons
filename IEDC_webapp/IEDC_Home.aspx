@@ -188,20 +188,20 @@ border-color: #ddd;
 
            Our mission is to show how data storage and exchange in sustainability science could look like in the future and to develop some of the building blocks of the required infrastructure.
               <br /><br />
-           The database is open and documented in a public <a href="https://github.com/IndEcol/IE_data_commons" target="_blank">GitHub repository</a>. There is a short <a href="https://youtu.be/mYh427O8toA" target="_blank">video tutorial</a> on how to use the download interface and a <a href="https://youtu.be/1aCynUvSVRY" target="_blank"> video lecture </a> on the data model. A journal publication on the data model is in preparation. 
-<br />
-We are interested in your feedback and also offer direct reading access to the database via SQL. Please send us an email to <u>in4mation*at*indecol.uni-freiburg.de</u>!
+           The database is open and documented in a public <a href="https://github.com/IndEcol/IE_data_commons" target="_blank">GitHub repository</a>. There is a short <a href="https://youtu.be/mYh427O8toA" target="_blank">video tutorial</a> on how to use the download interface, a <a href="https://youtu.be/1aCynUvSVRY" target="_blank"> video lecture </a> on the data model, and <a href="http://www.database.industrialecology.uni-freiburg.de/resources/DataModel_SEM_IEDC_FAQ.pdf" target="_blank">a glossary and FAQ list</a>. A journal publication on the data model is in preparation. A <a href="http://www.blog.industrialecology.uni-freiburg.de/index.php/2018/10/17/launching-the-prototype-for-an-industrial-ecology-data-inventory/" target="_blank">blog entry</a> on the vision and background behind the project is also available.
+<br /><br />
+We are interested in your feedback, bug reports, and critisicm, and also offer direct reading access to the database via SQL. Please send us an email to <u>in4mation*at*indecol.uni-freiburg.de</u>!
               <br />
            The search interface below allows you to browse the catalogue of datasets and to download the available data as spreadsheet.
 <br /><br /> The following links point to the different lookup tables:
-              <br /><br />
-	   <a href="http://www.database.industrialecology.uni-freiburg.de/resources/IEDC_DataTypes_Overview.pdf" target="_blank">List of all data types</a><br />
-           <a href="aspects.aspx" target="_blank">aspect and dimension tables</a><br />
-            <a href="datatypes.aspx" target="_blank">categories, types, and layers tables</a>  <br />
-           <a href="units.aspx" target="_blank">units table</a>  <br />
-            <a href="uncertainty.aspx" target="_blank">stats_array table</a>  <br />
-            <a href="provenance.aspx" target="_blank">provencance, sources, and licenses tables</a>  <br />
-            <a href="classifications.aspx" target="_blank">classifications definition table and display of selected classification</a>  <br />
+              <br />
+&nbsp;&nbsp;&nbsp;   <a href="http://www.database.industrialecology.uni-freiburg.de/resources/IEDC_DataTypes_Overview.pdf" target="_blank">List of all data types</a><br />
+&nbsp;&nbsp;&nbsp;   <a href="aspects.aspx" target="_blank">aspect and dimension tables</a><br />
+&nbsp;&nbsp;&nbsp;   <a href="datatypes.aspx" target="_blank">categories, types, and layers tables</a>  <br />
+&nbsp;&nbsp;&nbsp;   <a href="units.aspx" target="_blank">units table</a>  <br />
+&nbsp;&nbsp;&nbsp;   <a href="uncertainty.aspx" target="_blank">stats_array table</a>  <br />
+&nbsp;&nbsp;&nbsp;   <a href="provenance.aspx" target="_blank">provencance, sources, and licenses tables</a>  <br />
+&nbsp;&nbsp;&nbsp;   <a href="classifications.aspx" target="_blank">classifications definition table and display of selected classification</a>  <br />
             
         
            </div>
@@ -217,7 +217,7 @@ We are interested in your feedback and also offer direct reading access to the d
        <div class= "col-md-12"  style="background-color:#c6ecd9">
            <h2>Data search and download:</h2>
            + Searching for data? Use keywords! <br />
-
+           + Searching for a specific data type? Use the data type key, such as '1_F' or '3_MC', cf. <a href="http://www.database.industrialecology.uni-freiburg.de/resources/IEDC_DataTypes_Overview.pdf" target="_blank">the list of all data types</a>! <br />
 + Searching for data from a specific publication? Use main author name or DOI! If data source does not have a DOI, use keywords from report title and publishing institution! <br />
 
 + Searching for a specific dataset from the catalogue? Use the dataset name! <br /><br />

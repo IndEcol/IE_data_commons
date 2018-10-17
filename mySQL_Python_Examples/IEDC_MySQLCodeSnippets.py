@@ -93,6 +93,11 @@ cur.execute("SELECT COUNT(*) FROM data")
 for row in cur:
     print(row)    
     
+cur.execute("SELECT * FROM data WHERE id = 722907")
+for row in cur:
+    print(row)    
+    
+    
 cur.execute("SELECT MAX(id) FROM data")
 for row in cur:
     print(row)    

@@ -957,11 +957,10 @@ namespace IEF_Database.cls
 
             string query = "select d.id, ds.dataset_name, ci1.attribute1_oto as aspect_1, ci2.attribute1_oto as aspect_2, ci3.attribute1_oto as aspect_3, ci4.attribute1_oto as aspect_4, ";
             query += "ci5.attribute1_oto as aspect_5, ci6.attribute1_oto as aspect_6, ci7.attribute1_oto as aspect_7, ci8.attribute1_oto as aspect_8, ci9.attribute1_oto as aspect_9, ci10.attribute1_oto as aspect_10, ";
-            query += "ci11.attribute1_oto as aspect_11, ci12.attribute1_oto as aspect_12, d.value, u1.unitcode, u2.unitcode, sa1.name as stats_array_1, sa2.name as stats_array_2, sa3.name as stats_array_3, ";
+            query += "ci11.attribute1_oto as aspect_11, ci12.attribute1_oto as aspect_12, d.value, u1.unitcode, u2.unitcode, sa1.name as stats_array_1, d.stats_array_2, d.stats_array_3,";
 
-            query += "sa4.name as stats_array_4, d.comment, d.reserve1, d.reserve2, d.reserve3 from iedc.data d ";
-            query += "left join iedc.stats_array sa1 on d.stats_array_1 = sa1.id left join iedc.stats_array sa2 on d.stats_array_2 = sa2.id ";
-            query += "left join iedc.stats_array sa3 on d.stats_array_3 = sa3.id left join iedc.stats_array sa4 on d.stats_array_4 = sa4.id ";
+            query += "d.stats_array_4, d.comment, d.reserve1, d.reserve2, d.reserve3 from iedc.data d ";
+            query += "left join iedc.stats_array sa1 on d.stats_array_1 = sa1.id ";
             query += "left join iedc.units u1 on d.unit_nominator = u1.id left join iedc.units u2 on d.unit_denominator = u2.id ";
 
             query += "left join iedc.classification_items ci1 on d.aspect1 = ci1.id left join iedc.classification_items ci2 on d.aspect2 = ci2.id left join iedc.classification_items ci3 on d.aspect3 = ci3.id ";
