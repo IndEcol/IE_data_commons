@@ -114,14 +114,14 @@ for row in cur:
     DAspectsD.append(row[1])
 
 # Read datasets
-TOCFile  = xlrd.open_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload.xlsx')
+TOCFile  = xlrd.open_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_2018_Okt_17.xlsx')
 TOC = TOCFile.sheet_by_name('DataSets_Inventory')
 
-Offset = 0
-No_DS = 65
+Offset = 65
+No_DS = 12
 
 # loop over datasets
-for m in range(Offset,No_DS):
+for m in range(Offset,Offset +No_DS):
     print(m)
     # Define default data:
     D = [] # Data items list
