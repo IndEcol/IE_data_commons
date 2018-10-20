@@ -116,6 +116,11 @@ cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classificati
 for row in cur:
     print(row)
     
+cur.execute("SELECT unit_denominator FROM data WHERE dataset_id = 112")
+for row in cur:
+    print(row)      
+    
+#cur.execute("UPDATE data SET unit_denominator = 1 WHERE dataset_id = 112") 
 # Change auto_increment    
 #cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")
 #cur.execute("ALTER TABLE iedc_review.datasets AUTO_INCREMENT = 1")
