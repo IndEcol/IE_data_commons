@@ -75,7 +75,7 @@ cur.execute("SHOW CREATE TABLE units")
 for row in cur:
     print(row)  
     
-cur.execute("SHOW CREATE TABLE datagroups")
+cur.execute("SHOW CREATE TABLE data")
 for row in cur:
     print(row)      
     
@@ -288,6 +288,8 @@ for row in cur:
 cur.execute("DROP TABLE IF EXISTS test")
 
 
+# Drop NOT NULL constraint for data table:
+cur.execute("ALTER TABLE data MODIFY COLUMN value double")
 
     
 ## 4) close connection
