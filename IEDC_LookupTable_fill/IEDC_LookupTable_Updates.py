@@ -86,6 +86,13 @@ cur = conn.cursor()
 #    SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES (%s,%s,%s,%s,%s)"
 #    cur.execute(SQL,(NewAspects[m],NewAspectsD[m],NewAspectsM[m],NewAspectsL[m],NewAspectsC[m]))
 
+# Add explanations to lookup tables
+#cur.execute("UPDATE aspects SET description = 'technology class of product or commodity in the sense of product type' WHERE aspect = 'technology'")
+#cur.execute("UPDATE aspects SET description = 'layer of qantification: mass, volume, energy, radioactivity, monetary, ...' WHERE aspect = 'layer'")
+#cur.execute("UPDATE aspects SET index_letter_crib = 's_ubstituting' WHERE aspect = 'substituting_material'")	
+#cur.execute("UPDATE aspects SET description = 'refers to the material that substitutes another one' WHERE aspect = 'substituting_material'")	
+
+
 ## close connection
 cur.close()
 conn.close()
