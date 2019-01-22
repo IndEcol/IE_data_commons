@@ -22,3 +22,4 @@ id;classification_Name;dimension;description;mutually_exclusive;collectively_exh
 21;US_LCI_processes;7;List of processes used in US LCI database;False;False;True;False;;;;;Process (activity) names from US LCI database;;;;;;;;;;;;;;
 22;UK_IO_17Commodities;6;List of 17 commodities used for 2010 aggregated UK IO table in pxp format;False;False;False;False;;;;;Aggregated industrial sector names of UK IO table;;;;;;;;;;;;;;
 23;steel_cycle_200R_materials_products;6;materials and products for stocks and flows in dataset for global steel cycle;False;False;False;False;;;;;material name;;;;;;;;;;;;;;
+24;global_steel_cycle_Regions;4;regions used in global steel cycle project;False;False;False;False;;;;;region name;;;;;;;;;;;;;;

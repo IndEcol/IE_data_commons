@@ -19,3 +19,10 @@ id;name;description;reference_data_category;symbol;reserve1;reserve2;reserve3
 18;Process inventory;flows entering and leaving process, for LCI datasets;1;PI;;;
 19;Unit process inventory;flows entering and leaving process, normalized, for LCI datasets;1;UPI;;;
 20;Births_deaths;flows of people being born and dying;1;BD;;;
+21;Misc_intensive;miscellaneous intensive properties, e.g., those used in ecoinvent;6;MIP;;;
+22;Activity parameters;parameters, e.g., those used in ecoinvent;6;PAR;;; 
+23;Transfer coefficients;transfer coefficients, e.g., those used in ecoinvent;6;TC;;;
+24;Criticality;criticality indicators;6;CR;;;
+25;Impact indicators;impact indicators, e.g., from LC impact assessment;6;IMI;;;
+26;Flow_prices;price information for flows (not products: 3_PR);6;FPR;;;
+

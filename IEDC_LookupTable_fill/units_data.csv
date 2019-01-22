@@ -45,7 +45,7 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 44;3;yr;a;;year;annum;;31556928
 45;2;Pg;;;petagram;gigaton;;1.00E+12
 46;2;Tg;Mt;;teragram;megaton;;1.00E+09
-47;2;Gg;;;Gigagram;kiloton;;1000000
+47;2;Gg;kt;;Gigagram;kiloton;;1000000
 48;2;t;;;ton;Megagram;;1000
 49;2;Mg;;;Megagram;ton;;1000
 50;2;g;;;gram;;;0.001
@@ -81,9 +81,12 @@ id;refunit_id;unitcode;alt_unitcode;alt_unitcode2;unit_name;alt_unit_name;alt_un
 80;7;TW;;;terawatt;;;1.00E+12
 81;7;PW;;;petawatt;;;1.00E+15
 82;9;km;;;kilometer;;;1000
-83;8;GBP_2010;;;British Pound of 2010;;;
-84;8;million GBP_2010;;;million British Pound of 2010;;;
 85;13;kBq;;;kilobequerel;;;1000
-86;8;BYen;;;Billion Yen;;;
 87;1;promille;;;promille;;;0.001
 88;5;l;;;litre;;;0.001
+89;8;BYen;;;Billion Yen;;;
+90;8;million GBP_2010;;;million British Pounds_2010;;;
+
+
+
+

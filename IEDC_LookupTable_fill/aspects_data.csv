@@ -29,3 +29,6 @@ id;aspect;description;dimension;index_letter;index_letter_crib;reserve1;reserve2
 28;material_category;broad material groups 'product', 'waste', and 'elementary', used in LCI;5;C;material Category;;;
 29;layer;layer of qantification: mass, volume, energy, radioactivity, monetary, ?;12;L;Layer;;;
 30;city;City where process or stock is located, flows start or end;4;y;Cit_y;;;
+31;layer_in;Layer of quantification for incoming flow;12;a;L_a_yer_in;;;
+32;layer_out;Layer of quantification for outgoing flow;12;A;L_A_yer_out;;;
+33;impact_indicator;Impact indicator of flow;10;I;Impact indicator;;;

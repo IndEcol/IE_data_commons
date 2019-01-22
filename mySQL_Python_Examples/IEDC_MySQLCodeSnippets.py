@@ -37,10 +37,18 @@ for row in cur:
 cur.execute("SELECT index_letter FROM aspects WHERE index_letter = 'D' ")
 for row in cur:
     print(row)
+    
+cur.execute("SELECT * FROM aspects")
+for row in cur:
+    print(row)   
 
 cur.execute("SELECT * FROM types")
 for row in cur:
     print(row)    
+    
+cur.execute("SELECT * FROM layers")
+for row in cur:
+    print(row)      
     
 cur.execute("SELECT * FROM dimensions")
 for row in cur:
@@ -111,6 +119,10 @@ for row in cur:
 cur.execute("SELECT COUNT(*) FROM classification_items")
 for row in cur:
     print(row)    
+    
+cur.execute("SELECT count(*) FROM classification_items WHERE classification_id = 24")
+for row in cur:
+    print(row) 
     
 cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classification_id = 4")
 for row in cur:

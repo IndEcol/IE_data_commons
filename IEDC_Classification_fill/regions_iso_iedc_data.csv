@@ -1,6 +1,6 @@
 ﻿id;classification_id;parent_id;description;reference;attribute1_oto;attribute2_oto;attribute3_oto;attribute4_oto;attribute5_anc;attribute6_anc;attribute7_anc;attribute8_anc;attribute9_anc;attribute10_anc;attribute11_anc;attribute12_anc;attribute13_anc;attribute14_anc;attribute15_anc
 1;2;;;;Afghanistan;AF;AFG;4;Asia;Southern Asia;1;1;;;;;;;
-2;2;;;;land Islands;AX;ALA;248;Europe;Northern Europe;0;0;;;;;;;
+2;2;;;;Åland Islands;AX;ALA;248;Europe;Northern Europe;0;0;;;;;;;
 3;2;;;;Albania;AL;ALB;8;Europe;Southern Europe;1;1;;;;;;;
 4;2;;;;Algeria;DZ;DZA;12;Africa;Northern Africa;1;1;;;;;;;
 5;2;;;;American Samoa;AS;ASM;16;Oceania;Polynesia;0;0;;American Samoa (US);;;;;
@@ -56,10 +56,10 @@
 55;2;;;;Congo, Rep.;CG;COG;178;Africa;Middle Africa;1;1;;Congo;Republic of the Congo;Congo-Brazzaville;Rep Congo;;
 56;2;;;;Cook Islands;CK;COK;184;Oceania;Polynesia;0;0;;Cook Isds;Cook islands;;;;
 57;2;;;;Costa Rica;CR;CRI;188;America;Central America;1;1;CRC;;;;;;
-58;2;;;;Cote d''Ivoire;CI;CIV;384;Africa;Western Africa;1;1;;Ivory Coast;C“te d''Ivoire;;;;
+58;2;;;;Cote d'Ivoire;CI;CIV;384;Africa;Western Africa;1;1;;Ivory Coast;C“te d''Ivoire;;;;
 59;2;;;;Croatia;HR;HRV;191;Europe;Southern Europe;1;1;;Croatia (local name: hrvatska);;;;;
 60;2;;;;Cuba;CU;CUB;192;America;Caribbean;1;1;;;;;;;
-61;2;;;;Cura‡ao;CW;CUW;531;America;Caribbean;0;1;;;;;;;
+61;2;;;;Curacao;CW;CUW;531;America;Caribbean;0;1;;;;;;;
 62;2;;;;Cyprus;CY;CYP;196;Asia;Western Asia;1;1;;;;;;;
 63;2;;;;Czech Republic;CZ;CZE;203;Europe;Eastern Europe;1;1;;Czech Rep.;;;;;
 64;2;;;;Denmark;DK;DNK;208;Europe;Northern Europe;1;1;;;;;;;
@@ -78,7 +78,7 @@
 77;2;;;;Fiji;FJ;FJI;242;Oceania;Melanesia;1;1;;Fiji Islands;;;;;
 78;2;;;;Finland;FI;FIN;246;Europe;Northern Europe;1;1;;;;;;;
 79;2;;;;France;FR;FRA;250;Europe;Western Europe;1;1;;France(+DOM TOM);;;;;
-80;2;;;;French guiana;GF;GUF;254;America;South America;0;0;;French Guiana;;;;;
+80;2;;;;French Guiana;GF;GUF;254;America;South America;0;0;;French Guiana;;;;;
 81;2;;;;French Polynesia;PF;PYF;258;Oceania;Polynesia;0;0;;French polynesia;;;;;
 82;2;;;;French Southern and Antarctic Lands;TF;ATF;260;Africa;Southern Africa;0;0;;;;;;;
 83;2;;;;Gabon;GA;GAB;266;Africa;Middle Africa;1;1;;;;;;;
@@ -116,7 +116,7 @@
 115;2;;;;Kazakhstan;KZ;KAZ;398;Asia;Central Asia;1;1;;;;;;;
 116;2;;;;Kenya;KE;KEN;404;Africa;Eastern Africa;1;1;;;;;;;
 117;2;;;;Kiribati;KI;KIR;296;Oceania;Micronesia;1;1;;;;;;;
-118;2;;;;Korea, democratic people''s republic of;KP;PRK;408;Asia;Eastern Asia;1;1;;Dem. People''s Rep. of Korea;Dem. Peoples Rep. of Korea;Dem. People''s Rep. of Korea;Democratic People''s Republic of Korea;;
+118;2;;;;Korea, democratic people's republic of;KP;PRK;408;Asia;Eastern Asia;1;1;;Dem. People''s Rep. of Korea;Dem. Peoples Rep. of Korea;Dem. People''s Rep. of Korea;Democratic People''s Republic of Korea;;
 119;2;;;;Kosovo;;KSV;780;Europe;Southern Europe;0;1;;;;;;;
 120;2;;;;Kuwait;KW;KWT;414;Asia;Western Asia;1;1;;;;;;;
 121;2;;;;Kyrgyz Republic;KG;KGZ;417;Asia;Central Asia;1;1;;Kyrgyzstan;;;;;
@@ -200,7 +200,7 @@
 199;2;;;;Solomon Islands;SB;SLB;90;Oceania;Melanesia;1;1;;Solomon Isds;;;;;
 200;2;;;;Somalia;SO;SOM;706;Africa;Eastern Africa;1;1;;;;;;;
 201;2;;;;South Africa;ZA;ZAF;710;Africa;Southern Africa;1;1;;Southern African Customs Union;;;;;
-202;2;;;;South georgia and the south sandwich is;GS;SGS;239;Antarctica;;0;0;;South georgia and the south sandwich islands;South Georgia and the South Sandwichs Islands (UK);South Georgia and South Sandwich Islands;;;
+202;2;;;;South Georgia and the South Sandwich Islands;GS;SGS;239;Antarctica;;0;0;;South georgia and the south sandwich islands;South Georgia and the South Sandwichs Islands (UK);South Georgia and South Sandwich Islands;;;
 203;2;;;;South Korea;KR;KOR;410;Asia;Eastern Asia;1;1;;Korea, Republic of;Korea;Rep. of Korea;Republic of Korea;;
 204;2;;;;South Sudan;;SSD;728;Africa;Eastern Africa;1;1;;;;;;;
 205;2;;;;Spain;ES;ESP;724;Europe;Southern Europe;1;1;;;;;;;
@@ -297,9 +297,9 @@
 296;2;;;;Central America;;;916;;;;;;;;;;;
 297;2;;;;South America;;;931;;;;;;;;;;;
 298;2;;;;Northern America;;;905;;;;;;;;;;;
-299;2;;;;reserved;;;0;;;;;;;;;;;
-300;2;;;;reserved;;;0;;;;;;;;;;;
-301;2;;;;reserved;;;0;;;;;;;;;;;
+299;2;;;;America;;;10010;;;;;;;;;;;
+300;2;;;;Switzerland and Liechtenstein;;;10011;;;;;;;;;;;
+301;2;;;;Middle East;;;10012;;;;;;;;;;;
 302;2;;;;reserved;;;0;;;;;;;;;;;
 303;2;;;;reserved;;;0;;;;;;;;;;;
 304;2;;;;reserved;;;0;;;;;;;;;;;

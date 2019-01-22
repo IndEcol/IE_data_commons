@@ -17,3 +17,12 @@ id;name;description;reserve1;reserve2
 16;Parameters of pdf of product discard;;;
 17;Misc. physical units;;;
 18;Misc. units;;;
+19;Dry mass;;;
+20;Wet mass;;;
+21;Lower heating value;Net Calorific Value (NCV);;
+22;Higher heating value;Gross Calorific Value (GCV);;
+23;monetary (basic prices);;;
+24;monetary (purchaser prices);;;
+25;monetary (constant prices);;;
+
+
