@@ -92,6 +92,23 @@ cur = conn.cursor()
 #cur.execute("UPDATE aspects SET index_letter_crib = 's_ubstituting' WHERE aspect = 'substituting_material'")	
 #cur.execute("UPDATE aspects SET description = 'refers to the material that substitutes another one' WHERE aspect = 'substituting_material'")	
 
+#23.1.19 Add data category 7 (correspondence tables)
+## New category
+#SQL = "INSERT INTO categories (id,name,description) VALUES (7,'Correspondence','Correspondence between two classifications')"
+#cur.execute(SQL)
+#
+## New data type
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('correspondence_table','Correspondence between two classifications',7,'CT')"
+#cur.execute(SQL)
+#
+## New layer
+#SQL = "INSERT INTO layers (name,description) VALUES ('Correspondence','Correspondence between two classifications')"
+#cur.execute(SQL)
+#
+## add component aspect
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('component','component of product or other object',6,'k','k(c)omponent')"
+#cur.execute(SQL)
+
 
 ## close connection
 cur.close()

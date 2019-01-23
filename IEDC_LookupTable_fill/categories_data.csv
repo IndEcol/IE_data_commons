@@ -5,3 +5,4 @@ id;name;description;reserve1;reserve2
 4;Process coefficient, process parameter, intensive quantity;Intensive process properties;;
 5;Extensive process property;Extensive process properties such as capacity;;
 6;General ratio;Ratios between stocks and flows;;
+7;Correspondence;Correspondence between two classifications;;

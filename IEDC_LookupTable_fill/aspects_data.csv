@@ -32,3 +32,4 @@ id;aspect;description;dimension;index_letter;index_letter_crib;reserve1;reserve2
 31;layer_in;Layer of quantification for incoming flow;12;a;L_a_yer_in;;;
 32;layer_out;Layer of quantification for outgoing flow;12;A;L_A_yer_out;;;
 33;impact_indicator;Impact indicator of flow;10;I;Impact indicator;;;
+34;component;component of product or other object;6;k;k(c)omponent;;;

@@ -24,5 +24,5 @@ id;name;description;reserve1;reserve2
 23;monetary (basic prices);;;
 24;monetary (purchaser prices);;;
 25;monetary (constant prices);;;
-
+26;Correspondence;Correspondence between two classifications;;;
 

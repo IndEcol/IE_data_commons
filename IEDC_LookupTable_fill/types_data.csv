@@ -25,4 +25,4 @@ id;name;description;reference_data_category;symbol;reserve1;reserve2;reserve3
 24;Criticality;criticality indicators;6;CR;;;
 25;Impact indicators;impact indicators, e.g., from LC impact assessment;6;IMI;;;
 26;Flow_prices;price information for flows (not products: 3_PR);6;FPR;;;
-
+27;correspondence_table;Correspondence between two classifications;7;CT;;;
