@@ -109,6 +109,10 @@ cur = conn.cursor()
 #SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('component','component of product or other object',6,'k','k(c)omponent')"
 #cur.execute(SQL)
 
+## 29.1.
+### New data type
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Characterisation factor','Environmental or social midpoint or endpoint indicator per unit of substance listed in life cycle inventory',3,'CF')"
+#cur.execute(SQL)
 
 ## close connection
 cur.close()

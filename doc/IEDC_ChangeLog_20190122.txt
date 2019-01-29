@@ -146,7 +146,7 @@ cur.execute(SQL)
 Script is ready, upload will happen once custom classifications are moved.
 
 #####################################
-#   6)  NEW CATEGORY 7:             #
+#   7)  NEW CATEGORY 7:             #
 #####################################
 
 #23.1.19 Add data category 7 (correspondence tables)
@@ -165,5 +165,14 @@ Script is ready, upload will happen once custom classifications are moved.
 ## add component aspect
 #SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('component','component of product or other object',6,'k','k(c)omponent')"
 #cur.execute(SQL)
+
+#####################################
+#   8)  NEW DATA TYPE 3_CF_:        #
+#####################################
+
+# 29.1.
+## New data type
+SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Characterisation factor','Environmental or social midpoint or endpoint indicator per unit of substance listed in life cycle inventory',3,'CF')"
+cur.execute(SQL)
 
 >>>>> ALL CHANGES IMPLEMENTED!!!
