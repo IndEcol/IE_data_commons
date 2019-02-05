@@ -182,4 +182,14 @@ cur.execute(SQL)
 # 5.2.19
 cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'unspecified','10013'))
 
+#####################################
+#  10)  Change data category:       #
+#####################################
+
+#SQL = "UPDATE types SET reference_data_category = 4 WHERE symbol = 'PAR'"
+#cur.execute(SQL)
+#
+#SQL = "UPDATE types SET reference_data_category = 4 WHERE symbol = 'UPI'"
+#cur.execute(SQL)
+
 >>>>> ALL CHANGES IMPLEMENTED!!!

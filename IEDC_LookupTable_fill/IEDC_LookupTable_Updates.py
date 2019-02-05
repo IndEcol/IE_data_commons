@@ -114,6 +114,14 @@ cur = conn.cursor()
 #SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Characterisation factor','Environmental or social midpoint or endpoint indicator per unit of substance listed in life cycle inventory',3,'CF')"
 #cur.execute(SQL)
 
+# 5.2. Change data category
+#SQL = "UPDATE types SET reference_data_category = 4 WHERE symbol = 'PAR'"
+#cur.execute(SQL)
+#
+#SQL = "UPDATE types SET reference_data_category = 4 WHERE symbol = 'UPI'"
+#cur.execute(SQL)
+
+
 ## close connection
 cur.close()
 conn.close()
