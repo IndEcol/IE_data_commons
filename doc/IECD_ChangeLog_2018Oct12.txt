@@ -1,0 +1,28 @@
+3_MC_Buildings_Gustavsson_2006
++ changed to correct building type in template.
+
+4_PY_WorldSteel_EoL_RR_SteelScrap
++ changed classification for aspect 5 from 5 to 4, please update dataset table entry!
+
+'3_LT_AluCycle_LIU_2012.xlsx', '3_LT_AluCycle_LIU_2013.xlsx', '3_LT_IAI_GARC_2011.xlsx', '3_LT_MetalDemand_DEETMAN_2018.xlsx', '3_LT_SteelCycle_PAULIUK_2013.xlsx', '3_MC_SteelDemand_HU_2010.xlsx'
++ Changed stats_array_string to new format
+
+3_MC_Buildings_Kleemann_2014.xlsx, 
++ fixed classification items in data template
+
+6_PCS_Buildings_Indonesia_1985.xlsx, 6_PCS_Buildings_Indonesia_BPS_2008_2015.xlsx, '6_PCS_Buildings_USA_MOURA_2015.xlsx'
++ changed time classification from 9 to 3, please update dataset table entry!
+
+'3_MC_Vehicles_Hawkins_2012.xlsx',
++ Have added missing classification items to db. 
+
++ 6_PCS_Buildings_Indonesia_1985.xlsx, 4_PY_WorldSteel_EoL_RR_SteelScrap
+Changes attribute no in format table from '1' to 'custom'
+
+
+REMAINING:
+
+3_MC_MetalDemand_DEETMAN_2018.xlsx, 5_CAP_PowerGenCapacity_Germany_2018.xlsx,
++ needs discussion: in the main database, I dropped the NOT NULL constaint for data.value to allow us to distinguish between '0' and 'no data'. Does that make sense?
+
+

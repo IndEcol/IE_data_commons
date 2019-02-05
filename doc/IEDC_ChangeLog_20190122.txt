@@ -175,4 +175,11 @@ Script is ready, upload will happen once custom classifications are moved.
 SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Characterisation factor','Environmental or social midpoint or endpoint indicator per unit of substance listed in life cycle inventory',3,'CF')"
 cur.execute(SQL)
 
+
+#####################################
+#   9)  NEW DATA classitem in 2:    #
+#####################################
+# 5.2.19
+cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'unspecified','10013'))
+
 >>>>> ALL CHANGES IMPLEMENTED!!!

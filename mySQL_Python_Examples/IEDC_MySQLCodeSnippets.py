@@ -105,6 +105,11 @@ cur.execute("SELECT COUNT(*) FROM data")
 for row in cur:
     print(row)    
     
+cur.execute("SELECT COUNT(*) FROM classification_definition")
+for row in cur:
+    print(row)       
+    
+    
 cur.execute("SELECT * FROM data WHERE id = 722907")
 for row in cur:
     print(row)    
@@ -124,7 +129,7 @@ cur.execute("SELECT count(*) FROM classification_items WHERE classification_id =
 for row in cur:
     print(row) 
     
-cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classification_id = 4")
+cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classification_id = 25")
 for row in cur:
     print(row)
     
@@ -162,6 +167,10 @@ for row in cur:
 #cur.execute("ALTER TABLE datagroups AUTO_INCREMENT = 10")
 #cur.execute("TRUNCATE TABLE data")
 #cur.execute("DROP TABLE data")
+ 
+cur.execute("DELETE FROM classification_items WHERE classification_id > 27")        
+cur.execute("DELETE FROM classification_definition WHERE id > 27")   
+cur.execute("ALTER TABLE classification_definition AUTO_INCREMENT = 10000")
     
 # get units
 cur.execute("SELECT * FROM licences")

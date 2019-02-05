@@ -22,9 +22,12 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
 
-ClassList   = ['EXIOBASEv3_163Industries','EXIOBASEv3_163Products','EXIOBASEv3_200Products'] # List of filenames for classifications to be added.
-ClassIDList = [25,26,27]
-
+#ClassList   = ['EXIOBASEv3_163Industries','EXIOBASEv3_163Products','EXIOBASEv3_200Products'] # List of filenames for classifications to be added.
+#ClassIDList = [25,26,27]
+    
+ClassList   = ['EXIOBASEv3_163Products','EXIOBASEv3_200Products']
+ClassIDList = [26,27]
+    
 # Define mySQL commands for classification
 SQLD = "INSERT INTO classification_definition (\
 id,\
@@ -131,8 +134,8 @@ for m in range(0,len(ClassList)):
         
         
 # Delete existing classifications:
-#cur.execute("DELETE FROM classification_items WHERE classification_id = 25") 
-#cur.execute("DELETE FROM classification_definition WHERE id = 25") 
+#cur.execute("DELETE FROM classification_items WHERE classification_id = 27") 
+#cur.execute("DELETE FROM classification_definition WHERE id = 27") 
 #cur.execute("SELECT * FROM classification_definition WHERE id = 25")
 #for row in cur:
 #    print(row)
@@ -140,7 +143,7 @@ for m in range(0,len(ClassList)):
             
 
 # Check
-Value = 25
+Value = 27
 cur.execute("SELECT COUNT(*) FROM classification_items WHERE classification_id =%s",(Value))
 for row in cur:
     print(row)    
