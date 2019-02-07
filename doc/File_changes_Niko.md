@@ -1,7 +1,27 @@
-# File changes Niko
+# File changes & activity Niko
 
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
+
+## 7. Feb 2019
+
+- Updated https://github.com/IndEcol/IE_data_commons/issues/20#issuecomment-461464876
+
+- `1_UPI_USLCI_Aluminum_cold_rolling_at_plant.xlsx`
+  - Changed sheetname "Value_master" or "Values_Master" to "Data"
+  
+- `1_UPI_USLCI_Limestone_at_mine.xlsx`
+  - Data sheet changed "None" to "unspecified" for "destination_region" column
+
+- `3_LT_SteelCycle_PAULIUK_2013.xlsx`
+  - Changed sheetname "Value_master" or "Values_Master" to "Data"
+  - Replaced "Latin America (the entire Americas without the US and Canada" with "Latin America (the entire Americas without the US and Canada)"
+  - Removed trailing ";" from column "stats_array string"
+  - Fixed error with Stefan (see https://github.com/IndEcol/IE_data_commons/issues/20#issuecomment-461424064)
+
+- `3_MC_SteelDemand_HU_2010.xlsx`
+  - Removed trailing ";" from column "stats_array string"
+
 
 ## 5. Feb 2019
 
