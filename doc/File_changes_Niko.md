@@ -3,6 +3,14 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 11. Feb 2019
+
+- updated https://github.com/IndEcol/IE_data_commons/issues/20
+- `1_F_NewPassengerVehicleRegistration_AllCountries_OICA_2017.xlsx`
+  - renamed "Use phase" to "use phase" in Data sheet
+- `3_IUP_Vehicles_9Countries_Dhaniati_2012.xlsx` contains different values to encode `NULL`. *We seriously need a definition.*
+
+
 ## 7. Feb 2019
 
 - Updated https://github.com/IndEcol/IE_data_commons/issues/20#issuecomment-461464876
