@@ -9,7 +9,7 @@ File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`.
 - `1_F_NewPassengerVehicleRegistration_AllCountries_OICA_2017.xlsx`
   - renamed "Use phase" to "use phase" in Data sheet
 - `3_IUP_Vehicles_9Countries_Dhaniati_2012.xlsx` contains different values to encode `NULL`. *We seriously need a definition.*
-
+- All LIST and TABLE type files work now, *except* the ones without a 'dataset' entry
 
 ## 7. Feb 2019
 
