@@ -3,6 +3,21 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 14. Feb 2019
+
+- `7_CT_EXIOBASEv3_200Products_To_163Products.xlsx`
+  - Cover sheet, replaced "Correspondence Table" with "correspondence_table"
+
+- `7_CT_EXIOBASEv3_163Products_To_163Industries.xlsx`:
+  - Cover sheet, replaced "Correspondence Table" with "correspondence_table"
+  
+- Pushed latest version of IEDC_tools: https://github.com/IndEcol/IEDC_tools/commit/cf79057f6a026979414b34da1e99f9b0c140e160
+  - Finished function to create dataset entries
+  - All current files are being successfully processed
+  - Smaller issues remain (e.g. need to implement checks vor dataset version number)
+  - Function to update existing dataset entries not yet implemented
+
+
 ## 11. Feb 2019
 
 - updated https://github.com/IndEcol/IE_data_commons/issues/20
