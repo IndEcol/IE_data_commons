@@ -13,8 +13,8 @@ import xlrd, xlwt
 import IEDC_PW
 import IEDC_Paths
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -28,10 +28,11 @@ for row in cur:
     print(row)
     
 # update definition:
-cur.execute("UPDATE classification_definition SET classification_name = 'global_steel_cycle_Regions', dimension = 4, description = 'regions used in global steel cycle project', mutually_exclusive = 0, collectively_exhaustive = 0, general = 0, created_from_dataset = 0, meaning_attribute1 = 'region name' WHERE id = 24")    
+#cur.execute("UPDATE classification_definition SET classification_name = 'global_steel_cycle_Regions', dimension = 4, description = 'regions used in global steel cycle project', mutually_exclusive = 0, collectively_exhaustive = 0, general = 0, created_from_dataset = 0, meaning_attribute1 = 'region name' WHERE id = 24")    
+#cur.execute("INSERT INTO classification_definition (id,classification_name, dimension ,description,mutually_exclusive,collectively_exhaustive,general,created_from_dataset,meaning_attribute1 )VALUES (24,'global_steel_cycle_Regions',4, 'regions used in global steel cycle project', 0,  0,  0,  0, 'region name' )")    
     
 # delete items if present:
-cur.execute("DELETE FROM classification_items WHERE classification_id = 24")
+#cur.execute("DELETE FROM classification_items WHERE classification_id = 24")
 
 # define and insert new items:
     

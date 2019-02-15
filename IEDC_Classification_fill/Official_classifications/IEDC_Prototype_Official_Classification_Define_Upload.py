@@ -22,11 +22,11 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
 
-#ClassList   = ['EXIOBASEv3_163Industries','EXIOBASEv3_163Products','EXIOBASEv3_200Products'] # List of filenames for classifications to be added.
-#ClassIDList = [25,26,27]
+ClassList   = ['EXIOBASEv3_163Industries','EXIOBASEv3_163Products','EXIOBASEv3_200Products'] # List of filenames for classifications to be added.
+ClassIDList = [25,26,27]
     
-ClassList   = ['EXIOBASEv3_163Products','EXIOBASEv3_200Products']
-ClassIDList = [26,27]
+#ClassList   = ['EXIOBASEv3_163Products','EXIOBASEv3_200Products']
+#ClassIDList = [26,27]
     
 # Define mySQL commands for classification
 SQLD = "INSERT INTO classification_definition (\
@@ -81,8 +81,8 @@ attribute14_anc,\
 attribute15_anc) Values(\
 %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -140,19 +140,19 @@ for m in range(0,len(ClassList)):
 #for row in cur:
 #    print(row)
 
-            
-
-# Check
-Value = 27
-cur.execute("SELECT COUNT(*) FROM classification_items WHERE classification_id =%s",(Value))
-for row in cur:
-    print(row)    
-
-cur.execute("SELECT * FROM classification_items WHERE classification_id =%s",(Value))
-for row in cur:
-    print(row)  
-    
-    
+#            
+#
+## Check
+#Value = 27
+#cur.execute("SELECT COUNT(*) FROM classification_items WHERE classification_id =%s",(Value))
+#for row in cur:
+#    print(row)    
+#
+#cur.execute("SELECT * FROM classification_items WHERE classification_id =%s",(Value))
+#for row in cur:
+#    print(row)  
+#    
+#    
     
 
 # Close connection
