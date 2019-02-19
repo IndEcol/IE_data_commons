@@ -118,8 +118,8 @@ for line in lines:
         U4 = None
         
         # Add data into db:
-#        cur.execute(SQL,(DS_id,Proc_Pos,Elem_Pos,Year_Pos,Prod_Pos,Coun_Pos,None,None,None,None,None,None,None,StockValue,\
-#                     UnitnID,UnitdnID,U1,U2,U3,U4,None,None,None,None))
+        cur.execute(SQL,(DS_id,Proc_Pos,Elem_Pos,Year_Pos,Prod_Pos,Coun_Pos,None,None,None,None,None,None,None,StockValue,\
+                     UnitnID,UnitdnID,U1,U2,U3,U4,None,None,None,None))
 
     lc +=1
     

@@ -228,8 +228,8 @@ for ds in range(0,len(FlowFileList)):
             U4 = None
             
             # Add data into db:
-#            cur.execute(SQL,(DS_id,Elem_Pos,Prod_Pos,OrPr_Pos,OrRe_Pos,DesP_Pos,DesR_Pos,Year_Pos,None,None,None,None,None,FlowValue,\
-#                         UnitnID,UnitdnID,U1,U2,U3,U4,None,None,None,None))
+            cur.execute(SQL,(DS_id,Elem_Pos,Prod_Pos,OrPr_Pos,OrRe_Pos,DesP_Pos,DesR_Pos,Year_Pos,None,None,None,None,None,FlowValue,\
+                         UnitnID,UnitdnID,U1,U2,U3,U4,None,None,None,None))
     
 # Close connection
 cur.close()
