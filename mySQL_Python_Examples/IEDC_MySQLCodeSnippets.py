@@ -66,6 +66,10 @@ cur.execute("SELECT * FROM units")
 for row in cur:
     print(row)    
     
+cur.execute("SELECT * FROM users")
+for row in cur:
+    print(row)      
+    
 cur.execute("SELECT * FROM classification_definition")
 for row in cur:
     print(row)

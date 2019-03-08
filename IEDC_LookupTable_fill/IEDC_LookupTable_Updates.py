@@ -121,6 +121,15 @@ cur = conn.cursor()
 #SQL = "UPDATE types SET reference_data_category = 4 WHERE symbol = 'UPI'"
 #cur.execute(SQL)
 
+#8.3.2019
+## New layer
+#SQL = "INSERT INTO layers (name,description) VALUES ('Area','area measure of stocks or flows of products like buildings')"
+#cur.execute(SQL)
+
+## New user
+#SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (8,'qingshitu','Qingshi Tu','Yale','2019-01-01 12:00:00','2050-06-09 12:00:00')"
+#cur.execute(SQL)
+
 
 ## close connection
 cur.close()

@@ -32,6 +32,9 @@ cur = conn.cursor()
 #cur.execute("UPDATE datasets SET dataset_name = '4_UPI_USLCI_Limestone_at_mine', data_category = 4 WHERE id = 135")    
 #cur.execute("UPDATE datasets SET dataset_name = '4_UPI_USLCI_steel_liquid_at_plant', data_category = 4 WHERE id = 136")    
 
+## Add datagroup it to dataset 130 (Steel Sankey Cullen 2012)
+#cur.execute("UPDATE datasets SET datagroup_id = 8 WHERE id = 130")    
+
 # 4) close connection
 cur.close()
 conn.close()
