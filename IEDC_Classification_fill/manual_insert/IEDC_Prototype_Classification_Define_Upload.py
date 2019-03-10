@@ -21,10 +21,11 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
         ordinal -= 1  # Excel leap year bug, 1900 is not a leap year!
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
-ClassList   = ['30_SSP_32Regions'] # List of filenames for classifications to be added.
-ClassIDList = [30]
 
-    
+ClassList   = ['29_SSP_Models'] # List of filenames for classifications to be added.
+ClassIDList = [29]
+
+
 # Define mySQL commands for classification
 SQLD = "INSERT INTO classification_definition (\
 id,\
@@ -84,7 +85,7 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 cur = conn.cursor()
 
 for m in range(0,len(ClassList)):
-    ClassFilePath = path.join(path.join(IEDC_Paths.Class_ItemPath,'Official_classifications'),ClassList[m] + '.xlsx')
+    ClassFilePath = path.join(path.join(IEDC_Paths.Class_ItemPath,'manual_insert'),ClassList[m] + '.xlsx')
     ClassFile = xlrd.open_workbook(ClassFilePath)
     ClassDefsheet = ClassFile.sheet_by_name('Definition')
 

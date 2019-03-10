@@ -137,6 +137,10 @@ cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classificati
 for row in cur:
     print(row)
     
+cur.execute("SELECT * FROM classification_items  WHERE classification_id = 2 AND attribute3_oto = 'PSE'")
+for row in cur:
+    print(row)    
+    
 cur.execute("SELECT unit_denominator FROM data WHERE dataset_id = 112")
 for row in cur:
     print(row)      

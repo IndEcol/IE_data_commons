@@ -122,13 +122,45 @@ cur = conn.cursor()
 #cur.execute(SQL)
 
 #8.3.2019
-## New layer
+## New layers
 #SQL = "INSERT INTO layers (name,description) VALUES ('Area','area measure of stocks or flows of products like buildings')"
 #cur.execute(SQL)
+#SQL = "INSERT INTO layers (name,description) VALUES ('Misc_share','share of a quantity in another total quantity, miscellaneous units')"
+#cur.execute(SQL)
+
+## add new aspect
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('economic_indicator','various intensive economic indicators',10,'E','Economic indicator')"
+#cur.execute(SQL)
+
 
 ## New user
 #SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (8,'qingshitu','Qingshi Tu','Yale','2019-01-01 12:00:00','2050-06-09 12:00:00')"
 #cur.execute(SQL)
+
+###10.3.2019
+## add dimension 'object' for general objects of interest, comprises material, commodity, population, and other objects in the system, where the 'material' and 'commodity' dimensions don't fit.
+#SQL = "INSERT INTO dimensions (id,name,description) VALUES (14,'object','general objects of interest, comprises material, commodity, population, and other objects in the system, where the material and commodity dimensions dont fit')"
+#cur.execute(SQL)
+## add new aspect	s
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('model','quantification by different models, model alternatives',9,'R','model veRsion')"
+#cur.execute(SQL)
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('focus_object','object in focus of e.g., indicators',14,'i','none')"
+#cur.execute(SQL)
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('reference_object','object or object group that serves as reference, e.g., for indicators',14,'j','none')"
+#cur.execute(SQL)
+## add SSP_Database_license:
+#SQL = "INSERT INTO licences (id,name,description) VALUES (9,'SSP database license','license for using data from the SSP database at IIASA, copyright notice. For full text, cf. https://tntcat.iiasa.ac.at/SspDb/dsd?Action=htmlpage&page=about#termsofuse')"
+#cur.execute(SQL)
+## Add new units
+#SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (8,'BnUS$2005','billion US Dollar of 2005',1000000000)"
+#cur.execute(SQL)
+#SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'kg CO2 eq.','kg of CO2-equivalent (GWP)',1)"
+#cur.execute(SQL)
+#SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (6,'km2','square kilometer',1000000)"
+#cur.execute(SQL)
+#SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'Mm3','million cubig meters',1000000)"
+#cur.execute(SQL)
+
 
 
 ## close connection
