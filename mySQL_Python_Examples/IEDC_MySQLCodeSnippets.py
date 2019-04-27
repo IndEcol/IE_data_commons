@@ -11,7 +11,7 @@ import IEDC_PW
 
 
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -108,6 +108,10 @@ for row in cur:
 cur.execute("SELECT COUNT(*) FROM data")
 for row in cur:
     print(row)    
+
+cur.execute("SELECT COUNT(*) FROM data WHERE dataset_id = 420")
+for row in cur:
+    print(row)   
     
 cur.execute("SELECT COUNT(*) FROM classification_definition")
 for row in cur:
@@ -170,6 +174,9 @@ for row in cur:
 #
 #
 #cur.execute("DELETE FROM data")
+   
+#cur.execute("DELETE FROM data WHERE dataset_id = 200")
+    
 #
 #cur.execute("ALTER TABLE data AUTO_INCREMENT = 10478")
 #cur.execute("ALTER TABLE datagroups AUTO_INCREMENT = 10")

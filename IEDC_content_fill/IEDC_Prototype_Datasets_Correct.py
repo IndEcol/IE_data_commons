@@ -35,6 +35,10 @@ cur = conn.cursor()
 ## Add datagroup it to dataset 130 (Steel Sankey Cullen 2012)
 #cur.execute("UPDATE datasets SET datagroup_id = 8 WHERE id = 130")    
 
+## Add description of pre 1900 steel cycle datasets 202 and 203:
+#cur.execute("UPDATE datasets SET comment = 'only nonzero values are reported, no trade data for the years before 1900 were included' WHERE id = 202")    
+#cur.execute("UPDATE datasets SET comment = 'only nonzero values are reported, no trade data for the years before 1900 were included' WHERE id = 203")    
+
 # 4) close connection
 cur.close()
 conn.close()
