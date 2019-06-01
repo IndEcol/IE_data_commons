@@ -161,6 +161,23 @@ cur = conn.cursor()
 #SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'Mm3','million cubig meters',1000000)"
 #cur.execute(SQL)
 
+###30.5.2019
+## Add new units
+#SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (4,'toe','ton of oil equivalent',4.1868e10)"
+#cur.execute(SQL)
+#SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (4,'Mtoe','million ton of oil equivalent',4.1868e16)"
+#cur.execute(SQL)
+## add layer
+#SQL = "INSERT INTO layers (name,description) VALUES ('Energy','Energy layer')"
+#cur.execute(SQL)
+## add licences
+#SQL = "INSERT INTO licences (id,name,description) VALUES (10,'© OECD/IEA 2016','OECD/IEA license, for full text, cf. https://www.iea.org/media/copyright/TermsandconditionsFinal11Jan2017.pdf')"
+#cur.execute(SQL)
+#SQL = "INSERT INTO licences (id,name,description) VALUES (11,'© OECD/IEA 2018','OECD/IEA license, for full text, cf. https://www.iea.org/media/copyright/TermsandconditionsFinal11Jan2017.pdf')"
+#cur.execute(SQL)
+### add new aspect
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('time_frame','indicates time periods or time frames, quantitative and qualitative, for data and indicators',1,'P','Period')"
+#cur.execute(SQL)
 
 
 ## close connection

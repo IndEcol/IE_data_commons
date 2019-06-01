@@ -121,8 +121,13 @@ for row in cur:
 TOCFile  = xlrd.open_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_2019_Apr_27.xlsx')
 TOC = TOCFile.sheet_by_name('DataSets_SteelCycle')
 
-Offset = 46
-No_DS = 2
+# 1700 steel cycle data upload, April 27, 2019:
+#Offset = 46
+#No_DS = 2
+
+# Final consumption 4 categories upload, May 28, 2019:
+Offset = 48
+No_DS = 1
 
 # loop over datasets
 for m in range(Offset,Offset + No_DS):

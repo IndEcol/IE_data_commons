@@ -39,6 +39,10 @@ cur = conn.cursor()
 #cur.execute("UPDATE datasets SET comment = 'only nonzero values are reported, no trade data for the years before 1900 were included' WHERE id = 202")    
 #cur.execute("UPDATE datasets SET comment = 'only nonzero values are reported, no trade data for the years before 1900 were included' WHERE id = 203")    
 
+## Add description of 4 sector steel consumption dataset 211:
+#cur.execute("UPDATE datasets SET comment = 'only nonzero values are reported!' WHERE id = 211")    
+
+
 # 4) close connection
 cur.close()
 conn.close()
