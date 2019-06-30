@@ -3,6 +3,43 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 30. June 2019
+
+- `2_P_SSP_Database_32R_Future.xlsx`
+  - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
+  - Uploaded.
+- `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016.xlsx` cannot be included, because aspect 1 (energy does not exist).  https://github.com/IndEcol/IE_data_commons/issues/23
+- `3_MC_Buildings_China_Huang_2015.xlsx` uploaded.
+- `1_F_PPPGDP_SSP_Database_32R_History`
+    - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
+    - Uploaded.
+- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1` postponed until https://github.com/IndEcol/IE_data_commons/issues/21 is resolved.
+- `6_SHA_Urbanisation_SSP_Database_32R_History`
+    - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
+    - Uploaded.
+- `6_SHA_Urbanisation_SSP_Database_32R_Future`
+    - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
+    - Uploaded.
+- `6_MIP_SI.POV.GINI_WorldBank_2019.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
+- `2_P_SSP_Database_32R_History.xlsx`
+    - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
+    - Uploaded.
+- `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
+- `1_F_PPPGDP_SSP_Database_32R_Future.xlsx`
+    - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
+    - Uploaded.
+- `6_IMI_EU_Regional_Carbon_Footprint_Ivanova_2017.xlsx`
+    - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
+    - Unit "cap" is not defined. 
+    - Postponed until  https://github.com/IndEcol/IE_data_commons/issues/23 is resolved.
+- `6_IMI_Global_Household_EnvFootprints_Ivanova_2016.xlsx`
+    - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
+    - Uploaded.
+- `1_F_BuildingConstruction_HU_2010.xlsx` uploaded.
+- `4_PE_EnergyIntensity_MaterialProduction_Hertwich_2015.xlsx`uploaded.
+- `6_PCS_ResidentialBuildings_Canada.xlsx`uploaded.
+
+
 ## 15. Feb 2019
 
 - `1_F_steel_SankeyFlows_2008_Global`, `2_IUS_Buildings_Europe_2008_Enerdata`, `2_IUS_Wood_buildings_Pingoud_2000`, `3_LT_AluCycle_LIU_2012`, `3_LT_AluCycle_LIU_2013`, `3_LT_MetalDemand_DEETMAN_2018`, `3_LT_NonResBuildings_Minneapolis_2000`, `3_LT_ResBuildings_USA_1997_2009`, `3_LT_SteelCycle_PAULIUK_2013`, `3_MC_Buildings_Bergsdal_2007`, `3_MC_Buildings_Dodoo_2011`, `3_MC_Buildings_Gustavsson_2006`, `3_MC_Buildings_Gustavsson_2011`, `3_MC_Buildings_Kleemann_2014`, `3_MC_Buildings_Monahan_2010`, `3_MC_Buildings_Ortlepp_2016`, `3_MC_Buildings_Sinha_2016`, `3_MC_ConstructionImpact_Liu_2006`, `3_MC_MetalDemand_DEETMAN_2018`, `3_MC_Steel_DRCSCC_2005`, `3_MC_SteelDemand_HU_2010`, `3_MC_Vehicles_Hawkins_2012`, `3_MC_Vehicles_Modaresi_2014`, `3_SHA_EndUseShares_7Metals_Ciacci_2015`, `3_SHA_FabricationYield_CollectionRate_Alu_Liu_2012`, `4_PE_EnergyIntensity_AluminiumCycle_Liu_2012`, `4_PY_FabricationYield_Alu_Liu_2012`, `4_PY_FabricationYield_Cullen2012`, `4_PY_FabricationYield_Dahlstroem2004`, `4_PY_FabricationYield_Hatayama2010`, `4_PY_WorldSteel_EoL_RR_SteelScrap`, `5_CAP_PowerGenCapacity_Germany_2018`, `6_MSC_Wood_buildings_Höglmeier_2015`, `6_MSC_Wood_buildings_Pingoud_2000`, `6_PCS_Buildings_Europe_2008_Enerdata`, `6_PCS_Buildings_Indonesia_1985`, `6_PCS_Buildings_Indonesia_BPS_2008_2015`, `6_PCS_Buildings_Indonesia_Surahman_2014`, `6_PCS_Buildings_USA_MOURA_2015`, '1_F_IOT_UK_2010_pxp_Y', '1_F_IOT_UK_2010_pxp_Z', '1_F_IOT_UK_2010_pxp_e', '1_F_IOT_UK_2010_pxp_i', '1_F_IOT_UK_2010_pxp_v', '1_F_IOT_UK_2010_pxp_x', '1_F_WIO_Japan_Nakamura_Kondo_2002', '1_F_Waste_EXIOBASE2_Global_aggregated', '2_IUS_Vehicles_AllCountries_OICA_2017', '2_P_UN_WPP_Future_2100', '2_P_UN_WPP_Historic_2015', '3_IUP_Vehicles_9Countries_Dhaniati_2012', '3_LT_MaTraceGlobal_Pauliuk_2017', '3_MC_Buildings_Indonesia_Surahman_2014', '6_PCS_Vehicles_12Countries_Dhaniati_2012'
