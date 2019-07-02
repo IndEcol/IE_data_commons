@@ -33,7 +33,7 @@ File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`.
     - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
     - Uploaded.
 
-### Pending
+### Pending
 
 - `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
 - `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016.xlsx` cannot be included, because aspect 1 (energy does not exist).  https://github.com/IndEcol/IE_data_commons/issues/23
