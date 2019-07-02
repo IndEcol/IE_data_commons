@@ -5,39 +5,44 @@ File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`.
 
 ## 30. June 2019
 
+### Done
+
 - `2_P_SSP_Database_32R_Future.xlsx`
   - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
   - Uploaded.
-- `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016.xlsx` cannot be included, because aspect 1 (energy does not exist).  https://github.com/IndEcol/IE_data_commons/issues/23
 - `3_MC_Buildings_China_Huang_2015.xlsx` uploaded.
 - `1_F_PPPGDP_SSP_Database_32R_History`
     - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
     - Uploaded.
-- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1` postponed until https://github.com/IndEcol/IE_data_commons/issues/21 is resolved.
 - `6_SHA_Urbanisation_SSP_Database_32R_History`
     - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
     - Uploaded.
 - `6_SHA_Urbanisation_SSP_Database_32R_Future`
     - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
     - Uploaded.
-- `6_MIP_SI.POV.GINI_WorldBank_2019.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
 - `2_P_SSP_Database_32R_History.xlsx`
     - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
     - Uploaded.
-- `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
 - `1_F_PPPGDP_SSP_Database_32R_Future.xlsx`
     - Changed the value for `dataset_version` from "*SSP Public Database (Version 1.1)*" to "*SSP Public Database (Ver 1.1)*". See also issue https://github.com/IndEcol/IE_data_commons/issues/22
-    - Uploaded.
-- `6_IMI_EU_Regional_Carbon_Footprint_Ivanova_2017.xlsx`
-    - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
-    - Unit "cap" is not defined. 
-    - Postponed until  https://github.com/IndEcol/IE_data_commons/issues/23 is resolved.
-- `6_IMI_Global_Household_EnvFootprints_Ivanova_2016.xlsx`
-    - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
     - Uploaded.
 - `1_F_BuildingConstruction_HU_2010.xlsx` uploaded.
 - `4_PE_EnergyIntensity_MaterialProduction_Hertwich_2015.xlsx`uploaded.
 - `6_PCS_ResidentialBuildings_Canada.xlsx`uploaded.
+- `6_IMI_Global_Household_EnvFootprints_Ivanova_2016.xlsx`
+    - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
+    - Uploaded.
+
+### Pending
+
+- `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
+- `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016.xlsx` cannot be included, because aspect 1 (energy does not exist).  https://github.com/IndEcol/IE_data_commons/issues/23
+- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1` postponed until https://github.com/IndEcol/IE_data_commons/issues/21 is resolved.
+- `6_MIP_SI.POV.GINI_WorldBank_2019.xlsx` postponed until https://github.com/IndEcol/IE_data_commons/issues/23 is fixed
+- `6_IMI_EU_Regional_Carbon_Footprint_Ivanova_2017.xlsx`
+    - Renamed sheets "Unit_denom" to "Unit_denominator" and "Unit_nominator" to "Unit_nominator"
+    - Unit "cap" is not defined. 
+    - Postponed until  https://github.com/IndEcol/IE_data_commons/issues/23 is resolved.
 
 
 ## 15. Feb 2019
