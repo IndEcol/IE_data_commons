@@ -3,6 +3,33 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 19. July 2019
+
+- `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016` could not be uploaded because it caused the following error: 
+
+    > aspect_2 electricity generation from nuclear reactors 6 not in classification_items
+    > aspect_2 electricity generation from renewable sources 6 not in classification_items
+    > aspect_2 electricity generation, total 6 not in classification_items
+
+    - Updated https://github.com/IndEcol/IE_data_commons/issues/23
+
+- `6_MIP_SI.POV.GINI_WorldBank_2019` 
+
+    - uploaded successfully
+    - *Needs further attention:* https://github.com/IndEcol/IE_data_commons/issues/23#issuecomment-507737192
+
+- `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018` not uploaded and caused the following error:
+
+    > aspect_5 industry 6 not in classification_items
+    > aspect_5 transport 6 not in classification_items
+    > aspect_5 residential 6 not in classification_items
+    > aspect_5 other (commercial and public services, agriculture/forestry, fishing and non-specified) 6 not in classification_items
+    > aspect_5 non-energy use 6 not in classification_items
+
+    - Updated https://github.com/IndEcol/IE_data_commons/issues/23
+
+- `6_IMI_EU_Regional_Carbon_Footprint_Ivanova_2017` uploaded successfully
+
 ## 30. June 2019
 
 ### Done
