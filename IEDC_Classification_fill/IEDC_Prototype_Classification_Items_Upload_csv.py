@@ -44,8 +44,8 @@ attribute14_anc,\
 attribute15_anc) Values(\
 %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -80,8 +80,8 @@ for filename in f:
                     else:
                         D.append(cols[m])
                 # Add data into db:
-                cur.execute(SQL,(D[0],D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
-                         D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18]))
+#                cur.execute(SQL,(D[0],D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
+#                         D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18]))
                 print(D[4])
                 
             

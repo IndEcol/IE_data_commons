@@ -179,10 +179,57 @@ cur = conn.cursor()
 #SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('time_frame','indicates time periods or time frames, quantitative and qualitative, for data and indicators',1,'P','Period')"
 #cur.execute(SQL)
 
+### 12./13.11.2019
+## Add new uncertainty options to stats_array
+#cur.execute("INSERT INTO stats_array (name, description, loc) VALUES ('ca. value','data point flagged as ca. value without quantitative uncertainty estimate','ca. value')") 
+## New data types
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Stock change','change in stock (net addition, withdrawal, disposal, …)',2,'DS')"
+#cur.execute(SQL)
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Urban metabolism indicators','various indicators of urban metabolism, extensive, intensive.',6,'URB')"
+#cur.execute(SQL)
+## Fix typo in unit table:
+#cur.execute("UPDATE units SET unit_name = 'million cubic meters' WHERE id = 94")
+## add licence
+#SQL = "INSERT INTO licences (id,name,description) VALUES (13,'Copyright CSIRO','Copyright CSIRO	License information provided for datasets made available by CSIRO')"
+#cur.execute(SQL)
+## Add new units
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (4,'PJ','Petajoule',1000000000000000000)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (9,'mm','millimeter',0.001)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (3,'CDD','cooling degree days',86400)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'MEUR1995','million Euro 1995')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (6,'ha','hectare',10000)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (3,'person*day','person-day',86400)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Chinese yuan','Chinese yuan')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'US dollars, 2010','US dollars, 2010')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'MUSD','million US dollars')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Argentinian pesos','Argentinian pesos')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Indian rupee','Indian rupee')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'USD','US Dollars')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Nigerian naira','Nigerian naira')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'GBP pounds, 2010','British pounds, 2010')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Philippine pesos','Philippine pesos')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Mexican pesos','Mexican pesos')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'EUR','Euro')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Korean won','Korean won')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'Iranian rial','Iranian rial')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'t_CO2-eq','tonnes of CO2-equivalents',1000)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (3,'Ml','Million litres',1000)")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (2,'kt BOD','kiloton of biochemical oxygen demand (wastewater indicator)')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (2,'kt COD','kiloton of chemical oxygen demand (wastewater indicator)')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (3,'person*yr','person-year')")
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (13,'GBq','gigabequerel',1000000000)")
+
+
+
+
 
 ## close connection
 cur.close()
 conn.close()
+
+
+
+
 #
 #    
 #    
