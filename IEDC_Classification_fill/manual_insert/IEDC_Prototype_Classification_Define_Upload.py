@@ -22,8 +22,8 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
 
-ClassList   = ['36_Literature','37_YSTAFDB_criticality_regional_scope','38_YSTAFDB_Materials','39_YSTAFDB_criticality_timeframe','40_YSTAFDB_criticality_indicators','41_YSTAFDB_material_groups','42_YSTAFDB_use_phase_layer','43_YSTAFDB_UsePhase_Applications','44_YSTAFDB_Time','45_YSTAFDB_Region','46_YSTAFDB_Commodities','48_StockChangeLayers','49_Wood_MFA_Indonesia_Aryapratama_2019_processes'] # List of filenames for classifications to be added.
-ClassIDList = [36,37,38,39,40,41,42,43,44,45,46,48,49]
+ClassList   = ['47_YSTAFDB_Processes'] # List of filenames for classifications to be added.
+ClassIDList = [47]
 
 
 # Define mySQL commands for classification
@@ -80,7 +80,7 @@ attribute15_anc) Values(\
 %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 

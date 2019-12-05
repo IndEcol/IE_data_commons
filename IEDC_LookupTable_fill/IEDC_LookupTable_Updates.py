@@ -219,9 +219,10 @@ cur = conn.cursor()
 #cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (3,'person*yr','person-year')")
 #cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (13,'GBq','gigabequerel',1000000000)")
 
-
-
-
+## 4.12.19
+## Add new layer
+SQL = "INSERT INTO layers (name,description) VALUES ('Radioactivity','activity of a quantity of radioactive material')"
+cur.execute(SQL)
 
 ## close connection
 cur.close()
