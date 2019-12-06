@@ -1,0 +1,55 @@
+# Documentation of the conversion of the YSTAFDB v1.0 datasets, as published in Feb 2019.
+Uploaded to IEDC in Dec. 2019.
+
+1. All datasets were downloaded from Zenodo and archived locally, then converted from csv to xlsx using MS Excel csv import.
+https://zenodo.org/record/2561882#.XeFljCBCdB8 
+
+2. A datagroup for the YSTAFDB and a number of classifications were created in the IEDC, the latter by copy-pasting the time, region, process, etc. columns and using Excel's "remove duplicate" feature to create lists with unique entries, which then form the classification items.
+
+3. The files Criticality and Recycling_Shares were converted manually to the IEDC parameters
+4_PY_YSTAFDB_EoL_RecoveryRate_v1.0
+6_CR_YSTAFDB_criticality_2019_v21.0
+6_CR_YSTAFDB_criticality_ei_2019_v1.0
+6_CR_YSTAFDB_criticality_sr_2019_v1.0
+6_CR_YSTAFDB_criticality_vsr_2019_v1.0
+6_MIP_YSTAFDB_MetalUseShares_v1.0
+cf. documentation in these parameter files.
+
+4. Flows.csv
++ converted with script YSTAFDB_Flowextract.py
++ loaded directly from .csv
++ Entries with mass fraction > 1 are replaced by a mass fraction of 1 in the upload script. Those values look like the result of an Excel drag and drop mistake.
++ For 52 entries for Tungsten, the subsystem code is lacking in the destination process label: 55.ENV.T.9;9. The Subsystem code 5;1 was inserted for these 52 entries.
++ Quantity field is multiplied with concentration field to calculate mass fraction indicating mass of material in commodity. The result is inserted in to the database, and the mass fraction parameter is kept as part of the comment field.
++ 3075 flow entries could not be inserted because their process labels could not be parsed (no corresponding entry in the hierarchy table). This may be due to a misunderstanding of the process label coding, for example:
+
+58.F&M.2;1;2;4'.T.7;7_58.F&M.2;1;2;4'.D.8;8
+hierarchy 58 (Zn) has only process number 1,2, and 3 for subsystem code 2;1;2;4'
+
+58.USE.3;1'';1.D.12;12
+hierarchy 58 (Zn) has only process number 1,2,3,4 and 5 for subsystem code 3;1'';1
+
+1.PEM.1;1;1;2';2'.D.4;4
+hierarchy 1 (Ag) does not contain subsystem code 1;1;1;2';2' for PEM
+
+17.USE.3;1''';2.T.1;1
+hierarchy 17 (Fe) subsystem 3;1''';2 has only one process code, which is 2.
+
+
+5. Crossboundary flows.csv
++ converted with script YSTAFDB_Tradeextract.py
++ For 26 entries for Tungsten, the destination code is lacking in the destination process label: 55.PEM.1;1;1;1.D.2;2. The destination process label was added as follows:
+55.PEM.1;1;1;1.D.2;2_55.PEM.1;1;1;1.D.2;2
+
+
+6. Processes/Stocks: from processes.csv
++ converted with script YSTAFDB_Stockextract.py
++ In the stocks table, a number of entries (530) is reported as 'mass fraction (w/w)' without a specific unit (% are likely). 
++ Some of these stock data have mass fraction (w/w) as their main unit, and value > 1, e.g., 26 for process_id 344
+or just a  mass fraction of 1 without a stock value, e.g., process id 796
+--> Since there already is a end-use sector split dataset, these data are not included.
++ one chromium stock has no value and no unit but a residual value in Gg. Changed value to 0 and unit to Gg, to follow pattern for similar entries.
++ Stock Pb (Lead)	1991	Austria; Vienna	inside	use (USE)	aggregate use	35.USE.3.T.1;1  has unit Tg but uncertainty unit g. The latter was changed to Tg by the script (it is the only g unit for uncertainty). 
+
+
+
