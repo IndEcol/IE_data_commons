@@ -3,6 +3,15 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 15. Dec. 2019
+
+- `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016` uploaded successfully
+- `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018` uploaded successfully
+- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1.1` not uploaded 
+    - `dataset_size` and `comment` must have values
+    - Waiting for [feedback](https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-565851165)
+- `6_MIP_SI.POV.GINI_WorldBank_2019` not uploaded because there may be a [misunderstanding](https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-565851165) and I wait for feedback. Also this dataset will have to be removed from the DB again.
+
 ## 19. July 2019
 
 - `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016` could not be uploaded because it caused the following error: 
