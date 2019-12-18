@@ -221,8 +221,9 @@ cur = conn.cursor()
 
 ## 4.12.19
 ## Add new layer
-SQL = "INSERT INTO layers (name,description) VALUES ('Radioactivity','activity of a quantity of radioactive material')"
-cur.execute(SQL)
+#SQL = "INSERT INTO layers (name,description) VALUES ('Radioactivity','activity of a quantity of radioactive material')"
+#cur.execute(SQL)
+#cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (3,'HDD','heating degree days',86400)")
 
 ## close connection
 cur.close()
