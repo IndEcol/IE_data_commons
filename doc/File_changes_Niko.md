@@ -3,6 +3,48 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 18. Dec. 2019
+
+- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1.1`
+    - Changed value for `dataset_size` to 1.
+    - Renamed sheet'comment' to 'Comment'
+    - Added question in issue https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-567078634
+    - Uploaded successfully
+- `6_MIP_SI.POV.GINI_WorldBank_2019` deleted & uploaded successfully
+- Moved LIST type files to ../NEW_LIST_2, i.e. 4_PY_YSTAFDB_EoL_RecoveryRate_v1.0.xlsx, 6_MIP_YSTAFDB_MetalUseShares_v1.0.xlsx, 6_URB_MetabolismOfCities_Jan2019_DOI_7326485.v1.xlsx
+- `6_MIP_YSTAFDB_MetalUseShares_v1.0` 
+    - has an issue: https://github.com/IndEcol/IE_data_commons/issues/24
+    - *skipping for now*
+- `6_CR_YSTAFDB_criticality_2019_v1.0`
+    - Fixed classification names in Cover!F12:H14
+    - 'Data layer' in Cover!D10 must be fixed
+    - *skipping for now*
+- `6_CR_YSTAFDB_criticality_ei_2019_v1.0.xlsx`
+    - Fixed classification names in Cover!F12:H14
+    - 'Data layer' in Cover!D10 must be fixed
+    - *skipping for now*
+- `1_F_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
+- `3_LT_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
+- `6_CR_YSTAFDB_criticality_sr_2019_v1.0`
+    - classification names in Cover!F12:H14 need to be fixed
+    - 'Data layer' in Cover!D10 must be fixed
+    - *skipping for now*
+- `6_CR_YSTAFDB_criticality_vsr_2019_v1.0` see above. *Skipping for now*.
+-  `6_MIP_YSTAFDB_MetalUseShares_v1.0` see above. *Skipping for now*.
+- `1_F_UN_Global_Material_Flows_Database`
+- `2_IUS_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
+- See all other changes in https://github.com/IndEcol/IE_data_commons/issues/24
+
+
+## 15. Dec. 2019
+
+- `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016` uploaded successfully
+- `1_F_FinalEnergyConsumption_TFC_ByCountryAndSector_IEA_2018` uploaded successfully
+- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1.1` not uploaded 
+    - `dataset_size` and `comment` must have values
+    - Waiting for [feedback](https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-565851165)
+- `6_MIP_SI.POV.GINI_WorldBank_2019` not uploaded because there may be a [misunderstanding](https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-565851165) and I wait for feedback. Also this dataset will have to be removed from the DB again.
+
 ## 19. July 2019
 
 - `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016` could not be uploaded because it caused the following error: 
