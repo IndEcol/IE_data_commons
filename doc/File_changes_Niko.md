@@ -10,8 +10,28 @@ File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`.
     - Renamed sheet'comment' to 'Comment'
     - Added question in issue https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-567078634
     - Uploaded successfully
-
 - `6_MIP_SI.POV.GINI_WorldBank_2019` deleted & uploaded successfully
+- Moved LIST type files to ../NEW_LIST_2, i.e. 4_PY_YSTAFDB_EoL_RecoveryRate_v1.0.xlsx, 6_MIP_YSTAFDB_MetalUseShares_v1.0.xlsx, 6_URB_MetabolismOfCities_Jan2019_DOI_7326485.v1.xlsx
+- `6_MIP_YSTAFDB_MetalUseShares_v1.0` 
+    - has an issue: https://github.com/IndEcol/IE_data_commons/issues/24
+    - *skipping for now*
+- `6_CR_YSTAFDB_criticality_2019_v1.0`
+    - Fixed classification names in Cover!F12:H14
+    - 'Data layer' in Cover!D10 must be fixed
+    - *skipping for now*
+- `6_CR_YSTAFDB_criticality_ei_2019_v1.0.xlsx`
+    - Fixed classification names in Cover!F12:H14
+    - 'Data layer' in Cover!D10 must be fixed
+    - *skipping for now*
+- `1_F_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
+- `3_LT_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
+- `6_CR_YSTAFDB_criticality_sr_2019_v1.0`
+    - classification names in Cover!F12:H14 need to be fixed
+    - 'Data layer' in Cover!D10 must be fixed
+    - *skipping for now*
+- `6_CR_YSTAFDB_criticality_vsr_2019_v1.0` see above. *Skipping for now*.
+- `1_F_UN_Global_Material_Flows_Database`
+- `2_IUS_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
 
 
 ## 15. Dec. 2019
