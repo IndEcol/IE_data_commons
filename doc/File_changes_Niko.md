@@ -3,6 +3,17 @@
 Documenting changes and progress Niko while developping [IEDC_tools](https://github.com/IndEcol/IEDC_tools). 
 File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`. 
 
+## 18. Dec. 2019
+
+- `3_MC_Buildings_Heeren_Fishman_ScientificData_2019_V1.1`
+    - Changed value for `dataset_size` to 1.
+    - Renamed sheet'comment' to 'Comment'
+    - Added question in issue https://github.com/IndEcol/IE_data_commons/issues/21#issuecomment-567078634
+    - Uploaded successfully
+
+- `6_MIP_SI.POV.GINI_WorldBank_2019` deleted & uploaded successfully
+
+
 ## 15. Dec. 2019
 
 - `1_F_ElectricityGeneration_IEA_HeadlineEnergyData_2016` uploaded successfully
