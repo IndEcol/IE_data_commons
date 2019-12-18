@@ -30,6 +30,8 @@ File changes refer to the folder `IE_Data_Commons_Prototype/Data_ODYM_Format`.
     - 'Data layer' in Cover!D10 must be fixed
     - *skipping for now*
 - `6_CR_YSTAFDB_criticality_vsr_2019_v1.0` see above. *Skipping for now*.
+-  `6_MIP_YSTAFDB_MetalUseShares_v1.0` see above. *Skipping for now*.
+
 - `1_F_UN_Global_Material_Flows_Database`
 - `2_IUS_Wood_Carbon_MFA_Indonesia_Aryapratama_2019` successfully uploaded
 
