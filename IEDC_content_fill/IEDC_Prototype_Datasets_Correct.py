@@ -42,8 +42,50 @@ cur = conn.cursor()
 ## Add description of 4 sector steel consumption dataset 211:
 #cur.execute("UPDATE datasets SET comment = 'only nonzero values are reported!' WHERE id = 211")    
 
+## 19.12.2019
+## Add system definition to YSTAFDB
+#cur.execute("UPDATE datagroups SET system_definition_picture = 'YSTAFDB_WholeSystem.png' WHERE id = 10")    
+
+## 6.1.2020
+## Change DOI for all YSTAFDB-datasets to the paper:
+#cur.execute("UPDATE datagroups SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 10")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 233")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 234")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 235")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 236")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 237")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 238")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 239")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 240")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 241")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 242")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 243")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 244")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 247")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 248")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 249")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 250")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 251")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 252")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 253")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 254")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 255")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 256")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 257")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 281")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 284")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 285")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 287")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 290")    
+#cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 292")    
+
+
 
 # 4) close connection
 cur.close()
 conn.close()
 
+
+
+
+#

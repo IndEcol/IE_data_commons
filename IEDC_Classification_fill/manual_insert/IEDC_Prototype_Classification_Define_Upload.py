@@ -9,7 +9,7 @@ import pymysql
 import datetime
 import numpy as np
 from os import walk, path
-import xlrd
+import openpyxl
 from datetime import date, timedelta
 import csv
 
@@ -22,8 +22,8 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
 
-ClassList   = ['47_YSTAFDB_Processes'] # List of filenames for classifications to be added.
-ClassIDList = [47]
+ClassList   = ['IEDC_73_MFA13'] # List of filenames for classifications to be added.
+ClassIDList = [73]
 
 
 # Define mySQL commands for classification
@@ -80,26 +80,26 @@ attribute15_anc) Values(\
 %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
 for m in range(0,len(ClassList)):
     ClassFilePath = path.join(path.join(IEDC_Paths.Class_ItemPath,'manual_insert'),ClassList[m] + '.xlsx')
-    ClassFile = xlrd.open_workbook(ClassFilePath)
-    ClassDefsheet = ClassFile.sheet_by_name('Definition')
+    ClassFile = openpyxl.load_workbook(ClassFilePath, data_only=True)
+    ClassDefsheet = ClassFile['Definition']
 
-    C_id       = int(ClassDefsheet.cell_value(1,1))
-    C_name     = ClassDefsheet.cell_value(2,1)
-    C_Dim      = int(ClassDefsheet.cell_value(3,1))
+    C_id       = int(ClassDefsheet.cell(2,2).value)
+    C_name     = ClassDefsheet.cell(3,2).value
+    C_Dim      = int(ClassDefsheet.cell(4,2).value)
     OtherItems = [] 
     for n in range(0,24):
-        if ClassDefsheet.cell_value(4+n,1) == 'True':
+        if ClassDefsheet.cell(5+n,2).value == 'True':
             OtherItems.append(1)
-        elif ClassDefsheet.cell_value(4+n,1) == 'False':
+        elif ClassDefsheet.cell(5+n,2).value == 'False':
             OtherItems.append(0)                        
-        elif ClassDefsheet.cell_value(4+n,1) != '':
-            OtherItems.append(ClassDefsheet.cell_value(4+n,1))            
+        elif ClassDefsheet.cell(5+n,2).value != '':
+            OtherItems.append(ClassDefsheet.cell(5+n,2).value)            
         else:
             OtherItems.append(None)
 
@@ -109,19 +109,12 @@ for m in range(0,len(ClassList)):
                          OtherItems[16],OtherItems[17],OtherItems[18],OtherItems[19],OtherItems[20],OtherItems[21],OtherItems[22],OtherItems[23]))
 
     # Read items, take attribute1_oto as reference:
-    ClassItemsheet = ClassFile.sheet_by_name('Items')
+    ClassItemsheet = ClassFile['Items']
     n = 1
-    while True:
-        try:
-            ThisItem = ClassItemsheet.cell_value(n,5)
-        except:
-            break # break
+    while ClassItemsheet.cell(n+1,6).value:
         Items = []
         for o in range(0,18):
-            if ClassItemsheet.cell_value(n,o+2) != '':
-                Items.append(ClassItemsheet.cell_value(n,o+2))            
-            else:
-                Items.append(None)    
+            Items.append(ClassItemsheet.cell(n+1,o+3).value)            
         # insert classification item                
         cur.execute(SQLI,(C_id,Items[0],Items[1],Items[2],Items[3],Items[4],Items[5],Items[6],Items[7],Items[8],Items[9],Items[10],\
                          Items[11],Items[12],Items[13],Items[14],Items[15],Items[16],Items[17]))
@@ -149,9 +142,10 @@ for m in range(0,len(ClassList)):
 #cur.execute("SELECT * FROM classification_items WHERE classification_id =%s",(Value))
 #for row in cur:
 #    print(row)  
-#    
-#    
-    
+#
+#Value = 60 
+#cur.execute("DELETE FROM classification_items WHERE classification_id =%s",(Value))    
+#cur.execute("DELETE FROM classification_definition WHERE id =%s",(Value))       
 
 # Close connection
 cur.close()

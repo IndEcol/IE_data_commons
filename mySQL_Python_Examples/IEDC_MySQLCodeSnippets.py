@@ -144,6 +144,10 @@ cur.execute("SELECT count(*) FROM classification_items WHERE classification_id =
 for row in cur:
     print(row) 
     
+cur.execute("SELECT * FROM classification_definition WHERE id = 2")
+for row in cur:
+    print(row)     
+    
 cur.execute("SELECT attribute1_oto FROM classification_items  WHERE classification_id = 25")
 for row in cur:
     print(row)
@@ -155,6 +159,10 @@ for row in cur:
 cur.execute("SELECT unit_denominator FROM data WHERE dataset_id = 112")
 for row in cur:
     print(row)      
+    
+cur.execute("SELECT * FROM data WHERE dataset_id = 195 AND aspect1 = 6094")
+for row in cur:
+    print(row)     
     
 #cur.execute("UPDATE data SET unit_denominator = 1 WHERE dataset_id = 112") 
 # Change auto_increment    
