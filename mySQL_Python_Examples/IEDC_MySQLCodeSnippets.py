@@ -120,10 +120,17 @@ cur.execute("SELECT COUNT(*) FROM data WHERE dataset_id = 420")
 for row in cur:
     print(row)   
     
+cur.execute("SELECT COUNT(*) FROM data WHERE aspect7 = 5987") # search for wrong entry for Kosovo 3 digit code
+for row in cur:
+    print(row)     
+    
+cur.execute("SELECT DISTINCT dataset_id FROM data WHERE aspect6 = 5987") # search for wrong entry for Kosovo 3 digit code
+for row in cur:
+    print(row)     
+    
 cur.execute("SELECT COUNT(*) FROM classification_definition")
 for row in cur:
     print(row)       
-    
     
 cur.execute("SELECT * FROM data WHERE id = 722907")
 for row in cur:
@@ -161,6 +168,10 @@ for row in cur:
     print(row)      
     
 cur.execute("SELECT * FROM data WHERE dataset_id = 195 AND aspect1 = 6094")
+for row in cur:
+    print(row)     
+
+cur.execute("SELECT * FROM datasets WHERE id = 69")
 for row in cur:
     print(row)     
     

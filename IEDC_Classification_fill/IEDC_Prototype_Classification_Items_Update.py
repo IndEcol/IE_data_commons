@@ -291,6 +291,12 @@ cur = conn.cursor()
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'petroleum' WHERE attribute1_oto = 'reserved_72' AND classification_id = 4")
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'wild catch and harvest' WHERE attribute1_oto = 'reserved_73' AND classification_id = 4")
 
+###3.8.21
+## Classfs. 2: Fix duplicate and incorrect entry for Kosovo 3digit code: from 780 to 10018
+#cur.execute("UPDATE classification_items SET attribute4_oto = 10018 WHERE id = 5987")
+
+
+
 # Close connection
 cur.close()
 conn.close()

@@ -79,11 +79,62 @@ cur = conn.cursor()
 #cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 290")    
 #cur.execute("UPDATE datasets SET suggested_citation = 'DOI 10.1038/s41597-019-0085-7' WHERE id = 292")    
 
+#1.8.21
+# Delete dataset values for 195 and 196, as they were uploaded with mistakes using old version of iedc_tools. 
+# New upload will be done with up to data iedc_tools
+#cur.execute("DELETE FROM data WHERE dataset_id = 195") 
+#cur.execute("DELETE FROM data WHERE dataset_id = 196")
 
+#3.8.21
+'''
+Fix mismatch of region class. 2 for attribute4_oto: code 780 is for Trinidad and not Kosovo!
+IEDC bug fix: 780 Kosovo and Trinidad before class. 2 fix (now: 10018 for Kosovo)
+Bug fix: 780 country code was twice. Check all datasets with that entry and move, if necessary and where applicable: for all aspects: change classfication id 5987 to 6096 (Kosovo->Trinidad)
+All global steel cycle (Pauliuk 2013) data are affected.
+'''
+# cur.execute("SELECT DISTINCT dataset_id FROM data WHERE aspect7 = 5987") # search for possibly wrong entry for Kosovo 3 digit code
+# for row in cur:
+#     print(row)     
+# Dataset ids found:    
+#aspect 1: 2: global steel cycle (Pauliuk 2013) data, only has Trinidad and no Kosovo data: change classfication id 5987 to 6096 (Kosovo->Trinidad)
+#cur.execute("UPDATE data SET aspect1 = 6096 WHERE aspect1 = 5987 AND dataset_id = 2") 
+#aspect 2: 270 ( 6_MIP_SI.POV.GINI_WorldBank_2019 ): OK! Matching was done via attribute3_oto
+#aspect 3: None 
+#aspect 4: [70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,96,98,100,102,104,106,108,110,211]: global steel cycle (Pauliuk 2013) data, only has Trinidad and no Kosovo data: change classfication id 5987 to 6096 (Kosovo->Trinidad)
+# for m in [70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,96,98,100,102,104,106,108,110,211]: # all are global steel (Pauliuk 2013) datasets, has T&T but no Kosovo, must be wrong and is therefore changed:
+#     cur.execute("UPDATE data SET aspect4 = 6096 WHERE aspect4 = 5987 AND dataset_id = %s",(m))  
+#     print("UPDATE data SET aspect4 = 6096 WHERE aspect4 = 5987 AND dataset_id = %s",(m))  
+#aspect 5: [59,66,67,68,69,]: 2_IUS_steel_200R_4Categories // 2_IUS_steel_200R // 2_S_steel_200R_Slag // 2_S_steel_200R_Obsolete // 2_S_steel_200R_Landfills
+# for m in [59,66,67,68,69,]: # all are global steel (Pauliuk 2013) datasets, has T&T but no Kosovo, must be wrong and is therefore changed:
+#     cur.execute("UPDATE data SET aspect5 = 6096 WHERE aspect5 = 5987 AND dataset_id = %s",(m))  
+#     print("UPDATE data SET aspect5 = 6096 WHERE aspect5 = 5987 AND dataset_id = %s",(m))  
+#aspect 6: [70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,97,99,101,103,105,107,109,211]: global steel cycle (Pauliuk 2013) data, only has Trinidad and no Kosovo data: change classfication id 5987 to 6096 (Kosovo->Trinidad)
+# for m in [70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,97,99,101,103,105,107,109,211]: # all are global steel (Pauliuk 2013) datasets, has T&T but no Kosovo, must be wrong and is therefore changed:
+#     cur.execute("UPDATE data SET aspect6 = 6096 WHERE aspect6 = 5987 AND dataset_id = %s",(m))  
+#     print("UPDATE data SET aspect6 = 6096 WHERE aspect6 = 5987 AND dataset_id = %s",(m))  
+#aspect 7+: None
+
+#counter-search for Trinidad:
+# cur.execute("SELECT DISTINCT dataset_id FROM data WHERE aspect7 = 6096") # search for possibly wrong entry for Trinidad 3 digit code
+# for row in cur:
+#     print(row)     
+# Dataset ids found BEFORE change:
+#aspect 1: 195,196: correct! Was uploaded with distinct ids for Kosovo and Trinidad, those datasets triggered the whole process. 
+#aspect 2: 191: 1_F_NewPassengerVehicleRegistration_AllCountries_OICA_2017: OK! contains data for T&T but not for Kosovo, 194: 2_IUS_Vehicles_AllCountries_OICA_2017: OK! contains data for T&T but not for Kosovo, 270: 6_MIP_SI.POV.GINI_WorldBank_2019: OK! Matching was done via attribute3_oto
+#aspect 3+: None
+
+# Dataset ids found BEFORE change:
+#aspect 1: 2, 195,196: OK!
+#aspect 2: 191: 1_F_NewPassengerVehicleRegistration_AllCountries_OICA_2017: OK! contains data for T&T but not for Kosovo, 194: 2_IUS_Vehicles_AllCountries_OICA_2017: OK! contains data for T&T but not for Kosovo, 270: 6_MIP_SI.POV.GINI_WorldBank_2019: OK! Matching was done via attribute3_oto
+#aspect 3: None
+#aspect 4: Same as prev. aspect 4 search for Kosovo id
+#aspect 5: Same as prev. aspect 5 search for Kosovo id
+#aspect 6: Same as prev. aspect 6 search for Kosovo id
+#aspect 7+: None
 
 # 4) close connection
-cur.close()
-conn.close()
+# cur.close()
+# conn.close()
 
 
 
