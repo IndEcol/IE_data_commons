@@ -1,0 +1,12 @@
+id;classification_id;parent_id;description;reference;attribute1_oto;attribute2_oto;attribute3_oto;attribute4_oto;attribute5_anc;attribute6_anc;attribute7_anc;attribute8_anc;attribute9_anc;attribute10_anc;attribute11_anc;attribute12_anc;attribute13_anc;attribute14_anc;attribute15_anc
+1;24;;;;North America (USA and Canada);;;;;;;;;;;;;;
+2;24;;;;Latin America (the entire Americas without the US and Canada);;;;;;;;;;;;;;
+3;24;;;;Western Europe (all European countries which have not been part of the former Soviet Union, not Turkey and Cyprus);;;;;;;;;;;;;;
+4;24;;;;Commonwealth of Independent States (CIS) and other states that were part of the Soviet Union;;;;;;;;;;;;;;
+5;24;;;;Africa;;;;;;;;;;;;;;
+6;24;;;;Middle East, including Turkey and Cyprus;;;;;;;;;;;;;;
+7;24;;;;India;;;;;;;;;;;;;;
+8;24;;;;China;;;;;;;;;;;;;;
+9;24;;;;Developed Asia and Oceania: Japan, South Korea, Australia, New Zealand;;;;;;;;;;;;;;
+10;24;;;;Developing Asia and Oceania;;;;;;;;;;;;;;
+11;24;;;;Global;;;;;;;;;;;;;;

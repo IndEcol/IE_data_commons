@@ -31,7 +31,7 @@ for m in range(1,AI):
         print(Ts)
         cur.execute("UPDATE datasets SET dataset_size = %s WHERE id = %s",(Ts,m)) 
 
-## Close connection
+# Close connection
 cur.close()
 conn.close()
 #

@@ -99,7 +99,7 @@ for row in cur:
 #cur.execute("DELETE FROM classification_items")    
 #cur.execute("ALTER TABLE classification_items AUTO_INCREMENT = 1")
     
-#    FilePath = 'C:\\Users\\spauliuk\\FILES\\ARBEIT\\PROJECTS\\Database\\IE_DataCommons\\Software\\IEDC_Classification_fill\\generic_materials_waste_data.csv'    
+#    FilePath = 'Insert_My_File_Path_Here'    
 
 # Extra: Add leading 0 where missing for classification NACEv2 (id = 5)
 #cur.execute("SELECT COUNT(*) FROM classification_items WHERE classification_id = 5 AND LENGTH(attribute1_oto) = 7")

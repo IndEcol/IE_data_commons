@@ -237,12 +237,12 @@ conn.commit()
 
 # Create new read only user
 '''
-CREATE USER 'iedc_guest'@'www.industrialecology.uni-freiburg.de' IDENTIFIED BY '...';
-GRANT ALL ON iedc.* TO 'iedc_guest'@'www.industrialecology.uni-freiburg.de';
+CREATE USER 'sample_user'@'www.industrialecology.uni-freiburg.de' IDENTIFIED BY '...';
+GRANT ALL ON iedc.* TO 'sample_user'@'www.industrialecology.uni-freiburg.de';
 FLUSH PRIVILEGES;
 
-CREATE USER 'iedc_guest'@'%' IDENTIFIED BY '...';
-GRANT ALL ON iedc.* TO 'iedc_guest'@'%';
+CREATE USER 'sample_user'@'%' IDENTIFIED BY '...';
+GRANT ALL ON iedc.* TO 'sample_user'@'%';
 FLUSH PRIVILEGES;
 '''
 

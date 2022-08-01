@@ -32,7 +32,7 @@ system_id = 2
 stock_dataset_number = 1
 Process_id = 1
 
-FilePath = 'C:\\Users\\spauliuk\\FILES\\ARBEIT\\PROJECTS\\Database\\IndEcolFreiburg_Database\\CSVexport_SteelCycle_Population\\P1_D.csv'
+FilePath = 'Insert_Path_Here'
 lines = open(FilePath,'r').read().split('\n')
 for line in lines:
     if line != '':
