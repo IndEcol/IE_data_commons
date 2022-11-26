@@ -8,7 +8,6 @@ The purpose of this script is to scan the entire dataset table and for each entr
 """
 
 import pymysql
-import datetime
 import IEDC_PW
 
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
@@ -22,7 +21,7 @@ for row in cur:
     if row[0] == 'datasets':
         AI = row[1]
 
-AI = 300
+AI = 310
 # Get dataset size and update datasets entry:        
 for m in range(1,AI):
     cur.execute("SELECT count(*) FROM data WHERE dataset_id = %s",m)

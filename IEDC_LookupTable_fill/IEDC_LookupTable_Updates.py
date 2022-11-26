@@ -10,8 +10,8 @@ import datetime
 import IEDC_PW
 
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -24,9 +24,9 @@ cur = conn.cursor()
 #cur.execute("UPDATE units SET unitcode = 'µWs' WHERE unitcode = 'æWs'") 
 #cur.execute("UPDATE units SET unitcode = 'µJ' WHERE unitcode = 'æJ'") 
 #
-#cur.execute("SELECT * FROM units")
-#for row in cur:
-#    print(row)
+cur.execute("SELECT * FROM licences")
+for row in cur:
+    print(row)
 
 
 #cur.execute("SELECT * FROM stats_array")
@@ -224,6 +224,35 @@ cur = conn.cursor()
 #SQL = "INSERT INTO layers (name,description) VALUES ('Radioactivity','activity of a quantity of radioactive material')"
 #cur.execute(SQL)
 #cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (3,'HDD','heating degree days',86400)")
+
+## 25.11.2022
+# add SSP_Database_license:
+# SQL = "INSERT INTO licences (id,name,description) VALUES (14,'© by the International Society for Industrial Ecology','default license for material published in the Journal of Industrial Ecology (if not overridden by open access agreement)')"
+# cur.execute(SQL)
+
+## New category
+#SQL = "INSERT INTO categories (id,name,description) VALUES (8,'Non-numerical','Non-numeric data such as boolean values or flags')"
+
+## Add new layers
+# SQL = "INSERT INTO layers (name,description) VALUES ('Constructed floor area','Total constructed floor area of buildings')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Gross floor area','Gross floor area of buildings')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Gross internal area','Gross internal area of buildings')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Net internal area','Net internal area of buildings')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Heated area','Heated area of buildings')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Cooled area','Cooled area of buildings')"
+
+## Add new aspects
+# SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('end-use sector','sector of final consumption, where service is provided to households and public institutions',7,'U','end-Use sector')"
+# SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('strategy','scenario alternative that involves a certain strategy or a combination thereof',9,'v','scenario alternati_v_e')"
+
+## Add new units
+# SQL = "UPDATE units SET refunit_id = 2, unitcode = 'MtC', unit_name = 'megatons of carbon-equivalents', factor = 1000000000 WHERE id = 14" 
+# SQL = "UPDATE units SET refunit_id = 2, unitcode = 'Mt CO2-eq', unit_name = 'megatons of CO2-equivalents', factor = 1000000000 WHERE id = 15" 
+
+
+
+
+#cur.execute(SQL)
 
 ## close connection
 cur.close()

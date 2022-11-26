@@ -8,7 +8,7 @@ Created on Thu Nov 30 16:57:29 2017
 import pymysql
 import datetime
 import numpy as np
-import xlrd
+import openpyxl
 from datetime import date, timedelta
 
 import IEDC_PW
@@ -55,8 +55,8 @@ reserve3) Values(\
 %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,\
 %s,%s,%s,%s,%s,%s,%s,%s)"
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
-#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
 
@@ -82,11 +82,11 @@ Tuples = cur.fetchall()
 DUsers = [x[1] for x in Tuples] 
 
 # Read datasets
-TOCFile  = xlrd.open_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
-TOC = TOCFile.sheet_by_name('DataGroups')
+TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
+TOC = TOCFile['DataGroups']
 
-Offset = 9 # last id -1
-No_DG  = 2
+Offset = 11 # last id that was inserted
+No_DG  = 3
 
 # loop over datasets
 for m in range(Offset,Offset +No_DG):
@@ -97,34 +97,34 @@ for m in range(Offset,Offset +No_DG):
     # loop over items in dataset:
 
     # 0 ID: auto_increment
-    D[1] = TOC.cell_value(4,m +4) #1: name
-    if  TOC.cell_value(5,m +4) != 'none': #2: version
-        D[2] = str(TOC.cell_value(5,m +4))
-    if  TOC.cell_value(6,m +4) != 'none': #3: project id        
-        D[3] = DProj.index(TOC.cell_value(6,m +4)) +1
+    D[1] = TOC.cell(5,m +5).value #1: name
+    if  TOC.cell(6,m +5).value != 'none': #2: version
+        D[2] = str(TOC.cell(6,m +5).value)
+    if  TOC.cell(7,m +5).value != 'none': #3: project id        
+        D[3] = DProj.index(TOC.cell(7,m +5).value) +1
     
-    D[4] = TOC.cell_value(7,m +4) # 4: data categories
-    D[5] = TOC.cell_value(8,m +4) # 5: data types
-    D[6] = TOC.cell_value(9,m +4) # 6: data layers
+    D[4] = TOC.cell(8,m +5).value # 4: data categories
+    D[5] = TOC.cell(9,m +5).value # 5: data types
+    D[6] = TOC.cell(10,m +5).value # 6: data layers
     
     for n in range(7,21):
-        D[n]   = TOC.cell_value(n +3,m +4) # system location description, dataset description, keywords
+        D[n]   = TOC.cell(n +4,m +5).value # system location description, dataset description, keywords
 
-    D[21]      = DSource.index(TOC.cell_value(24,m +4)) +1  # 21: data source
-    D[22]      = DLicen.index(TOC.cell_value(25,m +4)) +1 # 22: License
+    D[21]      = DSource.index(TOC.cell(25,m +5).value) +1  # 21: data source
+    D[22]      = DLicen.index(TOC.cell(26,m +5).value) +1 # 22: License
 
-    D[23]      = TOC.cell_value(26,m +4) # 23: main author
-    D[24]      = TOC.cell_value(27,m +4) # 24: link
-    D[25]      = TOC.cell_value(28,m +4) # 25: report
-    D[26]      = TOC.cell_value(29,m +4) # 26: citation
+    D[23]      = TOC.cell(27,m +5).value # 23: main author
+    D[24]      = TOC.cell(28,m +5).value # 24: link
+    D[25]      = TOC.cell(29,m +5).value # 25: report
+    D[26]      = TOC.cell(30,m +5).value # 26: citation
         
-    D[27]   = datetime.datetime.combine(from_excel_ordinal(TOC.cell_value(30,m +4)), datetime.time()) # submission date
-    D[28]   = DUsers.index(TOC.cell_value(31,m +4)) +1 # 28: User
+    D[27]   = TOC.cell(31,m +5).value # submission date
+    D[28]   = DUsers.index(TOC.cell(32,m +5).value) +1 # 28: User
 
     cur.execute(SQL,(D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
-                     D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18],D[19],D[20],\
-                     D[21],D[22],D[23],D[24],D[25],D[26],D[27],D[28],D[29],D[30],\
-                     D[31]))
+                      D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18],D[19],D[20],\
+                      D[21],D[22],D[23],D[24],D[25],D[26],D[27],D[28],D[29],D[30],\
+                      D[31]))
 
 # Close connection
 cur.close()

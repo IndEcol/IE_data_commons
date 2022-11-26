@@ -132,6 +132,17 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #aspect 6: Same as prev. aspect 6 search for Kosovo id
 #aspect 7+: None
 
+### 25.11.2022 update
+#cur.execute("UPDATE datasets SET aspect_2_classification = 77 WHERE id = 302") 
+#cur.execute("UPDATE datasets SET aspect_3_classification = 77 WHERE id = 304") 
+#cur.execute("UPDATE datasets SET dataset_version = 'as published' WHERE id = 305") 
+#cur.execute("UPDATE datasets SET dataset_version = 'v1.0' WHERE id = 300") 
+#cur.execute("UPDATE datasets SET datagroup_id = 12 WHERE id = 300") 
+
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'RECC_SysDef_Model_v2_4.png' WHERE id = 12") 
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'RECC_SysDef_Model_v2_5.png' WHERE id = 13") 
+# cur.execute("UPDATE datagroups SET system_definition_picture = '' WHERE id = 14") 
+
 # 4) close connection
 # cur.close()
 # conn.close()

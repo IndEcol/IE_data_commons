@@ -10,10 +10,11 @@ import datetime
 import IEDC_PW
 
 
-conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
+#conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
 conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
+
 
 cur.execute("Show tables")
 for row in cur:
@@ -57,6 +58,10 @@ for row in cur:
 cur.execute("SELECT * FROM datagroups")
 for row in cur:
     print(row)
+    
+cur.execute("SELECT * FROM datagroups WHERE id = 14")
+for row in cur:
+    print(row)    
         
 cur.execute("SELECT * FROM datasets")
 for row in cur:
@@ -65,6 +70,10 @@ for row in cur:
 cur.execute("SELECT * FROM units")
 for row in cur:
     print(row)    
+    
+cur.execute("SELECT * FROM projects")
+for row in cur:
+    print(row)        
     
 cur.execute("SELECT * FROM users")
 for row in cur:

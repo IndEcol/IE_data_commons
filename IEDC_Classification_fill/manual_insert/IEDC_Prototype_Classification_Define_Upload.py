@@ -22,8 +22,8 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
 
-ClassList   = ['IEDC_73_MFA13'] # List of filenames for classifications to be added.
-ClassIDList = [73]
+ClassList   = ['79_General_Environmental_Pressure_Indicators'] # List of filenames for classifications to be added.
+ClassIDList = [79]
 
 
 # Define mySQL commands for classification
@@ -105,8 +105,8 @@ for m in range(0,len(ClassList)):
 
     # Define classification
     cur.execute(SQLD,(C_id,C_name,C_Dim,OtherItems[0],OtherItems[1],OtherItems[2],OtherItems[3],OtherItems[4],OtherItems[5],OtherItems[6],OtherItems[7],\
-                         OtherItems[8],OtherItems[9],OtherItems[10],OtherItems[11],OtherItems[12],OtherItems[13],OtherItems[14],OtherItems[15],\
-                         OtherItems[16],OtherItems[17],OtherItems[18],OtherItems[19],OtherItems[20],OtherItems[21],OtherItems[22],OtherItems[23]))
+                          OtherItems[8],OtherItems[9],OtherItems[10],OtherItems[11],OtherItems[12],OtherItems[13],OtherItems[14],OtherItems[15],\
+                          OtherItems[16],OtherItems[17],OtherItems[18],OtherItems[19],OtherItems[20],OtherItems[21],OtherItems[22],OtherItems[23]))
 
     # Read items, take attribute1_oto as reference:
     ClassItemsheet = ClassFile['Items']
@@ -117,7 +117,7 @@ for m in range(0,len(ClassList)):
             Items.append(ClassItemsheet.cell(n+1,o+3).value)            
         # insert classification item                
         cur.execute(SQLI,(C_id,Items[0],Items[1],Items[2],Items[3],Items[4],Items[5],Items[6],Items[7],Items[8],Items[9],Items[10],\
-                         Items[11],Items[12],Items[13],Items[14],Items[15],Items[16],Items[17]))
+                          Items[11],Items[12],Items[13],Items[14],Items[15],Items[16],Items[17]))
         n +=1
         
         
