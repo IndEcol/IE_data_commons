@@ -141,7 +141,7 @@ for row in cur:
 ## add dimension 'object' for general objects of interest, comprises material, commodity, population, and other objects in the system, where the 'material' and 'commodity' dimensions don't fit.
 #SQL = "INSERT INTO dimensions (id,name,description) VALUES (14,'object','general objects of interest, comprises material, commodity, population, and other objects in the system, where the material and commodity dimensions dont fit')"
 #cur.execute(SQL)
-## add new aspect	s
+## add new aspects	
 #SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('model','quantification by different models, model alternatives',9,'R','model veRsion')"
 #cur.execute(SQL)
 #SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('focus_object','object in focus of e.g., indicators',14,'i','none')"
@@ -249,9 +249,23 @@ for row in cur:
 # SQL = "UPDATE units SET refunit_id = 2, unitcode = 'MtC', unit_name = 'megatons of carbon-equivalents', factor = 1000000000 WHERE id = 14" 
 # SQL = "UPDATE units SET refunit_id = 2, unitcode = 'Mt CO2-eq', unit_name = 'megatons of CO2-equivalents', factor = 1000000000 WHERE id = 15" 
 
+### 25.4.23
+## add dimension 'strategy_option', (ID: 15), to describe options for change in a system. The new strategy dimension is more appropriate to describe potential for change than the already existing scenario dimension, which links a certain system variable to a given set of exogenous assumptions. Here, however, the potential for change lies more within the process/material/product itself rather than in the exogenous assumptions made. In a scenario analysis, the strategy potentials (scenario-independent) will materialize to a certain scenario-dependent degree.
+# SQL = "INSERT INTO dimensions (id,name,description) VALUES (15,'strategy_option','describe options for change in individual system elements. The strategy/option pertains to a possible change for a small unit in the system, whereas a scenario describes a possible future for the system as a whole, and needs a system-wide narrative.')"
+# cur.execute(SQL)
+## Update aspect and classificaitons linking to the new strategy dimension:
+# cur.execute("SELECT id, aspect_8, aspect_8_classification FROM datasets")
+# for row in cur:
+#     if row[1] == 41:
+#         print(row)    
+# --> Only aspect 41 and classification 78 is affacted!
+#Change dimension of aspect 41:
+#cur.execute("UPDATE aspects SET dimension = 15 WHERE id = 41")
+#cur.execute("UPDATE aspects SET index_letter_crib = 'alternati_v_e strategy or option' WHERE id = 41")
+#cur.execute("UPDATE classification_definition SET dimension = 15 WHERE id = 78")
 
-
-
+## New layers
+#SQL = "INSERT INTO layers (name,description) VALUES ('TRL','technology readiness level')"
 #cur.execute(SQL)
 
 ## close connection

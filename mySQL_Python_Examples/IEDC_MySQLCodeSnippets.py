@@ -15,7 +15,6 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
-
 cur.execute("Show tables")
 for row in cur:
     print(row)
@@ -363,6 +362,25 @@ print('Aspect and classification mismatch for dataset %s and aspect %s.' % ((m+1
 ## Drop NOT NULL constraint for data table:
 #cur.execute("ALTER TABLE data MODIFY COLUMN value double")
 
+### 
+#Try out: Select data for CIRCOMOD CE profile prototype
+cur.execute("SELECT id FROM classification_items WHERE classification_id = 77 AND attribute1_oto = 'Italy'")
+for row in cur:
+    print(row)
+    SelectedRegionId = row[0]
+    
+cur.execute("SELECT id FROM classification_items WHERE classification_id = 8 AND attribute1_oto = 'SSP1'")
+for row in cur:
+    print(row)    
+    SelectedScenarioId = row[0]    
+    
+query = 'select ci4.attribute1_oto as aspect_4, d.value, u1.unitcode, u2.unitcode from iedc.data d '
+query += 'left join iedc.units u1 on d.unit_nominator = u1.id left join iedc.units u2 on d.unit_denominator = u2.id '
+query += 'left join iedc.classification_items ci4 on d.aspect4 = ci4.id '
+query += 'inner join iedc.datasets ds on d.dataset_id = ds.id where d.dataset_id = 304 and d.aspect3 = %s and d.aspect5 = %s'
+cur.execute(query,(SelectedRegionId,SelectedScenarioId))    
+for row in cur:
+    print(row)   
     
 ## 4) close connection
 cur.close()
