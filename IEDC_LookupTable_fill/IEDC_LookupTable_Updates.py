@@ -268,6 +268,17 @@ for row in cur:
 #SQL = "INSERT INTO layers (name,description) VALUES ('TRL','technology readiness level')"
 #cur.execute(SQL)
 
+### 25.4.23
+# SQL = "INSERT INTO layers (name,description) VALUES ('Volume','volume of a flow, e.g., for water')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO layers (name,description) VALUES ('Production capacity','production capacity of plants, in e.g., Mt/yr')"
+# cur.execute(SQL)
+
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('input_category','general category of an input to a process, used for process inventories',14,'q','none')"
+#cur.execute(SQL)
+#SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('output_category','general category of an output of a process, used for process inventories',14,'Q','none')"
+#cur.execute(SQL)
+
 ## close connection
 cur.close()
 conn.close()
