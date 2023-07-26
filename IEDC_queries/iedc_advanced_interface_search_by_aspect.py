@@ -231,7 +231,7 @@ print ('    ')
 #################################################################################################################################
 '''    
 
-m = 213 #(example)
+m = 213 #(example, simulate click on item in list of matching datasets above)
 
 all_a = []
 cur.execute("SELECT aspect_1, aspect_2, aspect_3, aspect_4, aspect_5, aspect_6, aspect_7, aspect_8, aspect_9, aspect_10, aspect_11, aspect_12, aspect_1_classification, aspect_2_classification, aspect_3_classification, aspect_4_classification, aspect_5_classification, aspect_6_classification, aspect_7_classification, aspect_8_classification, aspect_9_classification, aspect_10_classification, aspect_11_classification, aspect_12_classification, dataset_name FROM datasets WHERE id = %s", m)
@@ -241,7 +241,7 @@ for row in cur:
 all_a = [i for i in all_a if i is not None]            
 dsn = row[24] # dataset name
 # Build SQL query
-SQL = 'SELECT value, unit_nominator FROM data WHERE dataset_id = %s'
+SQL = 'SELECT value, unit_nominator FROM data WHERE dataset_id = %s' # replace by preview query from iedc main page.
 QP  = (m,)
 try:
     a1_loc = all_a.index(a1)
