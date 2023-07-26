@@ -20,8 +20,8 @@ cur = conn.cursor()
 type_list = []
 cur.execute("SELECT * FROM types")
 for row in cur:
-    print(row) 
-    print(row[0])
+    # print(row) 
+    # print(row[0])
     type_list.append(row[1] + ' (' + str(row[3]) + '_' + row[4] + ')')
     
     
@@ -45,14 +45,16 @@ Download is then possible via the main interface.
 
 '''    
     
-# simulate user action: select a datatype, which leads to a value for p (simply the position in the list.
+# simulate user action: select a datatype, which leads to a value for p (simply the position in the list).
 # Here, we test for p = 5: material composition
-p = 5 
+p = 5 # Replace by actual user input later
 
 # check how many datasets of this type there are, p+1 because of list index start 0 (Python) to 1 (iedc)
 cur.execute("SELECT COUNT(*) FROM datasets WHERE data_type = %s", p+1)
 for row in cur:
     print(row[0])    
+
+print ('    ')
 
 '''
 ################################################################################################
@@ -103,49 +105,55 @@ For 'press search to have an effect, at least one of the dropdown lists must hav
 '''
 
 # here: simulate user action:
-a1 = 2 # region
-a2 = 0 # age-cohort
+a1 = 2 # region, replace by actual user input later
+a2 = 0 # age-cohort, replace by actual user input later
 
 # Now, compile all possible classification items for the selected aspects:
     
 if a1 is not None:
     a1 = all_aspects_u[a1] # map from position to aspect id
-    a1_classf = []
-    a1_classi = []
+    a1_classf = [] # classification id
+    a1_classi = [] # classification items
+    a1_classd = [] # classification items id
     for m in range(0,len(all_aspects)):
         if all_aspects[m] == a1:
             a1_classf.append(all_classfs[m])
     a1_classf = list(set(a1_classf))
     for m in a1_classf:
-        cur.execute("SELECT attribute1_oto FROM classification_items WHERE classification_id = %s", m)
+        cur.execute("SELECT id, attribute1_oto FROM classification_items WHERE classification_id = %s", m)
         for row in cur:
-            a1_classi.append(row[0])
+            a1_classi.append(row[1])
+            a1_classd.append(row[0])
     
 if a2 is not None:
     a2 = all_aspects_u[a2] # map from position to aspect id
     a2_classf = []
     a2_classi = []    
+    a2_classd = []
     for m in range(0,len(all_aspects)):
         if all_aspects[m] == a2:
             a2_classf.append(all_classfs[m])
     a2_classf = list(set(a2_classf))
     for m in a2_classf:
-        cur.execute("SELECT attribute1_oto FROM classification_items WHERE classification_id = %s", m)
+        cur.execute("SELECT id, attribute1_oto FROM classification_items WHERE classification_id = %s", m)
         for row in cur:
-            a2_classi.append(row[0])
+            a2_classi.append(row[1])
+            a2_classd.append(row[0])
             
 if a3 is not None:
     a3 = all_aspects_u[a3] # map from position to aspect id
     a3_classf = []
     a3_classi = []    
+    a3_classd = []    
     for m in range(0,len(all_aspects)):
         if all_aspects[m] == a3:
             a3_classf.append(all_classfs[m])
     a3_classf = list(set(a3_classf))    
     for m in a3_classf:
-        cur.execute("SELECT attribute1_oto FROM classification_items WHERE classification_id = %s", m)
+        cur.execute("SELECT id, attribute1_oto FROM classification_items WHERE classification_id = %s", m)
         for row in cur:
-            a3_classi.append(row[0])
+            a3_classi.append(row[1])
+            a3_classd.append(row[0])
 
 '''
 #################################################################################################################################################################
@@ -157,30 +165,60 @@ if a3 is not None:
 ###################################
 '''
 
-# here: simulate user action:
+# here: simulate user action, replace by actual user input later
 b1 = [59] # region: China
-b2 = np.arange(290,321,1).tolist()  # age-cohort: 1990 to 2020
+b2 = np.arange(290,321,1).tolist()  # age-cohorts: 1990 to 2020
+b3 = [] # nothing selected
+
+# Translate list positions into classficiation item ids
+b1id = [a1_classd[i] for i in b1]
+b2id = [a2_classd[i] for i in b2]
+b3id = [a3_classd[i] for i in b3]
 
 # Loop over all datasets to find relevant aspect and items covered:
 matchlist_id = [] # List with dataset ids that contain a match for the search
 matchlist_na = [] # dataset names
 for m in ids:
     all_a = []
-    cur.execute("SELECT aspect_1, aspect_2, aspect_3, aspect_4, aspect_5, aspect_6, aspect_7, aspect_8, aspect_9, aspect_10, aspect_11, aspect_12, aspect_1_classification, aspect_2_classification, aspect_3_classification, aspect_4_classification, aspect_5_classification, aspect_6_classification, aspect_7_classification, aspect_8_classification, aspect_9_classification, aspect_10_classification, aspect_11_classification, aspect_12_classification FROM datasets WHERE id = %s", m)
+    cur.execute("SELECT aspect_1, aspect_2, aspect_3, aspect_4, aspect_5, aspect_6, aspect_7, aspect_8, aspect_9, aspect_10, aspect_11, aspect_12, aspect_1_classification, aspect_2_classification, aspect_3_classification, aspect_4_classification, aspect_5_classification, aspect_6_classification, aspect_7_classification, aspect_8_classification, aspect_9_classification, aspect_10_classification, aspect_11_classification, aspect_12_classification, dataset_name FROM datasets WHERE id = %s", m)
     for row in cur:
         for n in range(0,12):
             all_a.append(row[n])    
-    if a1 is not None:
+    all_a = [i for i in all_a if i is not None]            
+    dsn = row[24] # dataset name
+    # Build SQL query
+    SQL = 'SELECT COUNT(*) FROM data WHERE dataset_id = %s'
+    QP  = (m,)
+    try:
         a1_loc = all_a.index(a1)
-    if a2 is not None:
+        SQL += ' AND aspect' + str(a1_loc+1) + ' IN %s'
+        QP  +=  (tuple(b1id),)
+    except:
+        a1_loc = None
+    try:
         a2_loc = all_a.index(a2)
-    if a3 is not None:
-        a3_loc = all_a.index(a3)       
+        SQL += ' AND aspect' + str(a2_loc+1) + ' IN %s'
+        QP  +=  (tuple(b2id),)
+    except:
+        a2_loc = None
+    try:
+        a3_loc = all_a.index(a3)
+        SQL += ' AND aspect' + str(a3_loc+1) + ' IN %s'
+        QP  +=  (tuple(b3id),)
+    except:
+        a3_loc = None
         
-    cur.execute("SELECT COUNT(*) FROM data WHERE dataset_id = %s AND aspect" + str(a1_loc+1) + " = %s", (m, b1[0]))
-    print(a1_loc)
-    for row in cur:
-        print(row[0])          
+    if len(QP) > 1: # if there is at least one matching aspct in the dataset
+        cur.execute(SQL,QP)
+        for row in cur:
+            # print(row[0])          
+            if row[0] > 0: # We have a match!
+                matchlist_id.append(m)
+                matchlist_na.append(dsn)
+
+for ii in range(0,len(matchlist_id)):
+    print(matchlist_id[ii], matchlist_na[ii])       
+print ('    ')
 
 '''
 #################################################################################################################################################################
@@ -188,11 +226,87 @@ for m in ids:
 #################################################################################################################################################################
 
 #################################################################################################################################
-#    Button "Show": Show dataset sample/previous as on main search page, just with specific selected classification items       #
+#    Next to each dataset id/name displayed: Create a button "Show": Show dataset sample/previous as on main search page, 
+#    just with specific selected classification items as above and example below             #
 #################################################################################################################################
 '''    
+
+m = 213 #(example)
+
+all_a = []
+cur.execute("SELECT aspect_1, aspect_2, aspect_3, aspect_4, aspect_5, aspect_6, aspect_7, aspect_8, aspect_9, aspect_10, aspect_11, aspect_12, aspect_1_classification, aspect_2_classification, aspect_3_classification, aspect_4_classification, aspect_5_classification, aspect_6_classification, aspect_7_classification, aspect_8_classification, aspect_9_classification, aspect_10_classification, aspect_11_classification, aspect_12_classification, dataset_name FROM datasets WHERE id = %s", m)
+for row in cur:
+    for n in range(0,12):
+        all_a.append(row[n])    
+all_a = [i for i in all_a if i is not None]            
+dsn = row[24] # dataset name
+# Build SQL query
+SQL = 'SELECT value, unit_nominator FROM data WHERE dataset_id = %s'
+QP  = (m,)
+try:
+    a1_loc = all_a.index(a1)
+    SQL += ' AND aspect' + str(a1_loc+1) + ' IN %s'
+    QP  +=  (tuple(b1id),)
+except:
+    a1_loc = None
+try:
+    a2_loc = all_a.index(a2)
+    SQL += ' AND aspect' + str(a2_loc+1) + ' IN %s'
+    QP  +=  (tuple(b2id),)
+except:
+    a2_loc = None
+try:
+    a3_loc = all_a.index(a3)
+    SQL += ' AND aspect' + str(a3_loc+1) + ' IN %s'
+    QP  +=  (tuple(b3id),)
+except:
+    a3_loc = None
+    
+if len(QP) > 1: # if there is at least one matching aspct in the dataset
+    cur.execute(SQL,QP)
+    for row in cur:
+        print(row[0], row[1])  # still need to resolve for the different IDs with a join statement, see the query for the sample results on the main iedc page.
 
 #
 # The end.
 #
+
+# Other code: Only one item for each aspect:
+'''
+cur.execute('SELECT COUNT(*) FROM data WHERE dataset_id = %s AND aspect4 = %s AND aspect3 = %s',(213, 5917, 6677))
+
+
+cur.execute('SELECT COUNT(*) FROM data WHERE dataset_id = %s AND aspect4 = %s AND aspect3 IN %s',(213, 5917, (6677,6678,6679,6680)))
+
+
+for m in ids:
+    all_a = []
+    cur.execute("SELECT aspect_1, aspect_2, aspect_3, aspect_4, aspect_5, aspect_6, aspect_7, aspect_8, aspect_9, aspect_10, aspect_11, aspect_12, aspect_1_classification, aspect_2_classification, aspect_3_classification, aspect_4_classification, aspect_5_classification, aspect_6_classification, aspect_7_classification, aspect_8_classification, aspect_9_classification, aspect_10_classification, aspect_11_classification, aspect_12_classification, dataset_name FROM datasets WHERE id = %s", m)
+    for row in cur:
+        for n in range(0,12):
+            all_a.append(row[n])    
+    all_a = [i for i in all_a if i is not None]            
+    dsn = row[24] # dataset name
+    # Build SQL query
+    SQL = 'SELECT COUNT(*) FROM data WHERE dataset_id = %s'
+    QP  = (m,)
+    try:
+        a1_loc = all_a.index(a1)
+        SQL += ' AND aspect' + str(a1_loc+1) + ' = %s'
+        QP  +=  (b1id[0],)
+    except:
+        a1_loc = None
+    try:
+        a2_loc = all_a.index(a2)
+        SQL += ' AND aspect' + str(a2_loc+1) + ' = %s'
+        QP  +=  (b2id[0],)
+    except:
+        a2_loc = None
+    try:
+        a3_loc = all_a.index(a3)
+        SQL += ' AND aspect' + str(a3_loc+1) + ' = %s'
+        QP  +=  (b3id[0],)
+    except:
+        a3_loc = None
+'''        
 
