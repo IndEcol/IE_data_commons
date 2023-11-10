@@ -28,7 +28,6 @@ cur.execute("SELECT * FROM licences")
 for row in cur:
     print(row)
 
-
 #cur.execute("SELECT * FROM stats_array")
 #for row in cur:
 #    print(row)
@@ -278,6 +277,40 @@ for row in cur:
 #cur.execute(SQL)
 #SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('output_category','general category of an output of a process, used for process inventories',14,'Q','none')"
 #cur.execute(SQL)
+
+# Nov. 2023 update
+## New layers
+# SQL = "INSERT INTO layers (name,description) VALUES ('primary energy','primary energy, as extracted from nature')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO layers (name,description) VALUES ('secondary energy','secondary energy, after conversion from primary energy')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO layers (name,description) VALUES ('final energy','final energy, at the point of final energy conversion for use')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO layers (name,description) VALUES ('useful energy','useful energy, energy delivered for/as service')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO layers (name,description) VALUES ('General ratio','General ratio of two quantities')"
+# cur.execute(SQL)
+
+# add new licenses
+# SQL = "INSERT INTO licences (id,name,description,link) VALUES (15,'© European Union','Used for Eurostat data. Reuse is authorised provided the source is acknowledged.','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Copyright/licence_policy')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO licences (id,name,description) VALUES (16,'GNU General Public License v3.0','GNU General Public License v3.0')"
+# cur.execute(SQL)
+
+## Add new data types:
+# NewTypes  = ['Process parameters']
+# NewTypesD = ['general parameters that describe processes, extensive']
+# NewTypesG = [5]
+# NewTypesS = ['PP']
+
+# for m in range(0,len(NewTypes)):
+#     SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES (%s,%s,%s,%s)"
+#     cur.execute(SQL,(NewTypes[m],NewTypesD[m],NewTypesG[m],NewTypesS[m]))
+
+## Add new units
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'g CO2 eq.','g of CO2-equivalent (GWP)',0.001)"
+# cur.execute(SQL)
+
 
 ## close connection
 cur.close()

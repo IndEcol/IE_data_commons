@@ -78,8 +78,8 @@ DUsers = [x[1] for x in Tuples]
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx', data_only=True)
 TOC = TOCFile['Projects']
 
-Offset = 2 # start with Project 3: RECC 
-No_Pr  = 1
+Offset = 5 # index of the latest project that was inserted, currently no. 5 (OWID) in November 2023.
+No_Pr  = 1 # number of new projects to insert
 
 # loop over datasets
 for m in range(Offset,Offset + No_Pr):

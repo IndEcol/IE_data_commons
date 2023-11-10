@@ -324,6 +324,271 @@ cur = conn.cursor()
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'scope 3', attribute5_anc = 'all indirect (GHG) emissions of an activity that are not part of scope 2' WHERE attribute1_oto = 'reserved_34' AND classification_id = 6")
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'system-wide', attribute2_oto = 'entire system', attribute5_anc = 'Definition is relative to the system definition for this dataset' WHERE attribute1_oto = 'reserved_35' AND classification_id = 6")
 
+# Nov. 2023 update
+# cities = ['Dhaka',
+# 'London',
+# 'Paris',
+# 'Moscow',
+# 'Lagos',
+# 'Cairo',
+# 'Tehran',
+# 'Istanbul',
+# 'Manila',
+# 'Karachi',
+# 'Seoul',
+# 'Tokyo',
+# 'Osaka',
+# 'Guangzhou',
+# 'Shanghai']
+
+# resv = ['reserved_12',
+# 'reserved_13',
+# 'reserved_14',
+# 'reserved_15',
+# 'reserved_16',
+# 'reserved_17',
+# 'reserved_18',
+# 'reserved_19',
+# 'reserved_20',
+# 'reserved_21',
+# 'reserved_22',
+# 'reserved_23',
+# 'reserved_24',
+# 'reserved_25',
+# 'reserved_26']
+
+
+# for m in range(0,len(cities)):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =11"
+#     cur.execute(SQL,(cities[m],resv[m]))
+    
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'service buildings' WHERE attribute1_oto = 'reserved_32' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'mixed-use buildings' WHERE attribute1_oto = 'reserved_33' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'residential buildings, row houses' WHERE attribute1_oto = 'reserved_34' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'residential buildings, high rise' WHERE attribute1_oto = 'reserved_35' AND classification_id = 13")
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Material footprint (MF), raw material input (RMI), or raw material equivalent (RME) (synonyms)' WHERE attribute1_oto = 'reserved_10' AND classification_id = 79")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Raw material equivalents of imports (RME_IM)' WHERE attribute1_oto = 'aw material equivalents of imports (RME_IM)' AND classification_id = 79")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Raw material equivalents of exports (RME_EX)' WHERE attribute1_oto = 'reserved_12' AND classification_id = 79")
+
+# gpc = ['roads',
+# 'bridges',
+# 'tunnels',
+# 'airports',
+# 'railways',
+# 'wind turbines',
+# 'solar PV generation units of all sizes',
+# 'geothermal power stations']
+
+# resv =['reserved_3',
+# 'reserved_4',
+# 'reserved_5',
+# 'reserved_6',
+# 'reserved_7',
+# 'reserved_8',
+# 'reserved_9',
+# 'reserved_11']
+
+# for m in range(0,len(gpc)):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =7"
+#     cur.execute(SQL,(gpc[m],cities[m]))
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'palladium' WHERE attribute1_oto = 'paladium' AND classification_id = 4")
+
+# matss = ['other metals (other than Fe, Al, Cu)',
+# 'aggregates (other than in concrete)',
+# 'other biomass-based materials (other than timber)',
+# 'all metals',
+# 'all non-metallic minerals',
+# 'timber',
+# 'total biomass',
+# 'other fossil-based materials (other than bitumen, including plastics)',
+# 'other minerals (other than concrete, bricks, glass, other aggregates)',
+# 'all fossil fuel based materials',
+# 'gravel (roof)',
+# 'glass wool',
+# 'raw material',
+# 'refined material',
+# 'manufactured goods',
+# 'manufacturing scrap',
+# 'manufacturing scrap for recycling',
+# 'scrap',
+# 'recycled material',
+# 'packaging waste',
+# 'plastic packaging waste',
+# 'solid waste (all types)',
+# 'waste paper and cardboard',
+# 'waste rubber',
+# 'waste textiles',
+# 'waste, organic',
+# 'mineralic waste',
+# 'ferrous metal waste',
+# 'non-ferrous metal waste',
+# 'non-ferrous metal waste, precious metals only',
+# 'non-ferrous metal waste, Cu, Al, and Ni only',
+# 'non-ferrous metal waste, other than prec. metals and Cu/Al/Ni',
+# 'waste, not specified',
+# 'yttrium',
+# 'tantalum',
+# 'tellurium',
+# 'titanium',
+# 'sapele wood',
+# 'praseodymium',
+# 'natural rubber',
+# 'limestone',
+# 'indium',
+# 'beryllium',
+# 'bismuth',
+# 'dysprosium',
+# 'gallium',
+# 'germanium',
+# 'all waste excluding major mineral waste',
+# 'waste electrical and electronic equipment (WEEE)',
+# 'paper and cardboard packaging waste',
+# 'wooden packaging waste',
+# 'metallic packaging waste',
+# 'glass packaging waste',
+# 'waste for recycling']
+
+
+# resv =['reserved_74',
+# 'reserved_75',
+# 'reserved_76',
+# 'reserved_77',
+# 'reserved_78',
+# 'reserved_79',
+# 'reserved_80',
+# 'reserved_81',
+# 'reserved_82',
+# 'reserved_83',
+# 'reserved_84',
+# 'reserved_85',
+# 'reserved_86',
+# 'reserved_87',
+# 'reserved_88',
+# 'reserved_89',
+# 'reserved_90',
+# 'reserved_91',
+# 'reserved_92',
+# 'reserved_93',
+# 'reserved_94',
+# 'reserved_95',
+# 'reserved_96',
+# 'reserved_97',
+# 'reserved_98',
+# 'reserved_99',
+# 'reserved_100',
+# 'reserved_101',
+# 'reserved_102',
+# 'reserved_103',
+# 'reserved_104',
+# 'reserved_105',
+# 'reserved_106',
+# 'reserved_107',
+# 'reserved_108',
+# 'reserved_109',
+# 'reserved_110',
+# 'reserved_111',
+# 'reserved_112',
+# 'reserved_113',
+# 'reserved_114',
+# 'reserved_115',
+# 'reserved_116',
+# 'reserved_117',
+# 'reserved_118',
+# 'reserved_119',
+# 'reserved_120',
+# 'reserved_121',
+# 'reserved_122',
+# 'reserved_123',
+# 'reserved_124',
+# 'reserved_125',
+# 'reserved_126',
+# 'reserved_127']
+
+    
+# for m in range(0,len(matss)):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =4"
+#     cur.execute(SQL,(matss[m],resv[m]))    
+
+
+# yrs = ['before 1945',
+# '1945-1970',
+# '1971-2000',
+# 'all years',
+# '2010-2020',
+# '2020-2080']
+
+# resv =['reserved_4',
+# 'reserved_5',
+# 'reserved_6',
+# 'reserved_7',
+# 'reserved_8',
+# 'reserved_9']
+
+# for m in range(0,len(yrs)):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =14"
+#     cur.execute(SQL,(yrs[m],resv[m]))
+
+# bigs = ['remelting',
+# 'electricity generation from wind turbines',
+# 'electricity generation from hydropower station',
+# 'electricity generation from solar PV',
+# 'electricity generation from other modern renewables, including biomass and geothermal power',
+# 'households',
+# 'housholds, commerce, and other sources of MSW',
+# 'all (entire economy including households and other end-use sectors)',
+# 'market for waste']
+
+# resv =['reserved_36',
+# 'reserved_37',
+# 'reserved_38',
+# 'reserved_39',
+# 'reserved_40',
+# 'reserved_41',
+# 'reserved_42',
+# 'reserved_43',
+# 'reserved_44']
+
+# for m in range(0,len(bigs)):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =6"
+#     cur.execute(SQL,(bigs[m],resv[m]))
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'electricity, from renewable sources' WHERE attribute1_oto = 'reserved_3' AND classification_id = 10")
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Production capacity' WHERE attribute1_oto = 'reserved_15' AND classification_id = 20")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Lifetime' WHERE attribute1_oto = 'reserved_16' AND classification_id = 20")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Monetary' WHERE attribute1_oto = 'reserved_17' AND classification_id = 20")
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (72,'all materials')")
+
+# cnts = ['G7',
+# 'G20',
+# 'ASEAN',
+# 'South and Central America',
+# 'Other EU27 (2020) countries',
+# 'Non EU27 (2020) countries',
+# 'EU28']
+
+# resv =['reserved_3',
+# 'reserved_4',
+# 'reserved_5',
+# 'reserved_6',
+# 'reserved_7',
+# 'reserved_8',
+# 'reserved_9']
+
+# attr4 = [10020,10021,10022,10023,100001,100002,10024]
+
+
+# for m in range(0,len(cnts)):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s, attribute4_oto = %s WHERE attribute1_oto = %s AND classification_id =2"
+#     cur.execute(SQL,(cnts[m],attr4[m],resv[m]))
+
+# SQL = "UPDATE classification_items SET attribute3_oto = %s WHERE attribute1_oto = %s AND classification_id =2"
+# cur.execute(SQL,('GLO','Global'))
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'Western Sahara' WHERE attribute1_oto = 'Western sahara' AND classification_id = 2")
 
 # Close connection
 cur.close()

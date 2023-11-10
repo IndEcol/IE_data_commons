@@ -143,6 +143,13 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # cur.execute("UPDATE datagroups SET system_definition_picture = 'RECC_SysDef_Model_v2_5.png' WHERE id = 13") 
 # cur.execute("UPDATE datagroups SET system_definition_picture = '' WHERE id = 14") 
 
+### Nov. 2023 update
+#cur.execute("UPDATE datasets SET dataset_version = 'none' WHERE id = 309") 
+#cur.execute("UPDATE datasets SET dataset_version = 'none' WHERE id = 312") 
+#cur.execute("DELETE FROM datasets WHERE id = 315") 
+#cur.execute("UPDATE datasets SET dataset_version = 'none' WHERE id = 319") 
+#cur.execute("UPDATE datasets SET dataset_version = 'none' WHERE id = 320") 
+
 # 4) close connection
 # cur.close()
 # conn.close()
