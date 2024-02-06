@@ -363,7 +363,7 @@ print('Aspect and classification mismatch for dataset %s and aspect %s.' % ((m+1
 #cur.execute("ALTER TABLE data MODIFY COLUMN value double")
 
 ### 
-#Try out: Select data for CIRCOMOD CE profile prototype
+#Try out 1 : Select data for CIRCOMOD CE profile prototype
 cur.execute("SELECT id FROM classification_items WHERE classification_id = 77 AND attribute1_oto = 'Italy'")
 for row in cur:
     print(row)
@@ -381,6 +381,30 @@ query += 'inner join iedc.datasets ds on d.dataset_id = ds.id where d.dataset_id
 cur.execute(query,(SelectedRegionId,SelectedScenarioId))    
 for row in cur:
     print(row)   
+    
+#Try out 2 : Select data for CIRCOMOD CE profile prototype    
+cur.execute("SELECT id FROM classification_items WHERE classification_id = 77 AND attribute1_oto = 'Italy'")
+for row in cur:
+    print(row)
+    SelectedRegionId = row[0]
+    
+cur.execute("SELECT id FROM classification_items WHERE classification_id = 8 AND attribute1_oto = 'SSP2'")
+for row in cur:
+    print(row)    
+    SelectedScenarioId = row[0]    
+
+
+query = 'select ci8.attribute1_oto as aspect_8, d.value, u1.unitcode, u2.unitcode from iedc.data d '
+query += 'left join iedc.units u1 on d.unit_nominator = u1.id '
+query += 'left join iedc.units u2 on d.unit_denominator = u2.id '
+query += 'left join iedc.classification_items ci8 on d.aspect8 = ci8.id '
+query += 'inner join iedc.datasets ds on d.dataset_id = ds.id '
+query += 'where d.dataset_id = 307 and d.aspect1 = %s and d.aspect3 = %s and d.aspect4 = %s and d.aspect6 = 9 and d.aspect7 = %s'
+
+# With class. ids for 'Italy', 'passenger vehicles', 'energy supply', 'HIY-RLU-MSU' and 9 (for SSP2)
+cur.execute(query,(102920,1071,57,102960))  
+for row in cur:
+    print(row)      
     
 ## 4) close connection
 cur.close()
