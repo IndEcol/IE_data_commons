@@ -311,6 +311,39 @@ for row in cur:
 # SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'g CO2 eq.','g of CO2-equivalent (GWP)',0.001)"
 # cur.execute(SQL)
 
+# July. 2023 update
+# Add new uncertainty options to stats_array
+#cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('25th and 75th percentile','25th and 75th percentile, some unit as value','25th percentile','75th percentile')") 
+#cur.execute("INSERT INTO stats_array (name, description, loc, scale, shape) VALUES ('min-25th and 75th percentile-max','min-25th and 75th percentile-max, some unit as value','min','25th percentile','75th percentile;max')") 
+
+## New user
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (9,'hmli','Huimei Li','IEF','2024-06-18 12:00:00','2050-06-09 12:00:00')"
+# cur.execute(SQL)
+
+# Nov. 2024 update:
+#SQL = "INSERT INTO layers (name,description) VALUES ('Energy per product operation','Energy per unit of operation of product, like MJ/km driven')"
+#cur.execute(SQL)
+# SQL = "UPDATE types SET symbol = 'EI' WHERE symbol = 'EIP'"
+# cur.execute(SQL)
+# SQL = "INSERT INTO licences (id,name,description) VALUES (17,'© IIASA and contributing modeling teams 2024','license for using data from SSP database at IIASA, version 3.0 and 3.1 of 2024, see https://data.ece.iiasa.ac.at/ssp/#/license')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO licences (id,name,description) VALUES (18,'© The authors','copyright lies with the authors')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO licences (id,name,description) VALUES (19,'miscellaneous licenses, see the comments in the dataset','miscellaneous licenses, see the comments in the dataset')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'EUR2020','Euros of 2020')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (5,'Nm3','standard cubic metre (Sm3), Normkubikmeter')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (2,'kt_F_gases_eq','kilotonnes of F-gases equivalents')"
+# cur.execute(SQL)
+
+## New user
+#SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (10,'ilhch','Ilham Checkrad','IEF','2024-11-22 12:00:00','2050-06-09 12:00:00')"
+#SQL = "UPDATE users SET name = 'Ilham Chekrad' WHERE id = 10" 
+#cur.execute(SQL)
+		
+
 
 ## close connection
 cur.close()

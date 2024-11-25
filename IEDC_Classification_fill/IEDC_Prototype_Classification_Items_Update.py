@@ -26,8 +26,7 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
 #conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc_review', autocommit=True, charset='utf8')
 conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
-cur = conn.cursor()
-
+cur = conn.cursor() 
 
 # Check
 #cur.execute("SELECT COUNT(*) FROM classification_items")
@@ -589,6 +588,485 @@ cur = conn.cursor()
 # cur.execute(SQL,('GLO','Global'))
 
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'Western Sahara' WHERE attribute1_oto = 'Western sahara' AND classification_id = 2")
+
+# July. 2023 update
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'structural wood' WHERE attribute1_oto = 'reserved_128' AND classification_id = 4")
+# cur.execute("UPDATE classification_items SET attribute1_oto = '1990-2030' WHERE attribute1_oto = 'reserved_14' AND classification_id = 14")
+# cur.execute("UPDATE classification_items SET attribute1_oto = '2010-2018' WHERE attribute1_oto = 'reserved_15' AND classification_id = 14")
+# cur.execute("UPDATE classification_items SET attribute1_oto = '2010-2050' WHERE attribute1_oto = 'reserved_16' AND classification_id = 14")
+# cur.execute("UPDATE classification_items SET attribute1_oto = '2015-2050' WHERE attribute1_oto = 'reserved_17' AND classification_id = 14")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'n.a.' WHERE attribute1_oto = 'reserved_18' AND classification_id = 14")
+# cur.execute("UPDATE classification_items SET attribute1_oto = '1980-2004' WHERE attribute1_oto = 'reserved_19' AND classification_id = 14")
+# cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'OECD Europe','10024'))
+# cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'OECD North America','10025'))
+# cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'OECD Pacific','10026'))
+# cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'Economies in Transition (EIT)','10027'))
+# cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto, attribute4_oto) VALUES (%s,%s,%s)",(2,'Africa and the Middle East','10028'))
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'non-residential buildings, concrete structure' WHERE attribute1_oto = 'reserved_36' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'non-residential buildings, masonry' WHERE attribute1_oto = 'reserved_37' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'non-residential buildings, steel structure' WHERE attribute1_oto = 'reserved_38' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'non-residential buildings, timber structure' WHERE attribute1_oto = 'reserved_39' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'multi-family houses, masonry' WHERE attribute1_oto = 'reserved_40' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'multi-family houses, steel structure' WHERE attribute1_oto = 'reserved_41' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'multi-family houses, timber structure' WHERE attribute1_oto = 'reserved_42' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'single-family house, concrete structure' WHERE attribute1_oto = 'reserved_43' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'single-family house, masonry' WHERE attribute1_oto = 'reserved_44' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'single-family house, steel structure' WHERE attribute1_oto = 'reserved_45' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'single-family house, timber structure' WHERE attribute1_oto = 'reserved_46' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'single-family house with concrete structure' WHERE attribute1_oto = 'reserved_47' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'single-family house with wooden structure' WHERE attribute1_oto = 'reserved_48' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'semi-detached house with concrete structure' WHERE attribute1_oto = 'reserved_49' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'semi-detached house with wooden structure' WHERE attribute1_oto = 'reserved_50' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'medium apartment building' WHERE attribute1_oto = 'reserved_51' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'large apartment building developed horizontally' WHERE attribute1_oto = 'reserved_52' AND classification_id = 13")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'large apartment building developed vertically' WHERE attribute1_oto = 'reserved_53' AND classification_id = 13")
+
+# NewProds = ['motorcycle, engine power 4kW',
+# 'motorcycle, engine power 11kW',
+# 'motorcycle, engine power 25kW',
+# 'motorcycle, engine power 50kW',
+# 'intercity bus',
+# 'city bus',
+# 'bicycle',
+# 'private car',
+# 'SUV',
+# 'electric bicycle',
+# 'subway car',
+# 'tram car',
+# 'local train',
+# 'passenger car, gasoline',
+# 'passenger car, diesel',
+# 'passenger car, battery electric',
+# 'plug-in battery electric vehicle',
+# 'diesel-powered bus',
+# 'diesel-powered passenger rail',
+# 'electric-powered passenger rail',
+# 'electric-powered high-speed rail',
+# 'jet fuel-powered aircraft',
+# 'diesel-powered medium heavy-duty truck',
+# 'diesel-powered heavy heavy-duty truck',
+# 'diesel-powered freight rail',
+# 'heavy fuel oil-powered containerships',
+# 'heavy fuel oil-powered crude tanker',
+# 'light duty vehicle',
+# '2/3-wheeler',
+# 'bus',
+# 'medium duty vehicle',
+# 'heavy-duty vehicle',
+# 'truck',
+# 'motorcycle',
+# 'compact vehicle (660ml-2000ml) for freight',
+# 'compact vehicle (660ml-2000ml) for own use',
+# 'light-duty vehicle (less 660ml) for freight',
+# 'light-duty vehicle (less 660ml) for own use',
+# 'motor coache for own use',
+# 'motor coache for passengers',
+# 'ordinary passenger car (over 2000ml) for freight',
+# 'ordinary passenger car (over 2000ml) for own use',
+# 'other industrial truck',
+# 'other vehicle for own use',
+# 'small-size bus for own use',
+# 'small-size bus for passengers',
+# 'special-use car and auxiliary car',
+# 'taxi',
+# 'truck (light-duty cars) for own use',
+# 'truck (light-duty) for freight',
+# 'truck (ordinary vehicle) for own use',
+# 'truck (ordinary, diesel-powered) for freight',
+# 'truck (ordinary, gas-powered) for freight',
+# 'trucks (small cars) for own use',
+# 'truck (small, diesel-powered) for freight',
+# 'truck (small, gas-powered) for freight',
+# 'truck (tractor) for freight',
+# 'industrial trailer, including agricultural trailer',
+# 'platform truck, including trailers',
+# 'rail car',
+# 'aircrafts and helicopters',
+# 'cargo ship',
+# 'other vessel',
+# 'ship',
+# 'steel vessel',
+# 'subway train',
+# 'rigid bus',
+# 'articulated bus',
+# 'battery electric bus',
+# 'service motor vehicle (road)',
+# 'service motor vehicle (rail)',
+# 'motorcycle (4-cylinder)',
+# 'motorcycle (2-cylinder)',
+# 'motorcycle (sport bike)',
+# 'school bus',
+# 'diesel-powered city bus',
+# 'light rail trains',
+# 'light rail trains, electric',
+# 'pickup',
+# 'sedan',
+# 'heavy rail, passenger',
+# 'heavy rail, passenger, diesel-powered',
+# 'high speed rail',
+# 'pedelec',
+# 'passenger car, LPG',
+# 'passenger car, bifuel CNG/petrol',
+# 'passenger car, PHEV gasoline',
+# 'passenger car, PHEV diesel',
+# 'diesel-powered coach',
+# 'aircraft, national kerosene',
+# 'aircraft, international kerosene',
+# 'trams and subway trains',
+# 'long-distance train',
+# 'motorcycle, 2-stroke gasoline engine',
+# 'motorcycle, 4-stroke gasoline engine',
+# 'motorcycle, battery-electric',
+# 'medium duty truck',
+# 'heavy-duty truck',
+# 'non-operating vehicles',
+# 'bus, government or business',
+# 'bus, LNG',
+# 'bus, CNG',
+# 'bus, hybrid eletric',
+# 'bus, H2, fuel cell',
+# 'locomotive, diesel',
+# 'locomotive, electric',
+# 'locomotive, highspeed',
+# 'aircraft, jetfuel',
+# 'aircraft, biofuel',
+# 'ship, fuel oil',
+# 'ship, dual fuel',
+# 'ship, LNG',
+# 'ship, modifiel fuel oil',
+# 'passenger car, hybrid electric',
+# 'passenger car, fuel cell']
+
+# for m in range(0,12):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =7"
+#     cur.execute(SQL,(NewProds[m],'reserved_'+str(m+115)))
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'bus, LNG' WHERE attribute1_oto = 'reserved_127' AND classification_id = 7")
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2004' WHERE attribute1_oto = 'reserved_20' AND classification_id = 14")
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2005' WHERE attribute1_oto = 'reserved_21' AND classification_id = 14")
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2006' WHERE attribute1_oto = 'reserved_22' AND classification_id = 14")
+
+#November 2024 update
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'bus, hybrid electric' WHERE attribute1_oto = 'bus, hybrid eletric' AND classification_id = 7")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'IIASA-WiC POP 2023' WHERE attribute1_oto = 'reserved_1' AND classification_id = 29")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'OECD ENV-Growth 2023' WHERE attribute1_oto = 'reserved_2' AND classification_id = 29")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'muscle power' WHERE attribute1_oto = 'reserved_4' AND classification_id = 10")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'compressed natural gas (CNG)' WHERE attribute1_oto = 'reserved_5' AND classification_id = 10")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'liquefied petroleum gas (LPG)' WHERE attribute1_oto = 'reserved_6' AND classification_id = 10")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'copper, electric grade' WHERE attribute1_oto = 'reserved_129' AND classification_id = 4")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'steel, automotive' WHERE attribute1_oto = 'reserved_130' AND classification_id = 4")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'pitch' WHERE attribute1_oto = 'reserved_131' AND classification_id = 4")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'bricks and tiles' WHERE attribute1_oto = 'reserved_132' AND classification_id = 4")
+
+# NewTR = ['2020-2030',
+# '2010',
+# '2020',
+# '2017',
+# '2025',
+# '2030',
+# '2040',
+# '2050',
+# '2018',
+# '2027',
+# '2023',
+# '2019',
+# '2021',
+# '2011',
+# '2016',
+# '2007',
+# '2013',
+# '2015',
+# '1949',
+# '1950',
+# '1954',
+# '1955',
+# '1956',
+# '1957',
+# '1958',
+# '1960-1979',
+# '2000-2006']
+
+# for m in range(0,27):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =14"
+#     cur.execute(SQL,(NewTR[m],'reserved_'+str(m+23)))
+
+# NewLayer = ['technology readiness level (TRL)',
+# 'time',
+# 'misc_share',
+# 'monetary value (constant prices)',
+# 'dry mass',
+# 'service',
+# 'electricity',
+# 'mass ratio']
+
+# for m in range(0,8):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =20"
+#     cur.execute(SQL,(NewLayer[m],'reserved_'+str(m+18)))
+
+# NewVehs = ['ICEV-g_Passenger car_Conventional design',
+# 'ICEV-g_Light truck_Conventional design',
+# 'ICEV-g_Microcar_Conventional design',
+# 'ICEV-g_Minivan/SUV_Conventional design',
+# 'ICEV-d_Passenger car_Conventional design',
+# 'ICEV-d_Light truck_Conventional design',
+# 'ICEV-d_Microcar_Conventional design',
+# 'ICEV-d_Minivan/SUV_Conventional design',
+# 'HEV_Passenger car_Conventional design',
+# 'HEV_Light truck_Conventional design',
+# 'HEV_Microcar_Conventional design',
+# 'HEV_Minivan/SUV_Conventional design',
+# 'PHEV_Passenger car_Conventional design',
+# 'PHEV_Light truck_Conventional design',
+# 'PHEV_Microcar_Conventional design',
+# 'PHEV_Minivan/SUV_Conventional design',
+# 'BEV_Passenger car_Conventional design',
+# 'BEV_Light truck_Conventional design',
+# 'BEV_Microcar_Conventional design',
+# 'BEV_Minivan/SUV_Conventional design',
+# 'HFCEV_Passenger car_Conventional design',
+# 'HFCEV_Light truck_Conventional design',
+# 'HFCEV_Microcar_Conventional design',
+# 'HFCEV_Minivan/SUV_Conventional design',
+# 'ICEV-g_Passenger car_Lightweight design',
+# 'ICEV-g_Light truck_Lightweight design',
+# 'ICEV-g_Microcar_Lightweight design',
+# 'ICEV-g_Minivan/SUV_Lightweight design',
+# 'ICEV-d_Passenger car_Lightweight design',
+# 'ICEV-d_Light truck_Lightweight design',
+# 'ICEV-d_Microcar_Lightweight design',
+# 'ICEV-d_Minivan/SUV_Lightweight design',
+# 'HEV_Passenger car_Lightweight design',
+# 'HEV_Light truck_Lightweight design',
+# 'HEV_Microcar_Lightweight design',
+# 'HEV_Minivan/SUV_Lightweight design',
+# 'PHEV_Passenger car_Lightweight design',
+# 'PHEV_Light truck_Lightweight design',
+# 'PHEV_Microcar_Lightweight design',
+# 'PHEV_Minivan/SUV_Lightweight design',
+# 'BEV_Passenger car_Lightweight design',
+# 'BEV_Light truck_Lightweight design',
+# 'BEV_Microcar_Lightweight design',
+# 'BEV_Minivan/SUV_Lightweight design',
+# 'HFCEV_Passenger car_Lightweight design',
+# 'HFCEV_Light truck_Lightweight design',
+# 'HFCEV_Microcar_Lightweight design',
+# 'HFCEV_Minivan/SUV_Lightweight design']
+
+# NewVehsD = ['ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'HEV: hybrid electric vehicle',
+# 'HEV: hybrid electric vehicle',
+# 'HEV: hybrid electric vehicle',
+# 'HEV: hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, gasoline',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'ICEV: internal combustion engine vehicle, diesel',
+# 'HEV: hybrid electric vehicle',
+# 'HEV: hybrid electric vehicle',
+# 'HEV: hybrid electric vehicle',
+# 'HEV: hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'PHEV: plugin hybrid electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'BEV: battery electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle',
+# 'HFCEV: hydrogen fuell cell electric vehicle']
+
+# for m in range(0,48):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s, description = %s WHERE attribute1_oto = %s AND classification_id =7"
+#     cur.execute(SQL,(NewVehs[m],NewVehsD[m],'reserved_'+str(m+128)))
+
+NewLy = ['technical lifetime',
+'investment cost per capacity',
+'fixed O&M costs per capacity',
+'technology readiness level (TRL)',
+'energy efficiency improvement',
+'expected technology availability year',
+'variable O&M costs per production',
+'typical plant capacity',
+'investment cost per capacity refurbishment',
+'annualized fixed costs (CAPEX and O&M)',
+'variable O&M costs per activity',
+'CAPEX, greenfield',
+'CAPEX, brownfield',
+'OPEX, total',
+'OPEX, alumina',
+'OPEX, electricity',
+'OPEX, anode',
+'OPEX, labour',
+'OPEX, other costs',
+'OPEX, CCS plant O&M costs',
+'OPEX, CCS plant fuel costs',
+'retrofit CAPEX',
+'variable O&M costs per capacity',
+'assumed plant capacity',
+'CAPEX - new build brownfield, Steam cracker',
+'CAPEX - new build brownfield, General',
+'O&M as % of CAPEX',
+'O&M',
+'CAPEX - new build brownfield, CCS',
+'CAPEX - retrofit',
+'CAPEX - new build brownfield, Electric steam cracker',
+'CAPEX - new build brownfield, POX unit',
+'CAPEX - new build brownfield, Methanol synthesis unit',
+'CAPEX - new build brownfield, MTO unit',
+'CAPEX - new build brownfield, Hydrogen burners',
+'CAPEX - new build brownfield, NOx abatement unit',
+'CAPEX - new build brownfield, Pyrolysis unit',
+'CAPEX - new build brownfield, Hydrotreater',
+'CAPEX - retrofit, Electric steam cracker',
+'CAPEX - new build brownfield',
+'CAPEX - new build brownfield, CCS unit',
+'CAPEX - new build brownfield, all units',
+'CAPEX - retrofit, all units']
+
+# for m in range(0,43):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =28"
+#     cur.execute(SQL,(NewLy[m],'reserved_'+str(m+8)))
+
+NewBld = ['industrial building, wood',
+'civil building, wood',
+'civil building, steel-concrete',
+'industrial building, brick-wood',
+'civil building, brick-wood',
+'industrial building, brick-concrete',
+'civil building, brick-concrete',
+'industrial building, steel-concrete',
+'civil building, steel',
+'industrial building, steel',
+'working shop',
+'storehouse',
+'energy station',
+'teaching building',
+'library',
+'hall',
+'hotel',
+'shower room',
+'meeting room',
+'washing room',
+'toilet',
+'forging shop',
+'heat-treatment shop',
+'electronic shop',
+'paper machine room',
+'chemical shop',
+'paper making shop',
+'machine shop']
+
+# for m in range(0,28):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =13"
+#     cur.execute(SQL,(NewLy[m],'reserved_'+str(m+54))) ###  ERROR: Wrong labels uploaded! Fix below.
+
+# InsLy =['CAPEX - new build brownfield, PDH',
+# 'CAPEX - retrofit, Feedstock switch',
+# 'CAPEX - new build brownfield, C3 splitter',
+# 'specific capital costs',
+# 'operating costs, use of green hydrogen',
+# 'operating costs, electricity use',
+# 'operating costs, other',
+# 'compensation, lost metallurgical gases',
+# 'operating costs, carbon capture, transport, storage',
+# 'operating costs, materials',
+# 'specific capital costs, CCU retrofitting',
+# 'sales, methanol',
+# 'operating costs, H2 for methanol synthesis']
+
+# for m in range(0,13):
+#     cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto) VALUES (%s,%s)",(28,InsLy[m]))
+
+# InsLby =['boiler shop',
+# 'cold room',
+# 'cement plant',
+# 'pharmaceutical shop',
+# 'mess hall',
+# 'pumping station',
+# 'woodworking shop ',
+# 'coal gas station',
+# 'repair shop',
+# 'metalwork shop',
+# 'acid pickling shop',
+# 'processing shop',
+# 'foundry shop',
+# 'tool shop',
+# 'assembly shop',
+# 'grinning shop',
+# 'engine shop',
+# 'molding shop',
+# 'power station',
+# 'boiler room',
+# 'transformer room',
+# 'compressed air station',
+# 'blacksmith casting room',
+# 'plate work shop',
+# 'heat treatment shop',
+# 'machine repair shop',
+# 'bathroom',
+# 'shopping mall',
+# 'gelatin shop',
+# 'drinking shop',
+# 'theatre',
+# 'gymnasium',
+# 'production room',
+# 'convenience store',
+# 'kindergarten',
+# ]
+
+# for m in range(0,35):
+#     cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto) VALUES (%s,%s)",(13,InsLby[m]))
+
+### Nov. 2024 update/fix
+# remove incomplete upload of class. items 83:
+#cur.execute("DELETE FROM classification_items WHERE classification_id = 83")            
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'diesel-powered heavy-duty truck' WHERE attribute1_oto = 'diesel-powered heavy heavy-duty truck' AND classification_id = 7")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'passenger train' WHERE attribute1_oto = 'reserved_176' AND classification_id = 7")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'freight train' WHERE attribute1_oto = 'reserved_177' AND classification_id = 7")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'container ship, fuel oil-powered' WHERE attribute1_oto = 'reserved_178' AND classification_id = 7")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'crude oil tanker, fuel oil-powered' WHERE attribute1_oto = 'reserved_179' AND classification_id = 7")
+
+# Fix wrong upload, by replacing economic indicators by building types:
+# 1. Uncomment and re-build the two lists NewLy and NewBld
+
+# for m in range(0,28):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =13"
+#     cur.execute(SQL,(NewBld[m],NewLy[m])) ###  Fix from above.
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'kerosene' WHERE attribute1_oto = 'kerosene ' AND classification_id = 10")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'stainless steel' WHERE attribute1_oto = 'stainless steel ' AND classification_id = 4")
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'CAPEX - retrofit, feedstock switch' WHERE attribute1_oto = 'CAPEX - retrofit, Feedstock switch' AND classification_id = 28")
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'copper slag' WHERE attribute1_oto = 'Copper slag' AND classification_id = 83")
+#cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto) VALUES (%s,%s)",(83,'CO2 direct'))
 
 # Close connection
 cur.close()

@@ -15,6 +15,15 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
+# get total number of data
+cur.execute("SELECT COUNT(*) FROM data")
+for row in cur:
+    print(row)  
+    
+cur.execute("SELECT COUNT(*) FROM datasets")
+for row in cur:
+    print(row)  
+    
 cur.execute("Show tables")
 for row in cur:
     print(row)
@@ -113,11 +122,6 @@ for row in cur:
 cur.execute("SELECT table_name, Auto_increment FROM information_schema.tables WHERE table_schema = DATABASE()")    
 for row in cur:
     print(row)
-    
-# get total number of data
-cur.execute("SELECT COUNT(*) FROM data")
-for row in cur:
-    print(row)    
 
 cur.execute("SELECT COUNT(*) FROM datasets")
 for row in cur:

@@ -150,6 +150,15 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #cur.execute("UPDATE datasets SET dataset_version = 'none' WHERE id = 319") 
 #cur.execute("UPDATE datasets SET dataset_version = 'none' WHERE id = 320") 
 
+### Nov. 2024 update
+#cur.execute("UPDATE datagroups SET project_link = 'https://doi.org/10.1111/jiec.13557' WHERE id = 13") 
+#cur.execute("UPDATE datagroups SET project_report = 'https://doi.org/10.1111/jiec.13557' WHERE id = 13")
+#cur.execute("UPDATE datagroups SET suggested_citation = 'https://doi.org/10.1111/jiec.13557' WHERE id = 13") 
+
+#Steel stocks and flows 2013 paper: Add comment that all data refer to method (a) as described in the paper.
+#cur.execute("UPDATE datasets SET comment = 'all data refer to method (a) as described in the paper' WHERE datagroup_id = 1 AND comment = 'none'") 
+#cur.execute("UPDATE datasets SET aspect_4_classification = 14 WHERE id = 362") 
+
 # 4) close connection
 # cur.close()
 # conn.close()

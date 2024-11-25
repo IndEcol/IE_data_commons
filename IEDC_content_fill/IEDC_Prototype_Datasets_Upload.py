@@ -102,10 +102,12 @@ for row in cur:
 
 ## Read ancillary tables:
 
-DClassDefsD = []
-cur.execute("SELECT dimension FROM classification_definition ORDER BY id")
+DClassDefsid = []
+DClassDefsD  = []
+cur.execute("SELECT id, dimension FROM classification_definition ORDER BY id")
 for row in cur:
-    DClassDefsD.append(row[0])
+    DClassDefsid.append(row[0])
+    DClassDefsD.append(row[1])
 
 DAspects  = []
 DAspectsD = []
@@ -118,8 +120,8 @@ for row in cur:
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
 TOC = TOCFile['DataSets_Inventory']
 
-Offset = 92 # entry of row 74 of column of first dataset to be entered.
-No_DS = 5
+Offset = 114 # entry of row 74 of column of first dataset to be entered.
+No_DS = 1
 
 # loop over datasets
 for m in range(Offset,Offset + No_DS):
@@ -168,7 +170,7 @@ for m in range(Offset,Offset + No_DS):
                 D[c]  = 0
             else:
                 D[c]  =  int(TOC.cell(c +4,m +5).value)
-                if DClassDefsD[D[c] -1] !=  DAspectsD[D[a] -1]:
+                if DClassDefsD[DClassDefsid.index(D[c])] !=  DAspectsD[D[a] -1]:
                     print('Aspect and classification mismatch for dataset %s and aspect %s.'  %((m), n))
 
     D[46]      = TOC.cell(50,m +5).value # 46: tuple notation
