@@ -28,6 +28,10 @@ cur.execute("SELECT * FROM licences")
 for row in cur:
     print(row)
 
+cur.execute("SELECT * FROM users")
+for row in cur:
+    print(row)
+    
 #cur.execute("SELECT * FROM stats_array")
 #for row in cur:
 #    print(row)
@@ -343,6 +347,60 @@ for row in cur:
 #SQL = "UPDATE users SET name = 'Ilham Chekrad' WHERE id = 10" 
 #cur.execute(SQL)
 		
+### IEDC March 2025 update
+#cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('2.5th and 97.5th percentile','2.5th and 97.5th percentile, of a given quantity, some unit as value','2.5th percentile','97.5th percentile')") 
+#cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('RSD','relative standard deviation (RSD) as share of mean (1) or % of mean (%)','RSD (unit: 1)','RSD (unit: %')") 
+#cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('5th and 95th percentile','5th and 95th percentile, of a given quantity, some unit as value','5th percentile','95th percentile')") 
+
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Lorenz curve, normalized','normalized Lorenz curve (values from 0-1) of the cumulative ranked distribution of an indicator across a population',3,'LC')"
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Lorenz curve, non-normalized, flow','non-normalized Lorenz curve of the cumulative ranked distribution of a flow across a population',1,'LCF')"
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Lorenz curve, non-normalized, stock','non-normalized Lorenz curve of the cumulative ranked distribution of a stock across a population',2,'LCS')"
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('general ratio of flows linked to a process','general ratio of flows linked to a process - determined by the same process they are all connected to',4,'SHR')"
+#SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Boolean data type (flag)','Boolean data type (flag) to indicate whether a certain property is true for a given set of aspects or not',8,'FLG')"
+#cur.execute(SQL)
+#cur.execute("UPDATE types SET description = 'flows of all kind' WHERE id = 1") 
+#cur.execute("UPDATE types SET description = 'material composition of products, alloys, waste/scrap, etc.' WHERE id = 6") 
+
+#SQL = "INSERT INTO provenance (name,description) VALUES ('Representative values based on compilation from scientific literature and expert estimates','')"
+#SQL = "INSERT INTO provenance (name,description) VALUES ('Representative (synthetic) sample, aggregated from survey results','Representative (including synthetic) sample, aggregated from survey results')"
+#SQL = "INSERT INTO provenance (name,description) VALUES ('Measurements','Data derived directly from measurements')"
+#cur.execute(SQL)
+
+
+#SQL = "INSERT INTO layers (name,description) VALUES ('material volume per area','used to indicate material composition of buildings, where the values are given as m³ per building area')"
+#cur.execute(SQL)
+
+## New users
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (11,'almcs','Alexander McShane','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (12,'chrhs','Christian Hauenstein','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (13,'magel','Marcel Geller','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (14,'jnasr','Jad Nasr','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (15,'Jovel','Johan Vélez','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (16,'mjiang','Meng Jiang','Indecol-NTNU','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (17,'mveng','Martijn van Engelenburg','CML','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (18,'arcast','Arias Castillo','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+#cur.execute(SQL)
+# cur.execute("UPDATE users SET username = 'jovel' WHERE id = 15") 
+
+# fix aspect table entry
+#cur.execute("UPDATE aspects SET description = 'dimensionless aspect (with unit 1)' WHERE id = 4") 
+
+#SQL = "INSERT INTO licences (id,name,description) VALUES (20,'CC BY NC 4.0','https://creativecommons.org/share-your-work/cclicenses/')"
+#SQL = "INSERT INTO licences (id,name,description) VALUES (21,'CC BY ND 4.0','https://creativecommons.org/share-your-work/cclicenses/')"
+#SQL = "INSERT INTO licences (id,name,description) VALUES (22,'CC BY NC ND 4.0','https://creativecommons.org/share-your-work/cclicenses/')"
+#cur.execute(SQL)
+
+# Add units:
+# SQL = "UPDATE units SET refunit_id = 6, unitcode = 'cm2', unit_name = 'square centimeter', factor = 1E-4 WHERE id = 16"
+# SQL = "UPDATE units SET refunit_id = 8, unitcode = 'MY', unit_name = 'million yen' WHERE id = 17"
+# SQL = "UPDATE units SET refunit_id = 1, unitcode = 'household', unit_name = 'household', factor = 1 WHERE id = 18"
+#SQL = "UPDATE units SET refunit_id = 7, unitcode = 'kVA', unit_name = 'kilo volt-ampere', factor = 1000 WHERE id = 19"
+#cur.execute(SQL)
+#cur.execute("UPDATE units SET factor = NULL WHERE id = 17") 
+
+## New layer
+SQL = "INSERT INTO layers (name,description) VALUES ('Energy per unit of output','specific energy requirement of a process per unit of output, e.g., in kWh/item')"
+cur.execute(SQL)			
 
 
 ## close connection
