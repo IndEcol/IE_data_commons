@@ -2420,7 +2420,37 @@ cur = conn.cursor()
 #cur.execute("UPDATE classification_items SET attribute2_oto = 'Nickel-cadmium electric accumulators' WHERE attribute2_oto = 'Nickel-cadmium' AND classification_id = 91")
 #cur.execute("UPDATE classification_items SET attribute2_oto = 'Nickel-iron electric accumulators' WHERE attribute2_oto = 'Nickel-iron' AND classification_id = 91")
     
+# Add to class. 7:
+# NewPr=['audio equipment',
+# 'rice cooker',
+# 'microscope',
+# 'heating appliances',
+# 'Hi-Fi stereo system',
+# 'television and video appliances',
+# 'machinery',
+# 'other electronic appliances',
+# 'other electrothermal cooking appliances',
+# 'other electric appliances',
+# 'other video equipment',
+# 'TV (except for LCD)',
+# 'transport equipment',
+# 'video cameras',
+# 'X-ray systems']    
+# for m in range(0,15):
+#     cur.execute("INSERT INTO classification_items (classification_id, attribute1_oto) VALUES (%s,%s)",(7,NewPr[m]))
 
+# add and fix regions
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'Serbia (incl. Kosovo)', attribute4_oto = 10031 WHERE attribute1_oto = 'reserved_14' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute4_oto = 10029 WHERE attribute2_oto = 10029 AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute2_oto = NULL WHERE attribute2_oto = 10029 AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute4_oto = 10030 WHERE attribute2_oto = 10030 AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute2_oto = NULL WHERE attribute2_oto = 10030 AND classification_id = 2")
+
+# delete redundant and mis-spelled product labels:
+#cur.execute("DELETE from classification_items WHERE id = 106978 AND classification_id = 7")    
+#cur.execute("DELETE from classification_items WHERE id = 1430 AND classification_id = 7")    
+#cur.execute("DELETE from classification_items WHERE id = 107058 AND classification_id = 7")    
+#cur.execute("DELETE from classification_items WHERE id = 1432 AND classification_id = 7")    
 
 
 # Close connection

@@ -159,6 +159,14 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #cur.execute("UPDATE datasets SET comment = 'all data refer to method (a) as described in the paper' WHERE datagroup_id = 1 AND comment = 'none'") 
 #cur.execute("UPDATE datasets SET aspect_4_classification = 14 WHERE id = 362") 
 
+# March 2025:
+# Search for mis-spelled classification items    
+# for m in range(1,13): 
+#     cur.execute("SELECT DISTINCT dataset_id FROM data WHERE aspect" + str(m) + " = 1432") # search for possibly wrong entry for a given classification item
+#     for row in cur:
+#         print(row) 
+
+
 # 4) close connection
 # cur.close()
 # conn.close()
