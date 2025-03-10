@@ -17,7 +17,7 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
-no_groups    = 15 # number of data types for drop-down menu
+no_groups    = 16 # number of data types for drop-down menu
 data_label  = []
 data_type   = []
 data_aspect = []
