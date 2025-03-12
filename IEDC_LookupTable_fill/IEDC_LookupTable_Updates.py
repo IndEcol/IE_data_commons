@@ -399,8 +399,14 @@ for row in cur:
 #cur.execute("UPDATE units SET factor = NULL WHERE id = 17") 
 
 ## New layer
-SQL = "INSERT INTO layers (name,description) VALUES ('Energy per unit of output','specific energy requirement of a process per unit of output, e.g., in kWh/item')"
-cur.execute(SQL)			
+# SQL = "INSERT INTO layers (name,description) VALUES ('Energy per unit of output','specific energy requirement of a process per unit of output, e.g., in kWh/item')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Production volume','Production volume (annual) of a company or process, e.g., in Mt/yr or items/yr')"
+# cur.execute(SQL)			
+
+# new aspect: organization	z
+# SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('organization','organization or company',7,'z','none')"
+# cur.execute(SQL)
+
 
 
 ## close connection

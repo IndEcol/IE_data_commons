@@ -2452,13 +2452,58 @@ cur = conn.cursor()
 #cur.execute("DELETE from classification_items WHERE id = 107058 AND classification_id = 7")    
 #cur.execute("DELETE from classification_items WHERE id = 1432 AND classification_id = 7")    
 
+# Add 5 more RECC regions to class. 89:
+# cur.execute("INSERT INTO classification_items (classification_id,description,reference,attribute1_oto,attribute2_oto,attribute5_anc) VALUES (%s,%s,%s,%s,%s,%s)",(89,'https://github.com/iiasa/circomod-workflow/blob/main/definitions/region/RECC_2.6.yaml','https://github.com/iiasa/circomod-workflow/blob/main/mappings/RECC_2.6.yaml','RECC 2.6|USA','RECC 2.6|R32USA','R32USA'))
+# cur.execute("INSERT INTO classification_items (classification_id,description,reference,attribute1_oto,attribute2_oto,attribute5_anc) VALUES (%s,%s,%s,%s,%s,%s)",(89,'https://github.com/iiasa/circomod-workflow/blob/main/definitions/region/RECC_2.6.yaml','https://github.com/iiasa/circomod-workflow/blob/main/mappings/RECC_2.6.yaml','RECC 2.6|Japan','RECC 2.6|R32JPN','R32JPN'))
+# cur.execute("INSERT INTO classification_items (classification_id,description,reference,attribute1_oto,attribute2_oto,attribute5_anc) VALUES (%s,%s,%s,%s,%s,%s)",(89,'https://github.com/iiasa/circomod-workflow/blob/main/definitions/region/RECC_2.6.yaml','https://github.com/iiasa/circomod-workflow/blob/main/mappings/RECC_2.6.yaml','RECC 2.6|Canada','RECC 2.6|R32CAN','R32CAN'))
+# cur.execute("INSERT INTO classification_items (classification_id,description,reference,attribute1_oto,attribute2_oto,attribute5_anc) VALUES (%s,%s,%s,%s,%s,%s)",(89,'https://github.com/iiasa/circomod-workflow/blob/main/definitions/region/RECC_2.6.yaml','https://github.com/iiasa/circomod-workflow/blob/main/mappings/RECC_2.6.yaml','RECC 2.6|China','RECC 2.6|R32CHN','R32CHN'))
+# cur.execute("INSERT INTO classification_items (classification_id,description,reference,attribute1_oto,attribute2_oto,attribute5_anc) VALUES (%s,%s,%s,%s,%s,%s)",(89,'https://github.com/iiasa/circomod-workflow/blob/main/definitions/region/RECC_2.6.yaml','https://github.com/iiasa/circomod-workflow/blob/main/mappings/RECC_2.6.yaml','RECC 2.6|India','RECC 2.6|R32IND','R32IND'))
+
+# add new layer to class. 20:
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'Power generation capacity' WHERE attribute1_oto = 'reserved_27' AND classification_id = 20")  
+
+# add to class. 18:
+#cur.execute("INSERT INTO classification_items (classification_id,description,attribute1_oto) VALUES (%s,%s,%s)",(18,'ore, non-metallic mineral, harvested biomass, extracted fossil fuel','raw material'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(18,'refined metal'))
+
+# EnCList =['bagasse (cane stalks)',
+# 'chaff (seed casings)',
+# 'animal dung, manure',
+# 'dried plants',
+# 'wood fuel',
+# 'charcoal',
+# 'uranium 235',
+# 'fusion fuel (2H->3H)',
+# 'coal',
+# 'crude oil',
+# 'ethane',
+# 'methane',
+# 'hydrogen',
+# 'pyrolysis oil',
+# 'methanol',
+# 'ethanol',
+# 'ecalene',
+# 'butanol',
+# 'fat',
+# 'biodiesel',
+# 'sunflower oil',
+# 'castor oil',
+# 'olive oil']
+
+# for m in range(0,23):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =10"
+#     cur.execute(SQL,(EnCList[m],'reserved_'+str(m+8)))
+
+# add news process scopes to class. 6:
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'product system of a given commodity, primary production from ore' WHERE attribute1_oto = 'reserved_66' AND classification_id = 6")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'product system of a given commodity, secondary production from scrap' WHERE attribute1_oto = 'reserved_67' AND classification_id = 6")  
+
 
 # Close connection
 cur.close()
 conn.close()
 
 
-#
 #
 #
 #
