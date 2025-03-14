@@ -407,6 +407,8 @@ for row in cur:
 # SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('organization','organization or company',7,'z','none')"
 # cur.execute(SQL)
 
+#SQL = "UPDATE stats_array SET scale = 'RSD (unit: %)' WHERE id = 28"
+#cur.execute(SQL)
 
 
 ## close connection

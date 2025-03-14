@@ -2498,6 +2498,45 @@ cur = conn.cursor()
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'product system of a given commodity, primary production from ore' WHERE attribute1_oto = 'reserved_66' AND classification_id = 6")  
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'product system of a given commodity, secondary production from scrap' WHERE attribute1_oto = 'reserved_67' AND classification_id = 6")  
 
+# add to 11:
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'rural and urban regions' WHERE attribute1_oto = 'reserved_29' AND classification_id = 11")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'urban regions' WHERE attribute1_oto = 'reserved_30' AND classification_id = 11")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'rural regions' WHERE attribute1_oto = 'reserved_31' AND classification_id = 11")  
+
+# add to 7:
+# cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'clothes dryer'))
+# cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'other musical instruments'))
+# cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'pianos'))
+# cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'stereo equipment'))
+# cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'water heater'))
+
+# add to 14:
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2003-2015' WHERE attribute1_oto = 'reserved_72' AND classification_id = 14")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2004-2010' WHERE attribute1_oto = 'reserved_73' AND classification_id = 14")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2009-2013' WHERE attribute1_oto = 'reserved_74' AND classification_id = 14")  
+
+# add to 1:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(1,'all metals'))
+
+# add to 7:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'feature phone'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'smartphone'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,'multimedia phone'))
+
+# add to 90:
+# Komps = ['screen',
+# 'camera',
+# 'cameras and speakers',
+# 'electronic components',
+# 'metal parts: mounts, screws',
+# 'plastic parts: housing components, cases, enclosures, covers',
+# 'displays',
+# 'entire device, without battery']
+
+# for mk in range(0,8):
+#     cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(90,Komps[mk]))
+
+
 
 # Close connection
 cur.close()
