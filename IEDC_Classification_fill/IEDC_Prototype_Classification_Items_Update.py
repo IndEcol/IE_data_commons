@@ -2536,6 +2536,54 @@ cur = conn.cursor()
 # for mk in range(0,8):
 #     cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(90,Komps[mk]))
 
+# update 1
+#cur.execute("UPDATE classification_items SET attribute4_oto = 'All metals' WHERE attribute1_oto = 'all metals' AND classification_id = 1")  
+
+# add to 4:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'calcium'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'barium'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'other non-metallic minerals'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'PET & HDPE'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'excavated material'))
+
+# tranges =[1983,1993,1996,2000,'1978-2020','2000-2020','before 1999','2011-2020','ca. 1995']
+# for mk in range(0,9):
+#     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =14"
+#     cur.execute(SQL,(tranges[mk],'reserved_'+str(mk+75)))
+
+# Fix class. 86:	remove all trailing blank spaces for attribute 2+3
+# CE_strats = ['R0',
+# 'R1',
+# 'R2',
+# 'R2a',
+# 'R2b',
+# 'R2c',
+# 'R2d',
+# 'R2e',
+# 'R2f',
+# 'R2g',
+# 'R2h',
+# 'R2i',
+# 'R3a',
+# 'R3b',
+# 'R4',
+# 'R5',
+# 'R6',
+# 'R7',
+# 'R8',
+# 'R8a',
+# 'R8b',
+# 'R9']
+# for si in range(0,22):
+#     cur.execute("SELECT attribute2_oto, attribute3_oto FROM classification_items WHERE classification_id = 86 AND attribute1_oto =%s",(CE_strats[si]))
+#     for row in cur:
+#         #print(row)  
+#         # fetch and fix labels
+#         attr2_new = row[0].replace(u'\xa0', u'')
+#         attr3_new = row[1].replace(u'\xa0', u'')
+#         # insert new labels
+#         cur.execute("UPDATE classification_items SET attribute2_oto = %s WHERE attribute1_oto = %s AND classification_id = 86",(attr2_new,CE_strats[si]))  
+#         cur.execute("UPDATE classification_items SET attribute3_oto = %s WHERE attribute1_oto = %s AND classification_id = 86",(attr3_new,CE_strats[si]))  
 
 
 # Close connection
