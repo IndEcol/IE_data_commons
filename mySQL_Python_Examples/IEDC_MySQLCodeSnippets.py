@@ -187,6 +187,16 @@ cur.execute("SELECT * FROM datasets WHERE id = 69")
 for row in cur:
     print(row)     
     
+cur.execute("SELECT * FROM projects WHERE id = 7")
+for row in cur:
+    print(row)   
+    
+# Check licenses of projects
+cur.execute("SELECT datagroup_name,submitting_user FROM datagroups ORDER BY id")
+Tuples = cur.fetchall()
+Pnames  = [x[0] for x in Tuples]      
+Psourc  = [x[1] for x in Tuples]      
+    
 #cur.execute("UPDATE data SET unit_denominator = 1 WHERE dataset_id = 112") 
 # Change auto_increment    
 #cur.execute("ALTER TABLE iedc_review.licences AUTO_INCREMENT = 5")

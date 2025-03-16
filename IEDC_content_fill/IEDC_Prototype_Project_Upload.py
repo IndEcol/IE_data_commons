@@ -62,15 +62,15 @@ for row in cur:
     print(row)
 
 # Read ancillary table items:
-cur.execute("SELECT id,name FROM licences")
+cur.execute("SELECT id,name FROM licences ORDER BY id")
 Tuples = cur.fetchall()
 DLicen = [x[1] for x in Tuples] 
 
-cur.execute("SELECT id,name FROM source_type")
+cur.execute("SELECT id,name FROM source_type ORDER BY id")
 Tuples = cur.fetchall()
 DSource = [x[1] for x in Tuples] 
 
-cur.execute("SELECT id,name FROM users")
+cur.execute("SELECT id,name FROM users ORDER BY id")
 Tuples = cur.fetchall()
 DUsers = [x[1] for x in Tuples] 
 

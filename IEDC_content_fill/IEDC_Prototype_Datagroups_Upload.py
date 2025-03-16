@@ -65,19 +65,19 @@ for row in cur:
     print(row)
 
 # Read ancillary table items:
-cur.execute("SELECT id,project_name FROM projects")
+cur.execute("SELECT id,project_name FROM projects ORDER BY id")
 Tuples = cur.fetchall()
 DProj  = [x[1] for x in Tuples]     
     
-cur.execute("SELECT id,name FROM licences")
+cur.execute("SELECT id,name FROM licences ORDER BY id")
 Tuples = cur.fetchall()
 DLicen = [x[1] for x in Tuples] 
 
-cur.execute("SELECT id,name FROM source_type")
+cur.execute("SELECT id,name FROM source_type ORDER BY id")
 Tuples = cur.fetchall()
 DSource = [x[1] for x in Tuples] 
 
-cur.execute("SELECT id,name FROM users")
+cur.execute("SELECT id,name FROM users ORDER BY id")
 Tuples = cur.fetchall()
 DUsers = [x[1] for x in Tuples] 
 
@@ -100,7 +100,7 @@ for m in range(Offset,Offset +No_DG):
     D[1] = TOC.cell(5,m +5).value #1: name
     if  TOC.cell(6,m +5).value != 'none': #2: version
         D[2] = str(TOC.cell(6,m +5).value)
-    if  TOC.cell(7,m +5).value != 'none': #3: project id        
+    if  TOC.cell(7,m +5).value != 'none': #3: project id, add 1 to convert from list index to SQL table id        
         D[3] = DProj.index(TOC.cell(7,m +5).value) +1
     
     D[4] = TOC.cell(8,m +5).value # 4: data categories
@@ -110,8 +110,8 @@ for m in range(Offset,Offset +No_DG):
     for n in range(7,21):
         D[n]   = TOC.cell(n +4,m +5).value # system location description, dataset description, keywords
 
-    D[21]      = DSource.index(TOC.cell(25,m +5).value) +1  # 21: data source
-    D[22]      = DLicen.index(TOC.cell(26,m +5).value) +1 # 22: License
+    D[21]      = DSource.index(TOC.cell(25,m +5).value) +1  # 21: data source, add 1 to convert from list index to SQL table id  
+    D[22]      = DLicen.index(TOC.cell(26,m +5).value) +1 # 22: license, add 1 to convert from list index to SQL table id  
 
     D[23]      = TOC.cell(27,m +5).value # 23: main author
     D[24]      = TOC.cell(28,m +5).value # 24: link
@@ -119,7 +119,7 @@ for m in range(Offset,Offset +No_DG):
     D[26]      = TOC.cell(30,m +5).value # 26: citation
         
     D[27]   = TOC.cell(31,m +5).value # submission date
-    D[28]   = DUsers.index(TOC.cell(32,m +5).value) +1 # 28: User
+    D[28]   = DUsers.index(TOC.cell(32,m +5).value) +1 # 28: user, add 1 to convert from list index to SQL table id  
 
     cur.execute(SQL,(D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
                       D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18],D[19],D[20],\

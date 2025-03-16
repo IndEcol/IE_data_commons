@@ -6,6 +6,7 @@ Created on Thu Nov 30 16:57:29 2017
 """
 
 import pymysql
+import openpyxl
 import datetime
 import numpy as np
 import xlrd
@@ -166,7 +167,48 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #     for row in cur:
 #         print(row) 
 
+# update datagroup ids:
+#cur.execute("UPDATE datasets SET datagroup_id = 4 WHERE id = 209")     
 
+#Correct projects and datasets, as upload scripts contained a mistake until now:
+# Fix iedc.projects type of source, fix iedc.datagroups type of source and license
+# Read dataset descriptions
+#TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
+# TOC = TOCFile['Projects']
+# for m in range (5,12):
+#     print(TOC.cell(22,m).value)
+#     # fetch index for provenance:
+#     cur.execute("SELECT id FROM source_type WHERE name = %s ",TOC.cell(22,m).value)
+#     for row in cur:
+#         provs = row[0]      
+#         print(provs)
+#         print(m-4)
+#     # update entry in projects table:
+#     cur.execute("UPDATE projects SET type_of_source = %s WHERE id = %s",(provs,m-4))      
+    
+#TOC = TOCFile['DataGroups']
+# for m in range (5,29):
+#     print(TOC.cell(25,m).value)
+#     # fetch index for provenance:
+#     cur.execute("SELECT id FROM source_type WHERE name = %s ",TOC.cell(25,m).value)
+#     for row in cur:
+#         provs = row[0]      
+#         print(provs)
+#         print(m-4)
+#     # update entry in datagroups table:
+#     cur.execute("UPDATE datagroups SET type_of_source = %s WHERE id = %s",(provs,m-4))    
+
+# for m in range (5,29):
+#     print(TOC.cell(26,m).value)
+#     # fetch index for licences:
+#     cur.execute("SELECT id FROM licences WHERE name = %s ",TOC.cell(26,m).value)
+#     for row in cur:
+#         lics = row[0]      
+#         print(lics)
+#         print(m-4)
+#     # update entry in datagroups table:
+#     cur.execute("UPDATE datagroups SET project_license = %s WHERE id = %s",(lics,m-4)) 
+    
 # 4) close connection
 # cur.close()
 # conn.close()

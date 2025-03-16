@@ -111,7 +111,7 @@ for row in cur:
 
 DAspects  = []
 DAspectsD = []
-cur.execute("SELECT aspect,dimension FROM aspects")
+cur.execute("SELECT aspect,dimension FROM aspects ORDER BY id")
 for row in cur:
     DAspects.append(row[0])
     DAspectsD.append(row[1])
@@ -120,8 +120,8 @@ for row in cur:
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
 TOC = TOCFile['DataSets_Inventory']
 
-Offset = 114 # entry of row 74 of column of first dataset to be entered.
-No_DS = 1
+Offset = 146 # entry of row 74 of column of first dataset to be entered.
+No_DS = 6
 
 # loop over datasets
 for m in range(Offset,Offset + No_DS):
