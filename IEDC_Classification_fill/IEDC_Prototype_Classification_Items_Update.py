@@ -2451,6 +2451,7 @@ cur = conn.cursor()
 #cur.execute("DELETE from classification_items WHERE id = 1430 AND classification_id = 7")    
 #cur.execute("DELETE from classification_items WHERE id = 107058 AND classification_id = 7")    
 #cur.execute("DELETE from classification_items WHERE id = 1432 AND classification_id = 7")    
+#cur.execute("DELETE from classification_items WHERE id = 1354 AND classification_id = 7")    
 
 # Add 5 more RECC regions to class. 89:
 # cur.execute("INSERT INTO classification_items (classification_id,description,reference,attribute1_oto,attribute2_oto,attribute5_anc) VALUES (%s,%s,%s,%s,%s,%s)",(89,'https://github.com/iiasa/circomod-workflow/blob/main/definitions/region/RECC_2.6.yaml','https://github.com/iiasa/circomod-workflow/blob/main/mappings/RECC_2.6.yaml','RECC 2.6|USA','RECC 2.6|R32USA','R32USA'))
@@ -2584,6 +2585,101 @@ cur = conn.cursor()
 #         # insert new labels
 #         cur.execute("UPDATE classification_items SET attribute2_oto = %s WHERE attribute1_oto = %s AND classification_id = 86",(attr2_new,CE_strats[si]))  
 #         cur.execute("UPDATE classification_items SET attribute3_oto = %s WHERE attribute1_oto = %s AND classification_id = 86",(attr3_new,CE_strats[si]))  
+
+# add to 6:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(6,'manufacturing of appliances'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(6,'other manufacturing'))
+
+# add to 14:
+#cur.execute("UPDATE classification_items SET attribute1_oto = 2060 WHERE attribute1_oto = 'reserved_92' AND classification_id = 14")  
+
+# appl = ['Tablet',
+# 'Laptop computer',
+# 'Printer, laser color',
+# 'CD/DVD player',
+# 'appliances',
+# 'other products']
+
+# for mk in range(0,6):
+#     cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(83,appl[mk]))
+
+# applm= ['raw material processing of refrigerators',
+# 'manufacturing of refrigerators',
+# 'raw material processing of clothes washer',
+# 'manufacturing of clothes washer',
+# 'assembly process of clothes washer',
+# 'raw material processing of dish washer',
+# 'raw material processing of air conditioner',
+# 'manufacturing of air conditioner',
+# 'raw material processing (Silver)',
+# 'raw material processing (Aluminium)',
+# 'raw material processing (Gold)',
+# 'raw material processing (Ceramics)',
+# 'raw material processing (Copper)',
+# 'raw material processing (Epoxy)',
+# 'raw material processing (Iron)',
+# 'raw material processing (Glass)',
+# 'raw material processing (Nickel)',
+# 'raw material processing (Lead)',
+# 'raw material processing (Palladium)',
+# 'raw material processing (Aggregated plastics, excl, PVC)',
+# 'raw material processing (Platinum)',
+# 'raw material processing (PVC)',
+# 'raw material processing (Silicon)',
+# 'raw material processing (Tin)',
+# 'raw material processing (Stainless steel)',
+# 'raw material processing (Steel)',
+# 'raw material processing (Zinc)',
+# 'raw material processing (Timber e.g. wood, cardboard)',
+# 'raw material processing (Paper, packaging)',
+# 'production of semiconductor ',
+# 'production of circuit board',
+# 'manufacturing/assembly of CRT',
+# 'assembly of computer',
+# 'manufacturing of Vacuum cleaners',
+# 'manufacturing of Electric kettle',
+# 'manufacturing of Hair Dryer',
+# 'manufacturing of Microwave oven',
+# 'manufacturing of Washing machine',
+# 'manufacturing of Coffee maker',
+# 'manufacturing of Cookstove',
+# 'manufacturing of Dishwasher',
+# 'manufacturing of Dryer',
+# 'manufacturing of Refrigerator',
+# 'manufacturing of Television',
+# 'manufacturing of Tablet',
+# 'manufacturing of Laptop computer',
+# 'manufacturing of Printer, laser color',
+# 'manufacturing of CD/DVD player',
+# 'manufacture of washing machine']
+
+# for mk in range(0,49):
+#     cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(82,applm[mk]))
+
+# prodx = ['water supply pipelines',
+# 'street lamps',
+# 'sewage pipelines',
+# 'subway lines',
+# 'subway station',
+# 'pumps',
+# 'roads, urban',
+# 'pipelines, for heat supply',
+# 'expressway',
+# 'highway, ordinary',
+# 'pipelines, for natural gas',
+# 'pipelines, for coal gas',
+# 'pipelines, for liquefied petroleum gas (LPG)',
+# 'tractors, large and medium-sized',
+# 'tractors, mini',
+# 'shellers, motorized',
+# 'combined harvester',
+# 'drainage and irrigation machinery']
+
+# for mk in range(0,18):
+#     cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,prodx[mk]))
+
+# add to 13:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(13,'office and administrative buildings'))
 
 
 # Close connection

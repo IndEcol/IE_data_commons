@@ -167,6 +167,15 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #     for row in cur:
 #         print(row) 
 
+#Search for mis-spelled classification items    
+# for m in range(1,13): 
+#     cur.execute("SELECT DISTINCT id,dataset_id FROM data WHERE aspect" + str(m) + " = 1354") # search for possibly wrong entry for a given classification item
+#     for row in cur:
+#         print(row) 
+#         print(m)
+# returns (3160714, 378)
+#cur.execute("UPDATE data SET aspect1 = 1455 WHERE aspect1 = 1354 AND dataset_id = 378") 
+
 # update datagroup ids:
 #cur.execute("UPDATE datasets SET datagroup_id = 4 WHERE id = 209")     
 
@@ -209,6 +218,9 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #     # update entry in datagroups table:
 #     cur.execute("UPDATE datagroups SET project_license = %s WHERE id = %s",(lics,m-4)) 
     
+# change version from number to string for id 365:
+#cur.execute("UPDATE datasets SET dataset_version = 'v2023' WHERE id = 365")  
+
 # 4) close connection
 # cur.close()
 # conn.close()
