@@ -2680,6 +2680,38 @@ cur = conn.cursor()
 
 # add to 13:
 #cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(13,'office and administrative buildings'))
+# add to 90:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(90,'inverter'))
+# add to 4:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'polyvinyl fluoride '))
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'polyvinyl fluoride' WHERE attribute1_oto = 'polyvinyl fluoride ' AND classification_id = 4")  
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,'acrylic foam'))
+# add to 20:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(20,'Energy per unit of output'))
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(20,'Energy per mass or output'))    
+# add to 83:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(83,'Generation - PV PERC (rooftop)'))
+# add to 14:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(14,'1946-1980'))
+# add to 86:
+#cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(14,'1946-1980'))
+
+# CEst = ['other: remanufacturing or refurbishment, low potential',
+# 'other: remanufacturing or refurbishment, high potential',
+# 'other: repair or maintenance, low potential',
+# 'other: repair or maintenance, high potential',
+# 'other: reuse, low potential',
+# 'other: reuse, high potential',
+# 'other: remanufacturing, maximum part replacement',
+# 'other: new product',
+# 'other: remanufacturing, light-weighting',
+# 'other: repair, light-weighting',
+# 'other: refuse light-weighting',
+# 'other: refuse, low potential',
+# 'other: refuse, high potential']
+
+# for mk in range(0,13):
+#     cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(86,CEst[mk]))
 
 
 # Close connection
