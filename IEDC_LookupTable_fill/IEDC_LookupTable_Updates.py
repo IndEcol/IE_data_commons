@@ -14,7 +14,7 @@ import IEDC_PW
 conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, user=IEDC_PW.IEDC_write_access_user, passwd=IEDC_PW.IEDC_write_access_user_PW, db='iedc', autocommit=True, charset='utf8')
 
 cur = conn.cursor()
-a
+
 ## Add 'Mt' to 'Gg' unit:
 #cur.execute("UPDATE units SET alt_unitcode = 'Mt' WHERE unitcode = 'Tg'") 
 #
@@ -395,6 +395,8 @@ for row in cur:
 # SQL = "UPDATE units SET refunit_id = 8, unitcode = 'MY', unit_name = 'million yen' WHERE id = 17"
 # SQL = "UPDATE units SET refunit_id = 1, unitcode = 'household', unit_name = 'household', factor = 1 WHERE id = 18"
 #SQL = "UPDATE units SET refunit_id = 7, unitcode = 'kVA', unit_name = 'kilo volt-ampere', factor = 1000 WHERE id = 19"
+#SQL = "UPDATE units SET refunit_id = 7, unitcode = 'MWp', unit_name = 'megawatt peak power', factor = 1000000 WHERE id = 21"
+#SQL = "UPDATE units SET refunit_id = 7, unitcode = 'kWth', unit_name = 'kilowatt thermal power', factor = 1000 WHERE id = 20"
 #cur.execute(SQL)
 #cur.execute("UPDATE units SET factor = NULL WHERE id = 17") 
 
@@ -409,6 +411,8 @@ for row in cur:
 
 #SQL = "UPDATE stats_array SET scale = 'RSD (unit: %)' WHERE id = 28"
 #cur.execute(SQL)
+
+
 
 
 ## close connection
