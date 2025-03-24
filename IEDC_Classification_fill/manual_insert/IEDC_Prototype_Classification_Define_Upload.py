@@ -22,8 +22,8 @@ def from_excel_ordinal(ordinal, _epoch=date(1900, 1, 1)):
     return _epoch + timedelta(days=ordinal - 1)  # epoch is day 1
 
 
-ClassList   = ['IEDC_94_specific_products_technologies'] # List of filenames for classifications to be added.
-ClassIDList = [94]
+ClassList   = ['IEDC_95_CIRCOMOD_end_use_assets'] # List of filenames for classifications to be added.
+ClassIDList = [95]
 
 
 # Define mySQL commands for classification

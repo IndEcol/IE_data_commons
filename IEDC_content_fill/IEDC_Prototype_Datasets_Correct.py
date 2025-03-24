@@ -221,6 +221,10 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # change version from number to string for id 365:
 #cur.execute("UPDATE datasets SET dataset_version = 'v2023' WHERE id = 365")  
 
+# fix two hyperlinks, remove additional linebreaks:
+#cur.execute("UPDATE datasets SET dataset_link = 'https://www.iea.org/media/statistics/IEA_HeadlineEnergyData_2016.xlsx' WHERE id = 258")  
+#cur.execute("UPDATE datasets SET dataset_link = 'https://www.iea.org/statistics/kwes/consumption/' WHERE id = 259")  
+
 # 4) close connection
 # cur.close()
 # conn.close()
