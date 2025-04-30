@@ -67,7 +67,7 @@ cur.execute("SELECT * FROM datagroups")
 for row in cur:
     print(row)
     
-cur.execute("SELECT * FROM datagroups WHERE id = 14")
+cur.execute("SELECT * FROM datagroups WHERE id = 27")
 for row in cur:
     print(row)    
         

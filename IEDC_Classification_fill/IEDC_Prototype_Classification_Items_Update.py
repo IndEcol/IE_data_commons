@@ -4012,6 +4012,463 @@ cur = conn.cursor()
 # Aa = 'Filter dust, to disposal'        
 # cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(83,Aa))
 
+## April-May 2025 update
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'yield loss, expressed as mass ratio' WHERE attribute1_oto = 'reserved_33' AND classification_id = 20")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'material utilisation (yield), expressed as mass ratio' WHERE attribute1_oto = 'reserved_34' AND classification_id = 20")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'backfilling potential of materials or components extracted from end-of-life goods, expressed as mass ratio' WHERE attribute1_oto = 'reserved_35' AND classification_id = 20")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'energy recovery potential of materials or components extracted from end-of-life goods, expressed as mass ratio' WHERE attribute1_oto = 'reserved_36' AND classification_id = 20")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'landfilling share of materials or components extracted from end-of-life goods, expressed as mass ratio' WHERE attribute1_oto = 'reserved_37' AND classification_id = 20")
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (82,'manufacturing of passenger vehicles')")
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = '2009-2015' WHERE attribute1_oto = 'reserved_106' AND classification_id = 14")
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'backfilling' WHERE attribute1_oto = 'reserved_68' AND classification_id = 6")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'energy recovery' WHERE attribute1_oto = 'reserved_69' AND classification_id = 6")
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'landfilling' WHERE attribute1_oto = 'reserved_70' AND classification_id = 6")
+
+# Cl83L = ['bricks',
+# 'ceramics and tiles',
+# 'insulation materials',
+# 'PVC',
+# 'EPS',
+# 'soil waste',
+# 'dredging spoils',
+# 'glass wool',
+# 'rock wool',
+# 'buildings',
+# 'non-metallic minerals',
+# 'iron and steel',
+# 'chemicals',
+# 'bio-based products']
+
+# for mk in range(0,14):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(83,Cl83L[mk]))
+#     except:
+#         None
+
+# Cl4L = ['other synthetics',
+# 'fluids',
+# 'sheet metal',
+# 'synthetics',
+# 'fuel/oil/lubricants',
+# 'light metals',
+# 'copper lower grade',
+# 'wood and wood products',
+# 'base metals',
+# 'synthetics, glass fiber',
+# 'synthetics, resins',
+# 'synthetics, textiles',
+# 'synthetics, glass',
+# 'liquids, oil & lubricants',
+# 'resins',
+# 'liquids',
+# 'copper/brass',
+# 'carbon fiber reinforced polymer (CFRP)',
+# 'platinum group metals (PGM)',
+# 'neodymium oxide',
+# 'light alloys',
+# 'non-ferrous metals',
+# 'service fluids',
+# 'process polymers',
+# 'special metals',
+# 'polymers, thermoplastics',
+# 'polymers, elastomers',
+# 'polymers, duromers',
+# 'polymers, other plastics',
+# 'aluminium alloys',
+# 'steel, cast steel, cast iron',
+# 'aluminium and aluminium alloys',
+# 'oil & lubricants',
+# 'multimaterial components']
+
+# for mk in range(0,34):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Cl4L[mk]))
+#     except:
+#         None
+
+# Cl90L=['n.a.',
+# 'glider',
+# 'powertrain',
+# 'battery',
+# 'engine',
+# 'motor',
+# 'leadbatteries',
+# 'skateboard',
+# 'tires']
+
+# for mk in range(0,9):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(90,Cl90L[mk]))
+#     except:
+#         None
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (86,'other: n.a.')")
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (86,'other: incineration with energy recovery')")
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (86,'other: landfill disposal')")
+
+# C7add = ['electric scooters',
+# 'battery of electric vehicles (LFP)',
+# 'battery of electric vehicles (NMC955)',
+# 'battery of electric vehicles (NMC811)',
+# 'battery of electric vehicles (NMC622)',
+# 'battery of electric vehicles (NMC111)',
+# 'battery of electric vehicles (NCA)',
+# 'pickup truck, ICEV, conventional material',
+# 'pickup truck, ICEV, lightweight material',
+# 'pickup truck, HEV, conventional material',
+# 'pickup truck, HEV, lightweight material',
+# 'pickup truck, PHEV, conventional material',
+# 'pickup truck, PHEV, lightweight material',
+# 'pickup truck, EV, conventional material',
+# 'pickup truck, EV, lightweight material',
+# 'pickup truck, FCV, conventional material',
+# 'pickup truck, FCV, lightweight material',
+# 'compact car, ICEV, petrol',
+# 'compact car, ICEV, diesel',
+# 'compact car, ICEV',
+# 'compact car, diesel-hybrid',
+# 'mini car, smart for two, ICE diesel',
+# 'mini car, smart for two, BEV',
+# 'city car, ICE diesel',
+# 'city car, BEV',
+# 'compact car, BEV',
+# 'passenger car, ICEV-USAMP',
+# 'passenger car, base vehicle',
+# 'passenger car, sedan, class E',
+# 'passenger car, sedan, class D (1)',
+# 'passenger car, sedan, class D',
+# 'passenger car, mini-van',
+# 'passenger car, sedan, class D (2)',
+# 'ecoinvent car',
+# 'aircraft, passenger',
+# 'aircraft, freight',
+# 'heavy duty truck',
+# 'heavy truck_BEV',
+# 'light commercial vehicles_BEV',
+# 'medium truck_BEV',
+# 'medium bus_BEV',
+# 'regular bus_BEV',
+# 'heavy truck_HEV',
+# 'light commercial vehicles_HEV',
+# 'medium truck_HEV',
+# 'medium bus_HEV',
+# 'regular bus_HEV',
+# 'heavy truck_ICE',
+# 'light commercial vehicles_ICE',
+# 'medium truck_ICE',
+# 'medium bus_ICE',
+# 'regular bus_ICE',
+# 'heavy truck_PHEV',
+# 'light commercial vehicles_PHEV',
+# 'medium truck_PHEV',
+# 'medium bus_PHEV',
+# 'regular bus_PHEV',
+# 'heavy truck_FCV',
+# 'light commercial vehicles_FCV',
+# 'medium truck_FCV',
+# 'medium bus_FCV',
+# 'regular bus_FCV',
+# 'regular bus_trolley',
+# 'passenger car, PHEV',
+# 'sea_ships_small',
+# 'sea_ships_med',
+# 'sea_ships_large',
+# 'sea_ships_very_large',
+# 'ships, inland',
+# 'truck, class 6 (PnD), HET',
+# 'truck, class 6 (PnD), BET',
+# 'truck, class 6 (PnD), FCET',
+# 'truck, class 8 (day-cab), ICET',
+# 'truck, class 8 (day-cab), BET',
+# 'truck, class 8 (day-cab), FCET',
+# 'truck, class 8 (sleeper-cab), ICET',
+# 'truck, class 8 (sleeper-cab), BET',
+# 'truck, class 8 (sleeper-cab), FCET',
+# 'bicycles, pedal',
+# 'bicycles, electric',
+# 'motorcycles, gasoline',
+# 'motorcycles, electric',
+# 'city busses, electric (trolley)',
+# 'city busses, battery electric',
+# 'coaches, battery electric',
+# 'light passenger trains or trams, electric',
+# 'metro train, electric',
+# 'passenger railroad car',
+# 'passenger trains (multiple units), diesel',
+# 'passenger trains (multiple units), electric',
+# 'passenger trains (multiple units), battery electric',
+# 'high speed passenger trains, electric',
+# 'passenger ships, fuel oil',
+# 'passenger ships, battery electric',
+# 'passenger ships, fuel cell',
+# 'passenger aircrafts, liquid fuel',
+# 'light cargo trucks (7.5t), diesel',
+# 'light cargo trucks (7.5t), battery electric',
+# 'freight trucks (distributors, 20 tons), diesel',
+# 'freight trucks (distributors, 20 tons), electric',
+# 'freight trucks (distributors, 20 tons), battery electric',
+# 'freight trucks (long-haul, 40 tons), diesel',
+# 'freight trucks (long-haul, 40 tons), electric',
+# 'freight trucks (long-haul, 40 tons), battery electric',
+# 'freight train cars/waggons',
+# 'barges, diesel',
+# 'barges, battery electric',
+# 'barges, fuel cell',
+# 'sea ships, fuel oil',
+# 'sea ships, fuel cell',
+# 'pipelines',
+# 'BEV (large)',
+# 'passenger vehicles, segment A',
+# 'passenger vehicles, segment B',
+# 'passenger vehicles, segment C',
+# 'passenger vehicles, segment D',
+# 'passenger vehicles, segment E',
+# 'passenger vehicles, segment F',
+# 'passenger vehicles, segment J',
+# 'passenger vehicles, segment M',
+# 'passenger vehicles, segment S',
+# 'end-of-life passenger car, ICEV',
+# 'battery of electric vehicles',
+# 'light commercial vehicles',
+# 'medium and heavy commercial vehicles',
+# 'sea_ships',
+# 'high speed passenger trains, electric',
+# 'vehicles, all types',
+# 'passenger vehicles, all types',
+# 'passenger car, all powertrains',
+# 'passenger car, natural gas engine',
+# 'motor coaches, buses and trolley buses, all powertrains',
+# 'motor coaches, buses and trolley buses, gasoline engine',
+# 'motor coaches, buses and trolley buses, diesel engine',
+# 'motor coaches, buses and trolley buses, LPG engine',
+# 'motor coaches, buses and trolley buses, natural gas engine',
+# 'motor coaches, buses and trolley buses, battery electric vehicle',
+# 'freight transport, all vehicles',
+# 'light duty vehicles, all powertrains',
+# 'light duty vehicles, gasoline engine',
+# 'light duty vehicles, diesel engine',
+# 'light duty vehicles, LPG engine',
+# 'light duty vehicles, natural gas engine',
+# 'light duty vehicles, battery electric vehicles',
+# 'heavy duty vehicles, all',
+# 'heavy duty vehicles, domestic',
+# 'heavy duty vehicles, international',
+# 'passenger vehicles',
+# 'passenger car_large',
+# 'passenger car_medium',
+# 'passenger car_small',
+# 'passenger car_micro',
+# 'trucks_heavy',
+# 'trucks_medium',
+# 'trucks_light',
+# 'trucks_micro',
+# 'other vehicles',
+# 'trailers',
+# 'deadweight tonnage motor vessels',
+# 'deadweight tonnage barges',
+# 'motor vehicles, trailers and semi-trailers, used in agriculture and food sector',
+# 'motor vehicles, trailers and semi-trailers, used in extraction & mining sector',
+# 'motor vehicles, trailers and semi-trailers, used in other manufacturing sector',
+# 'motor vehicles, trailers and semi-trailers, used in machinery sector',
+# 'motor vehicles, trailers and semi-trailers, used in utility sector',
+# 'motor vehicles, trailers and semi-trailers, used in construction sector',
+# 'motor vehicles, trailers and semi-trailers, used in transport sector',
+# 'motor vehicles, trailers and semi-trailers, used in other services sector',
+# 'passenger car, H2',
+# 'passenger car, CNG',
+# 'passenger car, LNG',
+# 'light commercial vehicles (N1), BEV',
+# 'light commercial vehicles (N1), PHEV',
+# 'light commercial vehicles (N1), H2',
+# 'light commercial vehicles (N1), LPG',
+# 'light commercial vehicles (N1), CNG',
+# 'light commercial vehicles (N1), LNG',
+# 'buses (M2 & M3), BEV',
+# 'buses (M2 & M3), PHEV',
+# 'buses (M2 & M3), H2',
+# 'buses (M2 & M3), LPG',
+# 'buses (M2 & M3), CNG',
+# 'buses (M2 & M3), LNG',
+# 'trucks (N2 & N3), BEV',
+# 'trucks (N2 & N3), PHEV',
+# 'trucks (N2 & N3), H2',
+# 'trucks (N2 & N3), LPG',
+# 'trucks (N2 & N3), CNG',
+# 'trucks (N2 & N3), LNG',
+# 'light electric vehicles (L), BEV+PHEV',
+# 'motor coaches for passengers',
+# 'rail car, diesel',
+# 'rail car, electric',
+# 'train',
+# 'passenger vehicles',
+# 'aircrafts/airplanes',
+# 'freight train',
+# 'ships, inland',
+# 'aircraft, freight',
+# 'diesel-powered bus',
+# 'regular bus_trolley',
+# 'battery electric bus',
+# 'diesel locomotives, passenger',
+# 'electric locomotives, passenger',
+# 'passenger railroad cars',
+# 'rail car, diesel',
+# 'rail car, electric',
+# 'light urban rail, metro, tram',
+# 'truck (light-duty), diesel',
+# 'truck (light-duty), battery electric',
+# 'truck (ordinary, diesel-powered) for freight',
+# 'truck (ordinary, electricity-powered (trolley)) for freight',
+# 'truck (ordinary, battery electric) for freight',
+# 'diesel locomotives, freight',
+# 'electric locomotives, freight',
+# 'freight train cars/waggons',
+# 'moped',
+# 'motorcycle (50-250cc)',
+# 'motorcycle (>250cc)',
+# 'passenger rail',
+# 'subcompact car',
+# 'truck (0-3.5t)',
+# 'truck (18t)',
+# 'truck (26t)',
+# 'truck (40t)',
+# 'truck (7.5t)',
+# 'van',
+# 'walking']
+
+# for mk in range(0,228):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,C7add[mk]))
+#     except:
+#         None
+      
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'mining (reserves)')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'use phase - residential buildings')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'use phase - nonresidential buildings')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'tools')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'toys, small')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'printing and imaging equipment')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (13,'residential buildings (all types)')")  
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = '1945-1969' WHERE attribute1_oto = 'reserved_107' AND classification_id = 14")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = '1970-1979' WHERE attribute1_oto = 'reserved_108' AND classification_id = 14")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'after 2010' WHERE attribute1_oto = 'reserved_109' AND classification_id = 14")  
+
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'heating' WHERE attribute1_oto = 'reserved_2' AND classification_id = 12")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'cooling' WHERE attribute1_oto = 'reserved_3' AND classification_id = 12")  
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'domestic hot water' WHERE attribute1_oto = 'reserved_4' AND classification_id = 12")  
+
+# Add4L=['rare earth elements (REE)',
+# 'tungsten',
+# 'fluorspar',
+# 'baryte',
+# 'bauxite',
+# 'borate',
+# 'coking coal',
+# 'hafnium',
+# 'graphite, natural',
+# 'rubber, natural',
+# 'phosphate rock',
+# 'phosphorus',
+# 'scandium',
+# 'silicon metal',
+# 'strontium',
+# 'heavy rare earth elements',
+# 'light rare earth elements']
+
+# for mk in range(0,17):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Add4L[mk]))
+#     except:
+#         None  
+
+# Add regions to class 2:
+#cur.execute("UPDATE classification_items SET attribute1_oto = 'Other non-EU27 (2020) countries', attribute4_oto = 100003 WHERE attribute1_oto = 'reserved_20' AND classification_id = 2")
+
+# Add4L = ['electricity grid - all elements',
+# 'electricity grid - transformers',
+# 'electricity grid - lines',
+# 'electricity grid - transformers (high voltage)',
+# 'electricity grid - lines (below ground)',
+# 'electricity grid - lines (above ground)',
+# 'electricity generation - solar PV',
+# 'electricity generation - CSP',
+# 'electricity generation - wind',
+# 'electricity generation - hydro',
+# 'electricity generation - other renewables',
+# 'electricity generation - nuclear',
+# 'electricity generation - fossil fuel-based',
+# 'electricity storage - pumped hydro electricity storage',
+# 'electricity storage - flywheel',
+# 'electricity storage - compressed air',
+# 'electricity storage - hydrogen fuel cells',
+# 'electricity storage - batteries - NiMH',
+# 'electricity storage - batteries - lead acid',
+# 'electricity storage - batteries - LMO',
+# 'electricity storage - batteries - NMC',
+# 'electricity storage - batteries - NCA',
+# 'electricity storage - batteries - LFP',
+# 'electricity storage - batteries - LTO',
+# 'electricity storage - batteries - zinc bromide',
+# 'electricity storage - batteries - vanadium redox flow',
+# 'electricity storage - batteries - sodium sulfur',
+# 'electricity storage - batteries - sodium–nickel–chloride (ZEBRA)',
+# 'electricity storage - batteries - lithium sulfur',
+# 'electricity storage - batteries - lithium ceramic',
+# 'electricity storage - batteries - lithium-air',
+# 'electricity grid - equipment - circuit breaker',
+# 'electricity grid - power transformers',
+# 'electricity grid - equipment - SF6-filled substation',
+# 'electricity grid - equipment - electrocmechanic protection',
+# 'electricity grid - lines - cables',
+# 'electricity grid - equipment - lines - towers',
+# 'electricity grid - equipment - lines - wood poles',
+# 'electricity generation - hydro (run-of-river)',
+# 'electricity generation - geothermal',
+# 'electricity generation - wind onshore',
+# 'electricity generation - wind offshore',
+# 'electricity generation - solar PV (rooftop)',
+# 'electricity generation - solar PV (ground-mounted)',
+# 'electricity generation - bioenergy',
+# 'electricity generation - coal',
+# 'electricity generation - gas',
+# 'electricity generation - oil',
+# 'electricity infrastructure',
+# 'all products',
+# 'electricity generation - all technologies']
+
+# Add4L = ['raw steel',
+# 'magnesium',
+# 'titanium sponge',
+# 'zirconium and hafnium',
+# 'aluminium oxide',
+# 'ilmenite (titanium dioxide content)',
+# 'rutile (titanium dioxide content)',
+# 'iron ore',
+# 'iron ore (iron content)',
+# 'zirconium (as ZrO2)',]
+
+
+# for mk in range(0,10):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Add4L[mk]))
+#     except:
+#         None  
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'market for refined materials')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'market for refined minerals')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'bauxite refining')")  
+
+# cur.execute("UPDATE classification_definition SET description = 'List of broad industry groups and general processes (mining, material production, markets, etc.)' WHERE id = 6")    
+
+# Delete incomplete classification 96 and re-upload:
+#cur.execute("DELETE FROM classification_items WHERE classification_id = 96") 
+#cur.execute("DELETE FROM classification_definition WHERE id = 96") 
+
 # Close connection
 cur.close()
 conn.close()

@@ -379,7 +379,8 @@ for row in cur:
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (16,'mjiang','Meng Jiang','Indecol-NTNU','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (17,'mveng','Martijn van Engelenburg','CML','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (18,'arcast','Arias Castillo','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
-#cur.execute(SQL)
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (19,'jongoli','Jonas Golisch','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# cur.execute(SQL)
 # cur.execute("UPDATE users SET username = 'jovel' WHERE id = 15") 
 
 # fix aspect table entry
@@ -412,6 +413,17 @@ for row in cur:
 #SQL = "UPDATE stats_array SET scale = 'RSD (unit: %)' WHERE id = 28"
 #cur.execute(SQL)
 
+## April-May 2025 update
+## Add vkm
+# SQL = "UPDATE units SET refunit_id = 22, unitcode = 'vkm', unit_name = 'vehicle kilometers', factor = 1 WHERE id = 22"
+# SQL = "UPDATE units SET refunit_id = 11, unitcode = 'million pkm', unit_name = 'million passenger kilometers', factor = 1000000 WHERE id = 23"
+# SQL = "UPDATE units SET refunit_id = 11, unitcode = 'billion pkm', unit_name = 'billion passenger kilometers', factor = 1000000000 WHERE id = 24"
+# SQL = "UPDATE units SET refunit_id = 12, unitcode = 'million tkm', unit_name = 'million ton kilometers', factor = 1000000 WHERE id = 25"
+# SQL = "UPDATE units SET refunit_id = 12, unitcode = 'billion tkm', unit_name = 'billion ton kilometers', factor = 1000000000 WHERE id = 26"
+# SQL = "UPDATE units SET refunit_id = 22, unitcode = 'million vkm', unit_name = 'million vehicle kilometers', factor = 1000000 WHERE id = 27"
+# SQL = "UPDATE units SET refunit_id = 22, unitcode = 'billion vkm', unit_name = 'billion vehicle kilometers', factor = 1000000000 WHERE id = 28"
+# SQL = "UPDATE units SET refunit_id = 29, unitcode = 'm2*yr', unit_name = 'square meter * year, area times time, for land occuptation and specific energy demand of buildings', factor = 1 WHERE id = 29"
+# cur.execute(SQL)
 
 
 
