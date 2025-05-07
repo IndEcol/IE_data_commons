@@ -423,7 +423,9 @@ for row in cur:
 # SQL = "UPDATE units SET refunit_id = 22, unitcode = 'million vkm', unit_name = 'million vehicle kilometers', factor = 1000000 WHERE id = 27"
 # SQL = "UPDATE units SET refunit_id = 22, unitcode = 'billion vkm', unit_name = 'billion vehicle kilometers', factor = 1000000000 WHERE id = 28"
 # SQL = "UPDATE units SET refunit_id = 29, unitcode = 'm2*yr', unit_name = 'square meter * year, area times time, for land occuptation and specific energy demand of buildings', factor = 1 WHERE id = 29"
+# SQL = "UPDATE units SET refunit_id = 6, unitcode = '100km2', unit_name = 'hundred square kilometers', factor = 100000000 WHERE id = 30"
 # cur.execute(SQL)
+
 
 
 

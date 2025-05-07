@@ -3336,7 +3336,8 @@ cur = conn.cursor()
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Southern Africa, nec', attribute4_oto = 10033 WHERE attribute1_oto = 'reserved_16' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Central America, nec', attribute4_oto = 10034 WHERE attribute1_oto = 'reserved_17' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'South America, nec', attribute4_oto = 10035 WHERE attribute1_oto = 'reserved_18' AND classification_id = 2")
-#cur.execute("UPDATE classification_items SET attribute1_oto = 'Central Europe', attribute4_oto = 10036 WHERE attribute1_oto = 'reserved_19' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Gulf Cooperation Council', attribute4_oto = 10037 WHERE attribute1_oto = 'reserved_21' AND classification_id = 2")
+
 
 # AppL = ['urban refrigerator',
 # 'urban washing machine',
@@ -4468,6 +4469,258 @@ cur = conn.cursor()
 # Delete incomplete classification 96 and re-upload:
 #cur.execute("DELETE FROM classification_items WHERE classification_id = 96") 
 #cur.execute("DELETE FROM classification_definition WHERE id = 96") 
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (82,'Treatmeant of end-of-life vehicles (ELV), recycling')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (82,'Treatmeant of end-of-life vehicles (ELV), reuse')")  
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'mass per area')")  
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'recycled asphalt')")  
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'truck, class 6 (PnD), ICET')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'compact car')")  
+
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'mass per kWh of battery storage capacity')")  
+
+# Add2L = ['wood, solid',
+# 'wood, layered',
+# 'particle board',
+# 'paper',
+# 'metals',
+# 'ferrous metal',
+# 'plastics',
+# 'concrete',
+# 'glass',
+# 'rubber',
+# 'paint',
+# 'adhesive',
+# 'textiles',
+# 'other polymers',
+# 'other materials']
+
+# Add2L = ['tables and desks',
+# 'chair, upholstered',
+# 'chair, unupholstered',
+# 'bed',
+# 'storage unit (furniture)',
+# 'coaches']
+
+# Add2L = ['road maintenance',
+# 'manufacturing of furniture',
+# 'manufacturing of furniture - sawing (2X)',
+# 'manufacturing of furniture - sawing (3X)',
+# 'manufacturing of furniture - finger-jointed component (FJC) production',
+# 'manufacturing of furniture - production of furniture leg']
+
+# Add2L =['asphalt pavement',
+# 'sofa, white oak',
+# 'desk',
+# 'wardrobe',
+# 'table']
+
+# Add2L = ['boards from butt log',
+# 'boards from intermediate log',
+# 'boards from fresh knot',
+# 'furniture component from butt log, 2x sawing',
+# 'furniture component from intermediate log, 2x sawing',
+# 'furniture component from fresh knot lot, 2x sawing',
+# 'furniture component from butt log, 3x sawing',
+# 'furniture component from intermediate log, 3x sawing',
+# 'furniture component from fresh knot lot, 3x sawing',
+# 'furniture leg from butt log, 2x sawing',
+# 'furniture leg from intermediate log, 2x sawing',
+# 'furniture leg from fresh knot lot, 2x sawing',
+# 'furniture leg from butt log, 3x sawing',
+# 'furniture leg from intermediate log, 3x sawing',
+# 'furniture leg from fresh knot lot, 3x sawing']
+
+# cur.execute("UPDATE classification_items SET description = 'length of assets in the built environment, e.g., road network length' WHERE attribute1_oto = 'length' AND classification_id = 20")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'density', description = 'socio-metabolic indicator per area, e.g., built-up area or infrastructure length per km²' WHERE attribute1_oto = 'reserved_38' AND classification_id = 20")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'units', description = 'units: number of countable items, like vehicles, buildings, etc.' WHERE attribute1_oto = 'reserved_39' AND classification_id = 20")  
+
+
+
+    
+
+# Add2L = ['roads, infrastructure',
+# 'rails,infrastructure',
+# 'interstate-rural',
+# 'freeways and expressway-rural',
+# 'principal arterial-rural',
+# 'minor arterial-rural',
+# 'major collector-rural',
+# 'minor collector-rural',
+# 'local-rural',
+# 'total infrastructure-rural',
+# 'interstate-urban',
+# 'freeways and expressway-urban',
+# 'principal arterial-urban',
+# 'minor arterial-urban',
+# 'major collector-urban',
+# 'minor collector-urban',
+# 'local-urban',
+# 'total infrastructure-urban',
+# 'total infrastructure',
+# 'road total infrastructure',
+# 'asphalted road',
+# 'stone paved road',
+# 'mixed stone & soil road',
+# 'soil road',
+# 'infrastructure, roads',
+# 'infrastructure, highspeed-rail',
+# 'length of tracks - end of year',
+# 'length of electrified tracks - end of year',
+# 'number of stations and stops - passenger - total infrastructure',
+# 'total infrastructure level crossings',
+# 'expressways',
+# 'highways_class i',
+# 'highways_class ii',
+# 'highways_class iii',
+# 'highways_class iv',
+# 'urban road',
+# 'highway bridges',
+# 'highway tunnels',
+# 'urban bridges',
+# 'water supply pipelines',
+# 'steam pipelines',
+# 'hot water pipelines',
+# 'sewerage pipelines',
+# 'street lamps',
+# 'urban cable tv users',
+# 'rural cable tv users',
+# 'landline users in urban',
+# 'landline users in rural',
+# 'wharf',
+# 'main road',
+# 'secondary road',
+# 'tertiary road',
+# 'local road',
+# 'all roads',
+# 'motorway',
+# 'motorway bridge',
+# 'motorway tunnel',
+# 'primary',
+# 'primary bridge',
+# 'primary tunnel',
+# 'secondary',
+# 'secondary bridge',
+# 'secondary tunnel',
+# 'tertiary',
+# 'tertiary bridge',
+# 'tertiary tunnel',
+# 'local',
+# 'local bridge',
+# 'local tunnel',
+# 'rural',
+# 'rural bridge',
+# 'rural tunnel',
+# 'railway',
+# 'railway bridge',
+# 'railway tunnel',
+# 'subway elevated',
+# 'subway ground level',
+# 'subway underground',
+# 'tram',
+# 'other',
+# 'highways',
+# 'primary roads',
+# 'secondary roads',
+# 'tertiary roads',
+# 'local roads',
+# 'trunk',
+# 'unclassified',
+# 'secondary_link',
+# 'primary_link',
+# 'residential',
+# 'trunk_link',
+# 'living_street',
+# 'busway',
+# 'service',
+# 'tertiary_link',
+# 'motorway_link']
+
+# Add2L =['electricity grid - high voltage lines (above ground)',
+# 'electricity grid - high voltage lines (below ground)',
+# 'electricity grid - low voltage lines (above ground)',
+# 'electricity grid - low voltage lines (below ground)',
+# 'electricity grid - high voltage lines',
+# 'electricity grid - medium voltage lines',
+# 'electricity grid - low voltage lines',
+# 'pipelines, for gas in gasworks',
+# 'pipelines, for natural gas',
+# 'pipelines, for liquefied petroleum gas (LPG)',
+# 'electricity generation - hydro',
+# 'electricity generation - thermal power station',
+# 'electricity generation - wind',
+# 'electricity transmission, 500 kV',
+# 'electricity transmission, 330 kV',
+# 'electricity transmission, 220 kV',
+# 'electricity transmission, 110 kV',
+# 'electricity transmission, 35 kV',
+# 'cables',
+# 'electricity transformer, 500 kV',
+# 'electricity transformer, 330 kV',
+# 'electricity transformer, 220 kV',
+# 'electricity transformer, 110 kV',
+# 'electricity transformer, 35 kV',
+# 'electricity generation - hydro (run-of-river)',
+# 'electricity storage - pumped hydro electricity storage',
+# 'electricity generation - geothermal',
+# 'electricity generation - wind onshore',
+# 'electricity generation - wind offshore',
+# 'electricity generation - solar PV (rooftop)',
+# 'electricity generation - solar PV (ground-mounted)',
+# 'electricity generation - CSP',
+# 'electricity generation - bioenergy',
+# 'electricity generation - coal',
+# 'electricity generation - gas',
+# 'electricity generation - oil',
+# 'electricity generation - nuclear',
+# 'electricity grid - high voltage lines (below ground)',
+# 'electricity grid - high voltage lines (above ground)',
+# 'electricity grid - medium voltage lines (above ground)',
+# 'electricity grid - medium voltage lines (below ground)',
+# 'electricity grid - low voltage lines (below ground)',
+# 'electricity grid - low voltage lines (above ground)',
+# 'electricity generation - solar PV',
+# 'electricity generation - hydro',
+# 'electricity generation - coal + CCS',
+# 'electricity generation - gas + CCS',
+# 'electricity generation - biomass',
+# 'electricity generation - biomass + CCS',
+# 'electricity generation - solar PV',
+# 'electricity generation - solar PV, residential',
+# 'electricity generation - CSP',
+# 'electricity generation - wind onshore',
+# 'electricity generation - wind offshore',
+# 'electricity generation - wave energy',
+# 'electricity grid - equipment - auxiliary components',
+# 'electricity generation - PV PERC (rooftop)',
+# 'electricity generation - PV PERC (ground-mounted)',
+# 'electricity generation - PV SHJ (rooftop)',
+# 'electricity generation - PV SHJ (ground-mounted)',
+# 'electricity generation - PV CIGS (rooftop)',
+# 'electricity generation - PV CIGS (ground-mounted)',
+# 'electricity generation - PV III-V/Si (rooftop)',
+# 'electricity generation - PV III-V/Si (ground-mounted)',
+# 'electricity generation - wind onshore - EESG-DD',
+# 'electricity generation - wind onshore - PMSG-DD',
+# 'electricity generation - wind offshore - PMSG-DD',
+# 'electricity generation - wind offshore - PMSG-MS',
+# 'electricity storage - batteries - vanadium redox flow',
+# 'electricity storage - batteries - NMC (nickel manganese cobalt lithium-ion battery)',
+# 'electricity grid - 380 kV AC circuit',
+# 'electricity grid - HC DC circuit underground',
+# 'air-water heat pump (AWHP)']
+
+# for mk in range(0,73):
+#     try:
+#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,Add2L[mk]))
+#     except:
+#         None 
+
+
+
 
 # Close connection
 cur.close()

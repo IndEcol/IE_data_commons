@@ -21,8 +21,8 @@ for row in cur:
     if row[0] == 'datasets':
         AI = row[1]
 
-A0 = 300
-AI = 400
+A0 = 400
+AI = 500
 # Get dataset size and update datasets entry:        
 for m in range(A0,AI):
     cur.execute("SELECT count(*) FROM data WHERE dataset_id = %s",m)
@@ -31,10 +31,25 @@ for m in range(A0,AI):
         print(Ts)
         cur.execute("UPDATE datasets SET dataset_size = %s WHERE id = %s",(Ts,m)) 
 
+# Checking the number of dataset entries with and without actual data:
+cur.execute("SELECT COUNT(*) FROM datasets")
+for row in cur:
+    print(row)  
+    
+cur.execute("SELECT COUNT(*) FROM datasets WHERE dataset_size > 0")
+for row in cur:
+    print(row)     
+    
+# get total number of data
+cur.execute("SELECT COUNT(*) FROM data")
+for row in cur:
+    print(row)      
+
 # Close connection
 cur.close()
 conn.close()
 #
-#    
+#
+#   
 #    
 # The End

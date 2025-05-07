@@ -17,12 +17,12 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
-no_groups    = 16 # number of data types for drop-down menu
+no_groups    = 17 # number of data types for drop-down menu
 data_label  = []
 data_type   = []
 data_aspect = []
 # fetch input data:
-mywb = openpyxl.load_workbook('IEDC_product_material_search_vMarch2025.xlsx')
+mywb = openpyxl.load_workbook('IEDC_product_material_search_vMay2025.xlsx')
 for mr in range(0,no_groups):
     data_label.append(mywb['Data_type_menu_entries'].cell(mr+3,2).value)
     data_type.append(mywb['Data_type_menu_entries'].cell(mr+3,9).value)
