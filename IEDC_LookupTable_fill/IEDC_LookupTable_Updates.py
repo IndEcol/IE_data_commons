@@ -347,10 +347,11 @@ for row in cur:
 #SQL = "UPDATE users SET name = 'Ilham Chekrad' WHERE id = 10" 
 #cur.execute(SQL)
 		
-### IEDC March 2025 update
+### IEDC March-May-July 2025 update
 #cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('2.5th and 97.5th percentile','2.5th and 97.5th percentile, of a given quantity, some unit as value','2.5th percentile','97.5th percentile')") 
 #cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('RSD','relative standard deviation (RSD) as share of mean (1) or % of mean (%)','RSD (unit: 1)','RSD (unit: %')") 
 #cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('5th and 95th percentile','5th and 95th percentile, of a given quantity, some unit as value','5th percentile','95th percentile')") 
+#cur.execute("INSERT INTO stats_array (name, description, loc, scale) VALUES ('Hypertabastic','Hypertabastic survival models','alpha','beta')") 
 
 #SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Lorenz curve, normalized','normalized Lorenz curve (values from 0-1) of the cumulative ranked distribution of an indicator across a population',3,'LC')"
 #SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Lorenz curve, non-normalized, flow','non-normalized Lorenz curve of the cumulative ranked distribution of a flow across a population',1,'LCF')"
@@ -403,7 +404,7 @@ for row in cur:
 
 ## New layer
 # SQL = "INSERT INTO layers (name,description) VALUES ('Energy per unit of output','specific energy requirement of a process per unit of output, e.g., in kWh/item')"
-# SQL = "INSERT INTO layers (name,description) VALUES ('Production volume','Production volume (annual) of a company or process, e.g., in Mt/yr or items/yr')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Mass per length','Mass per length of product or infrastructure')"
 # cur.execute(SQL)			
 
 # new aspect: organization	z
