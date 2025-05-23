@@ -26,6 +26,8 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
+axy # stopper to break script after opening SQL connection
+
 ## Change datasets 1_UPI to 4_UPI:
 #cur.execute("UPDATE datasets SET dataset_name = '4_UPI_USLCI_Aluminum_cold_rolling_at_plant', data_category = 4 WHERE id = 132")
 #cur.execute("UPDATE datasets SET dataset_name = '4_UPI_USLCI_Chainsawing_delimbing', data_category = 4 WHERE id = 133")
@@ -225,9 +227,12 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #cur.execute("UPDATE datasets SET dataset_link = 'https://www.iea.org/media/statistics/IEA_HeadlineEnergyData_2016.xlsx' WHERE id = 258")  
 #cur.execute("UPDATE datasets SET dataset_link = 'https://www.iea.org/statistics/kwes/consumption/' WHERE id = 259")  
 
+# fix datagroup_id for 6_CR_criticality_Naegler_2025
+# cur.execute("UPDATE datasets SET datagroup_id = 24 WHERE id = 420") 
+
 # 4) close connection
-# cur.close()
-# conn.close()
+cur.close()
+conn.close()
 
 
 

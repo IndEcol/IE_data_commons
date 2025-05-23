@@ -28,6 +28,8 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor() 
 
+axy # stopper to break script after opening SQL connection
+
 # Check
 #cur.execute("SELECT COUNT(*) FROM classification_items")
 #for row in cur:
@@ -3337,6 +3339,7 @@ cur = conn.cursor()
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Central America, nec', attribute4_oto = 10034 WHERE attribute1_oto = 'reserved_17' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'South America, nec', attribute4_oto = 10035 WHERE attribute1_oto = 'reserved_18' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Gulf Cooperation Council', attribute4_oto = 10037 WHERE attribute1_oto = 'reserved_21' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Other Asian countries', attribute4_oto = 10038 WHERE attribute1_oto = 'reserved_22' AND classification_id = 2")
 
 
 # AppL = ['urban refrigerator',
@@ -4366,6 +4369,24 @@ cur = conn.cursor()
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'mass per length' WHERE attribute1_oto = 'reserved_40' AND classification_id = 20")  
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'material volume per area' WHERE attribute1_oto = 'reserved_41' AND classification_id = 20")  
 
+# cur.execute("UPDATE classification_items SET attribute1_oto = '1979-2000' WHERE attribute1_oto = 'reserved_110' AND classification_id = 14")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = '2001-2018' WHERE attribute1_oto = 'reserved_111' AND classification_id = 14")  
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'production-related emissions (carbon footprint across supply chain), GWP 100' WHERE attribute1_oto = 'reserved_14' AND classification_id = 79")  
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'mining' WHERE attribute1_oto = 'reserved_71' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'manufacturing and service sectors' WHERE attribute1_oto = 'reserved_72' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'construction' WHERE attribute1_oto = 'reserved_73' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'final demand' WHERE attribute1_oto = 'reserved_74' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'service sectors' WHERE attribute1_oto = 'reserved_75' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'manufacturing of electronics' WHERE attribute1_oto = 'reserved_76' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'manufacturing of machinery, including electrical machinery' WHERE attribute1_oto = 'reserved_77' AND classification_id = 6")  
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'planed timber' WHERE attribute1_oto = 'planed timber ' AND classification_id = 4")  
+
+
+update # stopper to break script at the update commands
+
 # Add4L=['rare earth elements (REE)',
 # 'tungsten',
 # 'fluorspar',
@@ -4477,6 +4498,7 @@ cur = conn.cursor()
 #cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (82,'Treatmeant of end-of-life vehicles (ELV), reuse')")  
 
 #cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'mass per area')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'mass per volume')")  
 
 #cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'recycled asphalt')")  
 
@@ -4486,9 +4508,41 @@ cur = conn.cursor()
 #cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'mass per kWh of battery storage capacity')")  
 #cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'aggregates')")  
 #cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'fibre cement')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'ceramics, architectural')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'paint and glue')")  
+#cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'paper and cardboard')")  
 
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (86,'other: heavy-weight design')")  
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (14,2026)")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (90,'polysilicon')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'mopeds, gasoline')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'mopeds, electric')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'price')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'production volume')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'HHI (Herfindahl-Hirschman index)')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'WCR (weighted country risk)')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (90,'wafer')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'batteries and accumulators')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'permanent magnets')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'rubber and plastic')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'steel, EAF route (electrical steel)')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'electrolyzer')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'battery (storage battery, grid scale)')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'battery (battery storage - NMC (nickel manganese cobalt lithium-ion battery))')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (89,'European Union')")  
+
+
+
+insert # stopper to break script where insersion commands are stored
+
+
+
 
 # Add2L = ['wood, solid',
 # 'wood, layered',
@@ -5009,12 +5063,384 @@ cur = conn.cursor()
 # 'other fossil-based materials',
 # 'all materials']
 
+# Add2L = ['gas boiler',
+# 'heat pump',
+# 'PV panels',
+# 'splits',
+# 'motorized shellers',
+# 'pumps',
+# 'power saw',
+# 'water pump, 40 kW',
+# 'conveyor belt',
+# 'elevator, hydraulic',
+# 'pump, 40 W',
+# 'air compressor, screw-type, 300 kW',
+# 'air compressor, screw-type, 40 kW',
+# 'sugarcane havester',
+# 'self-propelled sprayer',
+# 'planter',
+# 'combiner',
+# 'average industrial machine',
+# 'average electronic component machinery',
+# 'average metal working machine',
+# 'refrigerator and AC compressor, 15 kW',
+# 'ultra China altitude elevator',
+# 'synchronous reluctance motor, 10kW',
+# 'permanent magnet assissted synchronous reluctance motor, 10kW',
+# 'induction motor, 10kW',
+# 'machinery and equipment in agriculture and food sector',
+# 'machinery and equipment in extraction & mining sector',
+# 'machinery and equipment in other manufacturing sector',
+# 'machinery and equipment in machinery sector',
+# 'machinery and equipment in utility sector',
+# 'machinery and equipment in construction sector',
+# 'machinery and equipment in transport sector',
+# 'machinery and equipment in other services sector',
+# 'electrical machinery and apparatus in agriculture and food sector',
+# 'electrical machinery and apparatus in extraction & mining sector',
+# 'electrical machinery and apparatus in other manufacturing sector',
+# 'electrical machinery and apparatus in machinery sector',
+# 'electrical machinery and apparatus in utility sector',
+# 'electrical machinery and apparatus in construction sector',
+# 'electrical machinery and apparatus in transport sector',
+# 'electrical machinery and apparatus in other services sector',
+# 'medical, precision and optical instruments, watches and clocks in agriculture and food sector',
+# 'medical, precision and optical instruments, watches and clocks in extraction & mining sector',
+# 'medical, precision and optical instruments, watches and clocks in other manufacturing sector',
+# 'medical, precision and optical instruments, watches and clocks in machinery sector',
+# 'medical, precision and optical instruments, watches and clocks in utility sector',
+# 'medical, precision and optical instruments, watches and clocks in construction sector',
+# 'medical, precision and optical instruments, watches and clocks in transport sector',
+# 'medical, precision and optical instruments, watches and clocks in other services sector',
+# 'fishing power boats',
+# 'fishing machines',
+# 'threshing machines']
 
-# for mk in range(0,87):
-#     try:
-#         cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Add2L[mk]))
-#     except:
-#         None 
+# Add2L = ['IMAGE 3.0|Canada',
+# 'IMAGE 3.0|USA',
+# 'IMAGE 3.0|Mexico',
+# 'IMAGE 3.0|Central America',
+# 'IMAGE 3.0|Brazil',
+# 'IMAGE 3.0|Rest of South America',
+# 'IMAGE 3.0|Northern Africa',
+# 'IMAGE 3.0|Western Africa',
+# 'IMAGE 3.0|Eastern Africa',
+# 'IMAGE 3.0|South Africa',
+# 'IMAGE 3.0|Western Europe',
+# 'IMAGE 3.0|Central Europe',
+# 'IMAGE 3.0|Turkey',
+# 'IMAGE 3.0|Ukraine region',
+# 'IMAGE 3.0|Central Asia',
+# 'IMAGE 3.0|Russia region',
+# 'IMAGE 3.0|Middle East',
+# 'IMAGE 3.0|India',
+# 'IMAGE 3.0|Korea region',
+# 'IMAGE 3.0|China region',
+# 'IMAGE 3.0|Southeastern Asia',
+# 'IMAGE 3.0|Indonesia region',
+# 'IMAGE 3.0|Japan',
+# 'IMAGE 3.0|Oceania',
+# 'IMAGE 3.0|Rest of South Asia',
+# 'IMAGE 3.0|Rest of Southern Africa',
+# 'EU27']
+
+# Add2L = ['brazing solder',
+# 'R-134a',
+# 'R410',
+# 'steel',
+# 'copper, cathode',
+# 'ABC Dry Chemical (ABC Powder)',
+# 'hydraulic oil',
+# 'diesel oil',
+# 'engine oil',
+# 'grease',
+# 'concrete reinforcement steel',
+# 'polyurethane',
+# 'silicone product',
+# 'polycarbonate']
+
+# Add2L = ['carbon steel',
+# 'lanthanum',
+# 'potassium',
+# 'uranium',
+# 'zirconium',
+# 'iridium',
+# 'cerium',
+# 'copper and copper products',
+# 'precious metals',
+# 'lead, zinc and tin',
+# 'cement, lime, plaster',
+# 'sand and clay',
+# 'glass and glass products',
+# 'pulp',
+# 'plastics, basic']
+
+# Add2L = ['informal building',
+# 'non-residential building',
+# 'other non-residential building',
+# 'residential tower',
+# 'rural non-residential building',
+# 'rural residential building',
+# 'urban apartments building',
+# 'urban non-residential building',
+# 'urban residential building']
+
+# Add2L = ['buses (M2 & M3), ICED',
+# 'buses (M2 & M3), ICEG',
+# 'buses (M2 & M3), HEV',
+# 'light commercial vehicles (N1), ICED',
+# 'light commercial vehicles (N1), ICEG',
+# 'light commercial vehicles (N1), HEV',
+# 'trucks (N2 & N3), ICED',
+# 'trucks (N2 & N3), ICEG',
+# 'trucks (N2 & N3), HEV']
+
+# Add2L = ['floorspace, gross, occupied',
+# 'floorspace, gross, vacant',
+# 'floorspace, gross, total',
+# 'floorspace, not further specified, per capita',
+# 'floorspace, not further specified',
+# 'floorspace, not further specified, per dwelling/unit',
+# 'floorspace, gross, permanently occupied',
+# 'floorspace, gross, non-permanently occupied',
+# 'floorspace, net, occupied',
+# 'number of buildings, total',
+# 'number of dwellings/units, not further specified',
+# 'number of dwellings/units, total',
+# 'number of dwellings/units, permanently occupied',
+# 'number of dwellings/units, non-permanently occupied',
+# 'number of dwellings/units, occupied',
+# 'number of dwellings/units, vacant']
+
+# Add2L = ['plastics and resins',
+# 'rubber, synthetic',
+# 'paving mixtures',
+# 'brick and structural clay tile',
+# 'copper, primary',
+# 'lead, primary',
+# 'zinc, primary',
+# 'aluminium, primary',
+# 'non-ferrous metals, primary',
+# 'clay and refractory products']
+
+# Add2L = ['use phase - residential buildings',
+# 'use phase - nonresidential buildings',
+# 'use phase - other buildings',
+# 'use phase - infrastructure',
+# 'use phase - other construction',
+# 'use phase - electric machinery',
+# 'use phase - other machinery',
+# 'use phase - motor vehicles',
+# 'use phase - other transport equipment',
+# 'use phase - appliances',
+# 'use phase - other consumer durables',
+# 'use phase - furniture',
+# 'use phase - extraction',
+# 'use phase - textiles',
+# 'use phase - packaging',
+# 'use phase - food products',
+# 'use phase - products nec',
+# 'use phase - services']
+
+# Add2L = ['machinery and equipment in agriculture, hunting, forestry and fishing',
+# 'machinery and equipment in mining and quarrying',
+# 'machinery and equipment in food, beverages and tobacco processing',
+# 'machinery and equipment in textiles, textile, leather and footwear manufacturing',
+# 'machinery and equipment in wood and cork processing',
+# 'machinery and equipment in pulp and paper production, printing and publishing',
+# 'machinery and equipment in coke, refined petroleum and nuclear fuel processing',
+# 'machinery and equipment in chemicals and chemical products manufacturing',
+# 'machinery and equipment in rubber and plastics manufacturing',
+# 'machinery and equipment in other non-metallic mineral processing',
+# 'machinery and equipment in basic metals and fabricated metal manufacturing',
+# 'machinery and equipment in manufacturing of machinery, nec',
+# 'machinery and equipment in manufacturing of electrical and optical equipment',
+# 'machinery and equipment in manufacturing of transport equipment',
+# 'machinery and equipment in recycling sector',
+# 'machinery and equipment in electricity, gas and water supply sector',
+# 'machinery and equipment in construction sector',
+# 'machinery and equipment in sectors for sale, maintenance and repair of motor vehicles and motorcycles; retail sale of fuel',
+# 'machinery and equipment in sectors for wholesale trade and commission trade, except of motor vehicles and motorcycles',
+# 'machinery and equipment in sectors for retail trade, except of motor vehicles and motorcycles; repair of household goods',
+# 'machinery and equipment in hotels and restaurants sector',
+# 'machinery and equipment in transport and storage sector',
+# 'machinery and equipment in post and telecommunications sector',
+# 'machinery and equipment in financial intermediation sector',
+# 'machinery and equipment in real estate activities sector',
+# 'machinery and equipment in renting of machinery and equipment and other business activities sector',
+# 'machinery and equipment in public admin and defence; compulsory social security sectors',
+# 'machinery and equipment in education sector',
+# 'machinery and equipment in health and social work sector',
+# 'machinery and equipment in other community, social and personal services sector',
+# 'machinery and equipment in private households with employed persons',
+# 'machinery and equipment in extra-territorial organizations and bodies',
+# 'boilers',
+# 'turbines',
+# 'engines',
+# 'elevators and escalators',
+# 'cranes, overhead',
+# 'cranes, other',
+# 'winches',
+# 'conveyors',
+# 'other carrying equipment',
+# 'refrigerated showcases, including refrigerated display shelf',
+# 'refrigerator',
+# 'refrigerator',
+# 'compressor',
+# 'fans',
+# 'vacuum pumps and equipment',
+# 'hydraulic equipment',
+# 'pneumatic equipment',
+# 'transmissions',
+# 'other power transmissions',
+# 'robots, numerically controlled',
+# 'robots, other industrial',
+# 'industrial kiln',
+# 'heavy oil and gas firing equipment, including light oil',
+# 'mechanical parking systems',
+# 'item and inner packaging machine',
+# 'packaging machines',
+# 'other general industrial machinery and equipment',
+# 'agricultural tractors and ground leveling equipment',
+# 'cultivation and manegement equipment',
+# 'feed mill machines',
+# 'other agricultural machinery and equipment',
+# 'graders',
+# 'shovel excavators',
+# 'excavators, except shovel machinery',
+# 'crance, for construction',
+# 'tractor, for construction',
+# 'asphalt paving machines',
+# 'concrete machines',
+# 'machines for foundation work',
+# 'drills and rock drills',
+# 'crushers, mills, sorters and auxiliary machinery',
+# 'general machinery, construction and mining sectors',
+# 'grain processing machines',
+# 'bread-making and confectionery machines',
+# 'milk processing and dairy products machinery',
+# 'charcuterie and fishery products manufacturing equipment',
+# 'other food processing machinery',
+# 'machines related to spinning',
+# 'looms and braiding machines',
+# 'dyeing and finishing machines',
+# 'sewing machinery',
+# 'other sewing machines',
+# 'sawmill machines',
+# 'woodworking machines',
+# 'plywood machines, including fiberboard machine',
+# 'pulp and paper making machines',
+# 'printing machinery',
+# 'paper covering machinery',
+# 'bookbinding machines',
+# 'plate making machines',
+# 'filters',
+# 'sorters',
+# 'heat exchangers, including partial condensers and heat converters',
+# 'mixers, agitators, kneaders, dissolvers, granulators, emulsifiers and crushers',
+# 'reactors, generators, carbonizes and electrolytic cells',
+# 'evaporators, distillers, digesters and crystallizers',
+# 'dryers',
+# 'dust collectors',
+# 'tanks for chemical equipment',
+# 'chemically treated environment protecting equipment',
+# 'other equipment for culture and control chemical machinery',
+# 'injection molding machines',
+# 'extruders',
+# 'other plastic working machinery and auxiliary equipment',
+# 'numerically controlled lathes',
+# 'other lathes',
+# 'drilling machines',
+# 'boring machines',
+# 'milling machines',
+# 'grinding machines',
+# 'gear cutting machines and gear finishing machines',
+# 'special purpose machines for metal cutting',
+# 'machining centers',
+# 'other metal machine tools',
+# 'rolling mill machines and attachments',
+# 'finishing equipment',
+# 'bending machines',
+# 'hydraulic presses',
+# 'mechanical presses',
+# 'shearing machines',
+# 'forging machines',
+# 'wire forming machines',
+# 'welding apparatus, gas-operated',
+# 'other metal working machinery',
+# 'wafer processing equipment',
+# 'assembly equipment',
+# 'flat panel and display manufacturing equipment',
+# 'clean room equipment',
+# 'pure and ultrapure water systems',
+# 'other semiconductor manufacturing equipment',
+# 'rubber industrial machinery and appliances',
+# 'asphalt emulsion and other asphalt products manufacturing machinery',
+# 'coke manufacturing machinery',
+# 'glass industrial special machinery',
+# 'special machines for chemicals and pharmaceutical preparations manufacturing',
+# 'other equipment for culture and control special industrial machinery',
+# 'special steel cutting tools',
+# 'cemented carbide and diamond tools',
+# 'pneumatic tools',
+# 'electric tools',
+# 'fixtures and accessories for metal machining',
+# 'other machinist precision tools',
+# 'molds for presses',
+# 'molds for forging',
+# 'molds for casting, including ones for die-casting',
+# 'molds for plastics',
+# 'molds for rubber and glass',
+# 'other molds and dies',
+# 'fire extinguishing appliances, including appliances for fire engines',
+# 'valves and cocks',
+# 'other general machines and equipment',
+# 'pinball machines and slots',
+# 'amusement machines for amusement arcade',
+# 'amusement park and other amusement equipment',
+# 'automats',
+# 'cigarette-vending machines',
+# 'ticket dispensers',
+# 'other vending machines',
+# 'industrial washing machines',
+# 'automobile maintenance and servicing equipment',
+# 'other machinery for retail and personal servise industries',
+# 'electric meters',
+# 'electric measuring instruments',
+# 'semiconductor and IC measuring instruments',
+# 'industrial instruments',
+# 'other electric measuring instruments',
+# 'general purpose engine-generator combinations',
+# 'motor-generator combinations',
+# 'other generator, except for turbine generators',
+# 'electric motors',
+# 'switchgears, controlling equipment and switchboards',
+# 'transformers',
+# 'arc welding equipment',
+# 'resistance welding equipment',
+# 'accumulators and power supply equipment',
+# 'electric furnaces and industrial electric heaters',
+# 'power conversion equipment',
+# 'other industrial electric machinery and equipment',
+# 'incandescent lamp fixtures',
+# 'fluorescent luminaires',
+# 'high-intensity discharge lamps',
+# 'other electric lighting fixtures',
+# 'cameras',
+# 'photographic machines and related and instruments',
+# 'microscopes and magnifying glasses',
+# 'motion picture equipment',
+# 'other optical machinery',
+# 'watches and clocks',
+# 'physical and chemical instruments',
+# 'instruments and appliances for analyzing, testing, measuring and scaling',
+# 'medical and surgical equipment']
+
+for mk in range(0,193):
+    try:
+        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,Add2L[mk]))
+    except:
+        None 
 
 
 

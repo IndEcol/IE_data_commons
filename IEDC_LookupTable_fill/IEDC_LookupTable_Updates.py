@@ -340,7 +340,9 @@ for row in cur:
 # SQL = "INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (5,'Nm3','standard cubic metre (Sm3), Normkubikmeter')"
 # cur.execute(SQL)
 # SQL = "INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (2,'kt_F_gases_eq','kilotonnes of F-gases equivalents')"
-# cur.execute(SQL)
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name) VALUES (8,'USD2015','US Dollars of 2015')"
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'Gt CO2-eq','gigatons of CO2-equivalents',1000000000000)"
+#cur.execute(SQL)
 
 ## New user
 #SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (10,'ilhch','Ilham Checkrad','IEF','2024-11-22 12:00:00','2050-06-09 12:00:00')"
@@ -381,6 +383,7 @@ for row in cur:
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (17,'mveng','Martijn van Engelenburg','CML','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (18,'arcast','Arias Castillo','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (19,'jongoli','Jonas Golisch','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (20,'jstreeck','Jan Streeck','SEC BoKu Vienna','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # cur.execute(SQL)
 # cur.execute("UPDATE users SET username = 'jovel' WHERE id = 15") 
 
@@ -405,7 +408,8 @@ for row in cur:
 ## New layer
 # SQL = "INSERT INTO layers (name,description) VALUES ('Energy per unit of output','specific energy requirement of a process per unit of output, e.g., in kWh/item')"
 # SQL = "INSERT INTO layers (name,description) VALUES ('Mass per length','Mass per length of product or infrastructure')"
-# cur.execute(SQL)			
+# SQL = "INSERT INTO layers (name,description) VALUES ('Ratio of monetary values','E.g., two monetary flows divided by each other to determine market shares etc.')"
+#cur.execute(SQL)			
 
 # new aspect: organization	z
 # SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('organization','organization or company',7,'z','none')"
@@ -427,7 +431,7 @@ for row in cur:
 # SQL = "UPDATE units SET refunit_id = 6, unitcode = '100km2', unit_name = 'hundred square kilometers', factor = 100000000 WHERE id = 30"
 # cur.execute(SQL)
 
-
+# cur.execute("UPDATE units SET alt_unitcode = 'million m2' WHERE unitcode = 'km2'") 
 
 
 ## close connection
