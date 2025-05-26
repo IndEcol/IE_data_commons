@@ -227,8 +227,15 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #cur.execute("UPDATE datasets SET dataset_link = 'https://www.iea.org/media/statistics/IEA_HeadlineEnergyData_2016.xlsx' WHERE id = 258")  
 #cur.execute("UPDATE datasets SET dataset_link = 'https://www.iea.org/statistics/kwes/consumption/' WHERE id = 259")  
 
-# fix datagroup_id for 6_CR_criticality_Naegler_2025
+# fix datagroup_id for 6_CR_criticality_Naegler_2025 and others:
 # cur.execute("UPDATE datasets SET datagroup_id = 24 WHERE id = 420") 
+# cur.execute("UPDATE datasets SET datagroup_id = 20 WHERE id = 427") 
+# cur.execute("UPDATE datasets SET datagroup_id = 20 WHERE id = 429") 
+# cur.execute("UPDATE datasets SET datagroup_id = 20 WHERE id = 430") 
+# cur.execute("UPDATE datasets SET datagroup_id = 20 WHERE id = 431") 
+
+# Delete dataset entries with wrong uncertainty info
+# cur.execute("DELETE FROM data WHERE dataset_id = 431") 
 
 # 4) close connection
 cur.close()

@@ -4384,6 +4384,11 @@ axy # stopper to break script after opening SQL connection
 
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'planed timber' WHERE attribute1_oto = 'planed timber ' AND classification_id = 4")  
 
+# cur.execute("UPDATE classification_items SET attribute2_oto = 'other: reuse, low potential', attribute3_oto = 'other: reuse, low potential' WHERE attribute1_oto = 'other: reuse, low potential' AND classification_id = 86")  
+
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'household size (number of persons per occupied dwelling)' WHERE attribute1_oto = 'reserved_42' AND classification_id = 20")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'share of building area that is heated' WHERE attribute1_oto = 'reserved_43' AND classification_id = 20")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'dwelling services' WHERE attribute1_oto = 'reserved_5' AND classification_id = 12")  
 
 update # stopper to break script at the update commands
 
@@ -4536,6 +4541,16 @@ update # stopper to break script at the update commands
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'battery (battery storage - NMC (nickel manganese cobalt lithium-ion battery))')")  
 
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (89,'European Union')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'use phase - fishing industry')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'vehicle parts, diesel engines')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'vehicle parts, motors')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (13,'residential buildings, apartment blocks')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (13,'trade-related buildings')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'share of building area that is cooled')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'manufacturing of wood & wood products')")  
 
 
 
@@ -5436,9 +5451,72 @@ insert # stopper to break script where insersion commands are stored
 # 'instruments and appliances for analyzing, testing, measuring and scaling',
 # 'medical and surgical equipment']
 
-for mk in range(0,193):
+# Add2L=['before 1940',
+# '1940-1959',
+# '2000-2008',
+# '2010-2019',
+# '2000-2009',
+# '1980-1999']
+
+# Add2L=['manufacturing - refurbishing',
+# 'manufacturing - repair']
+
+# Add2L=['traditional vehicle engine',
+# 'heavy-duty and off-road (HDOR) equipment parts',
+# 'box-type Al die casting for automotive industry',
+# 'structural type Al die casting for automotive industry']
+
+# Add2L = ['manufacturing of passenger vehicles',
+# 'treatment of end-of-life vehicle hulk, shredding',
+# 'treatment of end-of-life vehicle, dismantling',
+# 'treatment of end-of-life vehicle, recycling',
+# 'treatment of end-of-life vehicle, reuse']
+
+# Add2L = ['machinery and equipment in manufacturing of medical and optical equipment',
+# 'machinery and equipment in pulp and paper production',
+# 'machinery and equipment in printing and publishing facilities',
+# 'machinery and equipment in manufacturing of fabricated metal products',
+# 'machinery and equipment in manufacturing of office machinery, computers, TV, and communication equipment']
+
+# Add2L = ['insulation, glass wool',
+# 'exterior coating',
+# 'stone',
+# 'wood frame',
+# 'shuttered concrete',
+# 'concrete blocs',
+# 'aerated concrete',
+# 'multi cell bricks',
+# 'plaster board',
+# 'outside frames',
+# 'roof covering',
+# 'foundations',
+# 'beams and wall ties',
+# 'plumbing',
+# 'rain water evacuation',
+# 'residential building (not including the rural house)',
+# 'non-residential building (not including the rural house)',
+# 'rural house',
+# 'urban detached building',
+# 'urban semi-detached building',
+# 'urban appartments building',
+# 'urban high-rise building',
+# 'rural detached building',
+# 'rural semi-detached building',
+# 'rural appartments building',
+# 'rural high-rise building']
+
+# Add2L = ['kaolin',
+# 'potash',
+# 'feldspar']
+
+# Add2L = ['lumber, total',
+# 'lumber, sawnwood',
+# 'lumber, engineered lumber',
+# 'lumber, veneer sheets']
+
+for mk in range(0,4):
     try:
-        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,Add2L[mk]))
+        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Add2L[mk]))
     except:
         None 
 

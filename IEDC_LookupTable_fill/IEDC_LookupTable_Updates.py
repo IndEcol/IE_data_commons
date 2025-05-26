@@ -15,6 +15,8 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
+axy # stopper to break script after opening SQL connection
+
 ## Add 'Mt' to 'Gg' unit:
 #cur.execute("UPDATE units SET alt_unitcode = 'Mt' WHERE unitcode = 'Tg'") 
 #
@@ -384,6 +386,7 @@ for row in cur:
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (18,'arcast','Arias Castillo','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (19,'jongoli','Jonas Golisch','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (20,'jstreeck','Jan Streeck','SEC BoKu Vienna','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (21,'marinah','Marina Haug','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # cur.execute(SQL)
 # cur.execute("UPDATE users SET username = 'jovel' WHERE id = 15") 
 

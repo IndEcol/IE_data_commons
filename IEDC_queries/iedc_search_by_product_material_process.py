@@ -65,7 +65,7 @@ for mr in range(0,no_groups):
     no_hits     = len(cimatch)
     searchitems = sorted(list(set(cimatch)), key=str.casefold)
        
-    ws1.cell(row=2+mr, column=1).value = data_label[mr] +" (" + str(no_hits) + " entries)"
+    ws1.cell(row=2+mr, column=1).value = data_label[mr] +" (" + str(no_hits) + " data points)"
     ws1.cell(row=1, column=2+mr).value = 'Labels_' + str(mr)
     ws1.cell(row=1, column=2+mr).font = openpyxl.styles.Font(bold=True)
     for mrs in range(0,len(searchitems)):
