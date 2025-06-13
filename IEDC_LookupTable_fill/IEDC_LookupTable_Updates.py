@@ -387,7 +387,8 @@ for row in cur:
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (19,'jongoli','Jonas Golisch','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (20,'jstreeck','Jan Streeck','SEC BoKu Vienna','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (21,'marinah','Marina Haug','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
-# cur.execute(SQL)
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (22,'alexmcshane','Alexander McShane','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
+#cur.execute(SQL)
 # cur.execute("UPDATE users SET username = 'jovel' WHERE id = 15") 
 
 # fix aspect table entry

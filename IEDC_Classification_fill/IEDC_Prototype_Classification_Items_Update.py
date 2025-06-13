@@ -4390,6 +4390,9 @@ axy # stopper to break script after opening SQL connection
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'share of building area that is heated' WHERE attribute1_oto = 'reserved_43' AND classification_id = 20")  
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'dwelling services' WHERE attribute1_oto = 'reserved_5' AND classification_id = 12")  
 
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Freiburg im Breisgau' WHERE attribute1_oto = 'reserved_32' AND classification_id = 11")  
+
+
 update # stopper to break script at the update commands
 
 # Add4L=['rare earth elements (REE)',
@@ -4551,7 +4554,8 @@ update # stopper to break script at the update commands
 
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (20,'share of building area that is cooled')")  
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'manufacturing of wood & wood products')")  
-
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'extruded polystyrene foam (XPS)')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'all polymers')")  
 
 
 insert # stopper to break script where insersion commands are stored
@@ -5514,9 +5518,30 @@ insert # stopper to break script where insersion commands are stored
 # 'lumber, engineered lumber',
 # 'lumber, veneer sheets']
 
-for mk in range(0,4):
+# Add2L = ['water pipe, hot and cold',
+# 'pipe, for gas',
+# 'pipe, other',
+# 'pipe, industry',
+# 'pipe, soil and waste',
+# 'window & door profiles ',
+# 'other profiles ',
+# 'flooring, compact',
+# 'flooring, cushion vinyl ',
+# 'flooring, luxury vinyl tiles ',
+# 'flooring, vinyl-asbestos',
+# 'power cables, insulation',
+# 'building wire, insulation',
+# 'communication cables, insulation',
+# 'insulation, flat roof',
+# 'insulatation, external thermal insulation composite system (ETICS)',
+# 'insulation, perimeter',
+# 'insulation, floor',
+# 'insulation, others ',
+# 'roof sheeting films']
+
+for mk in range(0,20):
     try:
-        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Add2L[mk]))
+        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,Add2L[mk]))
     except:
         None 
 
