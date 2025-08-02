@@ -16,6 +16,8 @@ This repository contains:
 * C# code for the web interface (folder IEDC_webapp)
 * Sample code for the pymysql interface (folder mySQL_Python_Examples)
 
-Last change of this document: October 19th, 2018.
+Database schema diagram:
 
+![IEDC relational database schema diagram, showing only main tables and relationships](/doc/IEDC-EER-MainTables.JPG)
 
+Last change of this document: October 29th, 2018.
