@@ -4392,6 +4392,10 @@ axy # stopper to break script after opening SQL connection
 
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Freiburg im Breisgau' WHERE attribute1_oto = 'reserved_32' AND classification_id = 11")  
 
+# cur.execute("UPDATE classification_items SET description = 'all industrial machinery and equipment, including agriculture and other uses in non-residential buildings, not energy supply' WHERE attribute1_oto = 'industrial machinergy and equipment' AND classification_id = 95")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'industrial machinery and equipment' WHERE attribute1_oto = 'industrial machinergy and equipment' AND classification_id = 95")  
+# cur.execute("UPDATE classification_items SET description = 'other infrastructure, including military infrastructure' WHERE attribute1_oto = 'other infrastructrure' AND classification_id = 95")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'other infrastructure' WHERE attribute1_oto = 'other infrastructrure' AND classification_id = 95")  
 
 update # stopper to break script at the update commands
 
@@ -4556,6 +4560,7 @@ update # stopper to break script at the update commands
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'manufacturing of wood & wood products')")  
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'extruded polystyrene foam (XPS)')")  
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'all polymers')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'cold rolled aluminium, including coated aluminium')")  
 
 
 insert # stopper to break script where insersion commands are stored
@@ -5539,13 +5544,245 @@ insert # stopper to break script where insersion commands are stored
 # 'insulation, others ',
 # 'roof sheeting films']
 
-for mk in range(0,20):
+# Add2L = ['ore or scrap',
+# 'refined liquid metal',
+# 'slabs, blooms, billets',
+# 'plates and sections',
+# 'sections, rods, and bars',
+# 'steel rods and bars',
+# 'pipes',
+# 'ingot for forging',
+# 'steel products',
+# 'steel sections',
+# 'steel plates',
+# 'hot wide strip',
+# 'seamless tube',
+# 'welded pipe',
+# 'cold rolled steel, including coated steel',
+# 'finished steel products',
+# 'aluminium products',
+# 'aluminium plates',
+# 'cold rolled steel, including coated steel',
+# 'steel, in all forms',
+# 'steel, flat, cut and joined',
+# 'steel, in form of bent sheet',
+# 'steel, stretched and embossed',
+# 'steel, deep-drawn',
+# 'steel, forged',
+# 'steel, extruded',
+# 'steel, cast',
+# 'steel, in form of sections',
+# 'steel, in form of bar and wire',
+# 'steel, in form of pipes',
+# 'aluminium, in all forms',
+# 'aluminium, flat, cut and joined',
+# 'aluminium, in form of bent sheet',
+# 'aluminium, stretched and embossed',
+# 'aluminium, deep-drawn',
+# 'aluminium, forged',
+# 'aluminium, extruded',
+# 'aluminium, cast',
+# 'aluminium, in form of bar and wire',
+# 'buildings',
+# 'infrastructure',
+# 'buildings - construction - infrastructure',
+# 'vehicles, all types',
+# 'passenger vehicles',
+# 'light commercial vehicles',
+# 'trucks and busses',
+# 'aircrafts/airplanes',
+# 'train',
+# 'ship',
+# 'other vehicles',
+# 'industrial equipment, mechanical',
+# 'industrial equipment',
+# 'industrial equipment, electrical',
+# 'metal goods',
+# 'packaging',
+# 'appliances, domestic',
+# 'other metal goods',
+# 'food and drink cans',
+# 'shipping containers',
+# 'cookers and ovens',
+# 'refrigerators and freezers',
+# 'washing machines',
+# 'dishwashers',
+# 'air conditioner',
+# 'all products',
+# 'foil',
+# 'gas power plant (OCGT)',
+# 'lignite-fired power plant',
+# 'electricity generation - hydro (reservoir)',
+# 'cogeneration (combined heat and power, CHP), coal-based',
+# 'cogeneration (combined heat and power, CHP), gas-based',
+# 'cogeneration (combined heat and power, CHP), biomass-based',
+# 'biomass central heating plant',
+# 'electricity grid - HVDC overhead',
+# 'electricity grid - HVDC interver pair',
+# 'electricity storage - batteries',
+# 'electricity storage - battery inverter',
+# 'hydrogen storage - underground',
+# 'hydrogen storage - tank',
+# 'DAC (direct air capture) plant',
+# 'methanation plant',
+# 'gas boiler, central',
+# 'gas boiler, decentral',
+# 'resistance heating, central',
+# 'resistance heating, decentral',
+# 'water tank storage, central',
+# 'water tank storage, decentral',
+# 'air source heat pump (ASHP), decentral',
+# 'air source heat pump (ASHP), central',
+# 'ground-sourced heat pump, central',
+# 'ground-sourced heat pump, decentral',
+# 'ground-sourced heat pump']
+
+# Add2L = ['liquid metal production',
+# 'casting',
+# 'hot rolling',
+# 'hot strip mill',
+# 'cold rolling',
+# 'welding',
+# 'cutting sections or rebar to length',
+# 'cutting bar or rod to shape',
+# 'cutting flat plate or blanking sheet',
+# 'cutting pipe to length',
+# 'shaping: stretch-embossing (crash forming)',
+# 'shaping: deep-drawing and trimming',
+# 'forging',
+# 'extrusion/wire drawing',
+# 'machining: cutting parts from bar and forgings']
+
+# Add2L = ['7-storey multi-purpose building, wood-based, conversion',
+# '7-storey multi-purpose building, wood-based, demolition',
+# '7-storey multi-purpose building, concrete-based']
+
+# Add2L = ['ca. 2020-2030',
+# '2005-2020']
+
+# Add2L = ['laminated veneer lumber',
+# 'softwood products',
+# 'concrete',
+# 'connections',
+# 'steel',
+# 'clay',
+# 'glass',
+# 'mineral wool',
+# 'wood fiber',
+# 'gypsum',
+# 'heat pump',
+# 'elevator',
+# 'photovoltaic installation']
+
+# Add2L = ['solar PV (CIGS)',
+# 'all products',
+# 'Solar PV (c-Si) and CSP',
+# 'Solar PV (c-Si), CSP and EVs',
+# 'Solar PV (c-Si)',
+# 'fuel cells',
+# 'solar PV and nuclear power',
+# 'wind turbines',
+# 'solar PV (CdTe)',
+# 'solar PV, wind turbines, CSP, CCS, and electric vehicles',
+# 'solar PV',
+# 'solar PV, wind turbines, CSP, electric vehicles, and fuel cells',
+# 'solar PV, CSP, and electric vehicles',
+# 'wind turbines and electric vehicles',
+# 'wind turbines, CSP, electric vehicles, and fuel cells',
+# 'CSP and electric vehicles',
+# 'electric vehicles',
+# 'solar PV, wind turbines, CSP, and electric vehicles',
+# 'solar PV, wind turbines, and electric vehicles',
+# 'wind turbines, CSP, and electric vehicles']
+
+# Add2L =  ['before 1930',
+# '1930-1949',
+# '1950-1969',
+# 'after 1970',
+# '1996-2001',
+# '2001-2006',
+# '2010-2015',
+# '2007-2012',
+# '2012-2017',
+# '2002-2007',
+# '1998-2003',
+# '2000-2005',
+# '2001-2011',
+# '1995-2005',
+# '2004-2014',
+# '2005-2015',
+# '2000-2010',
+# '2006-2016',
+# '1992-2002',
+# '2016-2019',
+# '1977-1980',
+# '2004-2005',
+# '1975-1980',
+# '1970-1980',
+# '2002-2012',
+# '2005-2012',
+# '2010-2016',
+# '1997-2012',
+# '1995-2015',
+# '2000-2015',
+# '2005-2010',
+# '1990-2002',
+# '1995-2002',
+# '1998-2006',
+# '2000-2012',
+# '2000-2006',
+# '1985-2006',
+# '1992-2012']
+
+# Add2L = ['residential building, stone',
+# 'residential building, solid brick',
+# 'residential buildings',
+# 'residential building, solid brick, wider building ',
+# 'residential building, solid brick, narrow building ',
+# 'residential building, solid brick, taller building ',
+# 'residential building, solid brick, intermediate height building ',
+# 'residential building, stone, wider building ',
+# 'residential building, stone, narrow building ',
+# 'residential building, stone, taller building ',
+# 'residential building, stone, intermediate height building ',
+# 'residential building, wider building ',
+# 'residential building, narrow building ',
+# 'residential building, taller building ',
+# 'residential building, intermediate height building ']
+
+# Add2L = ['battery, portable',
+# 'battery, vehicle traction',
+# 'battery, unspecified',
+# 'catalyst, hydroprocessing, of cobalt',
+# 'catalyst, PET precursor, of cobalt',
+# 'catalyst, unspecified purpose, of cobalt',
+# 'components for dissipative use (e.g., refractory, friction or abrasive materials, )',
+# 'components of hard metals',
+# 'magnets',
+# 'components of other metals and alloys',
+# 'components of superalloys',
+# 'other components',
+# 'battery, vehicle traction, lithium-ion',
+# 'catalysts, of cobalt',
+# 'battery, for portable devices, lithium-ion',
+# 'catalyst, hydroformylation and GTL processes, of cobalt']
+
+# Add2L = ['market for manufactured goods and components',
+# 'market for waste products and components',
+# 'market for refined metals',
+# 'waste collection',
+# 'pre-treatment of waste and waste products before recycling',
+# 'market for recycled materials']
+
+for mk in range(0,6):
     try:
-        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(7,Add2L[mk]))
+        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(6,Add2L[mk]))
     except:
         None 
 
-
+for mr in range(0,6):
+    SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =81"
+    cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+1)))
 
 
 # Close connection

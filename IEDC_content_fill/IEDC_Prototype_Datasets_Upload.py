@@ -120,8 +120,8 @@ for row in cur:
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
 TOC = TOCFile['DataSets_Inventory']
 
-Offset = 193 # entry of row 74 of column of first dataset to be entered.
-No_DS = 1 # number of dataset definitions to be uploaded, starting from the position given above
+Offset = 198 # entry of row 74 of column of first dataset to be entered.
+No_DS = 5 # number of dataset definitions to be uploaded, starting from the position given above
 
 # loop over datasets
 for m in range(Offset,Offset + No_DS):

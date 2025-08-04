@@ -437,6 +437,7 @@ for row in cur:
 
 # cur.execute("UPDATE units SET alt_unitcode = 'million m2' WHERE unitcode = 'km2'") 
 
+# cur.execute("UPDATE classification_definition SET meaning_attribute1 = 'physical indicator' WHERE id = 93")
 
 ## close connection
 cur.close()

@@ -237,6 +237,10 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # Delete dataset entries with wrong uncertainty info
 # cur.execute("DELETE FROM data WHERE dataset_id = 431") 
 
+# Change dataset name:
+# 3_EI_Other_Vehicles_CIRCOMOD_D4.2_2025			change name to 3_EI_Other_Vehicles_CIRCOMOD	
+# cur.execute("UPDATE datasets SET dataset_name = '3_EI_Other_Vehicles_CIRCOMOD' WHERE id = 431")
+
 # 4) close connection
 cur.close()
 conn.close()
