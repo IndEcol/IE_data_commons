@@ -1047,7 +1047,12 @@ axy # stopper to break script after opening SQL connection
 
 ### Nov. 2024 update/fix
 # remove incomplete upload of class. items 83:
-#cur.execute("DELETE FROM classification_items WHERE classification_id = 83")            
+#cur.execute("DELETE FROM classification_items WHERE classification_id = 83")     
+
+# Aug. 2025:
+# remove incomplete upload of class. items 99:
+# cur.execute("DELETE FROM classification_definition WHERE id = 99") 
+# cur.execute("DELETE FROM classification_items WHERE classification_id = 99")         
 
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'diesel-powered heavy-duty truck' WHERE attribute1_oto = 'diesel-powered heavy heavy-duty truck' AND classification_id = 7")
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'passenger train' WHERE attribute1_oto = 'reserved_176' AND classification_id = 7")
@@ -3340,7 +3345,11 @@ axy # stopper to break script after opening SQL connection
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'South America, nec', attribute4_oto = 10035 WHERE attribute1_oto = 'reserved_18' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Gulf Cooperation Council', attribute4_oto = 10037 WHERE attribute1_oto = 'reserved_21' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Other Asian countries', attribute4_oto = 10038 WHERE attribute1_oto = 'reserved_22' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Rest of the world', attribute4_oto = 100004 WHERE attribute1_oto = 'reserved_23' AND classification_id = 2")
 
+
+
+regions
 
 # AppL = ['urban refrigerator',
 # 'urban washing machine',
@@ -4397,6 +4406,8 @@ axy # stopper to break script after opening SQL connection
 # cur.execute("UPDATE classification_items SET description = 'other infrastructure, including military infrastructure' WHERE attribute1_oto = 'other infrastructrure' AND classification_id = 95")  
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'other infrastructure' WHERE attribute1_oto = 'other infrastructrure' AND classification_id = 95")  
 
+
+
 update # stopper to break script at the update commands
 
 # Add4L=['rare earth elements (REE)',
@@ -4561,6 +4572,15 @@ update # stopper to break script at the update commands
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'extruded polystyrene foam (XPS)')")  
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'all polymers')")  
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'cold rolled aluminium, including coated aluminium')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (90,'battery, vehicle starter battery')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'glass and carbon composites')")  
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto, description) VALUES (99,'power converter, wind turbines','custom label, not part of official NZIA document')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto, description) VALUES (99,'castings, wind turbines','custom label, not part of official NZIA document')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto, description) VALUES (99,'cable','custom label, not part of official NZIA document')")  
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'fulltime emyployees')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (14,'2012-2016')")
 
 
 insert # stopper to break script where insersion commands are stored
@@ -5774,15 +5794,351 @@ insert # stopper to break script where insersion commands are stored
 # 'pre-treatment of waste and waste products before recycling',
 # 'market for recycled materials']
 
-for mk in range(0,6):
+# Add2L = ['dredging spoils',
+# 'soil waste',
+# 'waste wood',
+# 'ceramics and tiles']
+
+# Add2L = ['1992',
+# '1993-1996',
+# '1997',
+# '1998-2003',
+# '2004',
+# '2005-2006',
+# '2007',
+# '2008',
+# '2009',
+# '2010',
+# '2011',
+# '2012',
+# '2013',
+# '2014',
+# '2015',
+# '2016',
+# '1991',
+# '1992-1996',
+# '1998-2005',
+# '2006',
+# '2008-2009',
+# '2011-2012',
+# '2014-2016',
+# '2016-2021']
+
+# Add2L = ['steel, unalloyed',
+# 'steel, chromium steel',
+# 'polyethylene (PE) and other polymers']
+
+# Add2L = ['wind turbines, onshore, high-speed doubly-fed induction generator (DFIG)',
+# 'wind turbines, offshore, high-speed doubly-fed induction generator (DFIG)',
+# 'wind turbines, high-speed doubly-fed induction generator (DFIG)',
+# 'wind turbines, onshore, medium/high-speed permanent magnet synchronous generator (PMSG) (type E-PM)',
+# 'wind turbines, offshore, medium/high-speed permanent magnet synchronous generator (PMSG) (type E-PM)',
+# 'wind turbines, medium/high-speed permanent magnet synchronous generator (PMSG) (type E-PM)',
+# 'wind turbines, onshore, direct drive turbines include low-speed EESG (type D-EE)',
+# 'wind turbines, offshore, direct drive turbines include low-speed EESG (type D-EE)',
+# 'wind turbines, direct drive turbines include low-speed EESG (type D-EE)',
+# 'wind turbines, onshore, low-speed permanent magnet synchronous generator (PMSG) (type D-PM)',
+# 'wind turbines, offshore, low-speed permanent magnet synchronous generator (PMSG) (type D-PM)',
+# 'wind turbines, low-speed permanent magnet synchronous generator (PMSG) (type D-PM)',
+# 'wind turbines, direct drive permanent magnet synchronous generator (DD-PMSG)',
+# 'wind turbines, permanent magnet synchronous generator with gearbox (GB-PMSG)',
+# 'wind turbines, doubly-fed induction generator with gearbox (GB-DFIG)']
+
+# Add2L = ['CAPEX',
+# 'OPEX',
+# 'labour']
+
+# Add2L = ['Vienna',
+# 'Beijing',
+# 'Buenos Aires',
+# 'Cairo',
+# 'Delhi',
+# 'Dhaka',
+# 'Guangzhou',
+# 'Istanbul',
+# 'Jakarta',
+# 'Karachi',
+# 'London',
+# 'Los Angeles',
+# 'Manila',
+# 'Mexico City',
+# 'Moscow',
+# 'Mumbai',
+# 'Paris',
+# 'Rio de Janeiro',
+# 'Sao Paulo',
+# 'Shanghai',
+# 'Shenzhen',
+# 'Kolkata',
+# 'Tehran',
+# 'Tokyo',
+# 'Kenitra',
+# 'Lagos',
+# 'New York',
+# 'Osaka',
+# 'Seoul',
+# 'Lisbon',
+# 'Seoul-Incheon',
+# 'Île-de-France',
+# 'Paris and its dense urban Petite couronne suburbs',
+# 'Bogotá',
+# 'Hong Kong',
+# 'Charleroi',
+# 'Hamburg',
+# 'Bangalore',
+# 'Bangkok',
+# 'Ho Chi Minh City',
+# 'York',
+# 'Brussels, Anderlecht',
+# 'Brussels, Auderghem',
+# 'Brussels, Berchem-Sainte-Agathe',
+# 'Brussels, Bruxelles',
+# 'Brussels, Etterbeek',
+# 'Brussels, Evere',
+# 'Brussels, Forest',
+# 'Brussels, Ganshoren',
+# 'Brussels, Ixelles',
+# 'Brussels, Jette',
+# 'Brussels, Koekelberg',
+# 'Brussels, Molenbeek-Saint-Jean',
+# 'Brussels, Saint-Gilles',
+# 'Brussels, Saint-Josse-ten-Noode',
+# 'Brussels, Schaerbeek',
+# 'Brussels, Uccle',
+# 'Brussels, Watermael-Boitsfort',
+# 'Brussels, Woluwe-Saint-Lambert',
+# 'Brussels, Woluwe-Saint-Pierre',
+# 'Brussels',
+# 'London, City of London',
+# 'London, Barking and Dagenham',
+# 'London, Barnet',
+# 'London, Bexley',
+# 'London, Brent',
+# 'London, Bromley',
+# 'London, Camden',
+# 'London, Croydon',
+# 'London, Ealing',
+# 'London, Enfield',
+# 'London, Greenwich',
+# 'London, Hackney',
+# 'London, Hammersmith and Fulham',
+# 'London, Haringey',
+# 'London, Harrow',
+# 'London, Havering',
+# 'London, Hillingdon',
+# 'London, Hounslow',
+# 'London, Islington',
+# 'London, Kensington and Chelsea',
+# 'London, Kingston upon Thames',
+# 'London, Lambeth',
+# 'London, Lewisham',
+# 'London, Merton',
+# 'London, Newham',
+# 'London, Redbridge',
+# 'London, Richmond upon Thames',
+# 'London, Southwark',
+# 'London, Sutton',
+# 'London, Tower Hamlets',
+# 'London, Waltham Forest',
+# 'London, Wandsworth',
+# 'London, Westminster',
+# 'Ahmedabad',
+# 'Amman',
+# 'Athens',
+# 'Austin',
+# 'Avellaneda',
+# 'Baltimore',
+# 'Barcelona',
+# 'Bhutan',
+# 'Bologna (province)',
+# 'Boston',
+# 'Calgary',
+# 'Cape Town',
+# 'Chennai',
+# 'Chicago',
+# 'Chittagong',
+# 'Chongqing',
+# 'Coimbatore',
+# 'Colombo',
+# 'Dallas',
+# 'Denver',
+# 'Faridabad',
+# 'Frankfurt',
+# 'Geneva',
+# 'Glasgow',
+# 'Goiania',
+# 'Gurgaon',
+# 'Helsinki',
+# 'Houston',
+# 'Hyderabad',
+# 'Jaipur',
+# 'Juneau',
+# 'Kandy',
+# 'Kathmandu',
+# 'Khulna',
+# 'Kurunegala',
+# 'Lalitpur',
+# 'Ljubljana',
+# 'London (Greater London Area)',
+# 'Ludhiana',
+# 'Madrid',
+# 'Matale',
+# 'Menlo Park',
+# 'Mexico City (city)',
+# 'Mexico City (metro area)',
+# 'Miami',
+# 'Minneapolis',
+# 'Mysore',
+# 'Naples (province)',
+# 'New York City',
+# 'Oslo',
+# 'Patna',
+# 'Philadelphia',
+# 'Phuentsholing',
+# 'Pokhara',
+# 'Portland, OR',
+# 'Porto ',
+# 'Porto Alegre',
+# 'Portugal',
+# 'Prague',
+# 'Pune',
+# 'Rajshahi',
+# 'Rotterdam',
+# 'San Diego',
+# 'San Francisco',
+# 'Seattle',
+# 'Seoul  ',
+# 'Singapore',
+# 'Slovenia ',
+# 'Stockholm',
+# 'Stuttgart',
+# 'Surat',
+# 'Sydney',
+# 'Thimphu',
+# 'Tianjin',
+# 'Toronto  (metro area)',
+# 'Toronto (City of Toronto)',
+# 'Turin',
+# 'Udaipur',
+# 'Vancouver',
+# 'Veneto (province)',
+# 'Washington DC']
+
+# Add2L = ['costs (CAPEX) for achieving 3% primary energy saving',
+# 'costs (CAPEX) for achieving 3-30% primary energy saving',
+# 'costs (CAPEX) for achieving 30-60% primary energy saving',
+# 'costs (CAPEX) for achieving 60-100% primary energy saving']
+
+# Add2L = ['rare earth elements (REE) ore',
+# 'rare earth elements (REE) concentrate',
+# 'rare earth elements (REE) metal',
+# 'semi-products; auto catalyst',
+# 'semi-products; NiMH battery',
+# 'semi-products; NdFeB magnet',
+# 'semi-products; other alloy',
+# 'semi-products; glass and ceramics',
+# 'electronic devices',
+# 'appliances, domestic',
+# 'electric vehicles',
+# 'magnetic resonance imaging (MRI) devices',
+# 'vehicles, internal combustion engines',
+# 'industrial machinery',
+# 'wind turbines',
+# 'other final products',
+# 'final products and commodities',
+# 'semi-products',
+# 'semi-products; other alloy',
+# 'scrap; home appliances',
+# 'scrap; magnetic resonance imaging devices',
+# 'scrap; conventional vehicle',
+# 'scrap; electronic device',
+# 'scrap; industrial machinery',
+# 'scrap; electrical vehicle',
+# 'scrap; wind turbine',
+# 'scrap; other']
+
+# Add2L = ['cobalt oxide',
+# 'metallic cobalt and cobalt oxide',
+# 'metallic cobalt',
+# 'lithium carbonate',
+# 'lithium hydroxide',
+# 'lithium chloride']
+
+# Add2L = ['Murrin Murrin',
+# 'Nova',
+# 'Mt. Keith, Leinster',
+# 'Voisey\'s Bay',
+# 'Sudbury',
+# 'Raglan',
+# 'Thompson',
+# 'Jinchuan Mine',
+# 'Kalatongke',
+# 'Pedro Soto Alba',
+# 'Punta Gorda',
+# 'Mutanda',
+# 'Tenke Fungurume',
+# 'Etoile and Usoke',
+# 'Ruashi (Kalukuluku)',
+# 'Kamoto',
+# 'RTR',
+# 'Kamoya',
+# 'Kambove, Kasulo',
+# 'MKM, Luishia, SICOMINES I',
+# 'Kisanfu',
+# 'Kevitsa',
+# 'Talvivaara/Sotkamo',
+# 'Ambatovy ',
+# 'Boleo',
+# 'Bou Azzer',
+# 'Goro',
+# 'Taganito',
+# 'Rio Tuba',
+# 'Ramu, Karumbukari',
+# 'Kole MMC/Polar Division',
+# 'Bushveld Igneous Complex ',
+# 'Gördes and Yunusemre ',
+# 'Greenbushes (Base)',
+# 'Salar de Atacama (SQM) ',
+# 'Mt Marion',
+# 'Salar de Atacama (SQM)',
+# 'Pilgan (includes improvement works)',
+# 'Hombre Muerto',
+# 'Mt Cattlin',
+# 'Salar de Olaroz',
+# 'Ngungaju',
+# 'Yichun Tantalum (414)',
+# 'West Taiji Nai’er, Qinghai, CITIC',
+# 'Qarhan, Qinghai',
+# 'Mibra',
+# 'Al Hayat',
+# 'East Taiji Nai’er, Qinghai',
+# 'West Taiji Nai’er, Qinghai, HXR',
+# 'Silver Peak',
+# 'Zabuye, Tibet',
+# 'Yifeng Huashan Porcelain, Yifeng Baishuidong Kaolin',
+# 'East Qarhan, Qinghai',
+# 'Mina do Barroso',
+# 'Cachoeira',
+# 'Yifeng Huaqiao Dagang Porcelain',
+# 'Ningdu',
+# 'Jiajika',
+# 'Yiliping',
+# 'Yichun others',
+# 'Fengxin Jinfeng Silicon',
+# 'n.a.']
+
+for mk in range(0,62):
     try:
-        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(6,Add2L[mk]))
+        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(92,Add2L[mk]))
     except:
         None 
 
-for mr in range(0,6):
-    SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id =81"
-    cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+1)))
+for mr in range(0,175):
+    SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id = 11"
+    try:
+        cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+33)))
+    except:
+        None
 
 
 # Close connection

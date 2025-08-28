@@ -241,6 +241,33 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # 3_EI_Other_Vehicles_CIRCOMOD_D4.2_2025			change name to 3_EI_Other_Vehicles_CIRCOMOD	
 # cur.execute("UPDATE datasets SET dataset_name = '3_EI_Other_Vehicles_CIRCOMOD' WHERE id = 431")
 
+# Aug. 28, 2025: ID 299, '6_URB_MetabolismOfCities_Jan2019_DOI_7326485.v1':
+# changed name and version number compared to original dataset (spauliuk, Aug. 28, 2025), to separate dataset name from version number
+# changed classification number compared to original dataset (spauliuk, Aug. 28, 2025), to link to common cities classification (11).
+#cur.execute("DELETE FROM data WHERE dataset_id = 299") # delete existing data
+#cur.execute("UPDATE datasets SET dataset_name = '6_URB_MetabolismOfCities' WHERE id = 299") 
+#cur.execute("UPDATE datasets SET dataset_version = 'Jan2019_DOI_7326485.v1' WHERE id = 299") 
+#cur.execute("UPDATE datasets SET aspect_1_classification = 11 WHERE id = 299") 
+# subsequent reupload of data from corrected template with standard script.
+
+#Aug. 28, 2025: Search for mis-spelled classification items    
+# Class. 7, remove redundant label:				
+# jet fuel-powered aircraft  1103	to	aircraft, jetfuel   1189
+# for m in range(1,13): 
+#     cur.execute("SELECT DISTINCT id,dataset_id FROM data WHERE aspect" + str(m) + " = 1103") # search for possibly wrong entry for a given classification item
+#     for row in cur:
+#         print(row) 
+#         print(m)
+# returns:
+# (3136430, 342) plus seven more hits, all for m=1.
+# cur.execute("UPDATE data SET aspect1 = 1189 WHERE aspect1 = 1103 AND dataset_id = 342") 
+
+# fix datagroup_id for 1_F_Lithium_and_Cobalt_Ore_Extraction_Refining_TAN_2024 and others:
+# cur.execute("UPDATE datasets SET datagroup_id = 24 WHERE id = 460") 
+# cur.execute("UPDATE datasets SET datagroup_id = 24 WHERE id = 461") 
+
+
+
 # 4) close connection
 cur.close()
 conn.close()

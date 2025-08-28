@@ -183,7 +183,7 @@ cur.execute("SELECT * FROM data WHERE dataset_id = 195 AND aspect1 = 6094")
 for row in cur:
     print(row)     
 
-cur.execute("SELECT * FROM datasets WHERE id = 69")
+cur.execute("SELECT * FROM datasets WHERE id = 299")
 for row in cur:
     print(row)     
     

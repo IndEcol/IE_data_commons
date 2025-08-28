@@ -388,7 +388,8 @@ for row in cur:
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (20,'jstreeck','Jan Streeck','SEC BoKu Vienna','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (21,'marinah','Marina Haug','INEC HS Pforzheim','2025-01-01 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (22,'alexmcshane','Alexander McShane','IEF','2025-01-01 12:00:00','2050-06-09 12:00:00')"
-#cur.execute(SQL)
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (23,'pfortes','Patricia Fortes','NOVA','2025-08-01 12:00:00','2050-06-09 12:00:00')"
+# cur.execute(SQL)
 # cur.execute("UPDATE users SET username = 'jovel' WHERE id = 15") 
 
 # fix aspect table entry
@@ -413,7 +414,8 @@ for row in cur:
 # SQL = "INSERT INTO layers (name,description) VALUES ('Energy per unit of output','specific energy requirement of a process per unit of output, e.g., in kWh/item')"
 # SQL = "INSERT INTO layers (name,description) VALUES ('Mass per length','Mass per length of product or infrastructure')"
 # SQL = "INSERT INTO layers (name,description) VALUES ('Ratio of monetary values','E.g., two monetary flows divided by each other to determine market shares etc.')"
-#cur.execute(SQL)			
+# SQL = "INSERT INTO layers (name,description) VALUES ('Mass per capacity','Mass of material per installed capacity of equipment, e.g., per GW of electricity generation capacity')"
+# cur.execute(SQL)			
 
 # new aspect: organization	z
 # SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('organization','organization or company',7,'z','none')"
