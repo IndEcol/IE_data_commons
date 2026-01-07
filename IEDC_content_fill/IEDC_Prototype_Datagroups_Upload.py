@@ -85,7 +85,7 @@ DUsers = [x[1] for x in Tuples]
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
 TOC = TOCFile['DataGroups']
 
-Offset = 27 # last datagroup id that was inserted, currently no. 27 (EU criticality) on April 30, 2025.
+Offset = 32 # last datagroup id that was inserted, currently no. 32 (China_Sand_Gravel_ChrushedStone_MFA_REN_2025) on Jan 03, 2026.
 No_DG  = 1  # number of new data groups to insert ON THE RIGHT SIDE of the last offset column ID
 
 # loop over datasets

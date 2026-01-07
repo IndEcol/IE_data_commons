@@ -441,6 +441,26 @@ for row in cur:
 
 # cur.execute("UPDATE classification_definition SET meaning_attribute1 = 'physical indicator' WHERE id = 93")
 
+### IEDC Jan 2026 update
+# cur.execute("INSERT INTO stats_array (name, description, loc) VALUES ('Min value','indicated value is a minimal value or lower boundary (true value >= given value)','min')") 
+# cur.execute("INSERT INTO stats_array (name, description, loc) VALUES ('Max value','indicated value is a maximal value or upper boundary (true value <= given value)','max')") 
+# SQL = "INSERT INTO layers (name,description) VALUES ('Energy storage capacity','Capacity of a product or process to store energy')"
+# cur.execute(SQL)			
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (24,'hibikikiko','Hibiki Kiko','Nagoya University','2026-01-03 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (25,'younisahmed','Ahmed Younis','NOVA University','2026-01-03 12:00:00','2050-06-09 12:00:00')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO licences (id,name,description) VALUES (23,'© Americal Chemical Society','© Americal Chemical Society')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (6,'1000km2','thousand square kilometers',1000000000)"
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'billion m3','billion cubic meters',1000000000)"
+# cur.execute(SQL)
+# SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('country_subunit','provinces and other sub-entities of countries',4,'u','s_u_b-_u_nit')"
+# cur.execute(SQL)
+# SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Product parameters','parameters that describe products: energy efficiency, battery capacity, number of components per product, etc',3,'PUP')"
+# cur.execute(SQL)
+
+
+
 ## close connection
 cur.close()
 conn.close()

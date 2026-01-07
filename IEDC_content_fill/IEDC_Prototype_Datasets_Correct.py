@@ -266,7 +266,26 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # cur.execute("UPDATE datasets SET datagroup_id = 24 WHERE id = 460") 
 # cur.execute("UPDATE datasets SET datagroup_id = 24 WHERE id = 461") 
 
+## 29.8.25 / 30.8.25
+## Add system definition to CIRCOMOD results database, ID 23
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_MFA_System_May_2025.png' WHERE id = 23")    
+## Add system definition to CIRCOMOD input databases, IDs 19-22
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_Input_Database_IEDC.png' WHERE id = 19")    
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_Input_Database_IEDC.png' WHERE id = 20")    
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_Input_Database_IEDC.png' WHERE id = 21")    
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_Input_Database_IEDC.png' WHERE id = 22")    
 
+## 3.1.2026: Add data category and type to dataset name for dataset id 357-361:
+# cur.execute("UPDATE datasets SET dataset_name = '1_F_MAT_STOCKS_MISO2_Ew_Material_Cycles_2024_F_10_11_EoL_waste' WHERE id = 357") 
+# cur.execute("UPDATE datasets SET dataset_name = '1_F_MAT_STOCKS_MISO2_Ew_Material_Cycles_2024_F_9_10_final_consumption' WHERE id = 358") 
+# cur.execute("UPDATE datasets SET dataset_name = '2_IUS_MAT_STOCKS_MISO2_Ew_Material_Cycles_2024_S_10_In-use-stock' WHERE id = 359") 
+# cur.execute("UPDATE datasets SET dataset_name = '2_IUS_MAT_STOCKS_MISO2_Ew_Material_Cycles_2024_IUS_10_In-use-stock_Global_Fig3' WHERE id = 360") 
+# cur.execute("UPDATE datasets SET dataset_name = '6_PCS_MAT_STOCKS_MISO2_Ew_Material_Cycles_2024_PCS_10_In-use-stock_Global_Fig5' WHERE id = 361") 
+# cur.execute("UPDATE projects SET project_link = 'https://www.ise.fraunhofer.de/de/forschungsprojekte/souveraen.html' WHERE id = 7") 
+
+## 6.1.26: Add new comment and Sankey Flag to id 485
+#cur.execute("UPDATE datasets SET comment = 'Data copied from supplementary file 41467_2025_64349_MOESM5_ESM.xlsx, sheet Fig.2D, process and material labels matched to standard IEDC classifications. Note: in the supplement, the labels of the final uses buildings and demolition are swapped compared to the figure in the pdf. Here, the former is reported, with 6.05 Gt/yr waste from buildings and 3.55 Gt/yr waste from infrastructure.' WHERE id = 485") 
+#cur.execute("UPDATE datasets SET reserve1 = 'SANKEY_LINK' WHERE id = 485") 
 
 # 4) close connection
 cur.close()
