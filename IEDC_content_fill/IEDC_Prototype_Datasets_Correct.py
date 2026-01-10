@@ -287,6 +287,12 @@ All global steel cycle (Pauliuk 2013) data are affected.
 #cur.execute("UPDATE datasets SET comment = 'Data copied from supplementary file 41467_2025_64349_MOESM5_ESM.xlsx, sheet Fig.2D, process and material labels matched to standard IEDC classifications. Note: in the supplement, the labels of the final uses buildings and demolition are swapped compared to the figure in the pdf. Here, the former is reported, with 6.05 Gt/yr waste from buildings and 3.55 Gt/yr waste from infrastructure.' WHERE id = 485") 
 #cur.execute("UPDATE datasets SET reserve1 = 'SANKEY_LINK' WHERE id = 485") 
 
+# 9.1.26 link three datasets to newly established data groups
+# cur.execute("UPDATE datasets SET datagroup_id = 34 WHERE id = 467") 
+# cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 471") 
+# cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 474") 
+
+
 # 4) close connection
 cur.close()
 conn.close()

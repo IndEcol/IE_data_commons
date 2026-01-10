@@ -120,7 +120,7 @@ for row in cur:
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
 TOC = TOCFile['DataSets_Inventory']
 
-Offset = 248 # entry of row 74 of column of first dataset to be entered.
+Offset = 255 # entry of row 74 of column of first dataset to be entered.
 No_DS = 1 # number of dataset definitions to be uploaded, starting from the position given above
 
 # loop over datasets
@@ -195,7 +195,19 @@ for m in range(Offset,Offset + No_DS):
     cur.execute("SELECT id FROM users WHERE name = %s ",TOC.cell(63,m +5).value)
     for row in cur:
         D[59] = row[0] 
-    D[60]   = TOC.cell(60 +4,m +5).value 
+    D[60]   = TOC.cell(60 +4,m +5).value # conversion info
+    D[61]   = TOC.cell(61 +4,m +5).value # date
+    # 62: review user:
+    cur.execute("SELECT id FROM users WHERE name = %s ",TOC.cell(66,m +5).value)
+    for row in cur:
+        D[62] = row[0]         
+    D[63]   = TOC.cell(63 +4,m +5).value # date
+    D[64]   = TOC.cell(64 +4,m +5).value # date
+    D[65]   = TOC.cell(65 +4,m +5).value # date
+    D[66]   = TOC.cell(66 +4,m +5).value # date
+    D[67]   = TOC.cell(67 +4,m +5).value # date
+    D[68]   = TOC.cell(68 +4,m +5).value # date
+    
 
     cur.execute(SQL,(D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9],D[10],\
                     D[11],D[12],D[13],D[14],D[15],D[16],D[17],D[18],D[19],D[20],\

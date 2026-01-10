@@ -376,6 +376,14 @@ print('Aspect and classification mismatch for dataset %s and aspect %s.' % ((m+1
 ## Drop NOT NULL constraint for data table:
 #cur.execute("ALTER TABLE data MODIFY COLUMN value double")
 
+# Jan 09 2026 fixed to project table
+# cur.execute("DELETE FROM projects WHERE id = 13")
+# cur.execute("DELETE FROM projects WHERE id = 15")
+# cur.execute("ALTER TABLE projects AUTO_INCREMENT = 12")
+#
+#
+   
+
 ### 
 #Try out 1 : Select data for CIRCOMOD CE profile prototype
 cur.execute("SELECT id FROM classification_items WHERE classification_id = 77 AND attribute1_oto = 'Italy'")
