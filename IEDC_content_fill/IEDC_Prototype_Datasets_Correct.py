@@ -292,6 +292,44 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 471") 
 # cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 474") 
 
+# 14.1.26 link four datasets to newly established data groups, and correct other entries
+# cur.execute("UPDATE datasets SET datagroup_id = 26 WHERE id = 396") 
+# cur.execute("UPDATE datasets SET datagroup_id = 26 WHERE id = 397") 
+# cur.execute("UPDATE datasets SET datagroup_id = 26 WHERE id = 398") 
+# cur.execute("UPDATE datasets SET datagroup_id = 26 WHERE id = 399") 
+# cur.execute("UPDATE datagroups SET project_id = 14 WHERE id = 26") 
+# cur.execute("DELETE from datagroups WHERE id = 34") 
+# cur.execute("DELETE from datagroups WHERE id = 35") 
+# cur.execute("DELETE from datagroups WHERE id = 36") 
+# cur.execute("DELETE from datagroups WHERE id = 37") 
+# cur.execute("DELETE from datagroups WHERE id = 38") 
+# cur.execute("DELETE from datagroups WHERE id = 39") 
+# cur.execute("ALTER TABLE datagroups AUTO_INCREMENT = 33")
+# cur.execute("UPDATE datasets SET datagroup_id = 34 WHERE id = 467") # will be 34 again
+# cur.execute("UPDATE datasets SET datagroup_id = 34 WHERE id = 499") # will be 34 again
+# cur.execute("UPDATE datasets SET datagroup_id = 34 WHERE id = 500") # will be 34 again
+# cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 471") # will be 35 again
+# cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 474") # will be 35 again
+# cur.execute("UPDATE datasets SET datagroup_id = 35 WHERE id = 498") # will be 35 again
+
+# cur.execute("DELETE from datasets WHERE id = 498") 
+
+# cur.execute("UPDATE datasets SET comment = 'xlsx supplied by author upon request for data behind Fig. 2. Values back to 1970 are provided as well. The cumulative population share was rounded to the nearest per mille and data points for the same per mille were averaged.' WHERE id = 467")
+
+# cur.execute("UPDATE datagroups SET project_id = 6 WHERE id = 19")
+# cur.execute("UPDATE datagroups SET project_id = 6 WHERE id = 20")
+# cur.execute("UPDATE datagroups SET project_id = 6 WHERE id = 21")
+# cur.execute("UPDATE datagroups SET project_id = 6 WHERE id = 22")
+# cur.execute("UPDATE datagroups SET project_id = 6 WHERE id = 23")
+# cur.execute("UPDATE datagroups SET project_id = 4 WHERE id = 16")
+# cur.execute("UPDATE datagroups SET project_id = 5 WHERE id = 15")
+# cur.execute("UPDATE datagroups SET project_id = 1 WHERE id = 7")
+# cur.execute("UPDATE datagroups SET project_id = 2 WHERE id = 3")
+# cur.execute("UPDATE datagroups SET project_id = 1 WHERE id = 1")
+# cur.execute("UPDATE datagroups SET project_id = 15 WHERE id = 25")
+# cur.execute("UPDATE datagroups SET project_id = 16 WHERE id = 18")
+# cur.execute("UPDATE datagroups SET project_id = 17 WHERE id = 10")
+# cur.execute("UPDATE datasets SET datagroup_id = 38 WHERE id = 503") 
 
 # 4) close connection
 cur.close()

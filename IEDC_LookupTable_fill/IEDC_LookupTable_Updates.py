@@ -453,13 +453,18 @@ for row in cur:
 # cur.execute(SQL)
 # SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (6,'1000km2','thousand square kilometers',1000000000)"
 # SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'billion m3','billion cubic meters',1000000000)"
+# SQL = "INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (7,'GWp','gigawatt peak power',1000000000)"
 # cur.execute(SQL)
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (4,'EJ','Exajoule',1000000000000000000)")
+# SQL = "UPDATE units SET factor = 1000000000000000 WHERE id = 97"
+# cur.execute(SQL)
+
 # SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('country_subunit','provinces and other sub-entities of countries',4,'u','s_u_b-_u_nit')"
 # cur.execute(SQL)
 # SQL = "INSERT INTO types (name,description,reference_data_category,symbol) VALUES ('Product parameters','parameters that describe products: energy efficiency, battery capacity, number of components per product, etc',3,'PUP')"
 # cur.execute(SQL)
 
-
+# cur.execute("UPDATE types SET description = 'flows per person, e.g., GDP per capita' WHERE id = 16")
 
 ## close connection
 cur.close()

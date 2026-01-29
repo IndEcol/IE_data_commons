@@ -85,7 +85,7 @@ DUsers = [x[1] for x in Tuples]
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx')
 TOC = TOCFile['DataGroups']
 
-Offset = 37 - 1 # index of first datagroup to be inserted
+Offset = 38 - 1 # index of first datagroup to be inserted
 No_DG  = 1  # number of new data groups to insert
 
 # loop over datasets

@@ -67,7 +67,7 @@ cur.execute("SELECT * FROM datagroups")
 for row in cur:
     print(row)
     
-cur.execute("SELECT * FROM datagroups WHERE id = 27")
+cur.execute("SELECT * FROM datagroups WHERE id = 23")
 for row in cur:
     print(row)    
         
@@ -187,9 +187,17 @@ cur.execute("SELECT * FROM datasets WHERE id = 299")
 for row in cur:
     print(row)     
     
-cur.execute("SELECT * FROM projects WHERE id = 7")
+cur.execute("SELECT * FROM projects WHERE id = 18")
 for row in cur:
     print(row)   
+    
+cur.execute("SELECT * FROM datagroups WHERE id = 38")
+for row in cur:
+    print(row)      
+    
+cur.execute("SELECT datagroup_name FROM datagroups WHERE project_id = 6")
+for row in cur:
+    print(row)       
     
 # Check licenses of projects
 cur.execute("SELECT datagroup_name,submitting_user FROM datagroups ORDER BY id")
