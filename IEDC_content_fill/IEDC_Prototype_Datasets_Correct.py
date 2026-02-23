@@ -331,6 +331,25 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # cur.execute("UPDATE datagroups SET project_id = 17 WHERE id = 10")
 # cur.execute("UPDATE datasets SET datagroup_id = 38 WHERE id = 503") 
 
+# cur.execute("UPDATE datagroups SET datagroup_name = 'SOUVERAEN_Input_Database' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET regional_scope = 'Global' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET description = 'SOUVERAEN data collection effort on energy transition technologies; material demand; critical materials; EU supply chains; CE potentials' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET keywords = 'SOUVERAEN; criticality; supply risk; technology metals; mining; production; solar; wind; battery; electrolyser;' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET comment = 'This group comprises a number of datasets that were collected from various sources as input data to the SOUVERAEN project.' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET project_license = 19 WHERE id = 24")
+# cur.execute("UPDATE datagroups SET main_author = 'various data providers, see the individual datasets' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET project_link = 'https://www.ise.fraunhofer.de/de/forschungsprojekte/souveraen.html' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET project_report = 'https://www.ise.fraunhofer.de/de/forschungsprojekte/souveraen.html' WHERE id = 24")
+# cur.execute("UPDATE datagroups SET suggested_citation = 'https://www.ise.fraunhofer.de/de/forschungsprojekte/souveraen.html' WHERE id = 24")
+
+# cur.execute("UPDATE datagroups SET datagroup_name = 'iTEM_Open_Transport_Data_Historic' WHERE id = 37")
+# cur.execute("UPDATE datagroups SET temporal_scope = 'ca. 1970-2024' WHERE id = 37")
+# cur.execute("UPDATE datagroups SET temporal_resolution = 'single year values, historic data til 2024' WHERE id = 37")
+# cur.execute("UPDATE datagroups SET keywords = 'transport; energy; vehicles; service; emissions; statistics;' WHERE id = 37")
+# cur.execute("UPDATE datagroups SET project_license = 4 WHERE id = 37")
+# cur.execute("UPDATE datasets SET datagroup_id = 41 WHERE id = 392") 
+# cur.execute("UPDATE datasets SET comment = 'Year-country combinations with no data do not appear in the list. Only two values were reported for 2018, those were not included. Low values for Russia and Belarus as reported in the original database.' WHERE id = 545") 
+
 # 4) close connection
 cur.close()
 conn.close()

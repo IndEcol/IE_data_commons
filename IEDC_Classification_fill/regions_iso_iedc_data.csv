@@ -340,9 +340,9 @@
 339;2;;;;Eastern Europe and Central Asia;;;100012;;;;;;;;;;;
 340;2;;;;Middle East and North Africa (MENA);;;100013;;;;;;;;;;;
 341;2;;;;EU15;;;100014;;;;;;;;;;;
-342;2;;;;reserved;;;0;;;;;;;;;;;
-343;2;;;;reserved;;;0;;;;;;;;;;;
-344;2;;;;reserved;;;0;;;;;;;;;;;
+342;2;;;;Asia-Pacific Developed;;;100015;;;;;;;;;;;
+343;2;;;;East and Southeast Asia and Developing Pacific;;;100016;;;;;;;;;;;
+344;2;;;;Eurasia, Southern Asia, North Africa, and the Middle East;;;100017;;;;;;;;;;;
 345;2;;;;reserved;;;0;;;;;;;;;;;
 346;2;;;;reserved;;;0;;;;;;;;;;;
 347;2;;;;reserved;;;0;;;;;;;;;;;

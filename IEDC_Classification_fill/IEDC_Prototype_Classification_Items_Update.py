@@ -1067,7 +1067,12 @@ cur.execute("UPDATE classification_items SET attribute1_oto = 'Gini index' WHERE
 # Aug. 2025:
 # remove incomplete upload of class. items 99:
 # cur.execute("DELETE FROM classification_definition WHERE id = 99") 
-# cur.execute("DELETE FROM classification_items WHERE classification_id = 99")         
+# cur.execute("DELETE FROM classification_items WHERE classification_id = 99")   
+
+# Feb. 2026:
+# remove incomplete upload of class. items 102:
+# cur.execute("DELETE FROM classification_definition WHERE id = 102") 
+# cur.execute("DELETE FROM classification_items WHERE classification_id = 102")        
 
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'diesel-powered heavy-duty truck' WHERE attribute1_oto = 'diesel-powered heavy heavy-duty truck' AND classification_id = 7")
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'passenger train' WHERE attribute1_oto = 'reserved_176' AND classification_id = 7")
@@ -3561,6 +3566,8 @@ cur.execute("UPDATE classification_items SET attribute1_oto = 'Gini index' WHERE
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Eastern Europe and Central Asia', attribute4_oto = 100012 WHERE attribute1_oto = 'reserved_31' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Middle East and North Africa (MENA)', attribute4_oto = 100013 WHERE attribute1_oto = 'reserved_32' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'EU15', attribute4_oto = 100014 WHERE attribute1_oto = 'reserved_33' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Latin America and the Caribbean' WHERE attribute1_oto = 'Latin America and the Carribbean' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Eswatini' WHERE attribute1_oto = 'Swaziland' AND classification_id = 2")
 
 
 
@@ -4630,6 +4637,12 @@ regions
 
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'air source heat pump (ASHP)' WHERE id = 1330 AND classification_id = 7")  
 
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'phosphorus fertilizer use' WHERE attribute1_oto = 'phosphorous fertilizer use' AND classification_id = 28")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'phosphorus fertilizer use footprint' WHERE attribute1_oto = 'phosphorous fertilizer use footprint' AND classification_id = 28")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'methanol synthesis process, coal-based' WHERE attribute1_oto = 'methanol synthesish process, coal-based' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'methanol synthesis process, gas-based' WHERE attribute1_oto = 'methanol synthesish process, gas-based' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'all measures' WHERE attribute1_oto = 'reserved_29' AND classification_id = 8")  
+
 
 update # stopper to break script at the update commands
 
@@ -4659,6 +4672,11 @@ update # stopper to break script at the update commands
 
 # Add regions to class 2:
 #cur.execute("UPDATE classification_items SET attribute1_oto = 'Other non-EU27 (2020) countries', attribute4_oto = 100003 WHERE attribute1_oto = 'reserved_20' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Asia-Pacific Developed', attribute4_oto = 100015 WHERE attribute1_oto = 'reserved_34' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'East and Southeast Asia and Developing Pacific', attribute4_oto = 100016 WHERE attribute1_oto = 'reserved_35' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Eurasia, Southern Asia, North Africa, and the Middle East', attribute4_oto = 100017 WHERE attribute1_oto = 'reserved_36' AND classification_id = 2")
+
+
 
 # Add4L = ['electricity grid - all elements',
 # 'electricity grid - transformers',
@@ -4820,6 +4838,11 @@ update # stopper to break script at the update commands
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (12,'all goods and services')")
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'electricity')")
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'in-use stocks')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (11,'Global, all watersheds')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (28,'decent living standard')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (90,'PCB support')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (14,'2020-2040')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (94,'Nvidia A100 SXM 40GB GPU')")
 
 
 
@@ -9021,16 +9044,507 @@ insert # stopper to break script where insersion commands are stored
 # Add2L = ['polyolester oil (POE)',
 # 'bentonite']
 
-for mk in range(0,2):
+# Add2L = ['50%-90%',
+# '90%-99%']
+
+# Add2L = ['Energy return on investment (EROI)',
+# 'blue water consumption footprint',
+# 'carbon footprint',
+# 'loss of mean species abundance (MSA), footprint',
+# 'intentional nitrogen fixation footprint',
+# 'human appropriation of net primary productivity (HANPP)',
+# 'blue water consumption',
+# 'loss of mean species abundance (MSA)',
+# 'intentional nitrogen fixation',
+# 'human appropriation of net primary productivity (HANPP) footprint',
+# 'phosphorous fertilizer use',
+# 'phosphorous fertilizer use footprint',
+# 'cumulative energy demand (CED)',
+# 'per capita indicator']
+
+# Add2L = ['asbestos',
+# 'barite',
+# 'diatomite',
+# 'kyanite',
+# 'perlite',
+# 'pumice and pumicite',
+# 'rhenium',
+# 'salt',
+# 'sodium sulfate',
+# 'titanium mineral concentrates',
+# 'talc and pyrophyllite',
+# 'soda ash',
+# 'vermiculite',
+# 'wollastonite']
+
+# Add2L = ['end-of-life good and products, all types',
+# 'oil and gas',
+# 'coal',
+# 'coal, bituminous and sub-bituminous',
+# 'natural gas',
+# 'oil, gas, and tar sands',
+# 'oil',
+# 'all final goods and services',
+# 'construction services',
+# 'manufactured goods',
+# 'services',
+# 'mining products']
+
+# Add2L = ['polycarbonate/acrylonitrile butadiene styrene (PC/ABS)',
+# 'talc',
+# 'barium oxide',
+# 'tetrabromobisphenol A',
+# 'silicon, Czochralski silicon',
+# 'ferrites',
+# 'polyurethane foam',
+# 'antimony trioxide',
+# 'potassium oxide',
+# 'quartz sand',
+# 'strontium oxide',
+# 'magnesium oxide',
+# 'ceramics; electronic grade',
+# 'copper oxide']
+
+# Add2L = ['silicon, Czochralski silicon',
+# 'silicon, polysilicon',
+# 'solar PV module, glass-backsheet design',
+# 'solar wafer',
+# 'solid waste, solar wafer kerf loss',
+# 'solar cell',
+# 'solar wafer',
+# 'glass',
+# 'copper',
+# 'tin',
+# 'silicone',
+# 'polyvinylfluoride film',
+# 'ethylvinylacetate, foil',
+# 'glass fibre reinforced plastic, polyamide',
+# 'diode',
+# 'lead',
+# 'lubricating oil',
+# 'polyethylene terephthalate, granulate',
+# 'polyethylene, high density, granulate',
+# 'polyethylene, low density, granulate',
+# 'polyethylene, low density, packaging film',
+# 'silver',
+# 'municipal waste treatment service',
+# 'router',
+# 'domestic hot water (DHW)',
+# 'clothing/wearables',
+# 'all food products',
+# 'healthcare buildings',
+# 'education buildings',
+# 'all land vehicles']
+
+# Add2L = ['household carbon footprint',
+# 'human appropriation of net primary productivity (HANPP) footprint',
+# 'intentional nitrogen fixation footprint',
+# 'phosphorus fertilizer use footprint',
+# 'blue water consumption footprint',
+# 'loss of mean species abundance (MSA), footprint']
+
+# Add2L = ['mean species abundance (MSA) loss',
+# 'volume of water',
+# 'mass of nitrogen',
+# 'mass of phosphorus',
+# 'mass converted to CO2-eq',
+# 'mass of carbon']
+
+# Add2L = ['zinc and zinc alloys',
+# 'steel and steel alloys',
+# 'composites',
+# 'lead and lead alloys',
+# 'mixed materials',
+# 'copper and copper alloys',
+# 'iron, wrought and cast',
+# 'alloys for neodymium magnets (NdFeB)']
+
+# Add2L = ['theoretical (thermodynamic) minimum',
+# 'best available technology (BAT)']
+
+# Add2L = ['naphta-based steam cracking',
+# 'Haber-Bosch process, gas-based',
+# 'Haber-Bosch process, coal-based',
+# 'methanol synthesish process, gas-based',
+# 'methanol synthesish process, coal-based',
+# 'chlorine production - membrane process with ODC (oxygen depolarized cathodes)',
+# 'lime kiln',
+# 'glass kiln',
+# 'cement clinker production, with short dry kiln, preheater, and precalciner processes',
+# 'cement mixing, finished improved clinker',
+# 'steel making via the blast furnace and basic oxygen furnace (BF-BOF) route',
+# 'steel making via the direct reduction (DRI) route, natural gas-based',
+# 'steel making from scrap via electric arc furnaces (EAF)',
+# 'copper smelter',
+# 'electro-refining of copper',
+# 'casting and rolling of copper',
+# 'electro-winning of copper, incl. leaching and solvent extraction',
+# 'bauxite refining',
+# 'aluminium smelt electrolysis (Hall-Heroult process with point-feed prebaked carbon anode)',
+# 'casting and rolling of aluminium',
+# 'aluminium recycling (remelting), incl. scrap preparation',
+# 'pulp mill, chemical pulping',
+# 'pulp mill, mechanical pulping',
+# 'pulp mill, pulp recycling',
+# 'paper mill',
+# 'use phase (cross-sectoral)',
+# 'land-use and food processing']
+
+# Add2L = ['aromatics',
+# 'olefins',
+# 'ammonia',
+# 'methanol',
+# 'chlorine',
+# 'lime',
+# 'container glass',
+# 'flat glass',
+# 'cement clinker',
+# 'cement',
+# 'steel',
+# 'copper matte, from ore',
+# 'copper matte, from scrap',
+# 'copper, electrolytically refined',
+# 'copper, electrolytically refined, semi-finished product',
+# 'alumina',
+# 'aluminium',
+# 'aluminium, semi-finished product',
+# 'pulp',
+# 'paper, packaging paper',
+# 'paper, graphical paper',
+# 'paper, hygiene paper',
+# 'paper, tech packaging paper',
+# 'wind turbines, offshore, direct drive permanent magnet synchronous generator (DD-PMSG)',
+# 'wind turbines, onshore, direct drive permanent magnet synchronous generator (DD-PMSG)',
+# 'wind turbines, onshore, gearbox, asynchronous generator, high-speed doubly-fed induction generator (DFIG)',
+# 'wind turbines, offshore, gearbox, asynchronous generator, high-speed doubly-fed induction generator (DFIG)',
+# 'wind turbines, onshore, gearbox, synchronous generator, direct drive turbines include low-speed EESG (type D-EE)',
+# 'wind turbines, offshore, gearbox, synchronous generator, direct drive turbines include low-speed EESG (type D-EE)',
+# 'wind turbines, onshore, gearbox, permanent magnet synchronous generator (PMSG)',
+# 'wind turbines, offshore, gearbox, permanent magnet synchronous generator (PMSG)',
+# 'wind turbines, onshore, gearbox, asynchronous squirrel-cage induction generator (SCIG)',
+# 'wind turbines, offshore, gearbox, asynchronous squirrel-cage induction generator (SCIG)',
+# 'wind turbines, onshore, gearbox, asynchronous wound-rotor induction generator (WRIG)',
+# 'wind turbines, offshore, gearbox, asynchronous wound-rotor induction generator (WRIG)']
+
+# Add2L = ['ca. 2020',
+# '2015',
+# '2016-2030',
+# '2015-2030',
+# '2020-2050',
+# '2015-2050',
+# '2011-2050',
+# '2022',
+# '2013',
+# '2009-2030',
+# '2010-2030',
+# '2008-2030',
+# '2011-2030',
+# '2020',
+# '2020-2030',
+# '2018-2030',
+# '2000-2011',
+# '2018',
+# '2019-2025',
+# '2019-2035',
+# '2019-2050',
+# '2019-2023',
+# '2009',
+# '2021',
+# '2015-2045',
+# '2015-2065',
+# '2013-2030',
+# '2022-2040',
+# '2012-2015']
+
+# Add2L = ['naphtha',
+# 'heat',
+# 'heat, high temperature',
+# 'heat, low temperature',
+# 'liquid fuel',
+# 'heating oil',
+# 'all primary energy carriers',
+# 'palm oil',
+# 'transport fuel']
+
+# Add2L = ['process operational energy',
+# 'process feedstock',
+# 'process feedstock and operational energy',
+# 'realised potential',
+# 'theoretical potential',
+# 'economic potential',
+# 'technical potential']
+
+# Add2L = ['final energy savings potential',
+# 'energy savings potential']
+
+# Add2L = ['cables, external',
+# 'nacelle, rotor, and tower']
+
+# Add2L = ['natural gas',
+# 'carbon dioxide',
+# 'carbon dioxide, captured',
+# 'water',
+# 'oxygen',
+# 'coal',
+# 'graphite, as electrode',
+# 'sponge iron, direct reduced iron (DRI)',
+# 'gas, fossil',
+# 'nitrogen',
+# 'alloys',
+# 'steel slab',
+# 'ammonia',
+# 'methane',
+# 'methanol',
+# 'gasoline',
+# 'kerosene',
+# 'olefins',
+# 'ethylene',
+# 'propylene',
+# 'naphtha',
+# 'benzene, toluene, xylene (BTX)',
+# 'residual gas',
+# 'steam',
+# 'cooling water',
+# 'butene',
+# 'natural gas liquids (NGL)',
+# 'isobutane',
+# 'butane',
+# 'pentane']
+
+# Add2L = ['blast furnace and basic oxygen furnace, with carbon capture of 60% (BF+BOF+CC)',
+# 'blast furnace with top gas recycling (TGR) and basic oxygen furnace, with carbon capture of 41% (BF-TGR+BOF+CC)',
+# 'cement production',
+# 'cement production, tail-end CaL 20% IL with carbon capture',
+# 'cement production, tail-end CaL 50% IL with carbon capture',
+# 'cement production, integrated CaL with carbon capture',
+# 'coal gasification',
+# 'coal gasification, with carbon capture of 92.5%',
+# 'coal gasification',
+# 'direct air capture, high temperature (HT_DAC)',
+# 'direct air capture, low temperature (LT_DAC)',
+# 'direct air capture (DAC)',
+# 'EAF',
+# 'electrolysis, AEL',
+# 'electrolysis, PEM',
+# 'electrolysis, SOEC',
+# 'electrolysis',
+# 'Fischer-Tropsch synthesis',
+# 'Haber-Bosch process with air separation unit',
+# 'Haber-Bosch process with steam reforming unit',
+# 'heat pump for direct air capture',
+# 'hydrogen liquefaction',
+# 'hydrogen storage, SC',
+# 'hydrogen storage, AGCS',
+# 'DRI production',
+# 'methanation process, CAT',
+# 'methanation process',
+# 'methanation process, BIO',
+# 'methane reforming process, SMR',
+# 'methane reforming process, ATR',
+# 'methane reforming process',
+# 'methanol synthesis with reforming process',
+# 'methanol synthesis process',
+# 'methanol to gasoline process',
+# 'methanol to kerosene process',
+# 'methanol to olefins process',
+# 'naphta-based steam cracking',
+# 'natural gas liquids (NGL) to olefins',
+# 'steel casting',
+# 'hot rolling of steel',
+# 'urea synthesis process',
+# 'hydrogen storage',
+# 'blast furnace and basic oxygen furnace, with carbon capture (BF+BOF+CC)',
+# 'blast furnace and basic oxygen furnace, with carbon capture of 60% (BF+BOF+CC) and MEA solvent',
+# 'blast furnace and basic oxygen furnace, with carbon capture of 60% (BF+BOF+CC) and MDEA solvent',
+# 'use phase - freight vehicles']
+
+# Add2L = ['adsorbent',
+# 'blower',
+# 'vacuum pump',
+# 'hot metal production',
+# 'power plant',
+# 'steam production',
+# 'CO2 purification unit',
+# 'CO2 injection',
+# 'CO2 compression',
+# 'CO2 capture',
+# 'entire plant',
+# 'non-compression',
+# 'electric arc',
+# 'gas cleaning and ladle refining',
+# 'air separation unit (ASU)',
+# 'synthesis process',
+# 'compressors for hydrogen and other gases',
+# 'compressor']
+
+# Add2L = ['CAPEX annualised',
+# 'CAPEX per output capacity',
+# 'CAPEX annualised per output capacity',
+# 'higher heating value (HHV)',
+# 'lower heating value (LHV)',
+# 'fuel economy']
+
+# Add2L = ['from technosphere (feedstock and fuel)',
+# 'reference_input',
+# 'to technosphere (co-product)']
+
+# Add2L = ['passenger-km, all modes',
+# 'passenger-km, rail',
+# 'passenger-km, road, all',
+# 'passenger-km, road, bus',
+# 'passenger-km, road, LDV',
+# 'passenger-km, aviation',
+# 'ton-km, inland, all modes',
+# 'ton-km, inland, all modes except for pipelines',
+# 'ton-km, rail',
+# 'ton-km, road',
+# 'ton-km, coastal shipping',
+# 'ton-km, road, for hire and reward',
+# 'ton-km, shipping on inland waterways',
+# 'ton-km, pipelines',
+# 'ton-km, road, for own account',
+# 'ton-km, domestic aviation',
+# 'driving']
+
+# Add2L = ['industrial assets for cement production',
+# 'industrial assets for the chemical industry',
+# 'industrial assets for direct air capture (DAC)',
+# 'industrial assets for steel production',
+# 'industrial assets for water electrolysis',
+# 'industrial assets for hydrogen liquefaction',
+# 'industrial assets for hydrogen storage',
+# 'steel, liquid',
+# 'urea',
+# 'hydrogen',
+# 'captured CO2',
+# 'electrolyser',
+# 'synthetic hydrocarbons',
+# 'steel, hot-rolled coil',
+# 'industrial heat',
+# 'direct reduced iron (DRI)',
+# 'methane',
+# 'steel slab',
+# 'gasoline',
+# 'kerosine',
+# 'propylene',
+# 'ethylene',
+# 'PCI coal',
+# 'coking coal',
+# 'vehicles, road vehicle, all types',
+# 'special purpose vehicle',
+# 'tram',
+# 'passenger car, large, internal combustion engine (ICE)',
+# 'passenger car, large, PHEV',
+# 'passenger car, large SUV, internal combustion engine (ICE)',
+# 'passenger car, large SUV, PHEV',
+# 'passenger car, large SUV, battery electric',
+# 'passenger car, large SUV, fuel cell',
+# 'passenger car, large, battery electric',
+# 'passenger car, large, fuel cell',
+# 'passenger car, large SUV',
+# 'passenger car, medium, internal combustion engine (ICE)',
+# 'passenger car, medium, PHEV',
+# 'passenger car, medium, battery electric',
+# 'passenger car, medium, fuel cell',
+# 'passenger car, small, internal combustion engine (ICE)',
+# 'passenger car, small, PHEV',
+# 'passenger car, small, battery electric',
+# 'passenger car, small, fuel cell',
+# 'passenger car, small SUV, internal combustion engine (ICE)',
+# 'passenger car, small SUV, PHEV',
+# 'passenger car, small SUV, battery electric',
+# 'passenger car, small SUV, fuel cell',
+# 'passenger car, small SUV',
+# 'light commercial vehicle (LCV), internal combustion engine (ICE)',
+# 'light commercial vehicle (LCV), PHEV',
+# 'light commercial vehicle (LCV), battery electric',
+# 'light commercial vehicle (LCV), fuel cell',
+# 'light commercial vehicle (LCV)']
+
+# Add2L = ['hydrogen',
+# 'methane',
+# 'natural gas',
+# 'acetylene',
+# 'ammonia',
+# 'town gas',
+# 'acetone',
+# 'butane',
+# 'butanol',
+# 'diesel',
+# 'dimethyl ether',
+# 'ethane',
+# 'ethanol',
+# 'diethyl ether',
+# 'gasoline',
+# 'heating oil',
+# 'glycerin',
+# 'heavy fuel oil',
+# 'kerosene',
+# 'light fuel oil',
+# 'liquefied natural gas (LNG)',
+# 'liquefied petroleum gas (LPG)',
+# 'marine gas oil',
+# 'methanol',
+# 'methyl ester',
+# 'methyl tert-butyl ether (MTBE)',
+# 'vegetable oil',
+# 'paraffin',
+# 'pentane',
+# 'naphtha',
+# 'propane',
+# 'residual oil',
+# 'tar',
+# 'turpentine',
+# 'anthracite coal',
+# 'bituminous coal',
+# 'carbon',
+# 'charcoal',
+# 'coke',
+# 'lignite',
+# 'peat',
+# 'petroleum coke',
+# 'semi-anthracite coal',
+# 'sub-bituminous coal',
+# 'sulfur',
+# 'wood (dry)']
+
+# Add2L = ['electricity',
+# 'heat',
+# 'steel, liquid',
+# 'PCI coal',
+# 'hydrogen',
+# 'synthetic hydrocarbons',
+# 'urea']
+
+# Add2L = ['oils and fats (as food)',
+# 'meat, eggs, and aquatic food products',
+# 'dried and fresh vegetables and fruits',
+# 'pastries, milk, and milk products',
+# 'food services',
+# 'garments',
+# 'household facilities, appliances and services',
+# 'consumer durables',
+# 'medicine and medical services',
+# 'medicine',
+# 'medical services fees',
+# 'transport and communication',
+# 'recreational, educational, and cultural activites and services',
+# 'cultural activites and services',
+# 'residential services',
+# 'water, electricity, and fuels']
+
+ThisCl = 7
+
+for mk in range(0,len(Add2L)):
     try:
-        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(4,Add2L[mk]))
+        cur.execute("INSERT INTO classification_items (classification_id,attribute1_oto) VALUES (%s,%s)",(ThisCl,Add2L[mk]))
     except:
         None 
 
-for mr in range(0,2):
-    SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id = 12"
+for mr in range(0,len(Add2L)):
+    SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id = %s"
     try:
-        cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+19)))
+        cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+24),ThisCl))
     except:
         None
 

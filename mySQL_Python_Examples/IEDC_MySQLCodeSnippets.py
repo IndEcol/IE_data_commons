@@ -231,7 +231,9 @@ Psourc  = [x[1] for x in Tuples]
 #
 #cur.execute("DELETE FROM data")
    
-#cur.execute("DELETE FROM data WHERE dataset_id = 369")
+# cur.execute("DELETE FROM data WHERE dataset_id = 369")
+# cur.execute("DELETE FROM data WHERE dataset_id = 544")
+# cur.execute("DELETE FROM data WHERE dataset_id = 545")
     
 #
 #cur.execute("ALTER TABLE data AUTO_INCREMENT = 10478")

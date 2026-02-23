@@ -448,6 +448,7 @@ for row in cur:
 # cur.execute(SQL)			
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (24,'hibikikiko','Hibiki Kiko','Nagoya University','2026-01-03 12:00:00','2050-06-09 12:00:00')"
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (25,'younisahmed','Ahmed Younis','NOVA University','2026-01-03 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (26,'tolgakayabasi','Tolga Kayabaşı','Indecol Freiburg','2026-01-03 12:00:00','2050-06-09 12:00:00')"
 # cur.execute(SQL)
 # SQL = "INSERT INTO licences (id,name,description) VALUES (23,'© Americal Chemical Society','© Americal Chemical Society')"
 # cur.execute(SQL)
@@ -457,7 +458,76 @@ for row in cur:
 # cur.execute(SQL)
 # cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (4,'EJ','Exajoule',1000000000000000000)")
 # SQL = "UPDATE units SET factor = 1000000000000000 WHERE id = 97"
-# cur.execute(SQL)
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (4,'kcal','kilocalorie',4186.8)")
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (9,'100km','hundred kilometers',100000)")
+# cur.execute("UPDATE units set unit_name = 'Nm3/hr' WHERE unit_name = 'norm-m³/hr'")
+# cur.execute("INSERT INTO units (unitcode,unit_name) VALUES ('Nm3/hr','norm-cubic meters (Nm³) per hour (capacity unit)')")
+
+# unit_name_l = ['USD2018',
+# 'USD2009',
+# 'USD2021',
+# 'USD2016',
+# 'USD2022',
+# 'MUSD2010',
+# 'MEUR',
+# 'EUR2009',
+# 'EUR2011',
+# 'EUR2013',
+# 'EUR2014',
+# 'EUR2016',
+# 'EUR2018',
+# 'EUR2019',
+# 'USD2017',
+# 'EUR2022',
+# 'EUR2021',
+# 'MEUR2014',
+# 'MEUR2020',
+# 'MEUR2021',
+# 'MEUR2015',
+# 'MEUR2017',
+# 'MUSD2016',
+# 't/yr',
+# 't/day',
+# 'kg/day',
+# 'Mt/yr',
+# 'kg/yr',
+# 'norm-m³/hr',
+# 'kt/yr']
+
+# unit_desc_l = ['US Dollars of 2018',
+# 'US Dollars of 2009',
+# 'US Dollars of 2021',
+# 'US Dollars of 2016',
+# 'US Dollars of 2022',
+# 'million US Dollars of 2010',
+# 'million Euros',
+# 'Euros of 2009',
+# 'Euros of 2011',
+# 'Euros of 2013',
+# 'Euros of 2014',
+# 'Euros of 2016',
+# 'Euros of 2018',
+# 'Euros of 2019',
+# 'US Dollars of 2017',
+# 'Euros of 2022',
+# 'Euros of 2021',
+# 'million Euros of 2014',
+# 'million Euros of 2020',
+# 'million Euros of 2021',
+# 'million Euros of 2015',
+# 'million Euros of 2017',
+# 'million US Dollars of 2016',
+# 'tons per year (capacity unit)',
+# 'tons per day (capacity unit)',
+# 'kilograms per day (capacity unit)',
+# 'megatons per year (capacity unit)',
+# 'kilograms per year (capacity unit)',
+# 'norm-cubic meters per hour (capacity unit)',
+# 'kilotons per year (capacity unit)']
+
+# for munit in range(0,30):
+#     SQL = "INSERT INTO units (unitcode,unit_name) VALUES (%s,%s)"
+#     cur.execute(SQL,(unit_name_l[munit],unit_desc_l[munit]))
 
 # SQL = "INSERT INTO aspects (aspect,description,dimension,index_letter,index_letter_crib) VALUES ('country_subunit','provinces and other sub-entities of countries',4,'u','s_u_b-_u_nit')"
 # cur.execute(SQL)
@@ -465,6 +535,13 @@ for row in cur:
 # cur.execute(SQL)
 
 # cur.execute("UPDATE types SET description = 'flows per person, e.g., GDP per capita' WHERE id = 16")
+
+# SQL = "INSERT INTO licences (id,name,description) VALUES (24,'MIT license','see https://opensource.org/license/mit')"
+# SQL = "INSERT INTO licences (id,name,description) VALUES (25,'CC0 - no rights reserved','see https://creativecommons.org/public-domain/cc0/')"
+# cur.execute(SQL)
+
+# cur.execute("INSERT INTO stats_array (name, description, loc) VALUES ('uncertainty ns','uncertainty without further specification','uncertainty value')") 
+
 
 ## close connection
 cur.close()
