@@ -78,7 +78,7 @@ DUsers = [x[1] for x in Tuples]
 TOCFile  = openpyxl.load_workbook(IEDC_Paths.DataSetPath + 'IEDC_Prototype_Datasets_Batch1_Upload_MASTER.xlsx', data_only=True)
 TOC = TOCFile['Projects']
 
-Offset = 17 - 1 # column index of the first new project to be inserted
+Offset = 18 - 1 # column index of the first new project to be inserted
 No_Pr  = 1  # number of new projects to insert
 
 # loop over datasets

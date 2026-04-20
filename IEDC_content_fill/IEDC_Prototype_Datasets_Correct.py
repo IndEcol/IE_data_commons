@@ -349,6 +349,44 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # cur.execute("UPDATE datagroups SET project_license = 4 WHERE id = 37")
 # cur.execute("UPDATE datasets SET datagroup_id = 41 WHERE id = 392") 
 # cur.execute("UPDATE datasets SET comment = 'Year-country combinations with no data do not appear in the list. Only two values were reported for 2018, those were not included. Low values for Russia and Belarus as reported in the original database.' WHERE id = 545") 
+# cur.execute("UPDATE datasets SET datagroup_id = 41 WHERE id = 517") 
+# cur.execute("UPDATE datasets SET datagroup_id = 42 WHERE id = 181") 
+# cur.execute("UPDATE datasets SET datagroup_id = 42 WHERE id = 182") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 46") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 185") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 186") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 187") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 188") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 109") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 208") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 209") 
+# cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 210") 
+
+# April 2026 update the Sankey test datasets
+'''
+DONE. ID: 485 | 1_F_China_Sand_Gravel_MFA_2050_Scenario_REN | 
+DONE. ID: 501 | 1_F_Sand_Gravel_MFA_Global_184Countries_ZHUANG_2025 | 
+DONE. ID: 494 | 1_F_Economy_wide_MFA_Global_EU27_2005_HAAS 
+DONE. ID:495  Dataset Name:1_F_Economy_wide_MFA_EU28_2014_MAYER
+DONE. ID:496  Dataset Name:1_F_Watari_2025_SteelSankeys_30Regions 
+'''
+# Update dataset table entries
+# cur.execute("UPDATE datasets SET aspect_8 = 16 WHERE id = 496") 
+# cur.execute("UPDATE datasets SET aspect_8_classification = 8 WHERE id = 496") 
+# cur.execute("UPDATE datasets SET tupel_notation = 'Value(g,m,L,r,t,o,d,S)' WHERE id = 496") 
+# cur.execute("UPDATE datasets SET semantic_string_example = 'Flow of iron ore from mining to market for iron ore in China in 2000 for scenario History measured as mass of iron is 63.42 Mt/yr.' WHERE id = 496") 
+# cur.execute("UPDATE datasets SET semantic_string_general = '[Data type] of [Aspect 1] from [Aspect 6] to [Aspect 7] in [Aspect 4] in [Aspect 5] for scenario [Aspect 8] measured as [Aspect 3] of [Aspect 2] is [Value].' WHERE id = 496") 
+# cur.execute("UPDATE datasets SET reserve1 = 'floweaver_sankey_link' WHERE id = 496") 
+# Other
+# cur.execute("UPDATE datasets SET temporal_scope = '1970-2019' WHERE id = 501") 
+# cur.execute("UPDATE datasets SET temporal_resolution = 'Values for every decade' WHERE id = 501") 
+# cur.execute("UPDATE datasets SET description = 'sand and gravel Sankeys for the global aggregate, 1970-2019, from ZHUANG et al. (2025).' WHERE id = 501") 
+# cur.execute("UPDATE datasets SET comment = 'This dataset includes the 2019 global aggregate as shown in Fig. 2a of the paper' WHERE id = 501") 
+# Delete old dataset entries to make space for the updated data:
+# cur.execute("DELETE FROM data WHERE dataset_id = 496") 
+
+
+
 
 # 4) close connection
 cur.close()
