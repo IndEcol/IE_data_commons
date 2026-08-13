@@ -9,7 +9,6 @@ import pymysql
 import openpyxl
 import datetime
 import numpy as np
-import xlrd
 from datetime import date, timedelta
 
 import IEDC_PW
@@ -385,8 +384,15 @@ DONE. ID:496  Dataset Name:1_F_Watari_2025_SteelSankeys_30Regions
 # Delete old dataset entries to make space for the updated data:
 # cur.execute("DELETE FROM data WHERE dataset_id = 496") 
 
+# cur.execute("UPDATE datasets SET project_report = 'https://doi.org/10.1016/j.eiar.2026.108525' WHERE id = 534") 
+# cur.execute("UPDATE datasets SET suggested_citation = 'https://doi.org/10.1016/j.eiar.2026.108525' WHERE id = 534") 
 
-
+# August 2026:
+# cur.execute("UPDATE datagroups SET datagroup_name = 'Wood_MFA_Europe_Future_Forests_compilation' WHERE id = 44")
+# cur.execute("UPDATE datagroups SET datagroup_name = 'Wood_processing_use_Europe_Future_Forests_compilation' WHERE id = 45")
+# cur.execute("UPDATE datagroups SET datagroup_name = 'EDITS buildings, infrastructure, and vehicles data' WHERE id = 46")
+# cur.execute("UPDATE datasets SET aspect_5_classification = 14 WHERE id = 560") 
+# cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_MFA_System_May_2025.png' WHERE id = 22")  
 
 # 4) close connection
 cur.close()

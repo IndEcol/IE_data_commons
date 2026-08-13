@@ -9,7 +9,6 @@ import pymysql
 import datetime
 import numpy as np
 from os import walk, path
-import xlrd
 from datetime import date, timedelta
 import csv
 
@@ -3569,6 +3568,10 @@ cur.execute("UPDATE classification_items SET attribute1_oto = 'Gini index' WHERE
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Latin America and the Caribbean' WHERE attribute1_oto = 'Latin America and the Carribbean' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Eswatini' WHERE attribute1_oto = 'Swaziland' AND classification_id = 2")
 
+# Add 3 letter codes:
+# cur.execute("UPDATE classification_items SET attribute3_oto = 'GCC' WHERE attribute4_oto = 10037 AND classification_id = 2")    
+
+
 
 
 regions
@@ -4683,7 +4686,8 @@ update # stopper to break script at the update commands
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Asia-Pacific Developed', attribute4_oto = 100015 WHERE attribute1_oto = 'reserved_34' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'East and Southeast Asia and Developing Pacific', attribute4_oto = 100016 WHERE attribute1_oto = 'reserved_35' AND classification_id = 2")
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'Eurasia, Southern Asia, North Africa, and the Middle East', attribute4_oto = 100017 WHERE attribute1_oto = 'reserved_36' AND classification_id = 2")
-
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'Centrally Planned Asia', attribute4_oto = 10039 WHERE attribute1_oto = 'reserved_37' AND classification_id = 2")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'OEDC, other', attribute4_oto = 100018 WHERE attribute1_oto = 'reserved_38' AND classification_id = 2")
 
 
 # Add4L = ['electricity grid - all elements',
@@ -4856,7 +4860,10 @@ update # stopper to break script at the update commands
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'reference')")
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'balancing item')")
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'losses')")
-
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (79,'raw material input (RMI), by raw material')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (12,'building services')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (14,'2020-2025')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (4,'gangue, bauxite')")
 
 insert # stopper to break script where insersion commands are stored
 
@@ -9779,7 +9786,342 @@ insert # stopper to break script where insersion commands are stored
 # 'HY.City.Bremerhaven',
 # 'Green hydrogen for fragrance industry']
 
-ThisCl = 92
+# Add2L = ['use phase - transport infrastructure',
+# 'use phase - electricity infrastructure, solar PV centralized',
+# 'use phase - electricity infrastructure, solar PV roof',
+# 'use phase - electricity infrastructure, CSP',
+# 'use phase - electricity infrastructure, wind onshore',
+# 'use phase - electricity infrastructure, wind offshore',
+# 'use phase - electricity infrastructure, wave',
+# 'use phase - electricity infrastructure, hydropower',
+# 'use phase - electricity infrastructure, auxiliary grid equipment']
+
+# Add2L = ['R0/R1',
+# 'R2c/R2d',
+# 'R2a: modal shift from passenger car to bus',
+# 'R2a: modal shift from passenger car to rail',
+# 'R2a: partial transition from short distance aviation to rail',
+# 'R2a: modal shift from heavy trucks to rail',
+# 'R3-R7']
+
+# Add2L = ['narrow (circular economy)',
+# 'slow (circular economy)',
+# 'close (circular economy)',
+# 'slow and close (circular economy)',
+# 'narrow, slow, and close (circular economy)']
+
+# Add2L = ['floorspace, useful floor area',
+# 'vehicle occupancy rate',
+# 'annual vehicle kilometrage',
+# 'market share - % of new vehicles',
+# 'market share - % of passenger*km shifted to different transport mode',
+# 'market share - % of ton*km shifted to different transport mode',
+# 'market share - % of wood-framed buildings in new buildings',
+# 'market share - % of lightweight buildings in new buildings',
+# 'change of base value, in percent',
+# 'lifetime extension',
+# 'mean lifetime',
+# 'EoL reuse rate',
+# 'EoL recycling rate',
+# 'fabrication yield loss',
+# 'mass reduction, change relative to base value',
+# 'lifetime extension, change relative to base value',
+# 'mass, oven-dry']
+
+# Add2L = ['non-residential building services',
+# 'passenger transport, all modes',
+# 'freight transport, all modes',
+# 'passenger transport, cars',
+# 'passenger transport, busses',
+# 'passenger transport, rail',
+# 'passenger transport, bicycles',
+# 'freight transport, light duty vehicles (LDV)',
+# 'freight transport, medium duty vehicles (MDV)',
+# 'freight transport, rail',
+# 'freight transport, ships (inland)',
+# 'passenger transport, modes other than cars',
+# 'transport, airplanes',
+# 'freight transport, ships',
+# 'freight transport, heavy duty vehicles (HDV)',
+# 'transport, all modes',
+# 'transport infrastructure provision',
+# 'transport infrastructure provision, urban',
+# 'transport infrastructure provision, rural',
+# 'electricity provision',
+# 'services generated by appliances']
+
+# Add2L =['shift',
+# 'avoid',
+# 'avoid+shift',
+# 'improve',
+# 'shift+improve',
+# 'avoid+shift+improve',
+# 'avoid+improve',
+# 'provision of decent living standards (DLS) for all',
+# 'gap to meet provision of decent living standards (DLS) for all',
+# 'green supply and demand (vegan diet, low-carbon electricity, bicycles)']
+
+# Add2L =['coppice wood',
+# 'wood, short rotation',
+# 'deciduous wood, fast growing',
+# 'deciduous wood, slow growing',
+# 'deciduous wood, slow growing, shade',
+# 'coniferous wood, light, demanding species',
+# 'coniferous wood, shade tolerant',
+# 'coniferous wood, mediterranean',
+# 'evergreen mediterranean trees',
+# 'deciduous wood, fast growing',
+# 'deciduous wood, slow growing',
+# 'deciduous wood, slow growing, shade',
+# 'coniferous wood, light, demanding species',
+# 'coniferous wood, shade tolerant',
+# 'roundwood, from secondary parts of the tree (hardwood)',
+# 'wood residues from tops and small branches (hardwood)',
+# 'coppice (hardwood)',
+# 'roundwood, from secondary parts of the tree (softwood)',
+# 'wood residues from tops and small branches (softwood)',
+# 'secondary wood residues from sawmills']
+
+# Add2L = ['stove, electric',
+# 'oven, electric',
+# 'personal computer with internet access',
+# 'air conditioner, portable']
+
+# Add2L = ['wood residues, roundwood from secondary part of the tree',
+# 'wood residues, from tree tops and small branches',
+# 'stemwood, primary',
+# 'wood residues, secondary, from sawmill',
+# 'wood chips, from deciduous wood, fast growing',
+# 'wood chips, from deciduous wood, slow growing',
+# 'wood chips, from deciduous wood, slow growing, shade',
+# 'wood chips, from coniferous wood, light, demanding species',
+# 'wood chips, from coniferous wood, shade tolerant',
+# 'wood chips, from coniferous wood, mediterranean',
+# 'wood chips, from evergreen mediterranean trees',
+# 'wood chips',
+# 'wood chips, from coppice wood',
+# 'wood chips, from short rotation wood',
+# 'roundwood',
+# 'roundwood residues',
+# 'wood pellets, from roundwood, from secondary parts of the tree (hardwood)',
+# 'wood pellets, from wood residues from tops and small branches (hardwood)',
+# 'wood pellets, from coppice (hardwood)',
+# 'wood pellets, from secondary wood residues from sawmills',
+# 'wood pellets, from wood residues from tops and small branches (softwood)',
+# 'wood pellets, from roundwood, from secondary parts of the tree (softwood)']
+
+# Add2L = ['high forest, hardwood (beech and oak)',
+# 'coppice forest, hardwood (chestnuts)',
+# 'high forest, softwood (Douglas fir)',
+# 'high forest',
+# 'forests',
+# 'forests, continuous cover forest management',
+# 'forests, even-aged with shelterwood cut',
+# 'forests, even-aged with clear-cutting',
+# 'coppice forest, with standards',
+# 'coppice forest',
+# 'forest plantation, short rotation',
+# 'roundwood extraction, with skidder',
+# 'roundwood extraction, with forwarder',
+# 'roundwood extraction, with cable yarder',
+# 'roundwood extraction, with tractor and forest trailer']
+
+# Add2L = ['machinery for additive manufacturing',
+# 'lifting and handling equipment',
+# 'metal forming machinery',
+# 'machinery for metallurgy',
+# 'machinery for mining, quarrying and construction',
+# 'other machine tools',
+# 'other special-purpose machinery n.e.c.',
+# 'hard coal-fired power plant',
+# 'natural gas power plant',
+# 'batteries, stationary',
+# 'battery of electric vehicles, (BEV, PHEV, HEV, FCEV)',
+# 'battery of electric vehicles, (2- and 3-wheelers)',
+# 'electric motors, (BEV, PHEV, HEV, FCEV)',
+# 'electric motors, (2- and 3-wheelers)']
+
+# Add2L = ['top layer',
+# 'base layer',
+# 'entire structure']
+
+# Add2L = ['median useful lifetime (residence time in use phase)',
+# 'median hours of operation (while residing in use phase)']
+
+# Add2L = ['road bridge, other than motorway',
+# 'road tunnel, other than motorway',
+# 'other transport infrastructure']
+
+# Add2L = ['infrastructure, road and rail',
+# 'road bridges and tunnels',
+# 'railway bridges and tunnels']
+
+# Add2L = ['magnesite',
+# 'bromine',
+# 'gadolinium',
+# 'helium',
+# 'rhenium',
+# 'kieserite',
+# 'iodine',
+# 'sodium',
+# 'sylvite',
+# 'gangue',
+# 'thallium',
+# 'ulexite',
+# 'vermiculite',
+# 'xenon',
+# 'zirconia',
+# 'nitrogen',
+# 'energy (in form of raw materials)',
+# 'samarium',
+# 'anhydrite',
+# 'barite',
+# 'basalt',
+# 'borax',
+# 'calcite',
+# 'carnallite',
+# 'chrysotile',
+# 'cinnabar',
+# 'colemanite',
+# 'diatomite',
+# 'dolomite',
+# 'krypton',
+# 'metamorphous rock',
+# 'olivine',
+# 'peat',
+# 'perlite',
+# 'pumice',
+# 'pyrite',
+# 'pyrolusite',
+# 'shale',
+# 'spodumene',
+# 'stibnite',
+# 'talc']
+
+# Add2L = ['Switzerland, rural areas',
+# 'Switzerland, suburban areas',
+# 'Switzerland, urban areas',
+# 'Kinshasa',
+# 'Luanda',
+# 'Dar es Salaam',
+# 'Lahore',
+# 'Baghdad',
+# 'Rio de Janeiro']
+
+# Add2L = ['animal and plant based food provision',
+# 'education services',
+# 'hospital floorspace provision',
+# 'health services',
+# 'school floorspace provision']
+
+# Add2L = ['DLS gap',
+# 'DLS threshold']
+
+# Add2L = ['wood fuel, softwood',
+# 'sawlogs and veneer logs, softwood',
+# 'pulpwood and roundwood for wood-based panels, softwood',
+# 'other industrial roundwood, softwood',
+# 'wood fuel, hardwood',
+# 'sawlogs and veneer logs, hardwood',
+# 'pulpwood and roundwood for wood-based panels, hardwood',
+# 'other industrial roundwood, hardwood',
+# 'cork',
+# 'wood fuel',
+# 'wood residues',
+# 'wood strands',
+# 'wood chips',
+# 'sawnwood, softwood',
+# 'production waste, wood chips',
+# 'production waste, wood residues',
+# 'production waste, bark',
+# 'production waste, loss',
+# 'sawnwood, hardwood',
+# 'veneer sheets',
+# 'other simply worked or processed wood products',
+# 'wood charcoal',
+# 'wood pellets and other agglomerates',
+# 'plywood',
+# 'particle board',
+# 'oriented strand board (OSB)',
+# 'fibreboard, hardboard',
+# 'fibreboard, medium and high density',
+# 'fibreboard, other',
+# 'mechanical pulp',
+# 'production waste, pulp',
+# 'chemical pulp',
+# 'dissolving pulp',
+# 'recycling pulp',
+# 'non-fibrous pulp',
+# 'further-processed sawnwood',
+# 'wooden wrapping and packaging materials',
+# 'engineered structural timber products',
+# 'other construction timber products',
+# 'wooden furniture',
+# 'wood and wood products, other',
+# 'production waste, paper',
+# 'newsprint',
+# 'printing and writing papers',
+# 'sanitary and household papers',
+# 'packaging materials',
+# 'other paper and paperboard',
+# 'post-consumer paper and paperboard',
+# 'post-consumer wood',
+# 'wood chips and wood particles']
+
+# Add2L = ['wood supply, legal sources',
+# 'wood supply, illegal sources',
+# 'harvesting of wood',
+# 'production of wood chips and particles',
+# 'sawnwood production, softwood',
+# 'sawnwood production, hardwood',
+# 'production of veneer sheets',
+# 'production of other simply worked or processed wood products',
+# 'production of wood charcoal',
+# 'production of wood pellets and other agglomerates',
+# 'production of plywood',
+# 'production of particle board',
+# 'production of oriented strand boards (OSB)',
+# 'production of fibreboard, hardboard',
+# 'production of fibreboard, medium and high density',
+# 'production of fibreboard, other',
+# 'production of mechanical pulp',
+# 'production of chemical pulp',
+# 'production of dissolving pulp',
+# 'production of recycling pulp',
+# 'production of non-fibrous pulp',
+# 'production of further-processed sawnwood',
+# 'production of wooden wrapping and packaging',
+# 'production of engineered structural timber',
+# 'production of other construction timber',
+# 'production of wooden furniture',
+# 'production of other wood products',
+# 'production of newsprint',
+# 'production of printing and writing paper',
+# 'production of sanitary and household paper',
+# 'production of packaging materials',
+# 'production of other paper and paperboard',
+# 'market for production waste',
+# 'use phase - paper',
+# 'use phase - packaging',
+# 'use phase - construction',
+# 'use phase - furniture',
+# 'use phase - other',
+# 'market for end-of-life (EoL) waste',
+# 'market for end-of-life (EoL) paper and paperboard waste',
+# 'energy recovery',
+# 'recycling of wood waste',
+# 'recycling of waste paper and paperboard',
+# 'import',
+# 'bioenergy use',
+# 'chemical use',
+# 'energy recovery of production waste',
+# 'non-energy recovery',
+# 'incineration and disposal',
+# 'landfilling',
+# 'landfilling, open dump',
+# 'export']
+
+ThisCl = 6
 
 for mk in range(0,len(Add2L)):
     try:
@@ -9790,7 +10132,7 @@ for mk in range(0,len(Add2L)):
 for mr in range(0,len(Add2L)):
     SQL = "UPDATE classification_items SET attribute1_oto = %s WHERE attribute1_oto = %s AND classification_id = %s"
     try:
-        cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+24),ThisCl))
+        cur.execute(SQL,(Add2L[mr],'reserved_'+str(mr+30),ThisCl))
     except:
         None
 

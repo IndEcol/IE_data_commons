@@ -542,6 +542,28 @@ for row in cur:
 
 # cur.execute("INSERT INTO stats_array (name, description, loc) VALUES ('uncertainty ns','uncertainty without further specification','uncertainty value')") 
 
+# July 2026
+# add project logos to project table
+# cur.execute("UPDATE projects set reserve1 = 'CIRCOMOD_logo.png' WHERE id = 6")
+# cur.execute("UPDATE projects set reserve1 = 'EDITS_logo.jpg' WHERE id = 9")
+# cur.execute("UPDATE projects set reserve1 = 'CREEA_logo.jpg' WHERE id = 2")
+# cur.execute("UPDATE projects set reserve1 = 'EUROSTAT_logo.png' WHERE id = 4")
+# cur.execute("UPDATE projects set reserve1 = 'FUTURAM_logo.png' WHERE id = 12")
+# cur.execute("UPDATE projects set reserve1 = 'Future_Forests_logo.jpg' WHERE id = 18")
+# cur.execute("UPDATE projects set reserve1 = 'HotMaps_logo.png' WHERE id = 14")
+# cur.execute("UPDATE projects set reserve1 = 'ITEM_logo.png' WHERE id = 11")
+# cur.execute("UPDATE projects set reserve1 = 'OWID_logo.png' WHERE id = 5")
+# cur.execute("UPDATE projects set reserve1 = 'Souveraen_logo.png' WHERE id = 7")
+# cur.execute("UPDATE projects set reserve1 = 'USGS_logo.png' WHERE id = 15")
+
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'Modmt','million oven-dry metric tonnes',1000000000)")
+
+## New layer
+# SQL = "INSERT INTO layers (name,description) VALUES ('Market share','values that indicate the share of a flow in a total market volume (throughput of a market process)')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Oven-dry mass','mass reporting layer that refers to oven-dry mass, used for timber and wood products')"
+# SQL = "INSERT INTO layers (name,description) VALUES ('Length','physical length of a structure, like roads or bridges')"
+# cur.execute(SQL)		
+
 
 ## close connection
 cur.close()
