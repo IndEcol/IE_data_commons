@@ -462,6 +462,9 @@ for row in cur:
 # cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (9,'100km','hundred kilometers',100000)")
 # cur.execute("UPDATE units set unit_name = 'Nm3/hr' WHERE unit_name = 'norm-m³/hr'")
 # cur.execute("INSERT INTO units (unitcode,unit_name) VALUES ('Nm3/hr','norm-cubic meters (Nm³) per hour (capacity unit)')")
+# Fall 2026:
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (27,'zhangxiaowen','Xiaowen Zhang','Indecol Freiburg','2026-01-03 12:00:00','2050-06-09 12:00:00')"
+# cur.execute(SQL)
 
 # unit_name_l = ['USD2018',
 # 'USD2009',
@@ -557,6 +560,10 @@ for row in cur:
 # cur.execute("UPDATE projects set reserve1 = 'USGS_logo.png' WHERE id = 15")
 
 # cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (2,'Modmt','million oven-dry metric tonnes',1000000000)")
+
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'km3_SWE','1000 cubic meters of solid wood equivalents (SWE)',1000)")
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'Mm3_SWE','million cubic meters of solid wood equivalents (SWE)',1000000)")
+
 
 ## New layer
 # SQL = "INSERT INTO layers (name,description) VALUES ('Market share','values that indicate the share of a flow in a total market volume (throughput of a market process)')"

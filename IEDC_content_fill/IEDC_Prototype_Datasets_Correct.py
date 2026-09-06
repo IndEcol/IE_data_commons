@@ -387,12 +387,26 @@ DONE. ID:496  Dataset Name:1_F_Watari_2025_SteelSankeys_30Regions
 # cur.execute("UPDATE datasets SET project_report = 'https://doi.org/10.1016/j.eiar.2026.108525' WHERE id = 534") 
 # cur.execute("UPDATE datasets SET suggested_citation = 'https://doi.org/10.1016/j.eiar.2026.108525' WHERE id = 534") 
 
-# August 2026:
+# August/September 2026:
 # cur.execute("UPDATE datagroups SET datagroup_name = 'Wood_MFA_Europe_Future_Forests_compilation' WHERE id = 44")
 # cur.execute("UPDATE datagroups SET datagroup_name = 'Wood_processing_use_Europe_Future_Forests_compilation' WHERE id = 45")
 # cur.execute("UPDATE datagroups SET datagroup_name = 'EDITS buildings, infrastructure, and vehicles data' WHERE id = 46")
 # cur.execute("UPDATE datasets SET aspect_5_classification = 14 WHERE id = 560") 
 # cur.execute("UPDATE datagroups SET system_definition_picture = 'CIRCOMOD_MFA_System_May_2025.png' WHERE id = 22")  
+
+# cur.execute("UPDATE datasets SET temporal_scope = '2020 and 2050' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET description = 'In-use stocks of consumer goods/appliances required for digital convergence and sharing of consumer goods to improve living conditions, base values for 2020 and  scenario values for the Global South for 2050. Stocks/devices to fill the decent living standards gap.' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET comment = 'Data from the top part of figure 1: Figure 1. Number of devices needed to ensure decent living standards (DLS) in 2050 by regions of the Global South, in millions. and for 2020. Numbers refer to the additional number of devices needed to ensure DLS (in millions).' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET semantic_string_example = 'In-use stock of refrigerator in use phase - appliances in Sub-Saharan Africa for 2050 for scenario gap to meet provision of decent living standards (DLS) for all measured as unit is 151.05 million.' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET dataset_format = 'figure in paper, raw data provided as xlxs' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET dataset_conversion_info = 'Raw data provided as xlxs by authors, reformatted to IEDC template.' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET submission_date = '2026-08-24' WHERE id = 570") 
+# cur.execute("UPDATE datasets SET review_date = '2026-08-24' WHERE id = 570") 
+# cur.execute("DELETE FROM data WHERE dataset_id = 570") 
+
+# Fix wrong label in id 579 1_F_Concrete_Materials_Sankey_2018_CAO_2026:
+# replace all instances of aspect 6 where item_id = 159106	with id 159134:
+# cur.execute("UPDATE data SET aspect6 = 159134 WHERE dataset_id = 579 AND aspect6 = 159106")    
 
 # 4) close connection
 cur.close()
