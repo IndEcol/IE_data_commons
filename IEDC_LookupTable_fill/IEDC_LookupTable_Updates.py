@@ -464,6 +464,7 @@ for row in cur:
 # cur.execute("INSERT INTO units (unitcode,unit_name) VALUES ('Nm3/hr','norm-cubic meters (Nm³) per hour (capacity unit)')")
 # Fall 2026:
 # SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (27,'zhangxiaowen','Xiaowen Zhang','Indecol Freiburg','2026-01-03 12:00:00','2050-06-09 12:00:00')"
+# SQL = "INSERT INTO users (id,username,name,institution,start_date,end_date) VALUES (28,'nungesserlars','Lars Nungesser','Indecol Freiburg','2026-01-03 12:00:00','2050-06-09 12:00:00')"
 # cur.execute(SQL)
 
 # unit_name_l = ['USD2018',
@@ -563,6 +564,8 @@ for row in cur:
 
 # cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'km3_SWE','1000 cubic meters of solid wood equivalents (SWE)',1000)")
 # cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'Mm3_SWE','million cubic meters of solid wood equivalents (SWE)',1000000)")
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'km3_RWE','1000 cubic meters of roundwood equivalents (RWE)',1000)")
+# cur.execute("INSERT INTO units (refunit_id,unitcode,unit_name,factor) VALUES (5,'Mm3_RWE','million cubic meters of roundwood equivalents (RWE)',1000000)")
 
 
 ## New layer

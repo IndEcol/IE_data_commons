@@ -360,6 +360,12 @@ All global steel cycle (Pauliuk 2013) data are affected.
 # cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 208") 
 # cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 209") 
 # cur.execute("UPDATE datasets SET datagroup_id = 43 WHERE id = 210") 
+# cur.execute("UPDATE datasets SET datagroup_id = 22 WHERE id = 435") 
+# cur.execute("UPDATE datasets SET datagroup_id = 22 WHERE id = 451") 
+# cur.execute("UPDATE datasets SET datagroup_id = 21 WHERE id = 481") 
+# cur.execute("UPDATE datasets SET datagroup_id = 21 WHERE id = 482") 
+# cur.execute("UPDATE datasets SET datagroup_id = 21 WHERE id = 489") 
+# cur.execute("UPDATE datasets SET datagroup_id = 21 WHERE id = 490") 
 
 # April 2026 update the Sankey test datasets
 '''
@@ -406,7 +412,16 @@ DONE. ID:496  Dataset Name:1_F_Watari_2025_SteelSankeys_30Regions
 
 # Fix wrong label in id 579 1_F_Concrete_Materials_Sankey_2018_CAO_2026:
 # replace all instances of aspect 6 where item_id = 159106	with id 159134:
-# cur.execute("UPDATE data SET aspect6 = 159134 WHERE dataset_id = 579 AND aspect6 = 159106")    
+# cur.execute("UPDATE data SET aspect6 = 159134 WHERE dataset_id = 579 AND aspect6 = 159106")   
+
+# Nov 2026
+#counter-search for import of recovered pulp
+# cur.execute("SELECT DISTINCT dataset_id FROM data WHERE aspect6 = 159683") # search for import of recovered pulp
+# for row in cur:
+#     print(row) 
+# cur.execute("DELETE FROM data WHERE dataset_id = 600") # prepare for re-upload
+
+
 
 # 4) close connection
 cur.close()

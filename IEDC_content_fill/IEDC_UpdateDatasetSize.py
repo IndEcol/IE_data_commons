@@ -22,7 +22,7 @@ for row in cur:
         AI = row[1]
 
 A0 = 575
-AI = 625
+AI = 675
 # Get dataset size and update datasets entry:        
 for m in range(A0,AI):
     cur.execute("SELECT count(*) FROM data WHERE dataset_id = %s",m)

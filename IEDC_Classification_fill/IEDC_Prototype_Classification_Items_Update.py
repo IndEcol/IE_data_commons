@@ -4657,6 +4657,10 @@ regions
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'export of final products and commodities' WHERE attribute1_oto = 'export markets for final products and commodities' AND classification_id = 6")  
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'export of steel scrap' WHERE attribute1_oto = 'export market for steel scrap' AND classification_id = 6")  
 # cur.execute("UPDATE classification_items SET attribute1_oto = 'export of flat products' WHERE attribute1_oto = 'export market for flat products' AND classification_id = 6")  
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'balancing items input' WHERE attribute1_oto ='emissions to air' AND classification_id = 6")
+# cur.execute("UPDATE classification_items SET attribute1_oto = 'import of recovered pulp' WHERE attribute1_oto ='import of recoverd pulp' AND classification_id = 6")
+
+
 
 
 update # stopper to break script at the update commands
@@ -4878,8 +4882,16 @@ update # stopper to break script at the update commands
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'waste wood processing')")
 # cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'sawmill')")
 
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto, attribute2_oto, attribute3_oto, attribute4_oto) VALUES (1,'chromium and molybdenum','Cr_Mo','Cr_Mo','Chromium and Molybdenum')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto, attribute2_oto, attribute3_oto, attribute4_oto) VALUES (1,'titanium and niobium','Ti_Nb','Ti_Nb','Titanium and Niobium')")
+
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'emissions to air')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (6,'direct re-use of yield loss')")
+# cur.execute("INSERT into classification_items (classification_id, attribute1_oto) VALUES (7,'fabrication yield loss')")
 
 insert # stopper to break script where insersion commands are stored
+
+
 
 
 
@@ -10729,6 +10741,272 @@ insert # stopper to break script where insersion commands are stored
 # 'market for industrial roundwood',
 # 'market for untreated wood',
 # 'manufacturing of chemicals']
+
+# Add2L = ['passenger car, segment A, BEV',
+# 'passenger car, segment B, BEV',
+# 'passenger car, segment C, BEV',
+# 'passenger car, segment D, BEV',
+# 'passenger car, segment E, BEV',
+# 'passenger car, segment F, BEV',
+# 'passenger car, segment JA, BEV',
+# 'passenger car, segment JB, BEV',
+# 'passenger car, segment JC, BEV',
+# 'passenger car, segment JD, BEV',
+# 'passenger car, segment JE, BEV',
+# 'passenger car, segment JF, BEV',
+# 'van, BEV',
+# 'passenger car, segment A, diesel',
+# 'passenger car, segment B, diesel',
+# 'passenger car, segment C, diesel',
+# 'passenger car, segment D, diesel',
+# 'passenger car, segment E, diesel',
+# 'passenger car, segment F, diesel',
+# 'passenger car, segment JA, diesel',
+# 'passenger car, segment JB, diesel',
+# 'passenger car, segment JC, diesel',
+# 'passenger car, segment JD, diesel',
+# 'passenger car, segment JE, diesel',
+# 'passenger car, segment JF, diesel',
+# 'van, diesel',
+# 'passenger car, segment A, HEV',
+# 'passenger car, segment B, HEV',
+# 'passenger car, segment C, HEV',
+# 'passenger car, segment D, HEV',
+# 'passenger car, segment E, HEV',
+# 'passenger car, segment F, HEV',
+# 'passenger car, segment JA, HEV',
+# 'passenger car, segment JB, HEV',
+# 'passenger car, segment JC, HEV',
+# 'passenger car, segment JD, HEV',
+# 'passenger car, segment JE, HEV',
+# 'passenger car, segment JF, HEV',
+# 'van, HEV',
+# 'passenger car, other fuel',
+# 'passenger car, segment A, other fuel',
+# 'passenger car, segment B, other fuel',
+# 'passenger car, segment C, other fuel',
+# 'passenger car, segment D, other fuel',
+# 'passenger car, segment E, other fuel',
+# 'passenger car, segment F, other fuel',
+# 'passenger car, segment JA, other fuel',
+# 'passenger car, segment JB, other fuel',
+# 'passenger car, segment JC, other fuel',
+# 'passenger car, segment JD, other fuel',
+# 'passenger car, segment JE, other fuel',
+# 'passenger car, segment JF, other fuel',
+# 'van, other fuel',
+# 'passenger car, segment A, gasoline',
+# 'passenger car, segment B, gasoline',
+# 'passenger car, segment C, gasoline',
+# 'passenger car, segment D, gasoline',
+# 'passenger car, segment E, gasoline',
+# 'passenger car, segment F, gasoline',
+# 'passenger car, segment JA, gasoline',
+# 'passenger car, segment JB, gasoline',
+# 'passenger car, segment JC, gasoline',
+# 'passenger car, segment JD, gasoline',
+# 'passenger car, segment JE, gasoline',
+# 'passenger car, segment JF, gasoline',
+# 'van, petrol',
+# 'passenger car, segment A, PHEV',
+# 'passenger car, segment B, PHEV',
+# 'passenger car, segment C, PHEV',
+# 'passenger car, segment D, PHEV',
+# 'passenger car, segment E, PHEV',
+# 'passenger car, segment F, PHEV',
+# 'passenger car, segment JA, PHEV',
+# 'passenger car, segment JB, PHEV',
+# 'passenger car, segment JC, PHEV',
+# 'passenger car, segment JD, PHEV',
+# 'passenger car, segment JE, PHEV',
+# 'passenger car, segment JF, PHEV',
+# 'van, PHEV',
+# 'battery, MFP(manganese iron phosphate)',
+# 'battery, LMO(lithium manganese oxide)',
+# 'battery, NCA(nickel cobalt aluminium oxides)',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi)',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi)',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi)',
+# 'battery pack']
+
+# Add2L = ['5xxxAl alloy',
+# '6xxxAl alloy',
+# '7xxxAl alloy',
+# 'steel, mild',
+# 'AHSS (advanced high-strength steel)',
+# 'AHSS dual phase (advanced high-strength steel)',
+# 'UHSS (ultra high-strength steel)',
+# 'steel, other',
+# 'steel, alloy',
+# 'Mg and Mg alloys',
+# 'cast Al-Si-Cu alloys',
+# 'cast Al-Si-Mg alloys',
+# 'catalyst materials',
+# 'magnet alloys NdFeB']
+
+# Add2L = ['anode active material',
+# 'battery cell casing',
+# 'battery cell electrolyte',
+# 'battery cell separator',
+# 'battery pack cell terminals',
+# 'cathode active material',
+# 'current collector anode',
+# 'current collector cathode',
+# 'battery pack cables',
+# 'battery pack module enclosures and coolant manifolds',
+# 'battery pack support frame',
+# 'battery pack thermal conductor',
+# 'body in white',
+# 'brakes',
+# 'chassis',
+# 'closures',
+# 'driveline',
+# 'steering',
+# 'thermal management',
+# 'transmission',
+# 'trim',
+# 'wheels',
+# 'power electronics',
+# 'embedded electronics actuators',
+# 'embedded electronics controllers',
+# 'embedded electronics headlights',
+# 'embedded electronics cables',
+# 'electric motor',
+# 'generator',
+# 'catalytic converters']
+
+# Add2L = ['import of paper and paperboard',
+# 'export of recovered pulp',
+# 'import of roundwood',
+# 'stock decrease',
+# 'market for roundwood',
+# 'domestic consumption',
+# 'export of roundwood',
+# 'stock increase']
+
+# Add2L = ['coniferous wood',
+# 'non-coniferous wood',
+# 'wood products, semi-finished',
+# 'wood products',
+# 'wood, recovered',
+# 'sawmill by-products',
+# 'production residue']
+
+# Add2L = ['import of semi-finished products',
+# 'export of semi-finished products',
+# 'market for semi-finished products',
+# 'market for finished products',
+# 'market for sawmill byproducts',
+# 'use of roundwood, unspecified',
+# 'import of finished products',
+# 'export of finished products',
+# 'use of sawmill by-products and industrial residues, unspecified',
+# 'use of roundwood, unspecified',
+# 'treatment of industrial waste',
+# 'production of semi-finished products',
+# 'use of recovered wood, unspecified']
+
+# Add2L = ['domestic market for wood and all wood products, aggregated',
+# 'import of wood and wood products',
+# 'export of wood and wood products',
+# 'market for wood and all wood products, aggregated']
+
+# Add2L = ['import of wood and wood products',
+# 'domestic market for wood and all wood products, aggregated',
+# 'export of wood and wood products',
+# 'market for wood and all wood products, aggregated']
+
+# Add2L = ['wood residues and waste wood',
+# 'paper and paper products',
+# 'paper products',
+# 'regenerated cellulose and artificial filaments']
+
+# Add2L = ['battery, LFP (lithium–iron–phosphate), 100kWh',
+# 'battery, LFP (lithium–iron–phosphate), 25kWh',
+# 'battery, LFP (lithium–iron–phosphate), 45kWh',
+# 'battery, LFP (lithium–iron–phosphate), 60kWh',
+# 'battery, LFP (lithium–iron–phosphate), 80kWh',
+# 'battery, LFP (lithium–iron–phosphate), 1kWh',
+# 'battery, LFP (lithium–iron–phosphate), 20kWh',
+# 'battery, MFP(manganese iron phosphate), 100kWh',
+# 'battery, MFP(manganese iron phosphate), 25kWh',
+# 'battery, MFP(manganese iron phosphate), 45kWh',
+# 'battery, MFP(manganese iron phosphate), 60kWh',
+# 'battery, MFP(manganese iron phosphate), 80kWh',
+# 'battery, MFP(manganese iron phosphate), 1kWh',
+# 'battery, MFP(manganese iron phosphate), 20kWh',
+# 'battery, LMO(lithium manganese oxide), 100kWh',
+# 'battery, LMO(lithium manganese oxide), 25kWh',
+# 'battery, LMO(lithium manganese oxide), 45kWh',
+# 'battery, LMO(lithium manganese oxide), 60kWh',
+# 'battery, LMO(lithium manganese oxide), 80kWh',
+# 'battery, LMO(lithium manganese oxide), 1kWh',
+# 'battery, LMO(lithium manganese oxide), 20kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 100kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 25kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 45kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 60kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 80kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 1kWh',
+# 'battery, NCA(nickel cobalt aluminium oxides), 20kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 100kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 25kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 45kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 60kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 80kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 1kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, highNi), 20kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 100kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 25kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 45kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 60kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 80kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 1kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, lowNi), 20kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 100kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 25kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 45kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 60kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 80kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 1kWh',
+# 'battery, NMC(nickel cobalt aluminium oxides, midNi), 20kWh',
+# 'battery pack, 100kWh',
+# 'battery pack, 25kWh',
+# 'battery pack, 45kWh',
+# 'battery pack, 60kWh',
+# 'battery pack, 80kWh',
+# 'battery pack, 1kWh',
+# 'battery pack, 20kWh']
+
+# Add2L = ['final goods - primary material',
+# 'final goods - recycled material',
+# 'final goods - reused',
+# 'end-of-life (EoL) goods',
+# 'material, primary',
+# 'end-of-life (EoL) goods, not collected (obsolete) or discarded otherwise',
+# 'collection losses, obsolete stock formation',
+# 'fabrication scrap, for direct reuse',
+# 'fabrication scrap, for stock-piling',
+# 'reused material in components',
+# 'fabrication scrap, for remelting',
+# 'scrap; from end-of-life products (old scrap)',
+# 'material, recycled',
+# 'recycling losses',
+# 'material, recycled, for stock-piling',
+# 'material, recycled, from stock-piling']
+
+# Add2L = ['use phase - electricity generation',
+# 'stockpile of recycled material']
+
+# Add2L = ['SSP2_1.9_degrees_taxation',
+# 'SSP2_2.6_degrees_taxation']
+
+# Add2L = ['balancing items output',
+# 'domestic extraction',
+# 'domestic material consumption',
+# 'material processing',
+# 'treatment or disposal of solid and liquid waste',
+# 'dissipative use, losses']
 
 ThisCl = 6
 

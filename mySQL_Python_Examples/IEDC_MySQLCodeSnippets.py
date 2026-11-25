@@ -15,6 +15,8 @@ conn = pymysql.connect(host='www.industrialecology.uni-freiburg.de', port=3306, 
 
 cur = conn.cursor()
 
+ayx
+
 # get total number of data
 cur.execute("SELECT COUNT(*) FROM data")
 for row in cur:
@@ -67,7 +69,7 @@ cur.execute("SELECT * FROM datagroups")
 for row in cur:
     print(row)
     
-cur.execute("SELECT * FROM datagroups WHERE id = 23")
+cur.execute("SELECT * FROM datagroups WHERE id = 50")
 for row in cur:
     print(row)    
         
